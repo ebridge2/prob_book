@@ -517,9 +517,10 @@ title="Print to PDF"
 <p>A sequence on a set <span class="math notranslate nohighlight">\(\mathcal X\)</span> is a function <span class="math notranslate nohighlight">\(x : \mathbb N \rightarrow \mathcal X\)</span>.</p>
 </section>
 </div><p>For instance, we had a sequence on <span class="math notranslate nohighlight">\(\mathbb N\)</span>, our sequence might specify that <span class="math notranslate nohighlight">\(x(1) = 1\)</span>, <span class="math notranslate nohighlight">\(x(2) = -\frac{1}{2}\)</span>, <span class="math notranslate nohighlight">\(x(3) = \frac{1}{3}\)</span>, <span class="math notranslate nohighlight">\(x(4) = -\frac{1}{4}\)</span>, … so on and so forth, known as a geometric sequence. This notation of having extra parentheses can get cumbersome, so when we’re talking about sequences, we might often <em>overload</em> the notation we used for sets a little bit and just use <span class="math notranslate nohighlight">\(x_i\)</span> for short.  In words, we could express this sequence with set theory as:</p>
-<p>\begin{align*}
-\left{x_n : x_n = (-1)^{n - 1}\frac{1}{n}\right}_{n \in \mathbb N}
-\end{align*}</p>
+<div class="math notranslate nohighlight">
+\[
+\left\{x_n : x_n = (-1)^{n - 1}\frac{1}{n}\right\}_{n \in \mathbb N}
+\]</div>
 </section>
 <section id="notable-quantities-in-set-theory">
 <h2><span class="section-number">1.1.2. </span>Notable quantities in set theory<a class="headerlink" href="#notable-quantities-in-set-theory" title="Permalink to this headline">#</a></h2>
@@ -546,10 +547,10 @@ title="Print to PDF"
 <p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Limit)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. The sequence converges to <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span> if <span class="math notranslate nohighlight">\(\forall \epsilon &gt; 0\)</span>, there exists an <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span> such that (s.t.) for all <span class="math notranslate nohighlight">\(i &gt; m\)</span>:
-\begin{align*}
-\left|x_i - x\right| &lt; \epsilon,
-\end{align*}
-and is written as either <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty} x_n = x\)</span> or <span class="math notranslate nohighlight">\(x_n \xrightarrow[n \rightarrow \infty]{} x\)</span>.</p>
+$<span class="math notranslate nohighlight">\(
+    \left|x_i - x\right| &lt; \epsilon,
+\)</span><span class="math notranslate nohighlight">\(
+and is written as either \)</span>\lim_{n \rightarrow \infty} x_n = x<span class="math notranslate nohighlight">\( or \)</span>x_n \xrightarrow[n \rightarrow \infty]{} x$.</p>
 </section>
 </div><p>Let’s think briefly about what this statement means conceptually. If we were to choose a particular value of <span class="math notranslate nohighlight">\(\epsilon\)</span>, we could always find an index of the sequence <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span> where, for all the remaining values, they are at most a width <span class="math notranslate nohighlight">\(\epsilon\)</span> from <span class="math notranslate nohighlight">\(x\)</span> (and, possibly equal to it). We could make <span class="math notranslate nohighlight">\(\epsilon\)</span> as small as we wanted, and there would always be some index of the sequence where this were true. In this particular sequence, for instance, the limit is <span class="math notranslate nohighlight">\(0\)</span>. If we chose <span class="math notranslate nohighlight">\(\epsilon = \frac{1}{3}\)</span>, then for any <span class="math notranslate nohighlight">\(i &gt; 3\)</span>, <span class="math notranslate nohighlight">\(|x_i| &lt; \frac{1}{3}\)</span>. We could repeat this for <span class="math notranslate nohighlight">\(\epsilon = \frac{1}{4}\)</span>, so on and so forth all the way down to any number we chose exceeding zero.</p>
 <p>Next, let’s remember two extremely important related concepts, the limit superior and inferior:</p>
@@ -557,17 +558,17 @@ and is written as either <span class="math notranslate nohighlight">\(\lim_{n \r
 <p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Limit Superior)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. The limit superior is defined as:
-\begin{align*}
-\limsup_{n \rightarrow \infty} x_n &amp;= \lim_{n \rightarrow \infty} \sup_{i &gt; n} x_i.
-\end{align*}</p>
+$<span class="math notranslate nohighlight">\(
+    \limsup_{n \rightarrow \infty} x_n &amp;= \lim_{n \rightarrow \infty} \sup_{i &gt; n} x_i.
+\)</span>$</p>
 </section>
 </div><div class="proof definition admonition" id="definition-7">
 <p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Limit Inferior)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. The limit inferior is defined as:
-\begin{align*}
-\liminf_{n \rightarrow \infty} x_n &amp;= \lim_{n \rightarrow \infty} \inf_{i &gt; n} x_i.
-\end{align*}</p>
+$<span class="math notranslate nohighlight">\(
+    \liminf_{n \rightarrow \infty} x_n &amp;= \lim_{n \rightarrow \infty} \inf_{i &gt; n} x_i.
+\)</span>$</p>
 </section>
 </div><p>Conceptually, these can be thought of as upper and lower bounds for the <em>tails</em> of the sequence. The tail of the sequence is the subsequence which includes every number coming after a particular number, here denoted by <span class="math notranslate nohighlight">\(n\)</span>. Let’s take a look at what the sups of the tails look like for our sequence:</p>
 <ul class="simple">
