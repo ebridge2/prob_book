@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2. Convergence Results" href="convergence_tests.html" />
+    <link rel="next" title="1.2. Convergence Concepts" href="convergence_tests.html" />
     <link rel="prev" title="1. Foundations" href="foundations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="convergence_tests.html">
-     1.2. Convergence Results
+     1.2. Convergence Concepts
     </a>
    </li>
    <li class="toctree-l2">
@@ -460,6 +460,11 @@ title="Print to PDF"
    1.1.2. Notable quantities in set theory
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-from-above-and-below">
+   1.1.3. Convergence from above and below
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -487,6 +492,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notable-quantities-in-set-theory">
    1.1.2. Notable quantities in set theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-from-above-and-below">
+   1.1.3. Convergence from above and below
   </a>
  </li>
 </ul>
@@ -591,6 +601,23 @@ If you continue this logic on and on, and keep extending that <em>tail</em> furt
 </section>
 </div><p>The notation <span class="math notranslate nohighlight">\(\iff\)</span> is used to indicate “if and only if”, which means that the each side of the statement implies the other. If the sequence has a limit, the limit inferior and limit superior are equal. Likewise, if the limit inferior and the limit superior are equal, the sequence has a limit.</p>
 </section>
+<section id="convergence-from-above-and-below">
+<h2><span class="section-number">1.1.3. </span>Convergence from above and below<a class="headerlink" href="#convergence-from-above-and-below" title="Permalink to this headline">#</a></h2>
+<p>Next, we have two abbreviations that should be clear to you from real analysis, but you might not have seen before. They are the symbols for convergence from above and below:</p>
+<div class="proof definition admonition" id="def:found:lim:convabove">
+<p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Convergence from above)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal X \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((x_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal X\)</span>. Suppose further that <span class="math notranslate nohighlight">\(x_n \xrightarrow[n \rightarrow \infty]{} x\)</span>, where <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span> is finite. Then <span class="math notranslate nohighlight">\(x_n\)</span> converges from above to <span class="math notranslate nohighlight">\(x\)</span> if <span class="math notranslate nohighlight">\(x_n \geq x\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and can also be written <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="def:found:lim:convbelow">
+<p class="admonition-title"><span class="caption-number">Definition 1.11 </span> (Convergence from below)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal X \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((x_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal X\)</span>. Suppose further that <span class="math notranslate nohighlight">\(x_n \xrightarrow[n \rightarrow \infty]{} x\)</span>, where <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span> is finite. Then <span class="math notranslate nohighlight">\(x_n\)</span> converges from below to <span class="math notranslate nohighlight">\(x\)</span> if <span class="math notranslate nohighlight">\(x_n \leq x\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and can also be written <span class="math notranslate nohighlight">\(x_n \uparrow x\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
+</div><p>The idea here is that with convergence from above, the sequence is converging to the limit <span class="math notranslate nohighlight">\(x\)</span>, but all of the sequential terms <span class="math notranslate nohighlight">\(x_n\)</span> exceed <span class="math notranslate nohighlight">\(x\)</span>, and the logic is the same with convergence from below.</p>
+<p>For instance, consider the sequence <span class="math notranslate nohighlight">\((x_n)\)</span> where <span class="math notranslate nohighlight">\(x_n = \frac{1}{n}\)</span>. Notice that this sequence has a limit of <span class="math notranslate nohighlight">\(0\)</span>, but that <span class="math notranslate nohighlight">\(\frac{1}{n} &gt; 0\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>. Then <span class="math notranslate nohighlight">\(x_n \downarrow 0\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Likewise, consider the sequence <span class="math notranslate nohighlight">\((x_n)\)</span> where <span class="math notranslate nohighlight">\(x_n = -\frac{1}{n}\)</span>. Notice that this sequence has a limit of <span class="math notranslate nohighlight">\(0\)</span>, but that <span class="math notranslate nohighlight">\(-\frac{1}{n} &lt; 0\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>. Then <span class="math notranslate nohighlight">\(x_n \uparrow 0\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -630,7 +657,7 @@ If you continue this logic on and on, and keep extending that <em>tail</em> furt
     <a class='right-next' id="next-link" href="convergence_tests.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Convergence Results</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Convergence Concepts</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

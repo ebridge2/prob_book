@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.2. Convergence Results &#8212; Measure Theoretic Probability Theory</title>
+    <title>1.2. Convergence Concepts &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.2. Convergence Results
+     1.2. Convergence Concepts
     </a>
    </li>
    <li class="toctree-l2">
@@ -479,6 +479,21 @@ title="Print to PDF"
      -series test
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ratio-test">
+     1.2.2.4. Ratio Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#root-test">
+     1.2.2.5. Root Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limit-comparison-test">
+     1.2.2.6. Limit Comparison Test
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -490,7 +505,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Convergence Results</h1>
+                <h1>Convergence Concepts</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -529,6 +544,21 @@ title="Print to PDF"
      -series test
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ratio-test">
+     1.2.2.4. Ratio Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#root-test">
+     1.2.2.5. Root Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limit-comparison-test">
+     1.2.2.6. Limit Comparison Test
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -541,13 +571,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="convergence-results">
-<span id="foundations-conv-tests"></span><h1><span class="section-number">1.2. </span>Convergence Results<a class="headerlink" href="#convergence-results" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="convergence-concepts">
+<span id="foundations-conv-tests"></span><h1><span class="section-number">1.2. </span>Convergence Concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h1>
 <section id="basic-definitions">
 <h2><span class="section-number">1.2.1. </span>Basic definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this headline">#</a></h2>
 <p>Next, we’ll get to some convergence concepts that will be useful throughout this course. These will often be conducted on series, which are basically sequential sums of sequences:</p>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Partial sum)</p>
+<p class="admonition-title"><span class="caption-number">Definition 1.12 </span> (Partial sum)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. A <span class="math notranslate nohighlight">\(m\)</span>-element partial sum of the sequence is:</p>
 <div class="math notranslate nohighlight">
@@ -555,7 +585,7 @@ title="Print to PDF"
 </section>
 </div><p>This allows us to define a series:</p>
 <div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 1.11 </span> (Series)</p>
+<p class="admonition-title"><span class="caption-number">Definition 1.13 </span> (Series)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. A series on <span class="math notranslate nohighlight">\(\mathcal A\)</span> is the inifinte sum:</p>
 <div class="math notranslate nohighlight">
@@ -635,6 +665,62 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[    \sum_{n = 1}^\infty \frac{1}{n^p}\]</div>
 <p>If <span class="math notranslate nohighlight">\(p &gt; 1\)</span>, then the series converges. If <span class="math notranslate nohighlight">\(p \in (0, 1]\)</span>, then the series diverges.</p>
+</section>
+</div></section>
+<section id="ratio-test">
+<h3><span class="section-number">1.2.2.4. </span>Ratio Test<a class="headerlink" href="#ratio-test" title="Permalink to this headline">#</a></h3>
+<p>The next test is one of the more easily used convergence tests, as it amounts to taking the limit of two numbers. It is called the ratio test, and is based on the ratios of consecutive terms; e.g., <span class="math notranslate nohighlight">\(r_n \triangleq \frac{a_{n + 1}}{a_n}\)</span>. The statement is rather big and involved:</p>
+<div class="proof lemma admonition" id="lem:foundations:conv_tests:ratio">
+<p class="admonition-title"><span class="caption-number">Lemma 1.4 </span> (Ratio Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, where <span class="math notranslate nohighlight">\(a_n \neq 0\)</span> for large <span class="math notranslate nohighlight">\(n\)</span>. Let <span class="math notranslate nohighlight">\(L = \lim_{n \rightarrow \infty}|r_n|\)</span>, where <span class="math notranslate nohighlight">\(r_n = \frac{a_{n + 1}}{a_n}\)</span>. If <span class="math notranslate nohighlight">\(L\)</span> exists, then:</p>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(L &lt; 1\)</span>, the series converges absolutely.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(L = 1\)</span>, the test is inconclusive.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(L &gt; 1\)</span>, the series diverges.
+Further, if <span class="math notranslate nohighlight">\(L\)</span> does not exist, let <span class="math notranslate nohighlight">\(S = \limsup_{n \rightarrow \infty} |r_n|\)</span> and <span class="math notranslate nohighlight">\(I = \liminf_{n \rightarrow \infty}|r_n|\)</span>. Then:</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(S &gt; 1\)</span>, the series converges absolutely.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(R &lt; 1\)</span>, the series diverges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(|r_n| \geq 1\)</span> for all large <span class="math notranslate nohighlight">\(n\)</span>, regardless of the value of <span class="math notranslate nohighlight">\(R\)</span>, the series diverges.</p></li>
+<li><p>Otherwise, the test is inconclusive.</p></li>
+</ol>
+</section>
+</div><p>So, the nice aspect of this test is, we only need to think about the behavior of <span class="math notranslate nohighlight">\(r_n\)</span> in the tail. This means we can couple the ratio test with other nice results that operate on ratios of two numbers, like L’H^opital’s rule, for determining behavior about the series. The downside is that these inconclusive cases can sometimes be rather annoying.</p>
+</section>
+<section id="root-test">
+<h3><span class="section-number">1.2.2.5. </span>Root Test<a class="headerlink" href="#root-test" title="Permalink to this headline">#</a></h3>
+<p>The next test can also be useful if we have terms that can easily be upper bounded by an <span class="math notranslate nohighlight">\(n^{th}\)</span> root, such as polynomial expressions. This is called the root test:</p>
+<div class="proof lemma admonition" id="lem:foundations:conv_tests:root">
+<p class="admonition-title"><span class="caption-number">Lemma 1.5 </span> (Root Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, and let <span class="math notranslate nohighlight">\(C = \limsup_{n \rightarrow \infty} \sqrt[n]{|a_n|}\)</span>. If:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(C &lt; 1\)</span>, the series converges absolutely.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(C &gt; 1\)</span>, the series diverges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(C = 1\)</span>, and further, <span class="math notranslate nohighlight">\(\sqrt[n]{|a_n|} \downarrow 1\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, the series diverges.</p></li>
+<li><p>Otherwise, the test is inconclusive.</p></li>
+</ol>
+</section>
+</div></section>
+<section id="limit-comparison-test">
+<h3><span class="section-number">1.2.2.6. </span>Limit Comparison Test<a class="headerlink" href="#limit-comparison-test" title="Permalink to this headline">#</a></h3>
+<p>The next test looks only at the limits of a pair of sequence to determine behaviors, and is pretty similar to the comparison test.</p>
+<div class="proof lemma admonition" id="lem:foundations:conv_tests:lim_cmp">
+<p class="admonition-title"><span class="caption-number">Lemma 1.6 </span> (Limit Comparison Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be two sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Further, assume that <span class="math notranslate nohighlight">\(a_n \geq 0\)</span>, and <span class="math notranslate nohighlight">\(b_n &gt; 0\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Then:</p>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} &gt; 0\)</span> is finite, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> converges <span class="math notranslate nohighlight">\(\iff \sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarorow \infty}\frac{a_n}{b_n} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarorow \infty}\frac{a_n}{b_n} = \infty\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> diverges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> diverges.</p></li>
+</ol>
+</section>
+</div><p>Let’s take a look at how to use this one with an example, where we chain together the comparison test with the limit comparison test and the <span class="math notranslate nohighlight">\(p\)</span>-series convergence test:</p>
+<div class="proof example admonition" id="ex:foundations:conv_tests:lim_cmp">
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n\)</span>, where <span class="math notranslate nohighlight">\(\epsilon \in (0, 1)\)</span>.</p>
+<p>Our first guess at this series might be to use the comparison test</p>
 </section>
 </div></section>
 </section>
