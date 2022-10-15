@@ -26,12 +26,14 @@ parts:
         - file: uv/clts/clts
 #          sections:
     - caption: Markov Chain Theory
+      numbered: True
       chapters:
         - file: mc/martingales/martingales
 #          sections:
         - file: mc/mc/mc
 #          sections:
     - caption: Multivariate Probability Theory
+      numbered: True
       chapters:
         - file: mv/classes/classes
 #          sections:
