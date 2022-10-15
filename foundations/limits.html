@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.2. Convergence Results" href="convergence_tests.html" />
@@ -426,12 +428,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-theory-basics">
+   1.1.1. Set Theory Basics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notable-quantities-in-set-theory">
+   1.1.2. Notable quantities in set theory
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -443,6 +474,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-theory-basics">
+   1.1.1. Set Theory Basics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notable-quantities-in-set-theory">
+   1.1.2. Notable quantities in set theory
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -452,6 +501,89 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="limits">
 <span id="foundations-limits"></span><h1><span class="section-number">1.1. </span>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">#</a></h1>
+<p>To start off our discussion of probability theory, we’re going to start with the most fundamental concept you should have covered in real analysis: limits. All of this material should be review from your real analysis course, and you should know all of these results inside and out off the top of your head. We’ll briefly cover the basics here, just to familiarize you with the particular notation we’re going to use in this book.</p>
+<section id="set-theory-basics">
+<h2><span class="section-number">1.1.1. </span>Set Theory Basics<a class="headerlink" href="#set-theory-basics" title="Permalink to this headline">#</a></h2>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1.1 </span> (Set)</p>
+<section class="definition-content" id="proof-content">
+<p>A set <span class="math notranslate nohighlight">\(\mathcal X\)</span> is a collection of objects.</p>
+</section>
+</div><p>This collection of objects is left to the mind of the reader; it might be the natural numbers <span class="math notranslate nohighlight">\(\mathbb N\)</span>, it might be the real numbers <span class="math notranslate nohighlight">\(\mathbb R\)</span>, it might be the items sitting in your desk next to you. When sets are <em>countable</em>, we will often index them be their elements. For instance, if <span class="math notranslate nohighlight">\(\mathcal X\)</span> is a set with <span class="math notranslate nohighlight">\(n\)</span>-elements, we might illustrate that by saying <span class="math notranslate nohighlight">\(\mathcal X = \left\{x_i\right\}_{i = 1}^n\)</span>. In this case, <span class="math notranslate nohighlight">\(x_i\)</span> is the <span class="math notranslate nohighlight">\(i^{th}\)</span> element of the set <span class="math notranslate nohighlight">\(\mathcal X\)</span>.</p>
+<p>Often in probability theory, we’re going to be interested in the behavior of sequences of numbers, which brings us to our next definition:</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 1.2 </span> (Sequence)</p>
+<section class="definition-content" id="proof-content">
+<p>A sequence on a set <span class="math notranslate nohighlight">\(\mathcal X\)</span> is a function <span class="math notranslate nohighlight">\(x : \mathbb N \rightarrow \mathcal X\)</span>.</p>
+</section>
+</div><p>For instance, we had a sequence on <span class="math notranslate nohighlight">\(\mathbb N\)</span>, our sequence might specify that <span class="math notranslate nohighlight">\(x(1) = 1\)</span>, <span class="math notranslate nohighlight">\(x(2) = -\frac{1}{2}\)</span>, <span class="math notranslate nohighlight">\(x(3) = \frac{1}{3}\)</span>, <span class="math notranslate nohighlight">\(x(4) = -\frac{1}{4}\)</span>, … so on and so forth, known as a geometric sequence. This notation of having extra parentheses can get cumbersome, so when we’re talking about sequences, we might often <em>overload</em> the notation we used for sets a little bit and just use <span class="math notranslate nohighlight">\(x_i\)</span> for short.  In words, we could express this sequence with set theory as:</p>
+<p>\begin{align*}
+\left{x_n : x_n = (-1)^{n - 1}\frac{1}{n}\right}_{n \in \mathbb N}
+\end{align*}</p>
+</section>
+<section id="notable-quantities-in-set-theory">
+<h2><span class="section-number">1.1.2. </span>Notable quantities in set theory<a class="headerlink" href="#notable-quantities-in-set-theory" title="Permalink to this headline">#</a></h2>
+<p>Now that we have sets and sequences, we’re ready to recall some notable quantities that you learned about in real analysis. We’ll begin with the concepts of upper and lower bounds.</p>
+<div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 1.3 </span> (Upper (Lower) Bounds)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal X \subset \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(y \in \mathbb R\)</span> is an upper (lower) bound of <span class="math notranslate nohighlight">\(\mathcal X\)</span> if <span class="math notranslate nohighlight">\(\forall x \in \mathcal X\)</span>, <span class="math notranslate nohighlight">\(x \leq y\)</span> (<span class="math notranslate nohighlight">\(x \geq y\)</span>).</p>
+</section>
+</div><p>Notice that by this definition, if we were to let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be the geometric sequence we defined above, that suitable upper bounds could be any number greater than or equal to <span class="math notranslate nohighlight">\(1\)</span>, and suitable lower bounds could be any number less than or equal to <span class="math notranslate nohighlight">\(-\frac{1}{2}\)</span>. But what importance do <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(-\frac{1}{2}\)</span> have? These are known as the <em>supremum</em> and the <em>infimum</em> of <span class="math notranslate nohighlight">\(\mathcal X\)</span>, respectively:</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 1.4 </span> (Supremum)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal X \subset \mathbb R\)</span>. <span class="math notranslate nohighlight">\(y \in \mathbb R\)</span> is a supremum of <span class="math notranslate nohighlight">\(\mathcal X\)</span> if it is the least upper bound of <span class="math notranslate nohighlight">\(\mathcal X\)</span>. We write that <span class="math notranslate nohighlight">\(y = \sup \mathcal X\)</span>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 1.5 </span> (Infimum)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal X \subset \mathbb R\)</span>. <span class="math notranslate nohighlight">\(y \in \mathbb R\)</span> is a infimum of <span class="math notranslate nohighlight">\(\mathcal X\)</span> if it is the greatest lower bound of <span class="math notranslate nohighlight">\(\mathcal X\)</span>. We write that <span class="math notranslate nohighlight">\(y = \inf \mathcal X\)</span>.</p>
+</section>
+</div><p>As you can see here, <span class="math notranslate nohighlight">\(1\)</span> is the biggest number in <span class="math notranslate nohighlight">\(\{x_n\}\)</span>, as all the other terms are going to be smaller than it just by construction, which means <span class="math notranslate nohighlight">\(\sup \{x_n\} = 1\)</span>. Likewise, <span class="math notranslate nohighlight">\(-\frac{1}{2}\)</span> is the smallest number in <span class="math notranslate nohighlight">\(\{x_n\}\)</span>, so <span class="math notranslate nohighlight">\(\inf \left\{x_n\right\} = -\frac{1}{2}\)</span>. Sets and sequences do not, necessarily, need to have infimums nor supremums (nor upper/lower bounds), but they tend to be really interesting when they do, which is why these concepts will be essential in probability theory.</p>
+<p>Next, we get to the concept of limits:</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 1.6 </span> (Limit)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. The sequence converges to <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span> if <span class="math notranslate nohighlight">\(\forall \epsilon &gt; 0\)</span>, there exists an <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span> such that (s.t.) for all <span class="math notranslate nohighlight">\(i &gt; m\)</span>:
+\begin{align*}
+\left|x_i - x\right| &lt; \epsilon,
+\end{align*}
+and is written as either <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty} x_n = x\)</span> or <span class="math notranslate nohighlight">\(x_n \xrightarrow[n \rightarrow \infty]{} x\)</span>.</p>
+</section>
+</div><p>Let’s think briefly about what this statement means conceptually. If we were to choose a particular value of <span class="math notranslate nohighlight">\(\epsilon\)</span>, we could always find an index of the sequence <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span> where, for all the remaining values, they are at most a width <span class="math notranslate nohighlight">\(\epsilon\)</span> from <span class="math notranslate nohighlight">\(x\)</span> (and, possibly equal to it). We could make <span class="math notranslate nohighlight">\(\epsilon\)</span> as small as we wanted, and there would always be some index of the sequence where this were true. In this particular sequence, for instance, the limit is <span class="math notranslate nohighlight">\(0\)</span>. If we chose <span class="math notranslate nohighlight">\(\epsilon = \frac{1}{3}\)</span>, then for any <span class="math notranslate nohighlight">\(i &gt; 3\)</span>, <span class="math notranslate nohighlight">\(|x_i| &lt; \frac{1}{3}\)</span>. We could repeat this for <span class="math notranslate nohighlight">\(\epsilon = \frac{1}{4}\)</span>, so on and so forth all the way down to any number we chose exceeding zero.</p>
+<p>Next, let’s remember two extremely important related concepts, the limit superior and inferior:</p>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 1.7 </span> (Limit Superior)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. The limit superior is defined as:
+\begin{align*}
+\limsup_{n \rightarrow \infty} x_n &amp;= \lim_{n \rightarrow \infty} \sup_{i &gt; n} x_i.
+\end{align*}</p>
+</section>
+</div><div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 1.8 </span> (Limit Inferior)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. The limit inferior is defined as:
+\begin{align*}
+\liminf_{n \rightarrow \infty} x_n &amp;= \lim_{n \rightarrow \infty} \inf_{i &gt; n} x_i.
+\end{align*}</p>
+</section>
+</div><p>Conceptually, these can be thought of as upper and lower bounds for the <em>tails</em> of the sequence. The tail of the sequence is the subsequence which includes every number coming after a particular number, here denoted by <span class="math notranslate nohighlight">\(n\)</span>. Let’s take a look at what the sups of the tails look like for our sequence:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sup_{i &gt; 1} x_i = \frac{1}{3}\)</span>, because we’ve cut off the first element of our sequence. The maximum of the remaining entries is <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span>, which means that the sup is <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sup_{i &gt; 2} x_i = \frac{1}{3}\)</span>, because we’ve cut off the first two elements of our sequence. The maximum of the remaining entries is <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span>, which means that the sup is still <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sup_{i &gt; 3} x_i = \frac{1}{5}\)</span>, because we’ve cut off the three element of our sequence. The maximum of the remaining entries is <span class="math notranslate nohighlight">\(\frac{1}{5}\)</span>, which means that the sup is <span class="math notranslate nohighlight">\(\frac{1}{5}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sup_{i &gt; 4} x_i = \frac{1}{5}\)</span>, because we’ve cut off the first four elements of our sequence. The maximum of the remaining entries is <span class="math notranslate nohighlight">\(\frac{1}{5}\)</span>, which means that the sup is still <span class="math notranslate nohighlight">\(\frac{1}{5}\)</span>.
+If you continue this logic on and on, and keep extending that <em>tail</em> further and further out, you eventually come to the conclusion that the limit of these sups is <span class="math notranslate nohighlight">\(0\)</span>. You can repeat this logic to see that the limit of the infs will also be <span class="math notranslate nohighlight">\(0\)</span>, which leads us to our first useful theorem:</p></li>
+</ul>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Limit Superior and Inferior Equality)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\} \subset \mathbb R\)</span> be a sequence. Then there exists <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span> s.t. <span class="math notranslate nohighlight">\(x_n \xrightarrow[n \rightarrow \infty]{} x \iff \liminf_{n \rightarrow \infty}x_n = \limsup_{n \rightarrow \infty}x_n\)</span>.</p>
+</section>
+</div><p>The notation <span class="math notranslate nohighlight">\(\iff\)</span> is used to indicate “if and only if”, which means that the each side of the statement implies the other. If the sequence has a limit, the limit inferior and limit superior are equal. Likewise, if the limit inferior and the limit superior are equal, the sequence has a limit.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
