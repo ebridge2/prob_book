@@ -6,55 +6,55 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Markov Chains &#8212; Measure Theoretic Probability Theory</title>
+    <title>1. Foundations &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Classes of Random Variables" href="../../mv/classes/classes.html" />
-    <link rel="prev" title="5. Martingales" href="../martingales/martingales.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.1. Limits" href="limits.html" />
+    <link rel="prev" title="Terminology" href="../intro/terminology.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -89,19 +89,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Measure Theoretic Probability Theory</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../coverpage.html">
+                <a class="reference internal" href="../coverpage.html">
                     Measure Theoretic Probability Theory
                 </a>
             </li>
@@ -121,12 +121,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../intro/preface.html">
+  <a class="reference internal" href="../intro/preface.html">
    Preface
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../intro/terminology.html">
+  <a class="reference internal" href="../intro/terminology.html">
    Terminology
   </a>
  </li>
@@ -136,29 +136,29 @@ const thebe_selector_output = ".output, .cell_output"
   Foundations
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../foundations/foundations.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    1. Foundations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/limits.html">
+    <a class="reference internal" href="limits.html">
      1.1. Limits
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/convergence_tests.html">
+    <a class="reference internal" href="convergence_tests.html">
      1.2. Convergence Results
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../foundations/useful_results.html">
+    <a class="reference internal" href="useful_results.html">
      1.3. Useful Results
     </a>
    </li>
@@ -172,17 +172,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../uv/measure_theory/measure_theory.html">
+  <a class="reference internal" href="../uv/measure_theory/measure_theory.html">
    2. Introduction to Measure Theory
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../uv/llns/llns.html">
+  <a class="reference internal" href="../uv/llns/llns.html">
    3. Laws of Large Numbers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../uv/clts/clts.html">
+  <a class="reference internal" href="../uv/clts/clts.html">
    4. Central Limit Theorems
   </a>
  </li>
@@ -192,14 +192,14 @@ const thebe_selector_output = ".output, .cell_output"
   Markov Chain Theory
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../martingales/martingales.html">
+  <a class="reference internal" href="../mc/martingales/martingales.html">
    5. Martingales
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mc/mc/mc.html">
    6. Markov Chains
   </a>
  </li>
@@ -211,17 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../mv/classes/classes.html">
+  <a class="reference internal" href="../mv/classes/classes.html">
    7. Classes of Random Variables
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../mv/rvs/rvs.html">
+  <a class="reference internal" href="../mv/rvs/rvs.html">
    8. Random Vectors
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../mv/rmats/rmats.html">
+  <a class="reference internal" href="../mv/rmats/rmats.html">
    9. Random Matrices
   </a>
  </li>
@@ -284,7 +284,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/mc/mc/mc.ipynb"
+        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/foundations/foundations.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -294,7 +294,7 @@ title="Launch on Binder"
 
 <span class="headerbtn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img src="../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
@@ -344,7 +344,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Fmc/mc/mc.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Ffoundations/foundations.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -361,7 +361,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/mc/mc/mc.ipynb"
+        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/foundations/foundations.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +389,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/mc/mc/mc.ipynb"
+        <a href="../_sources/foundations/foundations.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -438,7 +438,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Markov Chains</h1>
+                <h1>Foundations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -450,8 +450,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="markov-chains">
-<h1><span class="section-number">6. </span>Markov Chains<a class="headerlink" href="#markov-chains" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="foundations">
+<span id="id1"></span><h1><span class="section-number">1. </span>Foundations<a class="headerlink" href="#foundations" title="Permalink to this headline">#</a></h1>
+<p>In this section, we’re going to breeze over concepts and ideas that, ideally, you’ve been exposed to before giving this book a go. In general, this section is going to just borrow results from your real analysis class, which means that a lot of this stuff is going to be left largely unproven (we’re going to take these results to be <em>true</em> within the scope of this book). if you aren’t familiar with the concepts that are left unproven, <em>stop immediately</em>! While it’s great to be ambitious, trying to work up a more advanced treatment of mathematics like probability theory without having the requisite background in real analysis is like trying to be a doctor without taking a science class. The ambition is meritous, but it might be too big a slice of pie to chew off.</p>
+<p>For some other concepts, I think that the idea should be attainable to you with a real analysis class, but the particular result we’ll use might not be a core concept touched on by every class. For these results, I’ll give a fairly rigorous proof. You can use these proofs to gauge whether you are at a level of mathematical maturity required for this book; if the statements all make sense, and you are able to follow the logic of the proofs as-written, I think you are ready to learn probability theory.</p>
+<p>We’ll have the following sections:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code>{foundations:limits}, which provides some basic definitions regarding limits, which are a basic concept regarding what happens as sequences proceed off to infinity.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code>{foundations:convergence_tests}, which covers convergence tests for sequences and series, and will be invaluable when we try to make proofs about sequences of random variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code>{foundations:useful_results}, which covers many useful theorems and lemmas that will come up again and again in this book.</p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -467,7 +477,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./mc/mc"
+            path: "./foundations"
         },
         predefinedOutput: true
     }
@@ -481,17 +491,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../martingales/martingales.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../intro/terminology.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5. </span>Martingales</p>
+            <p class="prev-next-title">Terminology</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../mv/classes/classes.html" title="next page">
+    <a class='right-next' id="next-link" href="limits.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Classes of Random Variables</p>
+        <p class="prev-next-title"><span class="section-number">1.1. </span>Limits</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -516,7 +526,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
