@@ -1,0 +1,10 @@
+wheel
+jupyter-book
+ghp-import
+setuptools>=61.0.0
+jupyterbook_latex
+sphinx-jupyterbook-latex
+latex
+jinja2
+myst_nb
+nbconvert
