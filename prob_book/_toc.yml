@@ -1,8 +1,39 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+format: jb-book
+root: coverpage
+parts:
+    - caption: Introduction
+    chapters:
+      - file: intro/preface
+      - file: intro/terminology
+    - caption: Foundations
+      numbered: True
+      chapters:
+        - file: foundations/ch1
+          sections:
+            - file: foundations/limits
+            - file: foundations/convergence_tests
+            - file: foundations/useful_results
+    - caption: Univariate Probability Theory
+      numbered: True
+      chapters:
+        - file: uv/measure_theory/measure_theory
+          sections:
+        - file: uv/llns/llns
+          sections:
+        - file: uv/clts/clts
+          sections:
+    - caption: Markov Chain Theory
+      chapters:
+        - file: mc/martingales/martingales
+          sections:
+        - file: mc/mc/mc
+    - caption: Multivariate Probability Theory
+      chapters:
+        - file: mv/classes/classes
+          sections:
+        - file: mv/rvs/rvs
+          sections:
+        - file: mv/rmats/rmats
