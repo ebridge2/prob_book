@@ -8,4 +8,4 @@ latex
 jinja2
 myst_nb
 nbconvert
-pip install sphinx-proof
+sphinx-proof
