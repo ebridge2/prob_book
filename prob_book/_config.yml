@@ -9,6 +9,7 @@ parse:
   myst_enable_extensions:
     - dollarmath
     - amsmath
+    - ericmath
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
