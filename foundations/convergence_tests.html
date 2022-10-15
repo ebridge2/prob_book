@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.3. Useful Results" href="useful_results.html" />
@@ -451,8 +453,86 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="convergence-results">
-<span id="foundations-convergence-tests"></span><h1><span class="section-number">1.2. </span>Convergence Results<a class="headerlink" href="#convergence-results" title="Permalink to this headline">#</a></h1>
+<span id="foundations-conv-tests"></span><h1><span class="section-number">1.2. </span>Convergence Results<a class="headerlink" href="#convergence-results" title="Permalink to this headline">#</a></h1>
+<p>Next, we’ll get to some convergence concepts that will be useful throughout this course. These will often be conducted on series, which are basically sequential sums of sequences:</p>
+<div class="proof definition admonition" id="definition-0">
+<p class="admonition-title"><span class="caption-number">Definition 1.10 </span> (Partial sum)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. A <span class="math notranslate nohighlight">\(m\)</span>-element partial sum of the sequence is:</p>
+<div class="math notranslate nohighlight">
+\[    s_m &amp;= \sum_{n = 1}^m a_n\]</div>
 </section>
+</div><p>This allows us to define a series:</p>
+<div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 1.11 </span> (Series)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. A series on <span class="math notranslate nohighlight">\(\mathcal A\)</span> is the inifinte sum:</p>
+<div class="math notranslate nohighlight">
+\[    \sum_{n = 1}^\infty a_n\]</div>
+<p>With <span class="math notranslate nohighlight">\(s_m = \sum_{n = 1}^m a_n\)</span> the <span class="math notranslate nohighlight">\(m^{th}\)</span> partial sum, we define the sum of the series to be:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty a_n &amp;= \lim_{m \rightarrow \infty} s_m\]</div>
+<p>If the limit exists and is finite, we say that the series converges; otherwise, we say that the series diverges.</p>
+</section>
+</div><p>We’re going to be extremely interested in the behavior of these series and their behaviors. This means that we need some tools to easily let us determine for which particular sequences <span class="math notranslate nohighlight">\((a_n)\)</span> that the resulting series converges/diverges. First up is the simplest test, the comparison test:</p>
+<div class="proof lemma admonition" id="lem:foundations:conv_tests:comp">
+<p class="admonition-title"><span class="caption-number">Lemma 1.1 </span> (Comparison Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span> where all <span class="math notranslate nohighlight">\(a_n, b_n \geq 0\)</span>. Then:</p>
+<ol class="simple">
+<li><p>If \sum_{n = 1}^\infty b_n is a convergent series and <span class="math notranslate nohighlight">\(a_n \leq b_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty\)</span> converges.</p></li>
+<li><p>If \sum_{n = 1}^\infty b_n is a divergent series and <span class="math notranslate nohighlight">\(a_n \geq b_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span> diverges.</p></li>
+</ol>
+</section>
+</div><p>When we have easy-to-use series that we already know behavior about, this can make proving convergence somewhat trivial. Let’s introduce the integral test, and we’ll see how the comparison test can help us out:</p>
+<div class="proof lemma admonition" id="lem:foundations:conv_tests:integral">
+<p class="admonition-title"><span class="caption-number">Lemma 1.2 </span> (Integral Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Let <span class="math notranslate nohighlight">\(f : \mathbb R \rightarrow \mathbb R\)</span> be a function, where in particular <span class="math notranslate nohighlight">\(f(n) = a_n\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is positive, continuous, and decreasing, then both:</p>
+<div class="math notranslate nohighlight">
+\[    \sum_{n = 1}^\infty a_n \text{ and }\int_1^\infty f(n)\text{d} n\]</div>
+<p>converge or diverge.</p>
+</section>
+</div><p>And a quick example of the integral test and the comparison test in action:</p>
+<div class="proof example admonition" id="ex:foundations:conv_tests:integral">
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Let’s consider the series:</p>
+<div class="math notranslate nohighlight">
+\[    \sum_{n = 2}^\infty \frac{1}{n(\log n)^s}\]</div>
+<p>If <span class="math notranslate nohighlight">\(s = 1\)</span>, let’s take a look at that integral. Notice that:</p>
+<div class="math notranslate nohighlight">
+\[\int_2^\infty \frac{1}{n(\log n)}\text{d} n\]</div>
+<p>When we choose <span class="math notranslate nohighlight">\(u = \log n\)</span>, we obtain that <span class="math notranslate nohighlight">\(\frac{\text{d}u}{\text{d}n} = \frac{1}{n}\)</span>, so <span class="math notranslate nohighlight">\(\text{d}u = \frac{1}{n}\text{d}n\)</span>. Then our integral is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{\log 2}^\infty \frac{1}{u}\text{d} u &amp;= \log(u) + C\big |_{u=\log 2}^\infty \\
+&amp;=  \log(\log n) + C\big |_{n=2}^\infty = \infty\end{split}\]</div>
+<p>so the series diverges.</p>
+<p>When <span class="math notranslate nohighlight">\(s &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{n (\log n)^s} &gt; \frac{1}{n (\log n)} \geq 0\)</span>, so this series must diverge by <a class="reference internal" href="#lem:foundations:conv_tests:comp">Lemma 1.1</a>.</p>
+<p>When <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, then we can’t just use the comparison test, so we need to calculate this integral out as well. This is because the terms of the sequence <span class="math notranslate nohighlight">\(\frac{1}{n \log^s n}\)</span> are not bigger than <span class="math notranslate nohighlight">\(\frac{1}{n\log n}\)</span>. Using the same <span class="math notranslate nohighlight">\(u\)</span>-substitution as before, we get:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_2^\infty \frac{1}{n(\log n)^s}\text{d} n &amp;= 
+\int_2^\infty u^{-s}\text{d} u \\
+&amp;= \frac{u^{1 - s}}{1 - s} + C \big|_{u = \log 2}^\infty \\
+&amp;= \frac{(\log n)^{1 - s}}{1 - s} \big|_{ n = 2}^\infty \\
+&amp;= -\frac{1}{(s - 1)(\log n)^{s - 1}} \big|_{n = 2}^\infty \\
+&amp;= 0 + \frac{1}{(s - 1)\log(2)^{s - 1}}\end{split}\]</div>
+<p>Which is finite (the integral is convergent). So our results are:</p>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(s \leq 1\)</span>, the series diverges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, the series converges.</p></li>
+</ol>
+</section>
+</div><p>Next up is probably the most important convergence result that you will want to know inside and out, the <span class="math notranslate nohighlight">\(p\)</span>-series convergence test:</p>
+<div class="proof lemma admonition" id="lem:foundations:conv_tests:pseries">
+<p class="admonition-title"><span class="caption-number">Lemma 1.3 </span> (<span class="math notranslate nohighlight">\(p\)</span>-series Convergence Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>The <span class="math notranslate nohighlight">\(p\)</span>-series is given by, with <span class="math notranslate nohighlight">\(p &gt; 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \sum_{n = 1}^\infty \frac{1}{n^p}\]</div>
+<p>If <span class="math notranslate nohighlight">\(p &gt; 1\)</span>, then the series converges. If <span class="math notranslate nohighlight">\(p \in (0, 1]\)</span>, then the series diverges.</p>
+</section>
+</div></section>
 
     <script type="text/x-thebe-config">
     {
