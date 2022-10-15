@@ -419,6 +419,43 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conventions-used">
+   Conventions used
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorems">
+     Theorems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lemmas">
+     Lemmas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     Definitions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proofs">
+     Proofs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-blocks">
+     Code Blocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-code-examples-citing-the-book-and-reaching-out-with-feedback">
+   Using code examples, citing the book, and reaching out with feedback
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#acknowledgements">
    Acknowledgements
   </a>
@@ -468,6 +505,43 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conventions-used">
+   Conventions used
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorems">
+     Theorems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lemmas">
+     Lemmas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definitions">
+     Definitions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proofs">
+     Proofs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-blocks">
+     Code Blocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-code-examples-citing-the-book-and-reaching-out-with-feedback">
+   Using code examples, citing the book, and reaching out with feedback
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#acknowledgements">
    Acknowledgements
   </a>
@@ -484,43 +558,119 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="preface">
 <h1>Preface<a class="headerlink" href="#preface" title="Permalink to this headline">#</a></h1>
-<p>The 17<span class="math notranslate nohighlight">\(^{th}\)</span> century was an exciting time for the world. The Renaissance was in full swing across Europe, and englightened thinking began to permeate every aspect of society, culturally, scientifically, and religiously. It was in 1650 when a French mathematician, Blaise Pascal, first entered a gambling place. A friend, the Chevalier de M’er’e, introduced a rather interesting problem to Pascal: the \textit{problem of points}. The problem concerns a simple game of chance which proceeds as follows. First, the players decide in advance a number of wins that must be achieved. Within each round, each player provides a bet of equal size, followed by a fair coin being flipped (each player has an equal chance of winning each round). The winner is the player for whom the coin landed in favor of. The first player to reach the required number of wins obtains the entire pot that has accumulated since the start of the game.</p>
-<p>The problem of points is, how do you divide the winnings if the game is ended early in a manner which is \textit{fair}? Early solutions, such as that by Luca Pacioli, relied on this principle: simply divide the stakes in proportion to the number of rounds won by each player. However, this approach produces some weird results. Let’s say, for instance, that the players agreed to play one hundred games, and the game is stopped after the first round. In this case, the player with one win obtains the entire pot, and the other player walks away empty handed. However, intuitively, there are still <span class="math notranslate nohighlight">\(99\)</span> wins to go, so the player with no wins still has a decent shot of getting to <span class="math notranslate nohighlight">\(100\)</span> wins before the other player gets <span class="math notranslate nohighlight">\(99\)</span> more wins. Numerous other early approaches shared similar inconsistencies with intuition about what would be a fair division of the pot in this hypothetical game.</p>
-<p>Blaise Pascal, being a prodigy mathematician who was well-educated in both geometry and actuarial sciences, posed this problem in correspondences with Pierre de Fermat, a respected French Mathematician who had already pioneered work in analytic geometry and seminal advancements in differential calculus. During their correspondences, Fermat proposed a tabular solution: if one player needs <span class="math notranslate nohighlight">\(r\)</span> rounds to win and the other player needs <span class="math notranslate nohighlight">\(s\)</span>, then the game will surely have been won by someone after <span class="math notranslate nohighlight">\(r + s - 1\)</span> additional rounds. Fermat proceeded by simply proceeding the game in \textit{all} possible ways for these <span class="math notranslate nohighlight">\(r + s - 1\)</span> additional rounds: as each game has <span class="math notranslate nohighlight">\(2\)</span> possibilities, this means that the game could proceed in <span class="math notranslate nohighlight">\(2^{r + s - 1}\)</span> different ways. Then, Fermat simply counted how many of the <span class="math notranslate nohighlight">\(2^{r + s - 1}\)</span> games led to a win for each player, and divided the stakes by the number of wins for each player.</p>
-<p>Perhaps problematically, this solution is extremely computationally intensive without a calculator. If the first player needs just <span class="math notranslate nohighlight">\(4\)</span> more wins and the second player needs <span class="math notranslate nohighlight">\(5\)</span> more wins, then <span class="math notranslate nohighlight">\(r + s - 1 = 8\)</span>, which means you would need to calculate out <span class="math notranslate nohighlight">\(2^8 = 256\)</span> different possibilities. Further, it is a little bit odd: some of these <span class="math notranslate nohighlight">\(256\)</span> games continue after a player has already won. On the other hand, Pascal proceeded a little bit differently. He proceeded by explicitly defining what it meant for a game to be fair with something called expected values. He defined that the game was fair if the division of pot matched the expected value for a particular player winning. The approach he used, which we will discuss at length later in the book when we talk about \textit{martingales}, served as the motivating example for his work on the now famous \textit{Pascal’s Triangle}, and perhaps equally significantly, inspired the first book on probability theory by Christiaan Huygens.</p>
+<p>The 17<span class="math notranslate nohighlight">\(^{th}\)</span> century was an exciting time for the world. The Renaissance was in full swing across Europe, and englightened thinking began to permeate every aspect of society, culturally, scientifically, and religiously. It was in 1650 when a French mathematician, Blaise Pascal, first entered a gambling place. A friend, the Chevalier de M’er’e, introduced a rather interesting problem to Pascal: the <em>problem of points</em>. The problem concerns a simple game of chance which proceeds as follows. First, the players decide in advance a number of wins that must be achieved. Within each round, each player provides a bet of equal size, followed by a fair coin being flipped (each player has an equal chance of winning each round). The winner is the player for whom the coin landed in favor of. The first player to reach the required number of wins obtains the entire pot that has accumulated since the start of the game.</p>
+<p>The problem of points is, how do you divide the winnings if the game is ended early in a manner which is <em>fair</em>? Early solutions, such as that by Luca Pacioli, relied on this principle: simply divide the stakes in proportion to the number of rounds won by each player. However, this approach produces some weird results. Let’s say, for instance, that the players agreed to play one hundred games, and the game is stopped after the first round. In this case, the player with one win obtains the entire pot, and the other player walks away empty handed. However, intuitively, there are still <span class="math notranslate nohighlight">\(99\)</span> wins to go, so the player with no wins still has a decent shot of getting to <span class="math notranslate nohighlight">\(100\)</span> wins before the other player gets <span class="math notranslate nohighlight">\(99\)</span> more wins. Numerous other early approaches shared similar inconsistencies with intuition about what would be a fair division of the pot in this hypothetical game.</p>
+<p>Blaise Pascal, being a prodigy mathematician who was well-educated in both geometry and actuarial sciences, posed this problem in correspondences with Pierre de Fermat, a respected French Mathematician who had already pioneered work in analytic geometry and seminal advancements in differential calculus. During their correspondences, Fermat proposed a tabular solution: if one player needs <span class="math notranslate nohighlight">\(r\)</span> rounds to win and the other player needs <span class="math notranslate nohighlight">\(s\)</span>, then the game will surely have been won by someone after <span class="math notranslate nohighlight">\(r + s - 1\)</span> additional rounds. Fermat proceeded by simply proceeding the game in <em>all</em> possible ways for these <span class="math notranslate nohighlight">\(r + s - 1\)</span> additional rounds: as each game has <span class="math notranslate nohighlight">\(2\)</span> possibilities, this means that the game could proceed in <span class="math notranslate nohighlight">\(2^{r + s - 1}\)</span> different ways. Then, Fermat simply counted how many of the <span class="math notranslate nohighlight">\(2^{r + s - 1}\)</span> games led to a win for each player, and divided the stakes by the number of wins for each player.</p>
+<p>Perhaps problematically, this solution is extremely computationally intensive without a calculator. If the first player needs just <span class="math notranslate nohighlight">\(4\)</span> more wins and the second player needs <span class="math notranslate nohighlight">\(5\)</span> more wins, then <span class="math notranslate nohighlight">\(r + s - 1 = 8\)</span>, which means you would need to calculate out <span class="math notranslate nohighlight">\(2^8 = 256\)</span> different possibilities. Further, it is a little bit odd: some of these <span class="math notranslate nohighlight">\(256\)</span> games continue after a player has already won. On the other hand, Pascal proceeded a little bit differently. He proceeded by explicitly defining what it meant for a game to be fair with something called expected values. He defined that the game was fair if the division of pot matched the expected value for a particular player winning. The approach he used, which we will discuss at length later in the book when we talk about <em>martingales</em>, served as the motivating example for his work on the now famous <em>Pascal’s Triangle</em>, and perhaps equally significantly, inspired the first book on probability theory by Christiaan Huygens.</p>
 <section id="probability-theory-today">
 <h2>Probability Theory today<a class="headerlink" href="#probability-theory-today" title="Permalink to this headline">#</a></h2>
-<p>At the time of this writing, computation has matured far beyond simply tossing dice and playing casino games: we have computers that can process and analyze enormous volumes of data, and can run algorithms in fractions of a second to solve the most complicated problems faced by our <span class="math notranslate nohighlight">\(17^{th}\)</span> century gamblers. Perhaps, in some sense, it seems almost \textit{trivial} to think about these early problems faced by previous mathematicians, because we can just solve them in real time by a computer.</p>
-<p>However, the question remains: how can \textit{you} contribute to these new problems? While the problems of today aren’t always dice and coin flips, the problems are \textit{still} extremely complicated. You might be studying a genome with millions of individual base-pairs, and you want to be able to deduce whether particular sequences of base pairs make someone more, or less, likely to get cancer later in their life. You might be studying financial data with thousands of past time points, and may want to see whether you can learn to forecast how the market might look in a few months. You might be studying social networking data with billions of users, and want to determine users who with high probability are bots.</p>
-<p>The problem, and the beauty, is that, as the data has gotten bigger, our need to understand probability theory has grown even more important. The fact remains that, no matter how much computation power grows, we only have a finite capacity to understand the universe. We cannot simply know the exact state of the entire world, and use this knowledge to determine exactly what its next state will be at some point in the future. What we can do is, we can conduct \textit{experiments}, delineate sets of rules that we think these experiments might loosely follow, and then learn about how our experiment tells us something about the world. What we learn from these experiments, and how confident we are in what we learn, are amongst the most crucial applications from probability theory.</p>
-<p>So: where does this book fit in? When determining how to interpret the results of an experiment, you are often going to capture the things you don’t know about this experiment with \textit{randomness}. For instance, if the experiment is a coin flip, you probably won’t be able to say, with certainty, that the coin is going to land on heads or tails with certainty in your experiment. Rather, you’re going to capture this randomness with probability. You might say that the coin has a probability that it will land on heads, and a probability that it will land on tails. What if you flipped the coin <span class="math notranslate nohighlight">\(100\)</span> times, and you attempted to use the ratio of the number of times it landed on heads divided by the number of flips to \textit{guess} the probability of this coin? Is this guess \textit{reasonable}? How often is it going to be \textit{close} to the true probability of the coin? What happens if you’re no longer dealing with a coin, but you’re measuring the expected temperature? What happens if you’re dealing with a genome?</p>
-<p>Determining how things that are random behave during experiments is hard work. As a theorist, your job is going to involve a good deal of math, a bit of knowledge of statistics, and a bit of experimentation. In this book, we’re going to attempt to give you the tools that you will need to, first and foremost, understand what exactly randomness is. There are a number of ways you can conceptualize randomness, some of which are easier to work with than others. The particular approach that we’re going to use to conceptualize randomness is called \textit{measure theory}. Under some assumptions, you can capture the behavior of random things using things called \textit{probability measures}, which we’ll talk more about in Section \ref{sec:univariate}. These ascribe \textit{rules} to the behavior of a particular set of functions that can be described by these probability measures called \textit{random variables}. As you’ll hopefully see later, random variables are not, like some statistics courses may lead you to believe, scary letters that have a bunch of rules attached to them. With the right intuition, in fact, they are quite intuitive, and most of the work you have learned so far in courses like calculus have already prepared you to understand how random variables work. Hopefully, by the end of this book, we’ll have equipped you with the knowledge to understand how, exactly, you can conceptualize and understand random variables, so that those scary letters and scary formulas are a bit less scary and easy to read.</p>
+<p>At the time of this writing, computation has matured far beyond simply tossing dice and playing casino games: we have computers that can process and analyze enormous volumes of data, and can run algorithms in fractions of a second to solve the most complicated problems faced by our <span class="math notranslate nohighlight">\(17^{th}\)</span> century gamblers. Perhaps, in some sense, it seems almost <em>trivial</em> to think about these early problems faced by previous mathematicians, because we can just solve them in real time by a computer.</p>
+<p>However, the question remains: how can <em>you</em> contribute to these new problems? While the problems of today aren’t always dice and coin flips, the problems are <em>still</em> extremely complicated. You might be studying a genome with millions of individual base-pairs, and you want to be able to deduce whether particular sequences of base pairs make someone more, or less, likely to get cancer later in their life. You might be studying financial data with thousands of past time points, and may want to see whether you can learn to forecast how the market might look in a few months. You might be studying social networking data with billions of users, and want to determine users who with high probability are bots.</p>
+<p>The problem, and the beauty, is that, as the data has gotten bigger, our need to understand probability theory has grown even more important. The fact remains that, no matter how much computation power grows, we only have a finite capacity to understand the universe. We cannot simply know the exact state of the entire world, and use this knowledge to determine exactly what its next state will be at some point in the future. What we can do is, we can conduct <em>experiments</em>, delineate sets of rules that we think these experiments might loosely follow, and then learn about how our experiment tells us something about the world. What we learn from these experiments, and how confident we are in what we learn, are amongst the most crucial applications from probability theory.</p>
+<p>So: where does this book fit in? When determining how to interpret the results of an experiment, you are often going to capture the things you don’t know about this experiment with <em>randomness</em>. For instance, if the experiment is a coin flip, you probably won’t be able to say, with certainty, that the coin is going to land on heads or tails with certainty in your experiment. Rather, you’re going to capture this randomness with probability. You might say that the coin has a probability that it will land on heads, and a probability that it will land on tails. What if you flipped the coin <span class="math notranslate nohighlight">\(100\)</span> times, and you attempted to use the ratio of the number of times it landed on heads divided by the number of flips to <em>guess</em> the probability of this coin? Is this guess <em>reasonable</em>? How often is it going to be <em>close</em> to the true probability of the coin? What happens if you’re no longer dealing with a coin, but you’re measuring the expected temperature? What happens if you’re dealing with a genome?</p>
+<p>Determining how things that are random behave during experiments is hard work. As a theorist, your job is going to involve a good deal of math, a bit of knowledge of statistics, and a bit of experimentation. In this book, we’re going to attempt to give you the tools that you will need to, first and foremost, understand what exactly randomness is. There are a number of ways you can conceptualize randomness, some of which are easier to work with than others. The particular approach that we’re going to use to conceptualize randomness is called <em>measure theory</em>. Under some assumptions, you can capture the behavior of random things using things called <em>probability measures</em>, which we’ll talk more about in <span class="xref std std-ref">uv:mt</span>. These ascribe <em>rules</em> to the behavior of a particular set of functions that can be described by these probability measures called <em>random variables</em>. As you’ll hopefully see later, random variables are not, like some statistics courses may lead you to believe, scary letters that have a bunch of rules attached to them. With the right intuition, in fact, they are quite intuitive, and most of the work you have learned so far in courses like calculus have already prepared you to understand how random variables work. Hopefully, by the end of this book, we’ll have equipped you with the knowledge to understand how, exactly, you can conceptualize and understand random variables, so that those scary letters and scary formulas are a bit less scary and easy to read.</p>
 </section>
 <section id="objectives-and-approach">
 <h2>Objectives and Approach<a class="headerlink" href="#objectives-and-approach" title="Permalink to this headline">#</a></h2>
 <p>The draft notes for this book were written while I undertook my doctoral studies at Johns Hopkins University. Going in, I was absolutely not the ideal candidate for a statistics PhD student: I had taken my basic engineering undergraduate mathematics courses (univariate and multivariate calculus, differential equations), I had some basic exposure to probability and statistics (I had taken statistics 101), and nearly no mathematical theory courses (I had no clue what a proof was, beyond that it was something too complicated for me to understand). When I saw my first proofs in real analysis, things were pretty easy: everything was clearly and explicitly stated, the proof was easy to follow, and most importantly, it cemented my insight into the topic. On the other hand, probability theory did not quite work this way. The proofs were often extremely terse and brief. Emphasis was placed on brevity, and giving the reader a general sketch of what a proof might look like, and none of the dots were really ever connected for a large portion of the material. I remain pretty confident that, had I been given a theorem on a test that was directly from the book and, verbatim provided the proof/insight in the book (plagiarism aside), that I would have failed every single test. It was basically impossible for me to figure out what a complete and correct proof of a probability theory result looked like because, in some sense, I hadn’t seen one.</p>
-<p>To me, this leaves a substantial gap in probability theory: it is a crucially important subject to learn, as most of the algorithms and approaches that you will use daily in your future as an industry professional or as a researcher will be best understood through the lens of probability theory. On the other hand, there is no medium through which you can appreciate these completely without substantial omissions in the proofs, or logical inconsistencies that are, for students like me, extremely arduous (or impossible in one’s year of study) to connect back. Some perspectives might view this as an advantage: it leaves open the gap for the student to explore the topic on their own, and appreciate the finer points in their own time. Truly understanding mathematics is a hands-on subject, and that requires self-study, self-reflection, and self-paced homeworks with attention to detail. However, I think that for a lot of students and practitioners alike, having some of these details shown to you can make the subject material a lot more palatable. Stated another way, to make those scary letters and formulas a little less scary, it’s going to take some math, but I’m going to do my best to make it as clear as possible for you. If you want to get a good understanding of \textit{why} probability theory results are what they are, in all the gorey details, and particularly \textit{without} needing five years of advanced mathematics ahead of time, it can help to have these results placed in front of you. You can learn by doing \textit{and} by example, and that is the approach that I am taking for this book.</p>
+<p>To me, this leaves a substantial gap in probability theory: it is a crucially important subject to learn, as most of the algorithms and approaches that you will use daily in your future as an industry professional or as a researcher will be best understood through the lens of probability theory. On the other hand, there is no medium through which you can appreciate these completely without substantial omissions in the proofs, or logical inconsistencies that are, for students like me, extremely arduous (or impossible in one’s year of study) to connect back. Some perspectives might view this as an advantage: it leaves open the gap for the student to explore the topic on their own, and appreciate the finer points in their own time. Truly understanding mathematics is a hands-on subject, and that requires self-study, self-reflection, and self-paced homeworks with attention to detail. However, I think that for a lot of students and practitioners alike, having some of these details shown to you can make the subject material a lot more palatable. Stated another way, to make those scary letters and formulas a little less scary, it’s going to take some math, but I’m going to do my best to make it as clear as possible for you. If you want to get a good understanding of <em>why</em> probability theory results are what they are, in all the gorey details, and particularly <em>without</em> needing five years of advanced mathematics ahead of time, it can help to have these results placed in front of you. You can learn by doing <em>and</em> by example, and that is the approach that I am taking for this book.</p>
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>Studying probability theory is going to require you to have some background in math.</p>
 <p>I am going to expect that you are familiar with basic univariate and multivariate calculus and differential equations.</p>
-<p>Further, you should be familiar with basic concepts from real analysis, such as concepts involving limits (<span class="math notranslate nohighlight">\(\lim\)</span>, <span class="math notranslate nohighlight">\(\liminf\)</span>, <span class="math notranslate nohighlight">\(\limsup\)</span>), basic differential results, and some exposure to proofs. I \textit{am} going to go through the gorey details with you, but I’m not going to start completely from scratch, so I’ll provide a Chapter <span class="math notranslate nohighlight">\(0\)</span> which outlines some concepts from real analysis I’m going to expect you know already.</p>
+<p>Further, you should be familiar with basic concepts from real analysis, such as concepts involving limits (<span class="math notranslate nohighlight">\(\lim\)</span>, <span class="math notranslate nohighlight">\(\liminf\)</span>, <span class="math notranslate nohighlight">\(\limsup\)</span>), basic differential results, and some exposure to proofs. I <em>am</em> going to go through the gorey details with you, but I’m not going to start completely from scratch, so I’ll provide a Chapter <span class="math notranslate nohighlight">\(0\)</span> which outlines some concepts from real analysis I’m going to expect you know already.</p>
 <p>Perhaps crucially, I’m going to write this book as though you know effectively nothing about probability or statistics, as we’re going to build those concepts from the ground up along the way.</p>
 </section>
 <section id="roadmap">
 <h2>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">#</a></h2>
 <p>This book is organized into four parts:</p>
-<p>\begin{enumerate}
-\item Part I, Foundations, gives you a brief overview of what you are expected to know already. We’ll discuss some key results from real analysis, which you should have seen before, and get introduced to proofs in a (hopefully) familiar environment.
-\item Part II, Univariate Probability Theory, will be where you are introduced to the foundational building blocks of probability and statistics, random variables, and interesting results as to how these random variables behave.
-\item Part III, Multivariate Probability Theory, will show you how the information you know about univariate random variables can be extended to multivariate behaviors. We’ll study some phenomena of multivariate random variables, known as \textit{concentration} results, and see how these results help us describe multivariate random quantities.
-\end{enumerate}</p>
+<ol class="simple">
+<li><p>Part I, Foundations, gives you a brief overview of what you are expected to know already. We’ll discuss some key results from real analysis, which you should have seen before, and get introduced to proofs in a (hopefully) familiar environment.</p></li>
+<li><p>Part II, Univariate Probability Theory, will be where you are introduced to the foundational building blocks of probability and statistics, random variables, and interesting results as to how these random variables behave.</p></li>
+<li><p>Part III, Markov Chain Theory, will introduce you to the concepts of Martingales and Markov Chains, two related techniques which provide you with the basic techniques for evaluating state-space type models.</p></li>
+<li><p>Part IV, Multivariate Probability Theory, will show you how the information you know about univariate random variables can be extended to multivariate random variables. We’ll study some phenomena of multivariate random variables, known as <em>concentration</em> results, and see how these results help us describe multivariate random quantities.</p></li>
+</ol>
 </section>
 <section id="other-resources">
 <h2>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">#</a></h2>
 <p>Many resources exist which will help you greatly with some of the content of this book.</p>
-<p>If you don’t have any background in real analysis quite yet, I’d recommend you start out with , by . I would recommend you start with an introduction to real analysis \textit{prior} to focusing on this book, because many of the concepts and ideas that will come up over and over again in this book, such as limits and concepts about basic calculus, will be crucial to the content of this book. Further, understanding the basics of how formal mathematical proof works is not a concept that this book is going to cover. We are going to prove things, explicitly and completely, in probability theory, but we are not going to be starting from scratch with reading and understanding proofs.</p>
+<p>If you don’t have any background in real analysis quite yet, I’d recommend you start out with , by . I would recommend you start with an introduction to real analysis <em>prior</em> to focusing on this book, because many of the concepts and ideas that will come up over and over again in this book, such as limits and concepts about basic calculus, will be crucial to the content of this book. Further, understanding the basics of how formal mathematical proof works is not a concept that this book is going to cover. We are going to prove things, explicitly and completely, in probability theory, but we are not going to be starting from scratch with reading and understanding proofs.</p>
+</section>
+<section id="conventions-used">
+<h2>Conventions used<a class="headerlink" href="#conventions-used" title="Permalink to this headline">#</a></h2>
+<p>The following conventions are used in this book:</p>
+<ul class="simple">
+<li><p><em>Italic</em>: indicates emphasis behind a term or exclamation to draw attention that this is the sentence in which it is being used.</p></li>
+<li><p><strong>Bold</strong>: indicates a definition for a term or concept.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Unicode</span> <span class="pre">block</span></code>: used to indicate the name of an algorithm, function names, package names, programmatic text elements, and related concepts.</p></li>
+</ul>
+<div class="admonition-admonitions admonition">
+<p class="admonition-title">Admonitions</p>
+<p>Used to indicate ideas that are directly relevant or supplementary to the content of the book, but are not essential for understanding the main concepts of a section or paragraph.</p>
+</div>
+<p>Throughout this book, we’re going to heavily develop new results, and then leverage them. You’ll often see numbered results in four different classes:</p>
+<section id="theorems">
+<h3>Theorems<a class="headerlink" href="#theorems" title="Permalink to this headline">#</a></h3>
+<p>Theorems are the backbone of mathematics. They are “big-deal” results, and they’ll tend to often have clever names attached to them which describe what they are, or what they do. For instance, if we wanted to make a theorem that the sky is blue, we might name it “The Sky is Blue” Theorem, and it would look like this:</p>
+<p>If we wanted to reference this theorem for another result, we would do it like this: <span class="xref std std-ref">pref:dummy-theorem</span>.</p>
+</section>
+<section id="lemmas">
+<h3>Lemmas<a class="headerlink" href="#lemmas" title="Permalink to this headline">#</a></h3>
+<p>Lemmas are to theorems what ingredients are to a recipe. Lemmas are used when the result that they outline is not, in and of itself, particularly interesting, but when coupled together with other interesting facts, can create an interesting result (such as in a theorem). For instance, let’s say that in order to ascertain whether the sky was blue, we needed to first define blue.</p>
+<p>If we wanted to reference this lemma for another result, we would do it like this: <span class="xref std std-ref">pref:dummy-lemma</span>.</p>
+</section>
+<section id="definitions">
+<h3>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h3>
+<p>Definitions are names ascribed to particular concepts or ideas that will come up again and again. Rather than having to use some big name to describe a single concept, the definition will capture all of these ideas simultaneously. They’ll look like this:</p>
+</section>
+<section id="proofs">
+<h3>Proofs<a class="headerlink" href="#proofs" title="Permalink to this headline">#</a></h3>
+<p>With every theorem and lemma, with few exceptions, we’ll also provide things called proofs. Theorems and lemmas basically assert a particular fact, and then the proof shows you why that particular result happens to be true. For instance, for a simple theorem, you might see a theorem with a proof look like this:</p>
+</section>
+<section id="code-blocks">
+<h3>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h3>
+<p>The entirety of this book has been compiled using jupyter notebooks, integrated through the jupyter-book framework. The book is currently hosted on github at <a class="reference external" href="https://github.com/ebridge2/prob_book">github.com/ebridge2/prob_book</a>, and the build log for the text can be found at <a class="reference external" href="https://github.com/ebridge2/prob_book/actions">github.com/ebridge2/prob_book/actions</a>. You can find every section notebook, and every command which was used to prepare the environment in which the corresponding textbook pages were executed, using those two links.</p>
+<p>Often times, we’re going to try our best to not just show you empirical results, we’re going to try to demonstrate how the result works in practice. This is going to be done, more often than not, using code snippets and figures. In general, all code relevant to an algorithm or simulation is going to be shown explicitly. For example, a python code block, and its corresponding output, looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">howdy_world</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Howdy world!&quot;</span><span class="p">)</span>
+
+<span class="n">howdy_world</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Howdy world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, there will be code sections that aren’t really relevant to the message being conveyed. These code blocks, which may include calls to plotting methods the user has seen before, or redundant blocks that only add styling to figures or the like, will generally be hidden if we think that they detract from the overall flow of a section. These blocks will look like this:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">howdy_hidden</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Howdy world, but I&#39;m hidden!&quot;</span><span class="p">)</span>
+
+<span class="n">howdy_hidden</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Howdy world, but I&#39;m hidden!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="using-code-examples-citing-the-book-and-reaching-out-with-feedback">
+<h2>Using code examples, citing the book, and reaching out with feedback<a class="headerlink" href="#using-code-examples-citing-the-book-and-reaching-out-with-feedback" title="Permalink to this headline">#</a></h2>
+<p>This book is intended to teach you a foundation in probability theory. In general, I am providing the proofs, code, and results here for you: it is intended that you will borrow and repurpose the theorems, lemmas, and code snippets I describe in your programs and documentation. If you are using a few brief snippets from my book for your work, feel free with proper attribution to the citation (below). If you want to write something that borrows some results, feel free without permission. If you intend to sell or financially profit from work directly found in this book, you need to request permission.</p>
+<p>To cite this textbook, you can use the following citation:</p>
+<p>Eric W. Bridgeford. <em>Measure Theoretic Probability Theory: A Hands-On Introduction</em>. Eric Bridgeford, https://ericwb.me/prob_book/coverpage.html.</p>
+<p>To request permissions, provide me with feedback about this in-progress draft, or even just to say hi and let me know what probability concepts you want to see me discuss, feel free to reach out directly. You can reach out at ericwb95 - at - gmail - dot - com. Hopefully you can piece that together to form a valid email address :)</p>
 </section>
 <section id="acknowledgements">
 <h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">#</a></h2>
