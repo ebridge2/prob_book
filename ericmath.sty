@@ -1,0 +1,498 @@
+\usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
+\usepackage{mathrsfs}
+\usepackage[english]{babel}
+\usepackage{ifthen}
+\usepackage{xifthen}
+\usepackage{xparse}
+\usepackage{bbm}
+\usepackage{scalerel}
+\usepackage{stackengine}
+
+% necessary theorem environments
+\newtheorem*{problem}{Problem}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{defn}{Definition}[subsection]
+\newtheorem{setup}{Setup}[subsection]
+\newtheorem{notation}{Notation}[subsection]
+\newtheorem{example}{Example}[subsection]
+
+\newtheorem*{solution}{Solution}
+
+\newcommand{\xqed}[1]{%
+    \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+    \quad\hbox{\ensuremath{#1}}}
+    
+\newenvironment{soln}[1]{%
+    \begin{proof}[Solution]\renewcommand{\qedsymbol}{\ensuremath{\blacklozenge}}#1}{\end{proof}%
+}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newcommand\superhat[2][]{%
+\renewcommand\stackalignment{l}%
+\stackon[\hatgap]{#2}{%
+\stretchto{%
+    \scalerel*[\widthof{$#2$}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+}{0.5ex}% THIS SQUEEZES THE WEDGE TO 0.5ex HEIGHT
+_{\smash{\belowbaseline[\subdown]{\scriptstyle#1}}}%
+}}
+
+% X \contradict Y
+\newcommand{\contradict}{\Rightarrow\!\Leftarrow}
+%================================
+% general linear algebra notation
+%================================
+% use as \<command>* to have operands sized appropriately
+\DeclarePairedDelimiterX{\iprod}[2]{\langle}{\rangle}{#1, #2}
+\DeclarePairedDelimiterX{\norm}[1]{\lVert}{\rVert}{#1}
+\DeclarePairedDelimiterX{\sgnorm}[1]{\lVert}{\rVert_{\psi_2}}{#1}
+\DeclarePairedDelimiterX{\senorm}[1]{\lVert}{\rVert_{\psi_1}}{#1}
+% log-normal distribution
+\newcommand{\lpnorm}[2][]{
+    \ifthenelse{\isempty{#1}}{
+        \norm*{{#2}}_{L^p}
+    }{
+        \norm*{{#2}}_{L^{#1}}
+    }
+}
+
+\DeclarePairedDelimiterX{\abs}[1]{\lvert}{\rvert}{#1}
+% Linear Algebra Operators
+\DeclareMathOperator*{\rank}{rank}
+\DeclareMathOperator*{\crank}{col\,rank}
+\DeclareMathOperator*{\rrank}{row\,rank}
+\DeclareMathOperator*{\dims}{dim}
+\DeclareMathOperator*{\col}{Col}
+\DeclareMathOperator*{\row}{Row}
+\DeclareMathOperator*{\kernel}{Kernel}
+\DeclareMathOperator*{\range}{range}
+\DeclareMathOperator*{\spn}{span}
+\DeclareMathOperator*{\eig}{eig}
+\DeclareMathOperator*{\trace}{tr}
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\support}{support}
+\DeclareMathOperator*{\sign}{sign}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+% it is often of value to do, say, \rank\parens*{X}
+% or something of the like
+
+%=====================================
+% notation for common numerical spaces
+%=====================================
+% use as \<command>^{<dimensions>} to have appropriate formatting
+\newcommand{\realn}{\mathbb{R}}
+\newcommand{\natn}{\mathbb{N}}
+\newcommand{\imagn}{\mathbb{I}}
+\newcommand{\ratn}{\mathbb{Q}}
+\newcommand{\intn}{\mathbb{Z}}
+\newcommand{\oddn}{\mathbb{O}}
+\newcommand{\evenn}{\mathbb{E}}
+\newcommand{\complexn}{\mathbb{C}}
+\newcommand{\real}{\mathfrak R}
+\newcommand{\imag}{\mathfrak I}
+
+%=================
+% general notation
+%=================
+% use as \<command>* to have formatting left/right as appropriate
+% ie within a math environment \parens{X\cdot \frac{Y}{Z}}
+\DeclarePairedDelimiterX{\parens}[1]{\lparen}{\rparen}{#1}
+\DeclarePairedDelimiterX{\bracks}[1]{\lbrack}{\rbrack}{#1}
+\DeclarePairedDelimiterX{\set}[1]{\lbrace}{\rbrace}{#1}
+\DeclarePairedDelimiterX{\ceil}[1]{\lceil}{\rceil}{#1}
+\DeclarePairedDelimiterX{\floor}[1]{\lfloor}{\rfloor}{#1}
+
+% mean, median, and mode
+% \mean{X} produces mean(X) with appropriately-sized parentheses
+\newcommand{\mean}[1]{\textrm{mean}\parens*{#1}}
+\newcommand{\mode}[1]{\textrm{mode}\parens*{#1}}
+\newcommand{\median}[1]{\textrm{median}\parens*{#1}}
+
+%======================
+% optimization notation
+%======================
+% \hat{\beta} = \argmin_{\beta} \norm*{Y - X\beta}^2
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% \frac{\hcancel{x}v}{\hcancel{x}y}
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}%
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2} 
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\para}[1]{\paragraph{#1}\mbox{}\\}
+% \combn{x}{y}
+\newcommand{\combn}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+%=====================
+%% statistical notation
+%=====================
+% X_i \distas{iid} \Norm{0, 1}
+\newcommand{\distas}[1]{\mathbin{\overset{#1}{\kern\z@\sim}}}
+% X \indep Y
+\newcommand{\indep}{\protect\mathpalette{\protect\independenT}{\perp}}
+% properly sized conditionals so they aren't the same size as the
+% line itself
+% ie \expect{X \cond Y}
+\newcommand{\cond}{\big|}
+% this one is bigger than the previous one
+\newcommand{\bcond}{\bigg|}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+% \var{\theta{X} or \var{X}
+%
+\DeclareDocumentCommand{\var}{o m}  
+{%
+  \textrm{var}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+\DeclareDocumentCommand{\varh}{o m}  
+{%
+  \hat{\textrm{var}}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+\DeclareDocumentCommand{\SE}{o m}  
+{%
+  \textrm{SE}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+\DeclareDocumentCommand{\SEh}{o m}  
+{%
+  \hat{\textrm{SE}}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+
+\DeclareDocumentCommand{\corr}{o m}  
+{%
+  \textrm{corr}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+\DeclareDocumentCommand{\corrh}{o m}  
+{%
+  \hat{\textrm{corr}}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+ 
+\DeclareDocumentCommand{\cov}{o m}  
+{%
+  \textrm{cov}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+\DeclareDocumentCommand{\covh}{o m}  
+{%
+  \hat{\textrm{cov}}\IfValueT{#1}{_{#1}}\parens*{{#2}}
+ }
+
+% use \expect and \prob as \<command>{expr} to obtain the
+% respective notation without a subscript, and \<command>[sub]{expr}
+% to have sub in a subscript and expr within the operands
+\newcommand{\ex}{\mathbb{E}}
+\newcommand{\expect}[2][] {
+    \ifthenelse{\isempty{#1}}{
+        \ex\bracks*{#2}
+    }{
+      \ex_{#1}\bracks*{#2}  
+    }
+}
+
+\newcommand{\edf}{\mathbb{F}}
+
+\newcommand{\edfn}[2][] {
+    \ifthenelse{\isempty{#1}}{
+        \edf\bracks*{#2}
+    }{
+      \edf_{#1}\bracks*{#2}  
+    }
+}
+
+\newcommand{\indicator}[1]{\mathbbm{1}_{\set*{#1}}}
+
+\newcommand{\pr}{\mathbb{P}}
+
+% \prob[\theta]{X} or \prob{X}
+\newcommand{\prob}[2][] {
+    \ifthenelse{\isempty{#1}}{
+        \pr\parens*{#2}
+    }{
+      \pr_{#1}\parens*{#2}  
+    }
+}
+\newcommand{\leb}{\textrm{Leb}}
+
+% \prob[\theta]{X} or \prob{X}
+\newcommand{\Leb}[1]{\leb\parens*{#1}}
+
+% gaussian process
+\newcommand{\proc}{\mathbb{G}}
+
+% \Lh[\theta]{\beta} or \Lh{\beta}
+\newcommand{\Lh}[2][] {
+    \ifthenelse{\isempty{#1}}{
+        \mathscr{L}\parens*{#2}
+    }{
+      \mathscr{L}\parens*{#1 \cond #2}  
+    }
+}
+
+\newcommand{\quantile}[2][] {
+    \ifthenelse{\isempty{#1}}{
+        \mathscr{Q}\parens*{#2}
+    }{
+      \mathscr{Q}_{#1}\parens*{#2}  
+    }
+}
+\newcommand{\loglh}[2][] {
+    \ifthenelse{\isempty{#1}}{
+        \ell\parens*{#2}
+    }{
+      \ell\parens*{#1 \cond #2}  
+    }
+}
+
+%======================
+% distribution notation
+%======================
+
+% poisson
+\newcommand{\Pois}[1]{\textrm{Pois}\parens*{#1}}
+
+% Normal
+% accepts a parameter for number of dimensions as the leading argument
+
+% ie \Norm[p]{\mu, \pmb I_p} or just \Norm{\mu, \pmb I_p}
+\newcommand{\Norm}[2][]{
+    \ifthenelse{\isempty{#1}}{
+        \mathcal{N}\parens*{#2}
+    }{
+        \mathcal{N}_{#1}\parens*{#2}  
+    }
+}
+
+% ie \Norm[p]{\mu, \pmb I_p} or just \Norm{\mu, \pmb I_p}
+\newcommand{\Subgauss}[1][]{
+    \ifthenelse{\isempty{#1}}{
+        \textrm{Sub-Gauss}
+    }{
+        \textrm{Sub-Gauss}_{#1} 
+    }
+}
+
+% ie \Norm[p]{\mu, \pmb I_p} or just \Norm{\mu, \pmb I_p}
+\newcommand{\Subexp}[1][]{
+    \ifthenelse{\isempty{#1}}{
+        \textrm{Sub-Exp}
+    }{
+        \textrm{Sub-Exp}_{#1}
+    }
+}
+% Singular Normal
+% accepts a parameter for number of dimensions as the leading argument
+% ie \Snorm[p]{\mu, \pmb I_p} or just \Snorm{\mu, \pmb I_p}
+\newcommand{\Snorm}[2][]{
+    \ifthenelse{\isempty{#1}}{
+        \mathcal{SN}\parens*{#2}
+    }{
+        \mathcal{SN}_{#1}\parens*{#2}  
+    }
+}
+
+% log-normal distribution
+\newcommand{\Lognorm}[2][]{
+    \ifthenelse{\isempty{#1}}{
+        \textrm{log-}\mathcal{N}\parens*{#2}
+    }{
+        \textrm{log-}\mathcal{N}_{#1}\parens*{#2}  
+    }
+}
+
+% binomial
+\newcommand{\Binom}[1]{\textrm{Binom}\parens*{#1}}
+% negative-binomial
+\newcommand{\NegBinom}[1]{\textrm{NegBinom}\parens*{#1}}
+
+\newcommand{\Bern}[1]{\textrm{Bern}\parens*{#1}}
+\newcommand{\Symbern}{\textrm{Sym-Bern}}
+% multinomial
+\newcommand{\Multinom}[1]{\textrm{Multinom}\parens*{#1}}
+% product multinomial
+\newcommand{\ProdMultinom}[1]{\textrm{ProdMultinom}\parens*{#1}}
+% uniform/discrete uniform
+\newcommand{\Unif}[1]{\textrm{Unif}\parens*{#1}}
+% geometric
+\newcommand{\Geom}[1]{\textrm{Geom}\parens*{#1}}
+% exponential
+\newcommand{\Exp}[1]{\textrm{Exp}\parens*{#1}}
+
+% dirichlet
+\newcommand{\Dir}[1]{\textrm{Dir}\parens*{#1}}
+% product dirichlet
+\newcommand{\ProdDir}[1]{\textrm{ProdDir}\parens*{#1}}
+% beta
+\newcommand{\Betadist}[1]{\textrm{Beta}\parens*{#1}}
+% beta-binom
+\newcommand{\BetaBinomdist}[1]{\textrm{Beta}\parens*{#1}}
+% Gamma
+\newcommand{\Gammadist}[1]{\textrm{Gamma}\parens*{#1}}
+% Inverse Gamma
+\newcommand{\IGammadist}[1]{\textrm{Inv-Gamma}\parens*{#1}}
+% Normal-Inverse Gamma
+\newcommand{\NormIGdist}[1]{\mathcal{N}-\textrm{Inv-Gamma}\parens*{#1}}
+% Cauchy
+\newcommand{\Cauchy}[1]{\textrm{Cauchy}\parens*{#1}}
+% hypergeometric
+\newcommand{\Hypergeometric}[1]{\textrm{Hypergeometric}\parens*{#1}}
+% laplace
+\newcommand{\Lapldist}[1]{\textrm{Laplace}\parens*{#1}}
+% non-central chi
+\newcommand{\nchi}[2]{\chi_{#1}\parens*{#2}}
+% non-central chi-squared
+\newcommand{\nchis}[2]{\chi^2_{#1}\parens*{#2}}
+% wishart
+\newcommand{\Wishart}[1]{\textrm{Wishart}\parens*{#1}}
+% inverse-wishart
+\newcommand{\Invwishart}[1]{\textrm{Inv-Wishart}\parens*{#1}}
+%==============
+% Link Functions
+%==============
+\DeclarePairedDelimiterX{\logit}[1]{\textrm{logit}\lparen}{\rparen}{#1}
+\DeclarePairedDelimiterX{\probit}[1]{\textrm{probit}\lparen}{\rparen}{#1}
+
+%==============
+% Random Stuffs
+%==============
+% stirling's approximation for gamma function
+\newcommand{\stapprox}[1]{\sqrt{\frac{2 \pi}{#1}} \parens*{\frac{#1}{e}}^{#1}}
+\newcommand{\rb}[1]{\textrm{\textbf{#1}}}
+\newcommand{\gammafunc}[1]{\Gamma\parens*{#1}}
+\newcommand{\erf}[1]{\textrm{erf}\parens*{#1}}
+
+% arguments for integral are lower limit, upper limit, integrand, integration
+% variable
+\newcommand{\integral}[4]{
+    \int_{#1}^{#2}{#3}\;\textrm{d}{#4}
+}
+% arguments for lebesgue integrals; arguments passed as {}; leave a slot empty if you don't want that particular entry to show up
+\newcommand{\lebintegral}[5]{
+    \int_{#1}^{#2}{#3}\;{#4}(\textrm{d}{#5})
+}
+
+% bold-faces and adds a hat
+% \hb X for X gives X with a hat and bolded
+\newcommand{\hb}[1]{\hat{\pmb{#1}}}
+
+% convergence in probability
+% use as X \convprob[your expression] Y to get an arrow denoting that X converges to Y in probability with your expression subscript below
+% use as X \convprob Y to just get the arrow for convergence in probability
+\NewDocumentCommand{\convprob}{o}{%
+  \xrightarrow[\IfValueT{#1}{{#1}}]{\mathcal{P}}
+}
+
+% convergence a.s.
+\NewDocumentCommand{\convas}{o}{%
+  \xrightarrow[\IfValueT{#1}{{#1}}]{a.s.}
+}
+% convergence in distribution
+\NewDocumentCommand{\convdist}{o}{%
+  \xRightarrow[\IfValueT{#1}{{#1}}]{\mathcal{D}}
+}
+
+% convergence in distribution
+\NewDocumentCommand{\convweak}{o}{%
+  \xRightarrow[\IfValueT{#1}{{#1}}]{\mathcal{W}}
+}
+
+% equality in distribution of two R.V.s
+\newcommand{\eqdist}{\overset{\mathcal D}{=}}
+% equality in probability of two sets
+\newcommand{\eqprob}{\overset{\mathcal P}{=}}
+\newcommand{\ltprob}{\overset{\mathcal P}{<}}
+\newcommand{\gtprob}{\overset{\mathcal P}{>}}
+\newcommand{\leqprob}{\overset{\mathcal P}{\leq}}
+\newcommand{\geqprob}{\overset{\mathcal P}{\geq}}
+% equality a.s. of two R.V.s
+\newcommand{\eqas}{\overset{a.s.}{=}}
+\newcommand{\ltas}{\overset{a.s.}{<}}
+\newcommand{\gtas}{\overset{a.s.}{>}}
+\newcommand{\leqas}{\overset{a.s.}{\leq}}
+\newcommand{\geqas}{\overset{a.s.}{\geq}}
+% convergence in distribution
+% use as X \convvague[your expression] Y to get an arrow denoting that X converges to Y in vaguely with your expression subscript below
+% use as X \convvague Y to just get the arrow for vague convergence
+\NewDocumentCommand{\convvague}{o}{%
+  \xRightarrow[\IfValueT{#1}{{#1}}]{\mathcal{V}}
+}
+
+% use as X \convlp[your expression]{p} Y to get an arrow denoting that converges to Y according to your expression (subscript) in L^p
+% alternatively just specify X \convlp{p} Y to get an arrow denoting X converges to Y in L^p
+\newcommand{\convlp}[2][]{
+    \ifthenelse{\isempty{#1}}{
+        \xrightarrow[]{L^{#2}}
+    }{
+        \xrightarrow[{#1}]{{L^{#2}}}
+    }
+}
+
+% unit ball
+% use as: \uball[radius][dimensions][center] (get B_radius^dimensions(center)
+% or: \uball[radius][dimensions] (get B_radius^dimensions)
+% or: \uball[radius] (get B_radius)
+% or: \uball (just get the B)
+% this order was chosen because the weakest thing you might find useful is knowing the radius of the ball (and assume it is centered at zero otherwise) followed by where its center is, followed by its #dimensions
+\DeclareDocumentCommand{\uball}{o o o}  
+{%
+  \mathbb B\IfValueT{#2}{_{#2}}\IfValueT{#1}{^{#1}}\IfValueT{#3}{\parens*{#3}}
+ }
+
+% same as above...
+\DeclareDocumentCommand{\usphere}{o o o}  
+{%
+  \mathbb S\IfValueT{#2}{_{#2}}\IfValueT{#1}{^{#1}}\IfValueT{#3}{\parens*{#3}}
+ }
+
+% same as above...
+\DeclareDocumentCommand{\ucube}{o o o}  
+{%
+  \mathbb Q\IfValueT{#1}{_{#1}}\IfValueT{#2}{^{#2}}\IfValueT{#3}{\parens*{#3}}
+ }
+ 
+\DeclareDocumentCommand{\volume}{m}  
+{%
+  \textrm{volume}\parens*{#1}
+ }
+ 
+\DeclareDocumentCommand{\surfarea}{m}  
+{%
+  \textrm{SA}\parens*{#1}
+ }
+
+\newcommand{\ev}[0]{\textrm{e.v.}}
+\newcommand{\io}[0]{\textrm{i.o.}}
+
+
+\newcommand{\deriv}[2]{\frac{\textrm{d}}{\textrm{d} {#2}}\bracks*{#1}}
+\newcommand{\pderiv}[2]{\frac{\partial }{\partial {#2}}\bracks*{#1}}
+% adds spacing for there exists and forall so that they don't
+% look crushed
+\let\oldexists\exists
+\renewcommand\exists{\oldexists\,}
+\let\oldforall\forall
+\renewcommand\forall{\oldforall\,}
+% allows you to easily add a bunch of spaces for starting things on multiple
+% lines
+\newcommand{\undereq}{\;\;\;\;\;\;\;\;}
+
+\newcommand\littleo{
+  \mathchoice
+    {{\scriptstyle\mathcal{O}}}% \displaystyle
+    {{\scriptstyle\mathcal{O}}}% \textstyle
+    {{\scriptscriptstyle\mathcal{O}}}% \scriptstyle
+    {\scalebox{.7}{$\scriptscriptstyle\mathcal{O}$}}%\scriptscriptstyle
+  }
+
+\newcommand{\lhs}{\textrm{LHS}}
+\newcommand{\rhs}{\textrm{RHS}}
+\newcommand{\Markov}{\textrm{Markov}}
+% allows math align environments to continue over multiple pages
+\allowdisplaybreaks
