@@ -24,6 +24,10 @@ latex:
 execute:
   timeout: 500
 
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
