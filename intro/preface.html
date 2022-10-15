@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -613,20 +614,47 @@ title="Print to PDF"
 <section id="theorems">
 <h3>Theorems<a class="headerlink" href="#theorems" title="Permalink to this headline">#</a></h3>
 <p>Theorems are the backbone of mathematics. They are “big-deal” results, and they’ll tend to often have clever names attached to them which describe what they are, or what they do. For instance, if we wanted to make a theorem that the sky is blue, we might name it “The Sky is Blue” Theorem, and it would look like this:</p>
-<p>If we wanted to reference this theorem for another result, we would do it like this: <span class="xref std std-ref">pref:dummy-theorem</span>.</p>
+<div class="proof theorem admonition" id="pref:dummy-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (The-Sky-is-Blue)</p>
+<section class="theorem-content" id="proof-content">
+<p>On sunny days, the sky is blue.</p>
+</section>
+</div><p>If we wanted to reference this theorem for another result, we would do it like this: <a class="reference internal" href="#pref:dummy-theorem">Theorem 2</a>.</p>
 </section>
 <section id="lemmas">
 <h3>Lemmas<a class="headerlink" href="#lemmas" title="Permalink to this headline">#</a></h3>
 <p>Lemmas are to theorems what ingredients are to a recipe. Lemmas are used when the result that they outline is not, in and of itself, particularly interesting, but when coupled together with other interesting facts, can create an interesting result (such as in a theorem). For instance, let’s say that in order to ascertain whether the sky was blue, we needed to first define blue.</p>
-<p>If we wanted to reference this lemma for another result, we would do it like this: <span class="xref std std-ref">pref:dummy-lemma</span>.</p>
+<div class="proof lemma admonition" id="pref:dummy-lemma">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<section class="lemma-content" id="proof-content">
+<p><span class="math notranslate nohighlight">\(2 + 2 = 4\)</span>.</p>
+</section>
+</div><p>If we wanted to reference this lemma for another result, we would do it like this: <a class="reference internal" href="#pref:dummy-lemma">Lemma 1</a>.</p>
 </section>
 <section id="definitions">
 <h3>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">#</a></h3>
 <p>Definitions are names ascribed to particular concepts or ideas that will come up again and again. Rather than having to use some big name to describe a single concept, the definition will capture all of these ideas simultaneously. They’ll look like this:</p>
+<div class="proof definition admonition" id="pref:blue">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span> (Natural-Numbers-<span class="math notranslate nohighlight">\(\mathbb N\)</span>)</p>
+<section class="definition-content" id="proof-content">
+<p>The natural numbers are the set of numbers which are used for counting; e.g.:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbb N &amp;= \left\{1, 2, 3, 4, ...\right\}
+\end{align*}\]</div>
 </section>
+</div></section>
 <section id="proofs">
 <h3>Proofs<a class="headerlink" href="#proofs" title="Permalink to this headline">#</a></h3>
 <p>With every theorem and lemma, with few exceptions, we’ll also provide things called proofs. Theorems and lemmas basically assert a particular fact, and then the proof shows you why that particular result happens to be true. For instance, for a simple theorem, you might see a theorem with a proof look like this:</p>
+<div class="proof theorem admonition" id="pref:dummy-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (The-Sky-is-Blue)</p>
+<section class="theorem-content" id="proof-content">
+<p>On sunny days, the sky is blue.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Look up, and observe its blueness.</p>
+</div>
 </section>
 <section id="code-blocks">
 <h3>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">#</a></h3>
