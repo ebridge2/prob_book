@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Measure Theoretic Probability Theory: A Hands-On, Proof-Based Introduction
-author: Eric Bridgeford
+title: Measure Theoretic Probability Theory
+author: Eric W. Bridgeford
 copyright: "2022"
 logo: logo.png
 parse:
@@ -30,8 +30,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/ebridge2/prob_book  # Online location of your book
-  path_to_book:   # Optional path to your book, relative to the repository root
+  url: https://github.com/ebridge2/prob_book/  # Online location of your book
+  path_to_book: prob_book/  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book

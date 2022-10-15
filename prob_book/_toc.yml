@@ -5,9 +5,9 @@ format: jb-book
 root: coverpage
 parts:
     - caption: Introduction
-    chapters:
-      - file: intro/preface
-      - file: intro/terminology
+      chapters:
+        - file: intro/preface
+        - file: intro/terminology
     - caption: Foundations
       numbered: True
       chapters:
@@ -20,20 +20,21 @@ parts:
       numbered: True
       chapters:
         - file: uv/measure_theory/measure_theory
-          sections:
+#          sections:
         - file: uv/llns/llns
-          sections:
+#          sections:
         - file: uv/clts/clts
-          sections:
+#          sections:
     - caption: Markov Chain Theory
       chapters:
         - file: mc/martingales/martingales
-          sections:
+#          sections:
         - file: mc/mc/mc
+#          sections:
     - caption: Multivariate Probability Theory
       chapters:
         - file: mv/classes/classes
-          sections:
+#          sections:
         - file: mv/rvs/rvs
-          sections:
+#          sections:
         - file: mv/rmats/rmats
