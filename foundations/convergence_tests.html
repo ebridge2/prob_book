@@ -661,7 +661,7 @@ title="Print to PDF"
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(x_0 \in \mathbb R\)</span>,</p></li>
 <li><p>let <span class="math notranslate nohighlight">\(f  : \mathbb R \rightarrow \mathbb R\)</span> be a function,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal X \suvseteq \mathbb R\)</span> is a neighborhood about <span class="math notranslate nohighlight">\(x_0\)</span>, on which <span class="math notranslate nohighlight">\(f \in C^\infty\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal X \subseteq \mathbb R\)</span> is a neighborhood about <span class="math notranslate nohighlight">\(x_0\)</span>, on which <span class="math notranslate nohighlight">\(f \in C^\infty\)</span>.</p></li>
 </ol>
 <p>Then for <span class="math notranslate nohighlight">\(x \in \mathcal X\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -750,11 +750,7 @@ title="Print to PDF"
     &amp;\xrightarrow[n \rightarrow \infty]{} \exp(c), \,\,\,\, c_n + o(n^{-1}) \rightarrow c\end{split}\]</div>
 <p>Which follows because <span class="math notranslate nohighlight">\(\exp(x)\)</span> is continuous, so the limit of the exponential is the exponential of the limit.</p>
 </div>
-<div class="proof lemma admonition" id="lemma-10">
-<p class="admonition-title"><span class="caption-number">Lemma 1.5 </span></p>
-<section class="lemma-content" id="proof-content">
 </section>
-</div></section>
 </section>
 <section id="convergence-concepts">
 <h2><span class="section-number">1.3.3. </span>Convergence concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h2>
@@ -763,7 +759,7 @@ title="Print to PDF"
 <h3><span class="section-number">1.3.3.1. </span>Comparison test<a class="headerlink" href="#comparison-test" title="Permalink to this headline">#</a></h3>
 <p>First up is the simplest test, the comparison test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:comp">
-<p class="admonition-title"><span class="caption-number">Lemma 1.6 </span> (Comparison Test)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 1.5 </span> (Comparison Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span> where all <span class="math notranslate nohighlight">\(a_n, b_n \geq 0\)</span>. Then:</p>
 <ol class="simple">
@@ -777,7 +773,7 @@ title="Print to PDF"
 <h3><span class="section-number">1.3.3.2. </span>Integral test<a class="headerlink" href="#integral-test" title="Permalink to this headline">#</a></h3>
 <p>Next up is the integral test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:integral">
-<p class="admonition-title"><span class="caption-number">Lemma 1.7 </span> (Integral Test)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 1.6 </span> (Integral Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Let <span class="math notranslate nohighlight">\(f : \mathbb R \rightarrow \mathbb R\)</span> be a function, where in particular <span class="math notranslate nohighlight">\(f(n) = a_n\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is positive, continuous, and decreasing, then both:</p>
 <div class="math notranslate nohighlight">
@@ -794,7 +790,7 @@ title="Print to PDF"
 <p>For a given value of <span class="math notranslate nohighlight">\(s \in (-\infty, \infty)\)</span>, does the series converge or diverge?</p>
 <p>Hint: first, consider what happens for <span class="math notranslate nohighlight">\(s = 1\)</span>. Next, use this result to deduce something about the case of <span class="math notranslate nohighlight">\(s &lt; 1\)</span>. Finally, consider the case of <span class="math notranslate nohighlight">\(s &gt; 1\)</span>.</p>
 </section>
-</div><div class="proof example dropdown admonition" id="example-14">
+</div><div class="proof example dropdown admonition" id="example-13">
 <p class="admonition-title"><span>Example </span></p>
 <section class="example-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(s = 1\)</span>, let’s take a look at that integral. Notice that:</p>
@@ -805,7 +801,7 @@ title="Print to PDF"
 \[\begin{split}\int_{\log 2}^\infty \frac{1}{u}\text{d} u &amp;= \log(u) + C\big |_{u=\log 2}^\infty \\
 &amp;=  \log(\log n) + C\big |_{n=2}^\infty = \infty\end{split}\]</div>
 <p>so the series diverges.</p>
-<p>When <span class="math notranslate nohighlight">\(s &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{n (\log n)^s} &gt; \frac{1}{n (\log n)} \geq 0\)</span>, so this series must diverge by <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a>.</p>
+<p>When <span class="math notranslate nohighlight">\(s &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{n (\log n)^s} &gt; \frac{1}{n (\log n)} \geq 0\)</span>, so this series must diverge by <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.5</a>.</p>
 <p>When <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, then we can’t just use the comparison test, so we need to calculate this integral out as well. This is because the terms of the sequence <span class="math notranslate nohighlight">\(\frac{1}{n \log^s n}\)</span> are not bigger than <span class="math notranslate nohighlight">\(\frac{1}{n\log n}\)</span>. Using the same <span class="math notranslate nohighlight">\(u\)</span>-substitution as before, we get:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\int_2^\infty \frac{1}{n(\log n)^s}\text{d} n &amp;= 
@@ -816,8 +812,8 @@ title="Print to PDF"
 &amp;= 0 + \frac{1}{(s - 1)\log(2)^{s - 1}}\end{split}\]</div>
 <p>Which is finite (the integral is convergent). So our results are:</p>
 <ol class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(s \leq 1\)</span>, the series diverges, by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.7</a> and <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a>.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, the series converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.7</a>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(s \leq 1\)</span>, the series diverges, by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.6</a> and <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.5</a>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, the series converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.6</a>.</p></li>
 </ol>
 </section>
 </div></section>
@@ -825,7 +821,7 @@ title="Print to PDF"
 <h3><span class="section-number">1.3.3.3. </span><span class="math notranslate nohighlight">\(p\)</span>-series test<a class="headerlink" href="#p-series-test" title="Permalink to this headline">#</a></h3>
 <p>Next up is probably the most important convergence result that you will want to know inside and out, the <span class="math notranslate nohighlight">\(p\)</span>-series convergence test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:pseries">
-<p class="admonition-title"><span class="caption-number">Lemma 1.8 </span> (<span class="math notranslate nohighlight">\(p\)</span>-series Convergence Test)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 1.7 </span> (<span class="math notranslate nohighlight">\(p\)</span>-series Convergence Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>The <span class="math notranslate nohighlight">\(p\)</span>-series is given by, with <span class="math notranslate nohighlight">\(p &gt; 0\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -837,7 +833,7 @@ title="Print to PDF"
 <h3><span class="section-number">1.3.3.4. </span>Ratio Test<a class="headerlink" href="#ratio-test" title="Permalink to this headline">#</a></h3>
 <p>The next test is one of the more easily used convergence tests, as it amounts to taking the limit of two numbers. It is called the ratio test, and is based on the ratios of consecutive terms; e.g., <span class="math notranslate nohighlight">\(r_n \triangleq \frac{a_{n + 1}}{a_n}\)</span>. The statement is rather big and involved:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:ratio">
-<p class="admonition-title"><span class="caption-number">Lemma 1.9 </span> (Ratio Test)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 1.8 </span> (Ratio Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, where <span class="math notranslate nohighlight">\(a_n \neq 0\)</span> for large <span class="math notranslate nohighlight">\(n\)</span>. Let <span class="math notranslate nohighlight">\(L = \lim_{n \rightarrow \infty}|r_n|\)</span>, where <span class="math notranslate nohighlight">\(r_n = \frac{a_{n + 1}}{a_n}\)</span>. If <span class="math notranslate nohighlight">\(L\)</span> exists, then:</p>
 <ol class="simple">
@@ -859,7 +855,7 @@ title="Print to PDF"
 <h3><span class="section-number">1.3.3.5. </span>Root Test<a class="headerlink" href="#root-test" title="Permalink to this headline">#</a></h3>
 <p>The next test can also be useful if we have terms that can easily be upper bounded by an <span class="math notranslate nohighlight">\(n^{th}\)</span> root, such as polynomial expressions. This is called the root test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:root">
-<p class="admonition-title"><span class="caption-number">Lemma 1.10 </span> (Root Test)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 1.9 </span> (Root Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, and let <span class="math notranslate nohighlight">\(C = \limsup_{n \rightarrow \infty} \sqrt[n]{|a_n|}\)</span>. If:</p>
 <ol class="simple">
@@ -874,7 +870,7 @@ title="Print to PDF"
 <h3><span class="section-number">1.3.3.6. </span>Limit Comparison Test<a class="headerlink" href="#limit-comparison-test" title="Permalink to this headline">#</a></h3>
 <p>The next test looks only at the limits of a pair of sequence to determine behaviors, and is pretty similar to the comparison test.</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:lim_cmp">
-<p class="admonition-title"><span class="caption-number">Lemma 1.11 </span> (Limit Comparison Test)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 1.10 </span> (Limit Comparison Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be two sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Further, assume that <span class="math notranslate nohighlight">\(a_n \geq 0\)</span>, and <span class="math notranslate nohighlight">\(b_n &gt; 0\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Then:</p>
 <ol class="simple">
@@ -890,7 +886,7 @@ title="Print to PDF"
 <p>Consider the series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n\)</span>, where <span class="math notranslate nohighlight">\(\epsilon \in (0, 1)\)</span>.</p>
 <p>Hint: compare to the series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span>, and then use the limit comparison test to a <span class="math notranslate nohighlight">\(p\)</span>-series.</p>
 </section>
-</div><div class="proof example dropdown admonition" id="example-20">
+</div><div class="proof example dropdown admonition" id="example-19">
 <p class="admonition-title"><span>Example </span></p>
 <section class="example-content" id="proof-content">
 <p>By <a class="reference internal" href="useful_results.html#foundations:useful_results:bounding_exp">Lemma 1.1</a>, recall that <span class="math notranslate nohighlight">\(\leq 1 + x \leq \exp(x)\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>, and that in particular, if <span class="math notranslate nohighlight">\(x \geq -1\)</span>, that <span class="math notranslate nohighlight">\(0 \leq 1 + x \leq \exp(x)\)</span>.</p>
@@ -899,21 +895,21 @@ title="Print to PDF"
 <span class="eqno">(1.2)<a class="headerlink" href="#equation-eqn-foundations-series-conv-tests-lim-cmp-helper" title="Permalink to this equation">#</a></span>\[\begin{split}0 \leq 1 + x \leq \exp(x) &amp;\Rightarrow (1 + x)^r \leq \exp(rx) \\
 \Rightarrow 0 \leq \left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n &amp;\leq \exp\left(-n\frac{n^\epsilon}{n}\right) = \exp\left(-n^\epsilon\right).\end{split}\]</div>
 <p>for any <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where we used that <span class="math notranslate nohighlight">\(n^{\epsilon - 1}\)</span> = <span class="math notranslate nohighlight">\(\frac{n^\epsilon}{n}\)</span>, and that <span class="math notranslate nohighlight">\(0 &lt; \frac{1}{n^{1 - \epsilon}} &lt; 1\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> and <span class="math notranslate nohighlight">\(\epsilon \in (0, 1)\)</span>.</p>
-<p>Notice that the <span class="math notranslate nohighlight">\(p\)</span>-series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> is convergent by <a class="reference internal" href="#lem:foundations:series:conv_tests:pseries">Lemma 1.8</a>, since <span class="math notranslate nohighlight">\(p &gt; 1\)</span>.</p>
+<p>Notice that the <span class="math notranslate nohighlight">\(p\)</span>-series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> is convergent by <a class="reference internal" href="#lem:foundations:series:conv_tests:pseries">Lemma 1.7</a>, since <span class="math notranslate nohighlight">\(p &gt; 1\)</span>.</p>
 <p>Comparing <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp\left(-n^\epsilon\right)\)</span> to <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> via the limit comparison test:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{\exp(-n^\epsilon)}{\frac{1}{n^2}} &amp;= \frac{n^2}{\exp(n^\epsilon)} = \frac{u^{\frac{2}{\epsilon}}}{\exp(u)},\,\,\,\,u = n^\epsilon \Rightarrow n = u^{\frac{1}{\epsilon}} \\
 &amp;\leq \frac{u^{\lceil\frac{2}{\epsilon}\rceil}}{\exp(u)} \xrightarrow[n \rightarrow \infty]{} \frac{\lceil\frac{2}{\epsilon}\rceil!}{\exp(u)} \xrightarrow[n \rightarrow \infty]{} 0\end{split}\]</div>
 <p>where in the second to last step, we repeatedly applied L’Hôpital’s rule to <span class="math notranslate nohighlight">\(u^{\lceil\frac{2}{\epsilon}\rceil}\)</span> and noting that a successive application of L’Hôpital’s rule would yield a numerator of <span class="math notranslate nohighlight">\(0\)</span>.</p>
-<p>Then since the limit is <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> converges, <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span> converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:lim_cmp">Lemma 1.11</a>.</p>
-<p>Then by <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a> and comparing to <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span> with Equation <a class="reference internal" href="#equation-eqn-foundations-series-conv-tests-lim-cmp-helper">(1.2)</a>, <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n\)</span> converges.</p>
+<p>Then since the limit is <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> converges, <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span> converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:lim_cmp">Lemma 1.10</a>.</p>
+<p>Then by <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.5</a> and comparing to <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span> with Equation <a class="reference internal" href="#equation-eqn-foundations-series-conv-tests-lim-cmp-helper">(1.2)</a>, <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n\)</span> converges.</p>
 </section>
 </div></section>
 <section id="alternating-series-test">
 <h3><span class="section-number">1.3.3.7. </span>Alternating series test<a class="headerlink" href="#alternating-series-test" title="Permalink to this headline">#</a></h3>
 <p>The next test considers what happens when we have an alternating series (the series alternates between positive and negative values), and the absolute value of the terms converge to zero. This is called the alternating series test:</p>
-<div class="proof lemma admonition" id="lemma-21">
-<p class="admonition-title"><span class="caption-number">Lemma 1.12 </span> (Alternating Series Test)</p>
+<div class="proof lemma admonition" id="lemma-20">
+<p class="admonition-title"><span class="caption-number">Lemma 1.11 </span> (Alternating Series Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>, where <span class="math notranslate nohighlight">\(a_n = (-1)^n b_n\)</span>, or <span class="math notranslate nohighlight">\(a_n = (-1)^{n + 1}b_n\)</span>, for <span class="math notranslate nohighlight">\(b_n \geq 0\)</span>. If:</p>
 <ol class="simple">
@@ -927,8 +923,8 @@ title="Print to PDF"
 <section id="convergence-of-tails-of-series-and-tails">
 <h2><span class="section-number">1.3.4. </span>Convergence of tails of series and tails<a class="headerlink" href="#convergence-of-tails-of-series-and-tails" title="Permalink to this headline">#</a></h2>
 <p>An important result we will use repeatedly throughout the book is that the definition of a series converging is that the partial sums possess a limit. The consequence of this is that, conveniently, this means that the tail of the series converge to zero. We’ll formalize this intuitive result with a lemma:</p>
-<div class="proof lemma admonition" id="lemma-22">
-<p class="admonition-title"><span class="caption-number">Lemma 1.13 </span> (Convergent Series and the Tail Sum)</p>
+<div class="proof lemma admonition" id="lemma-21">
+<p class="admonition-title"><span class="caption-number">Lemma 1.12 </span> (Convergent Series and the Tail Sum)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Let <span class="math notranslate nohighlight">\(s_n = \sum_{k \in [n]}a_k\)</span> be the <span class="math notranslate nohighlight">\(n^{th}\)</span> partial sum. Then:</p>
 <div class="math notranslate nohighlight">
@@ -955,8 +951,8 @@ title="Print to PDF"
 <p>Then since a Cauchy sequence has a finite limit, <span class="math notranslate nohighlight">\(s_n \xrightarrow[n \rightarrow \infty]{} L &lt; \infty\)</span>.</p>
 </div>
 <p>Next, we have another useful lemma which will be extremely useful when we try to make statements about averages of sequences. Averages of sequences will be a major topic when we talk about laws of large numbers, since laws of large numbers typically attempt to make statements about means of random quantities:</p>
-<div class="proof lemma admonition" id="lemma-23">
-<p class="admonition-title"><span class="caption-number">Lemma 1.14 </span> (Tail terms going to zero implies average goes to zero)</p>
+<div class="proof lemma admonition" id="lemma-22">
+<p class="admonition-title"><span class="caption-number">Lemma 1.13 </span> (Tail terms going to zero implies average goes to zero)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Suppose that <span class="math notranslate nohighlight">\(a_n \xrightarrow[n \rightarrow \infty]{} 0\)</span>. Then <span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{k = 1}^n a_n \xrightarrow[n \rightarrow \infty]{} 0\)</span>.</p>
 </section>
