@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.2. Convergence Concepts &#8212; Measure Theoretic Probability Theory</title>
+    <title>1.3. Series &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.3. Useful Results" href="useful_results.html" />
-    <link rel="prev" title="1.1. Limits" href="limits.html" />
+    <link rel="next" title="2. Introduction to Measure Theory" href="../uv/measure_theory/measure_theory.html" />
+    <link rel="prev" title="1.2. Useful Results" href="useful_results.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -154,14 +154,14 @@ const thebe_selector_output = ".output, .cell_output"
      1.1. Limits
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.2. Convergence Concepts
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="useful_results.html">
-     1.3. Useful Results
+     1.2. Useful Results
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.3. Series
     </a>
    </li>
   </ul>
@@ -452,27 +452,44 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-definitions">
-   1.2.1. Basic definitions
+   1.3.1. Basic definitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence-tests">
-   1.2.2. Convergence tests
+  <a class="reference internal nav-link" href="#taylor-s-theorem">
+   1.3.2. Taylor’s theorem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-taylor-series">
+     1.3.2.1. Examples of Taylor series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consequences-of-taylor-s-theorem">
+     1.3.2.2. Consequences of Taylor’s theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-concepts">
+   1.3.3. Convergence concepts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comparison-test">
-     1.2.2.1. Comparison test
+     1.3.3.1. Comparison test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integral-test">
-     1.2.2.2. Integral test
+     1.3.3.2. Integral test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#p-series-test">
-     1.2.2.3.
+     1.3.3.3.
      <span class="math notranslate nohighlight">
       \(p\)
      </span>
@@ -481,20 +498,30 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ratio-test">
-     1.2.2.4. Ratio Test
+     1.3.3.4. Ratio Test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#root-test">
-     1.2.2.5. Root Test
+     1.3.3.5. Root Test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#limit-comparison-test">
-     1.2.2.6. Limit Comparison Test
+     1.3.3.6. Limit Comparison Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternating-series-test">
+     1.3.3.7. Alternating series test
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-of-tails-of-series-and-tails">
+   1.3.4. Convergence of tails of series and tails
+  </a>
  </li>
 </ul>
 
@@ -505,7 +532,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Convergence Concepts</h1>
+                <h1>Series</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -517,27 +544,44 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-definitions">
-   1.2.1. Basic definitions
+   1.3.1. Basic definitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence-tests">
-   1.2.2. Convergence tests
+  <a class="reference internal nav-link" href="#taylor-s-theorem">
+   1.3.2. Taylor’s theorem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-taylor-series">
+     1.3.2.1. Examples of Taylor series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consequences-of-taylor-s-theorem">
+     1.3.2.2. Consequences of Taylor’s theorem
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-concepts">
+   1.3.3. Convergence concepts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comparison-test">
-     1.2.2.1. Comparison test
+     1.3.3.1. Comparison test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integral-test">
-     1.2.2.2. Integral test
+     1.3.3.2. Integral test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#p-series-test">
-     1.2.2.3.
+     1.3.3.3.
      <span class="math notranslate nohighlight">
       \(p\)
      </span>
@@ -546,20 +590,30 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ratio-test">
-     1.2.2.4. Ratio Test
+     1.3.3.4. Ratio Test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#root-test">
-     1.2.2.5. Root Test
+     1.3.3.5. Root Test
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#limit-comparison-test">
-     1.2.2.6. Limit Comparison Test
+     1.3.3.6. Limit Comparison Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternating-series-test">
+     1.3.3.7. Alternating series test
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-of-tails-of-series-and-tails">
+   1.3.4. Convergence of tails of series and tails
+  </a>
  </li>
 </ul>
 
@@ -571,21 +625,22 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="convergence-concepts">
-<span id="foundations-conv-tests"></span><h1><span class="section-number">1.2. </span>Convergence Concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="series">
+<span id="foundations-series"></span><h1><span class="section-number">1.3. </span>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h1>
+<p>It is almost always the case in real analysis that we’re going to be concerned with what happens when we take sums (or averages) of long sequences. These are known as <em>series</em>, and we need a few basic definitions to get us started.</p>
 <section id="basic-definitions">
-<h2><span class="section-number">1.2.1. </span>Basic definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this headline">#</a></h2>
-<p>Next, we’ll get to some convergence concepts that will be useful throughout this course. These will often be conducted on series, which are basically sequential sums of sequences:</p>
-<div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 1.12 </span> (Partial sum)</p>
+<h2><span class="section-number">1.3.1. </span>Basic definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this headline">#</a></h2>
+<p>To start with, we have a specific term, called a <em>partial sum</em>, for the sum of a portion of a sequence:</p>
+<div class="proof definition admonition" id="foundations:series:defs:partsum">
+<p class="admonition-title"><span class="caption-number">Definition 1.13 </span> (Partial sum)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. A <span class="math notranslate nohighlight">\(m\)</span>-element partial sum of the sequence is:</p>
 <div class="math notranslate nohighlight">
 \[    s_m = \sum_{n = 1}^m a_n\]</div>
 </section>
 </div><p>This allows us to define a series:</p>
-<div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 1.13 </span> (Series)</p>
+<div class="proof definition admonition" id="foundations:series:defs:series">
+<p class="admonition-title"><span class="caption-number">Definition 1.14 </span> (Series)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. A series on <span class="math notranslate nohighlight">\(\mathcal A\)</span> is the inifinte sum:</p>
 <div class="math notranslate nohighlight">
@@ -596,14 +651,119 @@ title="Print to PDF"
 <p>If the limit exists and is finite, we say that the series converges; otherwise, we say that the series diverges.</p>
 </section>
 </div></section>
-<section id="convergence-tests">
-<h2><span class="section-number">1.2.2. </span>Convergence tests<a class="headerlink" href="#convergence-tests" title="Permalink to this headline">#</a></h2>
+<section id="taylor-s-theorem">
+<h2><span class="section-number">1.3.2. </span>Taylor’s theorem<a class="headerlink" href="#taylor-s-theorem" title="Permalink to this headline">#</a></h2>
+<p>One of the most useful results from real analysis is known as Taylor’s Theorem, which effectively asserts that we can restate functions satisfying specific conditions using Taylor series. We can then, in effect, “chop off” terms from this Taylor series to obtain arbitrarily precise estimates of the function itself using polynomials. We’ve already seen the class of continuously differentiable functions <a class="reference internal" href="useful_results.html#foundations:useful_results:diff_class">Definition 1.12</a>, so we are ready to understand the concept behind the Taylor series:</p>
+<div class="proof lemma admonition" id="foundations:series:taylor:series">
+<p class="admonition-title"><span class="caption-number">Lemma 1.3 </span> (Taylor series)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_0 \in \mathbb R\)</span>,</p></li>
+<li><p>let <span class="math notranslate nohighlight">\(f  : \mathbb R \rightarrow \mathbb R\)</span> be a function,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal X \suvseteq \mathbb R\)</span> is a neighborhood about <span class="math notranslate nohighlight">\(x_0\)</span>, on which <span class="math notranslate nohighlight">\(f \in C^\infty\)</span>.</p></li>
+</ol>
+<p>Then for <span class="math notranslate nohighlight">\(x \in \mathcal X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    f(x) = \sum_{k = 0}^\infty \sum_{k = 0}^\infty \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k\]</div>
+</section>
+</div><p>This allows us to express functions which are infinitely differentiable about a neighborhood of a point <span class="math notranslate nohighlight">\(x_0\)</span> as polynomials. Now we can state Taylor’s Theorem:</p>
+<div class="proof theorem admonition" id="foundations:series:taylor:theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 1.2 </span> (Taylor’s Theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(n \geq 1\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_0 \in \mathbb R\)</span>,</p></li>
+<li><p>let <span class="math notranslate nohighlight">\(f  : \mathbb R \rightarrow \mathbb R\)</span> be a function,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal X\)</span> is a neighborhood about <span class="math notranslate nohighlight">\(x_0\)</span>, on which <span class="math notranslate nohighlight">\(f \in C^n\)</span>.</p></li>
+</ol>
+<p>Then for <span class="math notranslate nohighlight">\(x \in \mathcal X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    f(x) &amp;= T_n(f, x, x_0) + \mathcal o \left(|x - x_0|^n\right),\\
+    T_n(f, x, x_0) &amp;= \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k\end{split}\]</div>
+</section>
+</div><p>The core interpretation of Taylor’s Theorem that we will need for our study is that <span class="math notranslate nohighlight">\(T_n(f, x, x_0)\)</span> is a polynomial which “agrees” with <span class="math notranslate nohighlight">\(f\)</span> in terms of derivatives about <span class="math notranslate nohighlight">\(x_0\)</span> up to order <span class="math notranslate nohighlight">\(n\)</span>, and further, will be arbitrarily precise within a neighborhood of <span class="math notranslate nohighlight">\(x_0\)</span>. The idea of Taylor’s Theorem is that we are, in effect, “chopping off” the Taylor series at an arbitrary point, and are left with a remainder that is of a (potentially) extremely low order <span class="math notranslate nohighlight">\(o(|x - x_0|^n)\)</span> when <span class="math notranslate nohighlight">\(x\)</span> is in a neighborhood of <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<section id="examples-of-taylor-series">
+<h3><span class="section-number">1.3.2.1. </span>Examples of Taylor series<a class="headerlink" href="#examples-of-taylor-series" title="Permalink to this headline">#</a></h3>
+<p>Let’s take a look at some common Taylor series that will arise. As an exercise, try to work through some of these yourself:</p>
+<div class="proof example admonition" id="foundations:series:taylor:geometric">
+<p class="admonition-title"><span class="caption-number">Example 1.1 </span> (Taylor series of <span class="math notranslate nohighlight">\(\frac{1}{1 - x}\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(x \in (-1, 1)\)</span>. Then the Taylor series of <span class="math notranslate nohighlight">\(\frac{1}{1 - x}\)</span> about <span class="math notranslate nohighlight">\(x_0 = 0\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1 - x} = 1 + x + x^2 + x^3 + ... = \sum_{k = 0}^\infty x^k\]</div>
+</section>
+</div><div class="proof example admonition" id="foundations:series:taylor:exp">
+<p class="admonition-title"><span class="caption-number">Example 1.2 </span> (Taylor series of exponential)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span>. Then the Taylor series of <span class="math notranslate nohighlight">\(\exp(x)\)</span> about <span class="math notranslate nohighlight">\(x_0 = 0\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\exp(x) &amp;= 1 + x + \frac{x^2}{2!} + \frac{x^ 3}{3!} + ... \\
+&amp;= \sum_{k = 0}^\infty \frac{x^k}{k!}\end{split}\]</div>
+</section>
+</div><div class="proof example admonition" id="foundations:series:taylor:log">
+<p class="admonition-title"><span class="caption-number">Example 1.3 </span> (Taylor series of <span class="math notranslate nohighlight">\(\log(1 + x)\)</span>)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(x \in (-1, 1]\)</span>. Then the Taylor series of <span class="math notranslate nohighlight">\(\log(1 + x)\)</span> about <span class="math notranslate nohighlight">\(x_0 = 0\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\log(1 + x) &amp;= x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} ... \\
+&amp;= \sum_{k = 0}^\infty (-1)^{k - 1}\frac{x^k}{k}\end{split}\]</div>
+</section>
+</div><div class="proof example admonition" id="foundations:series:taylor:cos">
+<p class="admonition-title"><span class="caption-number">Example 1.4 </span> (Taylor series of cosine)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span>. Then the Taylor series of <span class="math notranslate nohighlight">\(\cos(x)\)</span> about <span class="math notranslate nohighlight">\(x_0 = 0\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\cos(x) &amp;= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ... \\
+&amp;= \sum_{k = 0}^\infty (-1)^k \frac{x^{2k}}{(2k)!}\end{split}\]</div>
+</section>
+</div><p>Due to the evenness of <span class="math notranslate nohighlight">\(\cos(x)\)</span> (that is, <span class="math notranslate nohighlight">\(\cos(x) = \cos(-x)\)</span>), we only end up with <em>even</em> powers.</p>
+<div class="proof example admonition" id="foundations:series:taylor:sin">
+<p class="admonition-title"><span class="caption-number">Example 1.5 </span> (Taylor series of sine)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span>. Then the Taylor series of <span class="math notranslate nohighlight">\(\sin(x)\)</span> about <span class="math notranslate nohighlight">\(x_0 = 0\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sin(x) &amp;= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ... \\
+&amp;= \sum_{k = 0}^\infty (-1)^k \frac{x^{2k + 1}}{(2k + 1)!}\end{split}\]</div>
+</section>
+</div><p>Due to the oddness of <span class="math notranslate nohighlight">\(\sin(x)\)</span> (that is, <span class="math notranslate nohighlight">\(\sin(x) = -\sin(x)\)</span>), we only end up with <em>odd</em> powers.</p>
+</section>
+<section id="consequences-of-taylor-s-theorem">
+<h3><span class="section-number">1.3.2.2. </span>Consequences of Taylor’s theorem<a class="headerlink" href="#consequences-of-taylor-s-theorem" title="Permalink to this headline">#</a></h3>
+<p>Next is an important consequence of Taylor’s theorem that will arise in several places in the book. Let’s start with an important sequence:</p>
+<div class="proof lemma admonition" id="lemma-9">
+<p class="admonition-title"><span class="caption-number">Lemma 1.4 </span> (Limit is exponential)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal C \subseteq \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((c_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal C\)</span>. Suppose that <span class="math notranslate nohighlight">\(c \in \mathbb R\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[    c_n \xrightarrow[n \rightarrow \infty]{} c \Rightarrow \left(1 + \frac{c_n}{n}\right)^n \xrightarrow[n \rightarrow \infty]{} \exp(c)\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. With some manipulations, notice that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \left(1 + \frac{c_n}{n}\right)^n &amp;= \exp\left\{n\log\left(1 + \frac{c_n}{n}\right)\right\} \\
+    &amp;= \exp\left\{n\log\left(\frac{c_n}{n} + o\left(\left|\frac{c_n}{n}\right|^2\right)\right)\right\}\end{split}\]</div>
+<p>Which is an order <span class="math notranslate nohighlight">\(1\)</span> Taylor expansion of <span class="math notranslate nohighlight">\(\log(1 + x)\)</span>, by <a class="reference internal" href="#foundations:series:taylor:log">Example 1.3</a>. For large <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(o\left(\left|\frac{c_n}{n}\right|^2\right) = o\left(\left|\frac{1}{n}\right|^2\right)\)</span>. Then for large <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \left(1 + \frac{c_n}{n}\right)^n &amp;= \exp\left\{c_n + o(n^{-1})\right\} \\
+    &amp;\xrightarrow[n \rightarrow \infty]{} \exp(c), \,\,\,\, c_n + o(n^{-1}) \rightarrow c\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\(\exp(x)\)</span> is continuous, so the limit of the exponential is the exponential of the limit.</p>
+</div>
+<div class="proof lemma admonition" id="lemma-10">
+<p class="admonition-title"><span class="caption-number">Lemma 1.5 </span></p>
+<section class="lemma-content" id="proof-content">
+</section>
+</div></section>
+</section>
+<section id="convergence-concepts">
+<h2><span class="section-number">1.3.3. </span>Convergence concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h2>
 <p>We’re going to be extremely interested in the behavior of these series and their behaviors. This means that we need some tools to easily let us determine for which particular sequences <span class="math notranslate nohighlight">\((a_n)\)</span> that the resulting series converges/diverges. These tend to be called convergence tests.</p>
 <section id="comparison-test">
-<h3><span class="section-number">1.2.2.1. </span>Comparison test<a class="headerlink" href="#comparison-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.1. </span>Comparison test<a class="headerlink" href="#comparison-test" title="Permalink to this headline">#</a></h3>
 <p>First up is the simplest test, the comparison test:</p>
-<div class="proof lemma admonition" id="lem:foundations:conv_tests:comp">
-<p class="admonition-title"><span class="caption-number">Lemma 1.1 </span> (Comparison Test)</p>
+<div class="proof lemma admonition" id="lem:foundations:series:conv_tests:comp">
+<p class="admonition-title"><span class="caption-number">Lemma 1.6 </span> (Comparison Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span> where all <span class="math notranslate nohighlight">\(a_n, b_n \geq 0\)</span>. Then:</p>
 <ol class="simple">
@@ -614,10 +774,10 @@ title="Print to PDF"
 </div><p>When we have easy-to-use series that we already know behavior about, this can make proving convergence somewhat trivial.</p>
 </section>
 <section id="integral-test">
-<h3><span class="section-number">1.2.2.2. </span>Integral test<a class="headerlink" href="#integral-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.2. </span>Integral test<a class="headerlink" href="#integral-test" title="Permalink to this headline">#</a></h3>
 <p>Next up is the integral test:</p>
-<div class="proof lemma admonition" id="lem:foundations:conv_tests:integral">
-<p class="admonition-title"><span class="caption-number">Lemma 1.2 </span> (Integral Test)</p>
+<div class="proof lemma admonition" id="lem:foundations:series:conv_tests:integral">
+<p class="admonition-title"><span class="caption-number">Lemma 1.7 </span> (Integral Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Let <span class="math notranslate nohighlight">\(f : \mathbb R \rightarrow \mathbb R\)</span> be a function, where in particular <span class="math notranslate nohighlight">\(f(n) = a_n\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is positive, continuous, and decreasing, then both:</p>
 <div class="math notranslate nohighlight">
@@ -625,12 +785,18 @@ title="Print to PDF"
 <p>converge or diverge.</p>
 </section>
 </div><p>Sometimes, when faced with a seemingly daunting example, it might make sense to just string together multiple tests to prove your desired result. Let’s look at quick example of the integral test and the comparison test being used together in action:</p>
-<div class="proof example admonition" id="ex:foundations:conv_tests:integral">
-<p class="admonition-title"><span class="caption-number">Example 1.1 </span></p>
+<div class="proof example admonition" id="ex:foundations:series:conv_tests:integral">
+<p class="admonition-title"><span class="caption-number">Example 1.6 </span></p>
 <section class="example-content" id="proof-content">
 <p>Let’s consider the series:</p>
 <div class="math notranslate nohighlight">
 \[    \sum_{n = 2}^\infty \frac{1}{n(\log n)^s}\]</div>
+<p>For a given value of <span class="math notranslate nohighlight">\(s \in (-\infty, \infty)\)</span>, does the series converge or diverge?</p>
+<p>Hint: first, consider what happens for <span class="math notranslate nohighlight">\(s = 1\)</span>. Next, use this result to deduce something about the case of <span class="math notranslate nohighlight">\(s &lt; 1\)</span>. Finally, consider the case of <span class="math notranslate nohighlight">\(s &gt; 1\)</span>.</p>
+</section>
+</div><div class="proof example dropdown admonition" id="example-14">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
 <p>If <span class="math notranslate nohighlight">\(s = 1\)</span>, let’s take a look at that integral. Notice that:</p>
 <div class="math notranslate nohighlight">
 \[\int_2^\infty \frac{1}{n(\log n)}\text{d} n\]</div>
@@ -639,7 +805,7 @@ title="Print to PDF"
 \[\begin{split}\int_{\log 2}^\infty \frac{1}{u}\text{d} u &amp;= \log(u) + C\big |_{u=\log 2}^\infty \\
 &amp;=  \log(\log n) + C\big |_{n=2}^\infty = \infty\end{split}\]</div>
 <p>so the series diverges.</p>
-<p>When <span class="math notranslate nohighlight">\(s &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{n (\log n)^s} &gt; \frac{1}{n (\log n)} \geq 0\)</span>, so this series must diverge by <a class="reference internal" href="#lem:foundations:conv_tests:comp">Lemma 1.1</a>.</p>
+<p>When <span class="math notranslate nohighlight">\(s &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\frac{1}{n (\log n)^s} &gt; \frac{1}{n (\log n)} \geq 0\)</span>, so this series must diverge by <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a>.</p>
 <p>When <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, then we can’t just use the comparison test, so we need to calculate this integral out as well. This is because the terms of the sequence <span class="math notranslate nohighlight">\(\frac{1}{n \log^s n}\)</span> are not bigger than <span class="math notranslate nohighlight">\(\frac{1}{n\log n}\)</span>. Using the same <span class="math notranslate nohighlight">\(u\)</span>-substitution as before, we get:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\int_2^\infty \frac{1}{n(\log n)^s}\text{d} n &amp;= 
@@ -650,16 +816,16 @@ title="Print to PDF"
 &amp;= 0 + \frac{1}{(s - 1)\log(2)^{s - 1}}\end{split}\]</div>
 <p>Which is finite (the integral is convergent). So our results are:</p>
 <ol class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(s \leq 1\)</span>, the series diverges.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, the series converges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(s \leq 1\)</span>, the series diverges, by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.7</a> and <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, the series converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.7</a>.</p></li>
 </ol>
 </section>
 </div></section>
 <section id="p-series-test">
-<h3><span class="section-number">1.2.2.3. </span><span class="math notranslate nohighlight">\(p\)</span>-series test<a class="headerlink" href="#p-series-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.3. </span><span class="math notranslate nohighlight">\(p\)</span>-series test<a class="headerlink" href="#p-series-test" title="Permalink to this headline">#</a></h3>
 <p>Next up is probably the most important convergence result that you will want to know inside and out, the <span class="math notranslate nohighlight">\(p\)</span>-series convergence test:</p>
-<div class="proof lemma admonition" id="lem:foundations:conv_tests:pseries">
-<p class="admonition-title"><span class="caption-number">Lemma 1.3 </span> (<span class="math notranslate nohighlight">\(p\)</span>-series Convergence Test)</p>
+<div class="proof lemma admonition" id="lem:foundations:series:conv_tests:pseries">
+<p class="admonition-title"><span class="caption-number">Lemma 1.8 </span> (<span class="math notranslate nohighlight">\(p\)</span>-series Convergence Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>The <span class="math notranslate nohighlight">\(p\)</span>-series is given by, with <span class="math notranslate nohighlight">\(p &gt; 0\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -668,30 +834,32 @@ title="Print to PDF"
 </section>
 </div></section>
 <section id="ratio-test">
-<h3><span class="section-number">1.2.2.4. </span>Ratio Test<a class="headerlink" href="#ratio-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.4. </span>Ratio Test<a class="headerlink" href="#ratio-test" title="Permalink to this headline">#</a></h3>
 <p>The next test is one of the more easily used convergence tests, as it amounts to taking the limit of two numbers. It is called the ratio test, and is based on the ratios of consecutive terms; e.g., <span class="math notranslate nohighlight">\(r_n \triangleq \frac{a_{n + 1}}{a_n}\)</span>. The statement is rather big and involved:</p>
-<div class="proof lemma admonition" id="lem:foundations:conv_tests:ratio">
-<p class="admonition-title"><span class="caption-number">Lemma 1.4 </span> (Ratio Test)</p>
+<div class="proof lemma admonition" id="lem:foundations:series:conv_tests:ratio">
+<p class="admonition-title"><span class="caption-number">Lemma 1.9 </span> (Ratio Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, where <span class="math notranslate nohighlight">\(a_n \neq 0\)</span> for large <span class="math notranslate nohighlight">\(n\)</span>. Let <span class="math notranslate nohighlight">\(L = \lim_{n \rightarrow \infty}|r_n|\)</span>, where <span class="math notranslate nohighlight">\(r_n = \frac{a_{n + 1}}{a_n}\)</span>. If <span class="math notranslate nohighlight">\(L\)</span> exists, then:</p>
 <ol class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(L &lt; 1\)</span>, the series converges absolutely.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(L = 1\)</span>, the test is inconclusive.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(L &gt; 1\)</span>, the series diverges.
-Further, if <span class="math notranslate nohighlight">\(L\)</span> does not exist, let <span class="math notranslate nohighlight">\(S = \limsup_{n \rightarrow \infty} |r_n|\)</span> and <span class="math notranslate nohighlight">\(I = \liminf_{n \rightarrow \infty}|r_n|\)</span>. Then:</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(L &gt; 1\)</span>, the series diverges.</p></li>
+</ol>
+<p>Further, if <span class="math notranslate nohighlight">\(L\)</span> does not exist, let <span class="math notranslate nohighlight">\(S = \limsup_{n \rightarrow \infty} |r_n|\)</span> and <span class="math notranslate nohighlight">\(I = \liminf_{n \rightarrow \infty}|r_n|\)</span>. Then:</p>
+<ol class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(S &gt; 1\)</span>, the series converges absolutely.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(R &lt; 1\)</span>, the series diverges.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(|r_n| \geq 1\)</span> for all large <span class="math notranslate nohighlight">\(n\)</span>, regardless of the value of <span class="math notranslate nohighlight">\(R\)</span>, the series diverges.</p></li>
 <li><p>Otherwise, the test is inconclusive.</p></li>
 </ol>
 </section>
-</div><p>So, the nice aspect of this test is, we only need to think about the behavior of <span class="math notranslate nohighlight">\(r_n\)</span> in the tail. This means we can couple the ratio test with other nice results that operate on ratios of two numbers, like L’H^opital’s rule, for determining behavior about the series. The downside is that these inconclusive cases can sometimes be rather annoying.</p>
+</div><p>So, the nice aspect of this test is, we only need to think about the behavior of <span class="math notranslate nohighlight">\(r_n\)</span> in the tail. This means we can couple the ratio test with other nice results that operate on ratios of two numbers, like L’Hôpital’s rule, for determining behavior about the series. The downside is that these inconclusive cases can sometimes be rather annoying.</p>
 </section>
 <section id="root-test">
-<h3><span class="section-number">1.2.2.5. </span>Root Test<a class="headerlink" href="#root-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.5. </span>Root Test<a class="headerlink" href="#root-test" title="Permalink to this headline">#</a></h3>
 <p>The next test can also be useful if we have terms that can easily be upper bounded by an <span class="math notranslate nohighlight">\(n^{th}\)</span> root, such as polynomial expressions. This is called the root test:</p>
-<div class="proof lemma admonition" id="lem:foundations:conv_tests:root">
-<p class="admonition-title"><span class="caption-number">Lemma 1.5 </span> (Root Test)</p>
+<div class="proof lemma admonition" id="lem:foundations:series:conv_tests:root">
+<p class="admonition-title"><span class="caption-number">Lemma 1.10 </span> (Root Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, and let <span class="math notranslate nohighlight">\(C = \limsup_{n \rightarrow \infty} \sqrt[n]{|a_n|}\)</span>. If:</p>
 <ol class="simple">
@@ -703,26 +871,108 @@ Further, if <span class="math notranslate nohighlight">\(L\)</span> does not exi
 </section>
 </div></section>
 <section id="limit-comparison-test">
-<h3><span class="section-number">1.2.2.6. </span>Limit Comparison Test<a class="headerlink" href="#limit-comparison-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.6. </span>Limit Comparison Test<a class="headerlink" href="#limit-comparison-test" title="Permalink to this headline">#</a></h3>
 <p>The next test looks only at the limits of a pair of sequence to determine behaviors, and is pretty similar to the comparison test.</p>
-<div class="proof lemma admonition" id="lem:foundations:conv_tests:lim_cmp">
-<p class="admonition-title"><span class="caption-number">Lemma 1.6 </span> (Limit Comparison Test)</p>
+<div class="proof lemma admonition" id="lem:foundations:series:conv_tests:lim_cmp">
+<p class="admonition-title"><span class="caption-number">Lemma 1.11 </span> (Limit Comparison Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be two sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Further, assume that <span class="math notranslate nohighlight">\(a_n \geq 0\)</span>, and <span class="math notranslate nohighlight">\(b_n &gt; 0\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Then:</p>
 <ol class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} &gt; 0\)</span> is finite, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> converges <span class="math notranslate nohighlight">\(\iff \sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarorow \infty}\frac{a_n}{b_n} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarorow \infty}\frac{a_n}{b_n} = \infty\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> diverges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> diverges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} = \infty\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> diverges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> diverges.</p></li>
 </ol>
 </section>
 </div><p>Let’s take a look at how to use this one with an example, where we chain together the comparison test with the limit comparison test and the <span class="math notranslate nohighlight">\(p\)</span>-series convergence test:</p>
-<div class="proof example admonition" id="ex:foundations:conv_tests:lim_cmp">
-<p class="admonition-title"><span class="caption-number">Example 1.2 </span></p>
+<div class="proof example admonition" id="ex:foundations:series:conv_tests:lim_cmp">
+<p class="admonition-title"><span class="caption-number">Example 1.7 </span></p>
 <section class="example-content" id="proof-content">
 <p>Consider the series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n\)</span>, where <span class="math notranslate nohighlight">\(\epsilon \in (0, 1)\)</span>.</p>
-<p>Our first guess at this series might be to use the comparison test</p>
+<p>Hint: compare to the series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span>, and then use the limit comparison test to a <span class="math notranslate nohighlight">\(p\)</span>-series.</p>
+</section>
+</div><div class="proof example dropdown admonition" id="example-20">
+<p class="admonition-title"><span>Example </span></p>
+<section class="example-content" id="proof-content">
+<p>By <a class="reference internal" href="useful_results.html#foundations:useful_results:bounding_exp">Lemma 1.1</a>, recall that <span class="math notranslate nohighlight">\(\leq 1 + x \leq \exp(x)\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>, and that in particular, if <span class="math notranslate nohighlight">\(x \geq -1\)</span>, that <span class="math notranslate nohighlight">\(0 \leq 1 + x \leq \exp(x)\)</span>.</p>
+<p>This means that for any <span class="math notranslate nohighlight">\(x \geq -1\)</span>, since <span class="math notranslate nohighlight">\(f(y) = y^r\)</span> is monotone increasing on <span class="math notranslate nohighlight">\(y \geq 0\)</span> for <span class="math notranslate nohighlight">\(r \geq 1\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-foundations-series-conv-tests-lim-cmp-helper">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-eqn-foundations-series-conv-tests-lim-cmp-helper" title="Permalink to this equation">#</a></span>\[\begin{split}0 \leq 1 + x \leq \exp(x) &amp;\Rightarrow (1 + x)^r \leq \exp(rx) \\
+\Rightarrow 0 \leq \left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n &amp;\leq \exp\left(-n\frac{n^\epsilon}{n}\right) = \exp\left(-n^\epsilon\right).\end{split}\]</div>
+<p>for any <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where we used that <span class="math notranslate nohighlight">\(n^{\epsilon - 1}\)</span> = <span class="math notranslate nohighlight">\(\frac{n^\epsilon}{n}\)</span>, and that <span class="math notranslate nohighlight">\(0 &lt; \frac{1}{n^{1 - \epsilon}} &lt; 1\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> and <span class="math notranslate nohighlight">\(\epsilon \in (0, 1)\)</span>.</p>
+<p>Notice that the <span class="math notranslate nohighlight">\(p\)</span>-series <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> is convergent by <a class="reference internal" href="#lem:foundations:series:conv_tests:pseries">Lemma 1.8</a>, since <span class="math notranslate nohighlight">\(p &gt; 1\)</span>.</p>
+<p>Comparing <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp\left(-n^\epsilon\right)\)</span> to <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> via the limit comparison test:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\exp(-n^\epsilon)}{\frac{1}{n^2}} &amp;= \frac{n^2}{\exp(n^\epsilon)} = \frac{u^{\frac{2}{\epsilon}}}{\exp(u)},\,\,\,\,u = n^\epsilon \Rightarrow n = u^{\frac{1}{\epsilon}} \\
+&amp;\leq \frac{u^{\lceil\frac{2}{\epsilon}\rceil}}{\exp(u)} \xrightarrow[n \rightarrow \infty]{} \frac{\lceil\frac{2}{\epsilon}\rceil!}{\exp(u)} \xrightarrow[n \rightarrow \infty]{} 0\end{split}\]</div>
+<p>where in the second to last step, we repeatedly applied L’Hôpital’s rule to <span class="math notranslate nohighlight">\(u^{\lceil\frac{2}{\epsilon}\rceil}\)</span> and noting that a successive application of L’Hôpital’s rule would yield a numerator of <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Then since the limit is <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\frac{1}{n^2}\)</span> converges, <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span> converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:lim_cmp">Lemma 1.11</a>.</p>
+<p>Then by <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a> and comparing to <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\exp(-n^\epsilon)\)</span> with Equation <a class="reference internal" href="#equation-eqn-foundations-series-conv-tests-lim-cmp-helper">(1.2)</a>, <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N}\left(1 - \frac{1}{n^{1 - \epsilon}}\right)^n\)</span> converges.</p>
 </section>
 </div></section>
+<section id="alternating-series-test">
+<h3><span class="section-number">1.3.3.7. </span>Alternating series test<a class="headerlink" href="#alternating-series-test" title="Permalink to this headline">#</a></h3>
+<p>The next test considers what happens when we have an alternating series (the series alternates between positive and negative values), and the absolute value of the terms converge to zero. This is called the alternating series test:</p>
+<div class="proof lemma admonition" id="lemma-21">
+<p class="admonition-title"><span class="caption-number">Lemma 1.12 </span> (Alternating Series Test)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>, where <span class="math notranslate nohighlight">\(a_n = (-1)^n b_n\)</span>, or <span class="math notranslate nohighlight">\(a_n = (-1)^{n + 1}b_n\)</span>, for <span class="math notranslate nohighlight">\(b_n \geq 0\)</span>. If:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(b_n \xrightarrow[n \rightarrow \infty]{} 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(b_n\)</span> is a decreasing sequence (<span class="math notranslate nohighlight">\(b_{n + 1} \leq b_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>),</p></li>
+</ol>
+<p>Then <span class="math notranslate nohighlight">\(\sum_{k = 1}^n a_k \xrightarrow[n \rightarrow \infty]{} L &lt; \infty\)</span>, and the series is convergent.</p>
+</section>
+</div></section>
+</section>
+<section id="convergence-of-tails-of-series-and-tails">
+<h2><span class="section-number">1.3.4. </span>Convergence of tails of series and tails<a class="headerlink" href="#convergence-of-tails-of-series-and-tails" title="Permalink to this headline">#</a></h2>
+<p>An important result we will use repeatedly throughout the book is that the definition of a series converging is that the partial sums possess a limit. The consequence of this is that, conveniently, this means that the tail of the series converge to zero. We’ll formalize this intuitive result with a lemma:</p>
+<div class="proof lemma admonition" id="lemma-22">
+<p class="admonition-title"><span class="caption-number">Lemma 1.13 </span> (Convergent Series and the Tail Sum)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Let <span class="math notranslate nohighlight">\(s_n = \sum_{k \in [n]}a_k\)</span> be the <span class="math notranslate nohighlight">\(n^{th}\)</span> partial sum. Then:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{k = 1}^na_k \xrightarrow[n \rightarrow \infty]{} L &lt; \infty \iff \sum_{k = n+1}^\infty a_k \xrightarrow[n \rightarrow \infty]{} 0.\]</div>
+</section>
+</div><p>Since this statement is an “if and only if” (as denoted by <span class="math notranslate nohighlight">\(\iff\)</span>), this means that we have to separately prove that each side implies the other. We’ll typically do that in this book by numbering the proof with two parts. For this proof, notice that we’re going to make use of the <span class="math notranslate nohighlight">\(\vee\)</span> and <span class="math notranslate nohighlight">\(\wedge\)</span> operators. <span class="math notranslate nohighlight">\(f \vee g\)</span> just means the maximum of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span>, and <span class="math notranslate nohighlight">\(f \wedge g\)</span> just means the minimum of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span>.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. <span class="math notranslate nohighlight">\(\Rightarrow\)</span> Suppose that <span class="math notranslate nohighlight">\(\sum_{k = 1}^n a_k \xrightarrow[n \rightarrow \infty]{} L &lt; \infty\)</span>.</p>
+<p>By definition of a limit, for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists <span class="math notranslate nohighlight">\(N\)</span> s.t. for all <span class="math notranslate nohighlight">\(n &gt; N\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left|\sum_{k = 1}^n a_k - L\right| &amp;&lt; \epsilon \\
+\left|\sum_{k = 1}^n a_k - \sum_{k = 1}^\infty a_k\right| &amp;&lt; \epsilon,\,\,\,\,\sum_{k = 1}^\infty a_k = L &lt; \infty\\
+\left|\sum_{k = n + 1}^\infty a_k\right| &amp;&lt; \epsilon\end{split}\]</div>
+<p>Which is the definition of <span class="math notranslate nohighlight">\(\sum_{k = n + 1}^\infty a_k \xrightarrow[n \rightarrow \infty]{} 0\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Leftarrow\)</span> Suppose that <span class="math notranslate nohighlight">\(\sum_{k = n + 1}^\infty a_k \xrightarrow[n \rightarrow \infty]{} 0\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(s_n = \sum_{k \in [n]}a_k\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left|s_n - s_m\right| &amp;= 
+\left|\sum_{k = (m \wedge n) + 1}^{m \vee n}a_k\right| = 
+\left|\sum_{k \geq m + 1}a_k - \sum_{k \geq n + 1}a_k\right| \\
+&amp;\leq \left|\sum_{k \geq m + 1}a_k\right| + \left| \sum_{k \geq n + 1}a_k\right|,\,\,\,\,\text{Triangle Inequality} \\
+&amp;\xrightarrow[n, m \rightarrow \infty]{} 0.\,\,\,\,\text{by supposition}\end{split}\]</div>
+<p>Which shows that <span class="math notranslate nohighlight">\(\{s_n\}\)</span> is Cauchy.</p>
+<p>Then since a Cauchy sequence has a finite limit, <span class="math notranslate nohighlight">\(s_n \xrightarrow[n \rightarrow \infty]{} L &lt; \infty\)</span>.</p>
+</div>
+<p>Next, we have another useful lemma which will be extremely useful when we try to make statements about averages of sequences. Averages of sequences will be a major topic when we talk about laws of large numbers, since laws of large numbers typically attempt to make statements about means of random quantities:</p>
+<div class="proof lemma admonition" id="lemma-23">
+<p class="admonition-title"><span class="caption-number">Lemma 1.14 </span> (Tail terms going to zero implies average goes to zero)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span> be a set, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Suppose that <span class="math notranslate nohighlight">\(a_n \xrightarrow[n \rightarrow \infty]{} 0\)</span>. Then <span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{k = 1}^n a_n \xrightarrow[n \rightarrow \infty]{} 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Since <span class="math notranslate nohighlight">\(a_n \rightarrow 0\)</span>, for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists <span class="math notranslate nohighlight">\(N\)</span> s.t. for all <span class="math notranslate nohighlight">\(n &gt; N\)</span>, <span class="math notranslate nohighlight">\(|a_n| &lt; \epsilon\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}0 \leq \left|\frac{1}{n} \sum_{k = 1}^n a_k\right| &amp;= 
+\frac{1}{n}\left| \sum_{k = 1}^N a_k + \sum_{k = N + 1}^n a_k\right| \\
+&amp;\leq 
+\frac{1}{n}\left| \sum_{k = 1}^N a_k\right| + \frac{1}{n}\left|\sum_{k = N + 1}^n a_k\right|,\,\,\,\,\text{triangle ineq.} \\
+&amp;\leq \frac{1}{n} C + \frac 1 n \sum_{k = N + 1}^n |a_k|,\,\,\,\, C \triangleq \left|\sum_{k = 1}^N a_k\right|,\text{ triangle ineq.} \\
+&amp;\leq \frac{1}{n} C + \epsilon,\,\,\,\, (n - N + 1) &lt; n, |a_k| &lt; \epsilon \\
+&amp;\xrightarrow[n \rightarrow \infty]{} \leq \epsilon.\end{split}\]</div>
+<p>Taking <span class="math notranslate nohighlight">\(\epsilon \downarrow 0\)</span> and noting that the quantity is lower-bounded by zero, the sandwich theorem gives that <span class="math notranslate nohighlight">\(\frac 1 n \sum_{k = 1}^n \xrightarrow[n \rightarrow \infty]{} 0\)</span>.</p>
+</div>
 </section>
 </section>
 
@@ -753,17 +1003,17 @@ Further, if <span class="math notranslate nohighlight">\(L\)</span> does not exi
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="limits.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="useful_results.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.1. </span>Limits</p>
+            <p class="prev-next-title"><span class="section-number">1.2. </span>Useful Results</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="useful_results.html" title="next page">
+    <a class='right-next' id="next-link" href="../uv/measure_theory/measure_theory.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Useful Results</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Measure Theory</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
