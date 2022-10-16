@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.1. Probability Spaces &#8212; Measure Theoretic Probability Theory</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.2. Random Variables" href="random_variables.html" />
+    <link rel="prev" title="2. Introduction to Measure Theory" href="measure_theory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Measure Theoretic Probability Theory</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../coverpage.html">
+                    Measure Theoretic Probability Theory
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro/preface.html">
+   Preface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro/terminology.html">
+   Terminology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../foundations/foundations.html">
+   1. Foundations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../foundations/limits.html">
+     1.1. Limits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../foundations/useful_results.html">
+     1.2. Useful Results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../foundations/convergence_tests.html">
+     1.3. Series
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Univariate Probability Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="measure_theory.html">
+   2. Introduction to Measure Theory
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Probability Spaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="random_variables.html">
+     2.2. Random Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prod_meas.html">
+     2.3. Product Measures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../llns/llns.html">
+   3. Laws of Large Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../clts/clts.html">
+   4. Central Limit Theorems
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Markov Chain Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mc/martingales/martingales.html">
+   5. Martingales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mc/mc/mc.html">
+   6. Markov Chains
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Multivariate Probability Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mv/classes/classes.html">
+   7. Classes of Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mv/rvs/rvs.html">
+   8. Random Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mv/rmats/rmats.html">
+   9. Random Matrices
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/uv/measure_theory/probability_spaces.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ebridge2/prob_book/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Fuv/measure_theory/probability_spaces.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/uv/measure_theory/probability_spaces.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/uv/measure_theory/probability_spaces.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-wrong-with-traditional-probability-courses">
+   2.1.1. What is wrong with traditional probability courses?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#establishing-units-upon-which-we-can-understand-probabilities">
+   2.1.2. Establishing units upon which we can understand probabilities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sigma-algebras">
+     2.1.2.1.
+     <span class="math notranslate nohighlight">
+      \(\sigma\)
+     </span>
+     -algebras
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measures">
+   2.1.3. Measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-measures">
+     2.1.3.1. Properties of measures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-measures">
+   2.1.4. Probability measures
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Probability Spaces</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-wrong-with-traditional-probability-courses">
+   2.1.1. What is wrong with traditional probability courses?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#establishing-units-upon-which-we-can-understand-probabilities">
+   2.1.2. Establishing units upon which we can understand probabilities
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sigma-algebras">
+     2.1.2.1.
+     <span class="math notranslate nohighlight">
+      \(\sigma\)
+     </span>
+     -algebras
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measures">
+   2.1.3. Measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-measures">
+     2.1.3.1. Properties of measures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-measures">
+   2.1.4. Probability measures
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="probability-spaces">
+<span id="uv-mt-prob-spaces"></span><h1><span class="section-number">2.1. </span>Probability Spaces<a class="headerlink" href="#probability-spaces" title="Permalink to this headline">#</a></h1>
+<section id="what-is-wrong-with-traditional-probability-courses">
+<h2><span class="section-number">2.1.1. </span>What is wrong with traditional probability courses?<a class="headerlink" href="#what-is-wrong-with-traditional-probability-courses" title="Permalink to this headline">#</a></h2>
+<p>By reading this book, I’m assuming you’ve thought about probability at some point in your life.</p>
+<p>When you think of probability, one of the first things that might come to your mind is something like a coin flip. The coin lands on heads with probability <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>, and tails with probability <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>. The computations you have inherently made here are that a coin can land on either heads or tails, and both of these outcomes are equally likely, so it makes sense to say that each have a probability of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>. When there’s a finite number of possible outcomes, this is pretty easy to understand. When we are dealing with random quantities that have only finitely many possible outcomes, we call these quantities <em>discrete</em>.</p>
+<p>Let’s say, on the other hand, that I’m throwing a ball. What is the probability that I throw the ball <span class="math notranslate nohighlight">\(30\)</span> meters? <span class="math notranslate nohighlight">\(40\)</span> meters? <span class="math notranslate nohighlight">\(50\)</span> meters? <span class="math notranslate nohighlight">\(30.05\)</span> meters? <span class="math notranslate nohighlight">\(30.0001\)</span> meters? If we were to assign probabilities of any sort of mass to particular distance totals, we’d quickly run into a problem: there are uncountably many different distances I could possibly throw the ball! Stated another way, maybe it’s certain that I would throw the ball between <span class="math notranslate nohighlight">\(30\)</span> and <span class="math notranslate nohighlight">\(50\)</span> meters (I did play baseball and waterpolo for the better part of a decade), but there are uncountably many points on the real line between <span class="math notranslate nohighlight">\(30\)</span> and <span class="math notranslate nohighlight">\(50\)</span>. Let’s say we were to pick to ascribe probabilities every <span class="math notranslate nohighlight">\(.0001\)</span> meters, which would result in <span class="math notranslate nohighlight">\(\frac{20}{.0001} = 200000\)</span> possible locations I could throw the ball. If we could assume I’d hit each of these distance totals with equal probability, and say that for any gradation of <span class="math notranslate nohighlight">\(.0001\)</span> yards in between <span class="math notranslate nohighlight">\(30\)</span> and <span class="math notranslate nohighlight">\(50\)</span>, I throw the ball that particular distance with probability <span class="math notranslate nohighlight">\(\frac{1}{200000} = 0.000005\)</span>. So, the probability of me throwing the ball to the <span class="math notranslate nohighlight">\(30.0001\)</span> yards is <span class="math notranslate nohighlight">\(0.000005\)</span>. But now we’ve got a new problem: what if I threw the ball <span class="math notranslate nohighlight">\(30.00011\)</span> yards? Since I already “allocated” all possible distances with my <span class="math notranslate nohighlight">\(.0001\)</span> meter gradations, this distance has a probability of <span class="math notranslate nohighlight">\(0\)</span> that I throw the ball to it. This is absolutely puzzling and completely counter-intuitive, so I’d need a system that completely breaks with how I ascribe probabilities to the coin flip situation to how I ascribe probabilities with throwing the ball.</p>
+<p>The problem is that, in this context, the unit that we want to ascribe probabilities to, the distances of the throw, are <em>continuous</em>. We could certainly overcome this pretty easily: we could invent a probability system that works when the outcomes are finite (like the coin flips), and we could invent a totally different probability system for when the outcomes are continuous (like throwing the ball). However, this is pretty counter-intuitive: wouldn’t it be nice if you could conceptualize any probabilistic system with the same intuition? This is where <em>measure theory</em>, and in particular, <em>probability spaces</em>, will come into play. Figuring out how to have unified sets of rules, and unified sets of <em>intuition</em>, are what makes probability theory so powerful for both theorists and application specialists alike. Probability spaces will serve as the building blocks upon which we can ascribe unified sets of rules for random quantities.</p>
+</section>
+<section id="establishing-units-upon-which-we-can-understand-probabilities">
+<h2><span class="section-number">2.1.2. </span>Establishing units upon which we can understand probabilities<a class="headerlink" href="#establishing-units-upon-which-we-can-understand-probabilities" title="Permalink to this headline">#</a></h2>
+<section id="sigma-algebras">
+<h3><span class="section-number">2.1.2.1. </span><span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#sigma-algebras" title="Permalink to this headline">#</a></h3>
+<p>To begin to delineate how we can come to terms with this seeming inconsistency when we handle discrete outcomes (like coin flips) with continuous outcomes (like throwing a ball), we need to create a sort of homologous system on which we can ascribe probabilities, that works whether or not the units are discrete or continous. The first ingredient for this is called a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. A <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is defined on a set <span class="math notranslate nohighlight">\(\Omega\)</span>, which can be anything (such as the real line).</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:sig">
+<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(\mathcal F\)</span> is called a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span> if it is a non-empty collection of <em>events</em> <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, s.t. <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>, where:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega \in \mathcal F\)</span>,</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(F^c \in \mathcal F\)</span>,</p></li>
+<li><p>If <span class="math notranslate nohighlight">\((F_i)_{i \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, then <span class="math notranslate nohighlight">\(\bigcup_{i \in \mathbb N}F_i \in \mathcal F\)</span>.</p></li>
+</ol>
+</section>
+</div><p>You’ll notice that we called these “subsets” of <span class="math notranslate nohighlight">\(\mathcal F\)</span> “events”: the reason for this will be apparent before we get to the end of this section, so just bear with us for a second. We’ll often call this set <span class="math notranslate nohighlight">\(\Omega\)</span> the “event space”, because it is the set in which our “events” <span class="math notranslate nohighlight">\(F\)</span> live (<span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>). <span class="math notranslate nohighlight">\(\mathcal F\)</span> collects these events in a very particular way. It contains the entire “event space” <span class="math notranslate nohighlight">\(\Omega\)</span>, it is closed under complements, and if a set of events are in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, then the union of these events are also in <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
+</section>
+</section>
+<section id="measures">
+<h2><span class="section-number">2.1.3. </span>Measures<a class="headerlink" href="#measures" title="Permalink to this headline">#</a></h2>
+<p>The main reason that <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are powerful for our field of study is that they are special mathematical objects to which we can assign something called a <em>measure</em>. Together, the event space (and a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on it) for this reason are called a measurable space:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:measbl_sp">
+<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Measurable Space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>)</p>
+<section class="definition-content" id="proof-content">
+<p>The tuple <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is called a measurable space, if:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is a set,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Now that we have measurable spaces, we can begin to think about things called <em>measures</em>. A measure, in effect, is a function which allows us to formalize the concept of <em>size</em>:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:meas">
+<p class="admonition-title"><span class="caption-number">Definition 2.3 </span> (Measure <span class="math notranslate nohighlight">\(\mu\)</span>)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> be a measurable space. A measure <span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> is a non-negative countably additive set function, where:</p>
+<ol class="simple">
+<li><p>Measure of empty set is zero: <span class="math notranslate nohighlight">\(\mu(\varnothing) = 0\)</span>,</p></li>
+<li><p>Non-negative: For any <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, <span class="math notranslate nohighlight">\(\mu(F) \geq 0\)</span>,</p></li>
+<li><p>Countably additive: If <span class="math notranslate nohighlight">\(\{F_i\}_{i \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of disjoint events, then:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[    \mu\left(\bigcup_{n \in \mathbb N}F_n\right) = \sum_{n \in \mathbb N}\mu(F_n)\]</div>
+</section>
+</div><p>By the sets being disjoint, what we means is that for all <span class="math notranslate nohighlight">\(i, j \in \mathbb N\)</span>, then <span class="math notranslate nohighlight">\(F_i \cap F_j = \varnothing\)</span>. When the sets are disjoint, we use the square union cup <span class="math notranslate nohighlight">\(\sqcup\)</span> instead of the union cup <span class="math notranslate nohighlight">\(\cup\)</span> to emphasize explicitly that the sets we are taking a union of are disjoint. The space <span class="math notranslate nohighlight">\(\bar{\mathbb R}\)</span> is called the <em>extended real numbers</em>, which just means that it includes <span class="math notranslate nohighlight">\(\infty\)</span> and <span class="math notranslate nohighlight">\(-\infty\)</span>. The subscript <span class="math notranslate nohighlight">\(\geq 0\)</span> just delineates that it is the non-negative component. Written another way, <span class="math notranslate nohighlight">\(\bar{\mathbb R}_{\geq 0} = [0, \infty]\)</span>. The concepts of a measurable space and a measure are united with the concept of a measure space:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:meas_sp">
+<p class="admonition-title"><span class="caption-number">Definition 2.4 </span> (Measure Space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>)</p>
+<section class="definition-content" id="proof-content">
+<p>The triple <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is called a measure space if:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is a set,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on \Omega,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \mathbb R\)</span> is a measure on <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>.</p></li>
+</ol>
+</section>
+</div><section id="properties-of-measures">
+<h3><span class="section-number">2.1.3.1. </span>Properties of measures<a class="headerlink" href="#properties-of-measures" title="Permalink to this headline">#</a></h3>
+<p>In this book, we will often use (and abuse) several basic properties of measures. We’ll go through some of these now. To start off, we have the monotonicity of measures:</p>
+<div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:monotone">
+<p class="admonition-title"><span class="caption-number">Theorem 2.1 </span> (Monotonicity of measures)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. Then if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(A, B \in \mathcal F\)</span>, <span class="math notranslate nohighlight">\(\mu(A) \leq \mu(B)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(A, B \in \mathcal F\)</span>, where <span class="math notranslate nohighlight">\(A \subseteq B\)</span>.</p>
+<p>Recall that <span class="math notranslate nohighlight">\(B \setminus A = B \cap A^c\)</span>. This represents the elements of <span class="math notranslate nohighlight">\(B\)</span> that are not in <span class="math notranslate nohighlight">\(A\)</span>, so we could alternatively express <span class="math notranslate nohighlight">\(B = A \cup (B \setminus A)\)</span>.</p>
+<p>As <span class="math notranslate nohighlight">\(B \setminus A\)</span> is disjoint from <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mu(B) &amp;= \mu\left(A \sqcup (B \setminus A)\right) \\
+    &amp;= \mu(A) + \mu(B \setminus A),\,\,\,\,\mu\text{ is countably additive} \\
+    &amp;\geq \mu(A),\,\,\,\,\mu(B \setminus A) \geq 0\text{ by definition of a measure}\end{split}\]</div>
+<p>as desired.</p>
+</div>
+<p>Intuitively, what this statement asserts is that the measure of a set which comprises another set must be at least the measure of the set it comprises. This concept extends to the case when <span class="math notranslate nohighlight">\(A\)</span> is a subset of a countable union of sets as well, and is called subadditivity:</p>
+<div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:subadd">
+<p class="admonition-title"><span class="caption-number">Theorem 2.4 </span> (Subadditivity of measures)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(A \subseteq \bigcup_{n \in \mathbb N}A_n\)</span> where <span class="math notranslate nohighlight">\(A, A_n \in \mathcal F\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu(A) \leq \sum_{n \in \mathbb N}\mu(A_n).\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(A_n' = A_n \cap A\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Like above, <span class="math notranslate nohighlight">\(A_n'\)</span> are the elements of <span class="math notranslate nohighlight">\(A_n\)</span> that are also in <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Define <span class="math notranslate nohighlight">\(F_1 = A_1'\)</span>, and let <span class="math notranslate nohighlight">\(F_n = A_n' \setminus \bigcup_{m = 1}^{n - 1}A_m'\)</span> for all <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <span class="math notranslate nohighlight">\(F_n\)</span> represents the elements of <span class="math notranslate nohighlight">\(A_n\)</span> that are in <span class="math notranslate nohighlight">\(A\)</span>, but are not in any of the preceding sets <span class="math notranslate nohighlight">\(F_m\)</span> where <span class="math notranslate nohighlight">\(m \leq n\)</span>.</p>
+<p>Note that <span class="math notranslate nohighlight">\(F_n\)</span> are disjoint by construction, since each set adds only the unique elements of <span class="math notranslate nohighlight">\(A_n\)</span> in <span class="math notranslate nohighlight">\(A\)</span> that are not in any of the preceding sets <span class="math notranslate nohighlight">\(F_m\)</span>, and that <span class="math notranslate nohighlight">\(A = \bigsqcup_{n \in \mathbb N}F_n\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(F_n \subseteq A_n\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mu(A) &amp;= \mu\left(\bigsqcup_{n \in \mathbb N}F_n\right) \\
+&amp;= \sum_{n \in \mathbb N}\mu(F_n),\,\,\,\,\mu\text{ is countably additive} \\
+&amp;\leq \sum_{n \in \mathbb N}\mu(A_n).\,\,\,\,F_n \subseteq A_n \Rightarrow \mu(F_n) \leq \mu(A_n)\end{split}\]</div>
+<p>which follows by <a class="reference internal" href="#uv:mt:prob_spaces:meas:monotone">Theorem 2.1</a>.</p>
+</div>
+<p>Next, we’ll see that measures share some of the intuitive convergence concepts a lot like functions, except instead of operating on single points, they operate on sets. We’ll begin with a definition for sets and then apply it to the measure:</p>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 2.5 </span> (Set convergence from below)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and that <span class="math notranslate nohighlight">\(A_n \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>. If <span class="math notranslate nohighlight">\(A_n \subseteq A_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}A_n = A \in \mathcal F\)</span>, then we say that <span class="math notranslate nohighlight">\(A_n \uparrow A\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
+</div><p>This is called <em>convergence from below</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(A_n\)</span> are “growing” to the set <span class="math notranslate nohighlight">\(A\)</span>. When the sets “grow” to <span class="math notranslate nohighlight">\(A\)</span>, the measures do, too:</p>
+<div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:convbelow">
+<p class="admonition-title"><span class="caption-number">Theorem 2.3 </span> (Measure convergence from below)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(A_n \uparrow A\)</span>, then <span class="math notranslate nohighlight">\(\mu(A_n) \uparrow A\)</span>, as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(F_1 = A_1\)</span>, and let <span class="math notranslate nohighlight">\(F_n = A_n \setminus A_{n - 1}\)</span> for <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <span class="math notranslate nohighlight">\(F_n\)</span> represents the unique elements of <span class="math notranslate nohighlight">\(A_n\)</span> from all of the preceding sets <span class="math notranslate nohighlight">\(A_m\)</span>, for <span class="math notranslate nohighlight">\(m \leq n\)</span>.</p>
+<p>Note that the <span class="math notranslate nohighlight">\(F_n\)</span> are disjoint by construction, that <span class="math notranslate nohighlight">\(\bigsqcup_{n \in \mathbb N}F_n = \bigcup_{n \in \mathbb N}A_n = A\)</span>, and that <span class="math notranslate nohighlight">\(\bigsqcup_{n = 1}^m F_n = A_m\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mu(A) &amp;= \mu\left(\bigsqcup_{n \in \mathbb N}F_n\right) \\
+    &amp;= \sum_{n \in \mathbb N}\mu\left(F_n\right),\,\,\,\,\text{ countable additivity} \\
+    &amp;= \lim_{m \rightarrow \infty}\sum_{n = 1}^m \mu(F_n) \\
+    &amp;= \lim_{m \rightarrow \infty} \mu(A_n).\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\(\bigsqcup_{n = 1}^m F_n = A_m \Rightarrow \sum_{n = 1}^m \mu(F_n) = \mu(A_m)\)</span>.</p>
+</div>
+<p>Wouldn’t it be great if this same property held in reverse, too? Good news:</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 2.6 </span> (Set convergence from above)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and that <span class="math notranslate nohighlight">\(A_n \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>. If <span class="math notranslate nohighlight">\(A_n \supseteq A_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb N}A_n = A \in \mathcal F\)</span>, then we say that <span class="math notranslate nohighlight">\(A_n \downarrow A\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
+</div><p>This is called <em>convergence from above</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(A_n\)</span> are “shrinking” to the set <span class="math notranslate nohighlight">\(A\)</span>. An important corollary of this is that <span class="math notranslate nohighlight">\(A \subseteq A_n\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, which follows since <span class="math notranslate nohighlight">\(A = \bigcap_{n \in \mathbb N}A_n\)</span>.</p>
+<p>When the sets “shrink” to <span class="math notranslate nohighlight">\(A\)</span>, the measures do, too:</p>
+<div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:subadd">
+<p class="admonition-title"><span class="caption-number">Theorem 2.4 </span> (Measure convergence from above)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(A_n \downarrow A\)</span>, and further <span class="math notranslate nohighlight">\(\mu(A_k) &lt; \infty\)</span> for some <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>, then <span class="math notranslate nohighlight">\(\mu(A_n) \downarrow \mu(A)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Without loss of generality (WOLOG), suppose that <span class="math notranslate nohighlight">\(k=1\)</span>. If it does not, simply shift <span class="math notranslate nohighlight">\((A_n)\)</span> over <span class="math notranslate nohighlight">\(k\)</span> places, until the first element has <span class="math notranslate nohighlight">\(A_1\)</span> where <span class="math notranslate nohighlight">\(\mu(A_1) &lt; \infty\)</span>.</p>
+<p>Notice that <span class="math notranslate nohighlight">\(A_1 \setminus A_n \uparrow A_1 \setminus A\)</span>, so then <span class="math notranslate nohighlight">\(\mu(A_1 \setminus A_n) \uparrow \mu(A_1 \setminus A)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, by <a class="reference internal" href="#uv:mt:prob_spaces:meas:convbelow">Theorem 2.3</a>.</p>
+<p>Observe that since <span class="math notranslate nohighlight">\(A \subseteq A_m\)</span>, that <span class="math notranslate nohighlight">\(A_m = A_m \setminus A \sqcup A\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(\mu(A_m) = \mu(A_m \setminus A) + \mu(A)\)</span>, and consequently, <span class="math notranslate nohighlight">\(\mu(A_m \setminus A) = \mu(A_m) - \mu(A)\)</span>, which holds for any <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, since <span class="math notranslate nohighlight">\(A_n \downarrow A\)</span>. By the same argument, <span class="math notranslate nohighlight">\(\mu(A_1 \setminus A_m) = \mu(A_1) - \mu(A_m)\)</span>, as <span class="math notranslate nohighlight">\(A_m \subseteq A_1\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mu(A_1 \setminus A_n) &amp;\uparrow \mu(A_1 \setminus A), \\
+    \mu(A_1) - \mu(A_n) &amp;\uparrow \mu(A_1) - \mu(A),\,\,\,\,A_1 \supseteq A_n \supseteq A \\
+    -\mu(A_n) &amp;\uparrow \mu(A), \\
+   \Rightarrow \mu(A_n) &amp;\downarrow \mu(A),\end{split}\]</div>
+<p>as desired.</p>
+</div>
+<p>What we did here was we effectively used the fact that the sets are “shrinking” to <span class="math notranslate nohighlight">\(A\)</span>, so <span class="math notranslate nohighlight">\(A_1\)</span> contains every succeeding set (and <span class="math notranslate nohighlight">\(A\)</span> itself).</p>
+</section>
+</section>
+<section id="probability-measures">
+<h2><span class="section-number">2.1.4. </span>Probability measures<a class="headerlink" href="#probability-measures" title="Permalink to this headline">#</a></h2>
+<p>Finally, we are ready for the most important concept of this section: the probability measure. To define a probability measure, we really don’t need to do much: we just add a single property to the definition of measure. Since probability measures are measures (but reverse need not be true), all of those nice properties we just learned about measures extend to probability measures, too:</p>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 2.7 </span> (Probability Measure)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. We say that <span class="math notranslate nohighlight">\(\mu\)</span> is a probability measure if <span class="math notranslate nohighlight">\(\mu(\Omega) = 1\)</span>, and we typically denote such measures with <span class="math notranslate nohighlight">\(\mathbb P\)</span>.</p>
+</section>
+</div><p>Nothing to it: all we added was the condition that the measure, or the <em>probability</em>, of the entire event space was <span class="math notranslate nohighlight">\(1\)</span>. Likewise, we have probability spaces:</p>
+<div class="proof definition admonition" id="definition-11">
+<p class="admonition-title"><span class="caption-number">Definition 2.8 </span> (Probability Space)</p>
+<section class="definition-content" id="proof-content">
+<p>The triple <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is called a probability space, where:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is a set (the event space),</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal F\)</span> is a set of events, where <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb P: \mathcal F \rightarrow [0, 1]\)</span> is a probability measure that assigns probabilities to events.</p></li>
+</ol>
+</section>
+</div><p>In that last definition, we snuck in a fact about probability measures <span class="math notranslate nohighlight">\(\mathbb P\)</span>: that their upper bound is always <span class="math notranslate nohighlight">\(1\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb P\)</span> ascribes values in <span class="math notranslate nohighlight">\([0, 1]\)</span>), which wasn’t <em>quite</em> what the definition of a probability measure states unless you look closely. This is a consequence of the fact that any <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>; e.g., <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>, so therefore <span class="math notranslate nohighlight">\(\mathbb P(F) \leq \mathbb P(\Omega) = 1\)</span>, simply by <a class="reference internal" href="#uv:mt:prob_spaces:meas:monotone">Theorem 2.1</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./uv/measure_theory"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="measure_theory.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Measure Theory</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="random_variables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Random Variables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Eric W. Bridgeford<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
