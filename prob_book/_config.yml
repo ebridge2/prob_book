@@ -9,7 +9,6 @@ parse:
   myst_enable_extensions:
     - dollarmath
     - amsmath
-    - ericmath
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -30,7 +29,7 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   extra_extensions:
     - sphinx_proof
-
+    - sphinx_togglebutton
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib

@@ -13,9 +13,9 @@ parts:
       chapters:
         - file: foundations/foundations
           sections:
-            - file: foundations/limits
-            - file: foundations/convergence_tests
+            - file: foundations/limits 
             - file: foundations/useful_results
+            - file: foundations/convergence_tests
     - caption: Univariate Probability Theory
       numbered: True
       chapters:
