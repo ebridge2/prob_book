@@ -492,7 +492,27 @@ title="Print to PDF"
      2.2.3.1. Properties of Measurability
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-operations">
+     2.2.3.2. Mathematical Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extrema">
+     2.2.3.3. Extrema
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#induced-distributions">
+   2.2.4. Induced Distributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribution-functions">
+   2.2.5. Distribution functions
+  </a>
  </li>
 </ul>
 
@@ -533,7 +553,27 @@ title="Print to PDF"
      2.2.3.1. Properties of Measurability
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-operations">
+     2.2.3.2. Mathematical Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extrema">
+     2.2.3.3. Extrema
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#induced-distributions">
+   2.2.4. Induced Distributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribution-functions">
+   2.2.5. Distribution functions
+  </a>
  </li>
 </ul>
 
@@ -595,19 +635,20 @@ title="Print to PDF"
     \end{cases}\end{split}\]</div>
 <p>is <span class="math notranslate nohighlight">\(m\mathcal F\)</span>.</p>
 </section>
-</div><p>We also have an equivalent characterization of the definition for a random variable, that will be helpful for proofs:</p>
+</div><p>We also have an equivalent, if slightly more direct, characterization of the definition for a random variable, that will be helpful for proofs:</p>
 <div class="proof remark admonition" id="uv:mt:rvs:rv:equiv">
-<p class="admonition-title"><span class="caption-number">Remark 2.5 </span> (Inverse map)</p>
+<p class="admonition-title"><span class="caption-number">Remark 2.5 </span> (Equivalent characterization for <span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span> random variable)</p>
 <section class="remark-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are two measurable spaces, and <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. An equivalent interpretation of the definition of a random variable is that <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 </section>
-</div><p>Let’s take a look at what this characterization looks like with a similar figure to the one we saw before:</p>
+</div><p>This definition is identical to <a class="reference internal" href="#uv:mt:rvs:rv">Definition 2.12</a> and says it in a lot less words/math speak, and gives you a better idea regarding what’s going on. Further, as we’ll see later, use of this characterization will make proofs a little more obvious. Let’s take a look at what this characterization says with a similar figure to the one we saw before:</p>
 <figure class="align-default" id="uv-mt-rvs-preimage-fig">
 <a class="reference internal image-reference" href="../../_images/preimage.png"><img alt="../../_images/preimage.png" src="../../_images/preimage.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Here, we instead start with the dark red circles, <span class="math notranslate nohighlight">\(B\)</span>. The preimage of <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span>, are the dark blue circles, and the set comprising these dark blue circles is in <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</span><a class="headerlink" href="#uv-mt-rvs-preimage-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>Finally, if it isn’t clear to you already, let’s just take a little step back and think about the word “random”:</p>
 <div class="proof remark admonition" id="remark-5">
 <p class="admonition-title"><span class="caption-number">Remark 2.6 </span></p>
 <section class="remark-content" id="proof-content">
@@ -649,9 +690,8 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}B_n  \in \mathcal B\)</span>.</p>
 <p>Then by construction, <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal B)\)</span>.</p>
 <p>Finally, we have to show that <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\(m(\mathcal F, \mathcal \Sigma)\)</span>.</p>
-<p>Notice that <span class="math notranslate nohighlight">\(\mathcal B \supseteq \Sigma\)</span>.</p>
 <p>By construction, <span class="math notranslate nohighlight">\(\mathcal B \supseteq \mathcal A\)</span>, where <span class="math notranslate nohighlight">\(\Sigma = \sigma(\mathcal A)\)</span>.</p>
-<p>Then since <span class="math notranslate nohighlight">\(\mathcal B\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:sig:preserve">Lemma 2.2</a>, <span class="math notranslate nohighlight">\(\mathcal B \supseteq \Sigma = \sigma(\mathcal A)\)</span>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(\mathcal B\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra that contains <span class="math notranslate nohighlight">\(\mathcal A\)</span>, by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:sig:preserve">Lemma 2.2</a>, <span class="math notranslate nohighlight">\(\mathcal B \supseteq \Sigma = \sigma(\mathcal A)\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, by <a class="reference internal" href="#uv:mt:rvs:rv:equiv">Remark 2.5</a>.</p>
 </div>
@@ -665,12 +705,13 @@ title="Print to PDF"
 \[\begin{split}    \sigma(X) &amp;\triangleq \{\{\omega : X(\omega) \in B\} : B \in \Sigma\} \equiv \{\{X \in B\} : B \in \Sigma\} \\
     &amp;\equiv \{X^{-1}(B) : B \in \Sigma\}  = X^{-1}(\Sigma)\end{split}\]</div>
 </section>
-</div></section>
+</div><p>Now that we have these two properties down, we’re going to take a look at how to use them in practice.</p>
+</section>
 <section id="elementary-operations">
 <h2><span class="section-number">2.2.3. </span>Elementary Operations<a class="headerlink" href="#elementary-operations" title="Permalink to this headline">#</a></h2>
 <p>Random variables can do lots of interesting and useful things. One of the easiest to wrap your head around is composition:</p>
 <div class="proof lemma admonition" id="uv:mt:rvs:elem:comp">
-<p class="admonition-title"><span class="caption-number">Lemma 2.5 </span> (Composition Lemma)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 2.3 </span> (Composition Lemma)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, and <span class="math notranslate nohighlight">\((T, \mathcal T)\)</span> are measurable spaces, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal T)\)</span>. Then <span class="math notranslate nohighlight">\(f \circ X = f(X) \in m(\mathcal F, \mathcal T)\)</span>.</p>
 </section>
@@ -691,6 +732,7 @@ title="Print to PDF"
 </div>
 <section id="properties-of-measurability">
 <h3><span class="section-number">2.2.3.1. </span>Properties of Measurability<a class="headerlink" href="#properties-of-measurability" title="Permalink to this headline">#</a></h3>
+<p>Also, measurability comes with some nice properties. First and foremost, the preimage of random variables preserve set unions and complements:</p>
 <div class="proof lemma admonition" id="uv:mt:rvs:elem:set">
 <p class="admonition-title"><span class="caption-number">Lemma 2.4 </span> (Measurable functions preserve elementary set operations)</p>
 <section class="lemma-content" id="proof-content">
@@ -713,7 +755,7 @@ title="Print to PDF"
 &amp;= \left(h^{-1}(F_i)\right)^c\end{split}\]</div>
 </div>
 <p>Next, we’ll see how continuity and measurability go hand-in-hand:</p>
-<div class="proof lemma admonition" id="uv:mt:rvs:elem:comp">
+<div class="proof lemma admonition" id="uv:mt:rvs:elem:cont">
 <p class="admonition-title"><span class="caption-number">Lemma 2.5 </span> (Continuity implies measurability)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and suppose that <span class="math notranslate nohighlight">\(h : \Omega \rightarrow \mathbb R\)</span> is continuous. Then <span class="math notranslate nohighlight">\(h \in m(\mathcal B(\Omega), \mathcal R)\)</span>.</p>
@@ -725,8 +767,9 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(B \subseteq \mathcal B(\Omega)\)</span>, for every <span class="math notranslate nohighlight">\(C \in \mathcal C\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(X^{-1} : \mathcal C \rightarrow \mathcal B(\Omega)\)</span>, so by <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a>, <span class="math notranslate nohighlight">\(X^{-1} : \sigma(\mathcal C) = \mathcal R \rightarrow \mathcal B(\Omega)\)</span>, and <span class="math notranslate nohighlight">\(X \in m(\mathcal B(\Omega), \mathcal R)\)</span>.</p>
 </div>
-<p>Finally, we’ll see an extremely useful corollary of <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a> when we are concerned with <span class="math notranslate nohighlight">\(\mathcal R\)</span>. This corollary will make proving measurability quite easy for some sets of functions:</p>
-<div class="proof corollary admonition" id="uv:mt:rvs:elem:comp">
+<p>This means that if a function is continuous from <span class="math notranslate nohighlight">\(\Omega\)</span> to <span class="math notranslate nohighlight">\(\mathbb R\)</span>, it is a <span class="math notranslate nohighlight">\((\mathcal B(\Omega), \mathcal R)\)</span> random variable.</p>
+<p>Finally, we’ll see an extremely useful corollary of <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a> when the codomain is <span class="math notranslate nohighlight">\(\mathbb R\)</span> and the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is <span class="math notranslate nohighlight">\(\mathcal R\)</span>. This corollary will make proving measurability quite easy for some sets of functions:</p>
+<div class="proof corollary admonition" id="uv:mt:rvs:elem:gen_sets_borel">
 <p class="admonition-title"><span class="caption-number">Corollary 2.1 </span> (Generator sets of <span class="math notranslate nohighlight">\(\mathcal R\)</span>)</p>
 <section class="corollary-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces. Then <span class="math notranslate nohighlight">\(h \in m(\mathcal F, \mathcal R) \iff \{h \leq \lambda\} \in m(\mathcal F, \mathcal R)\)</span> for any <span class="math notranslate nohighlight">\(\lambda \in \mathbb R\)</span>.</p>
@@ -740,7 +783,85 @@ title="Print to PDF"
 <p>Then note that by supposition that <span class="math notranslate nohighlight">\(\{h \leq \lambda\} \equiv h^{-1}(-\infty, \lambda] \in \mathcal F\)</span>, so for any <span class="math notranslate nohighlight">\(C \in \mathcal C\)</span>, <span class="math notranslate nohighlight">\(h^{-1}(C) \in \mathcal F\)</span>.</p>
 <p>Then by <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a>, <span class="math notranslate nohighlight">\(h \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </div>
+<p>Pretty neat, right? So, when the codomain is <span class="math notranslate nohighlight">\(\mathbb R\)</span>, all we need to do is prove it on generator sets. In the other direction, we also obtain that if we have a random variable, we can determine inequalities about it, which we’ll use later on extensively. It is not hard to conceptualize that we can use this property to deduce inequalities all of the other inequalities as well, by chaining this result together with <a class="reference internal" href="#uv:mt:rvs:elem:cont">Lemma 2.5</a> and using properties about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras. Let’s see how we can use it now.</p>
 </section>
+<section id="mathematical-operations">
+<h3><span class="section-number">2.2.3.2. </span>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline">#</a></h3>
+<p>If we want to be able to use random variables, it would be extremely convenient if we could add, multiply, and rescale them. We’ll formalize these operations now, which if you take notice, will all be trivial applications of <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a> like we just discussed:</p>
+<div class="proof theorem admonition" id="uv:mt:rvs:elem:math:add">
+<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span> (Addition of Random Variables)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and that <span class="math notranslate nohighlight">\(X_1, X_2 \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>.  Then <span class="math notranslate nohighlight">\(X_1 \circ X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Denote <span class="math notranslate nohighlight">\(Y = X_1 + X_2 \equiv Y(\omega) = X_1(\omega) + X_2(\omega)\)</span>.</p>
+<p>By <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, it suffices to show that for every <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>, that <span class="math notranslate nohighlight">\(\{Y \leq r\} \equiv \{\omega : Y(\omega) \leq r\} \in \mathcal F\)</span>.</p>
+<p>Note that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \{Y \leq r\} &amp;= \{X_1 + X_2 \leq r\} \\
+    &amp;= \{X_1 \leq r - X_2\} \\
+    &amp;= \{X_1 &gt; r - X_2\}^c \\
+    &amp;= \{X_1 &gt; q &gt; r - X_2\}^c,\,\,\,\, q \in \mathbb Q\end{split}\]</div>
+<p>This result follows because, if <span class="math notranslate nohighlight">\(X_1(\omega), r - X_2(\omega) \in \mathbb R\)</span>, then <span class="math notranslate nohighlight">\(\exists q \in \mathbb Q\)</span> s.t. <span class="math notranslate nohighlight">\(q \in (X_1(\omega), r - X_2(\omega))\)</span>.</p>
+<p>Continuing, and noting that the existence of such a <span class="math notranslate nohighlight">\(\mathbb Q\)</span> implies that we can take the (countable, as <span class="math notranslate nohighlight">\(\mathbb Q\)</span> is countably infinite) union of all of these such sets:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \{Y \leq r\} &amp;= \left(\bigcup_{q \in \mathbb Q}\{X_1 &gt; q &gt; r - X_2\}\right)^c \\
+    \{Y \leq r\} &amp;= \left(\bigcup_{q \in \mathbb Q}\{X_1 &gt; q\} \cap \{q &gt; r - X_2\}\right)^c\end{split}\]</div>
+<p>Remember that <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, so since <span class="math notranslate nohighlight">\(X_1, X_2 \in m(\mathcal F, \mathcal R)\)</span>, then <span class="math notranslate nohighlight">\(\{X_1 &gt; q\}, \{q &gt; r - X_2\} \equiv \{X_2 &gt; r - q\}\)</span>, their finite intersection, the countable union, and the complement are also in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, because <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under all of these operations.</p>
+<p>Then <span class="math notranslate nohighlight">\(\{Y \leq r\} \in \mathcal F\)</span>.</p>
+<p>Then by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y = X_1 + X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</div>
+<div class="proof theorem admonition" id="uv:mt:rvs:elem:math:multiply">
+<p class="admonition-title"><span class="caption-number">Theorem 2.8 </span> (Multiplication of Random Variables)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and that <span class="math notranslate nohighlight">\(X_1, X_2 \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(X_1 + X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Denote <span class="math notranslate nohighlight">\(Y = X_1 \cdot X_2 \equiv Y(\omega) = X_1(\omega)X_2(\omega)\)</span>.</p>
+<p>By <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a> and <a class="reference internal" href="#uv:mt:rvs:elem:set">Lemma 2.4</a>, it suffices to show that for every <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>, that <span class="math notranslate nohighlight">\(\{Y &gt; r\} \equiv \{\omega : Y(\omega) &gt; r\} \in \mathcal F\)</span>.</p>
+<p>Suppose WOLOG that <span class="math notranslate nohighlight">\(X_1, X_2\)</span> are s.t. <span class="math notranslate nohighlight">\(X_1(\omega), X_2(\omega) \geq 0\)</span> for all <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>.</p>
+<p>Note that for all <span class="math notranslate nohighlight">\(r \in \mathbb R_{&lt; 0}\)</span>, that:</p>
+<div class="math notranslate nohighlight">
+\[    \{\omega \in \Omega : X_1(\omega)X_2(\omega) &gt; r\} = \Omega \in \mathcal F\]</div>
+<p>since <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra and must contain the event space.</p>
+<p>If <span class="math notranslate nohighlight">\(r \geq 0\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \{\omega \in \Omega : X_1(\omega)X_2(\omega) &gt; r\} &amp;= \bigcup_{q \in \mathbb Q_{&gt; 0}}\left\{\omega \in \Omega : X_1(\omega) &gt; q, X_2(\omega) &gt; \frac{r}{q}\right\} \\
+    &amp;= \bigcup_{q \in \mathbb Q_{&gt; 0}}\left(\left\{\omega \in \Omega : X_1(\omega) &gt; q\right\}\cap \left\{\omega \in \Omega : X_2(\omega) &gt; \frac{r}{q}\right\}\right) \\
+    &amp;\in \mathcal F\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, and hence closed under countable unions and finite intersections in <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
+<p>Then by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y = X_1 \cdot X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</div>
+<p>In the preceding proof, we made our lives a lot easier with the WOLOG statement; you could also repeat (nearly) same argument, going case-by-case, for the cases where <span class="math notranslate nohighlight">\(X_1(\omega) &lt; 0\)</span> but <span class="math notranslate nohighlight">\(X_2(\omega) \geq 0\)</span>, so on and so-forth.</p>
+<div class="proof theorem admonition" id="uv:mt:rvs:elem:math:add">
+<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span> (Rescaling of Random Variables)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, that <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>, and <span class="math notranslate nohighlight">\(\lambda \in \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(\lambda X \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. If <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, then for any <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \{\omega \in \Omega : \lambda X(\omega) &gt; r\} = \{\omega \in \Omega : 0 &gt; r\} \in \{\Omega, \varnothing\} \in \mathcal F,\]</div>
+<p>since <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra (and hence contains the event space <span class="math notranslate nohighlight">\(\Omega\)</span> and its complement, the empty set <span class="math notranslate nohighlight">\(\varnothing\)</span>).</p>
+<p>If <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span>, then for <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \{\omega \in \Omega : \lambda X(\omega) &gt; r\} &amp;= \begin{cases}
+        \{\omega \in \Omega : X(\omega) &gt; \frac{r}{\lambda}\}, &amp; \lambda &gt; 0 \\
+        \{\omega \in \Omega : X(\omega) &lt; \frac{r}{\lambda}\}, &amp; \lambda &lt; 0
+    \end{cases} \in \mathcal F\end{split}\]</div>
+<p>which follows by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a> and <a class="reference internal" href="#uv:mt:rvs:elem:set">Lemma 2.4</a>.</p>
+<p>Then by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y = \lambda X \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</div>
+</section>
+<section id="extrema">
+<h3><span class="section-number">2.2.3.3. </span>Extrema<a class="headerlink" href="#extrema" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="induced-distributions">
+<h2><span class="section-number">2.2.4. </span>Induced Distributions<a class="headerlink" href="#induced-distributions" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="distribution-functions">
+<h2><span class="section-number">2.2.5. </span>Distribution functions<a class="headerlink" href="#distribution-functions" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
