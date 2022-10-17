@@ -482,6 +482,11 @@ title="Print to PDF"
    2.2.2. Generators
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elementary-operations">
+   2.2.3. Elementary Operations
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -509,6 +514,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generators">
    2.2.2. Generators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elementary-operations">
+   2.2.3. Elementary Operations
   </a>
  </li>
 </ul>
@@ -539,14 +549,14 @@ title="Print to PDF"
 </section>
 </div><p>That definition was quite large, and the interpretation of this definition is really at the heart of the difference between traditional probability and statistics with measure theoretic probability and statistics. Let’s break down all of the things that this definition is saying.</p>
 <p>The first aspect to fixate on here is that for some <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(X\)</span> maps <span class="math notranslate nohighlight">\(\omega\)</span> to some other point <span class="math notranslate nohighlight">\(s \in \mathcal S\)</span>.</p>
-<p>All that the first line says is that, when we take some subset of the codomain <span class="math notranslate nohighlight">\(S\)</span> that is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\Sigma\)</span>, <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, that the set of all <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(X(\omega) \in B\)</span> is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span> (this is made extremely clear by the right-most set). Stated mathematically, for any <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, the <em>preimage</em> of <span class="math notranslate nohighlight">\(B\)</span> is in <span class="math notranslate nohighlight">\(\mathcal F\)</span>. The left two notations, <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> and <span class="math notranslate nohighlight">\(\{X \in B\}\)</span>, are simply shorthands for the statement at the right. Random variables can, and will, become extremely confusing simply by way of people seeing the shorthands, and then forgetting what the shorthand actually means. The idea is that the preimage of elements of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of <span class="math notranslate nohighlight">\(S\)</span> are in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of <span class="math notranslate nohighlight">\(\Omega\)</span>. In a figure, this looks kind of like this:</p>
+<p>All that the first line says is that, when we take some subset of the codomain <span class="math notranslate nohighlight">\(S\)</span> that is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\Sigma\)</span>, <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, that the set of all <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(X(\omega) \in B\)</span> is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span> (this is made extremely clear by the right-most set). Stated mathematically, for any <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, the <em>preimage</em> of <span class="math notranslate nohighlight">\(B\)</span> is in <span class="math notranslate nohighlight">\(\mathcal F\)</span>. The left two notations, <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> and <span class="math notranslate nohighlight">\(\{X \in B\}\)</span>, are simply shorthands for the statement at the right. Random variables can, and will, become extremely confusing simply by way of people seeing the shorthands, and then forgetting what the shorthand actually means. The <span class="math notranslate nohighlight">\(\equiv\)</span> symbol is just used to make explicit that the notations are not just equal, they say exactly the same thing. The idea is that the preimage of elements of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of <span class="math notranslate nohighlight">\(S\)</span> are in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of <span class="math notranslate nohighlight">\(\Omega\)</span>. In a figure, this looks kind of like this:</p>
 <figure class="align-default" id="uv-mt-rvs-measurable-fig">
 <a class="reference internal image-reference" href="../../_images/measurable.png"><img alt="../../_images/measurable.png" src="../../_images/measurable.png" style="width: 700px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Here, the blue circle represents the event space <span class="math notranslate nohighlight">\(\Omega\)</span>, and the target space <span class="math notranslate nohighlight">\(S\)</span> is represented by the red square. For some <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, represented by the dark red circles, there are a set of <span class="math notranslate nohighlight">\(\omega\)</span>s which are a subset of <span class="math notranslate nohighlight">\(\Omega\)</span> that map to <span class="math notranslate nohighlight">\(B\)</span> under <span class="math notranslate nohighlight">\(X\)</span>. The collection of all such <span class="math notranslate nohighlight">\(\omega\)</span>s, here shown in dark blue circles, comprise a set which is in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>.</span><a class="headerlink" href="#uv-mt-rvs-measurable-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The bottom line simply states this another way. This notation can get confusing, and we are not going to write it out so nicely every time, so take a long hard look at the previous definition, the equivalent notations, and learn to love them!</p>
+<p>The bottom line simply states this another way. This notation can get confusing, and while I’m going to take the time to write out the equivalences every time the first few times you see these sets arise, I’m not always going to write it out every time. Take a long hard look at the previous definition, the equivalent notations, and learn to love them!</p>
 <div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 2.3 </span> (Shorthand when codomain is a subset of the reals)</p>
 <section class="remark-content" id="proof-content">
@@ -577,7 +587,14 @@ title="Print to PDF"
 <section class="remark-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are two measurable spaces, and <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. An equivalent interpretation of the definition of a random variable is that <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 </section>
-</div><div class="proof remark admonition" id="remark-5">
+</div><p>Let’s take a look at what this characterization looks like with a similar figure to the one we saw before:</p>
+<figure class="align-default" id="uv-mt-rvs-preimage-fig">
+<a class="reference internal image-reference" href="../../_images/preimage.png"><img alt="../../_images/preimage.png" src="../../_images/preimage.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Here, we instead start with the dark red circles, <span class="math notranslate nohighlight">\(B\)</span>. The preimage of <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span>, are the dark blue circles, and the set comprising these dark blue circles is in <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</span><a class="headerlink" href="#uv-mt-rvs-preimage-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="proof remark admonition" id="remark-5">
 <p class="admonition-title"><span class="caption-number">Remark 2.6 </span></p>
 <section class="remark-content" id="proof-content">
 <p>You’ll often see us go back and forth throughout this book using the words measurable and random variable. Probability theorists tend to like the word random variable, and mathematicians tend to like the word measurable. We will tend to stick to the probability theory language later on, but it is important to cement in your head that there is nothing “random” about these things really; random variables (measurable functions), follow a prescribed set of rules, and really thinking hard about these rules will make them feel a little less mysterious.</p>
@@ -586,7 +603,7 @@ title="Print to PDF"
 <section id="generators">
 <h2><span class="section-number">2.2.2. </span>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">#</a></h2>
 <p>Just like we could identify <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras from generating sets, we can identify random variables from generating sets:</p>
-<div class="proof theorem admonition" id="uv:mt:rvs:generator">
+<div class="proof theorem admonition" id="uv:mt:rvs:generator_set">
 <p class="admonition-title"><span class="caption-number">Theorem 2.6 </span> (Random variable induced by generating sets)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are measurable spaces. that <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>, and that <span class="math notranslate nohighlight">\(\Sigma = \sigma(\mathcal A)\)</span> for some family of subsets <span class="math notranslate nohighlight">\(A \in \mathcal A\)</span>, where <span class="math notranslate nohighlight">\(A \subseteq S\)</span>. Then if for all <span class="math notranslate nohighlight">\(A \in \mathcal A\)</span>:</p>
@@ -624,7 +641,40 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, by <a class="reference internal" href="#uv:mt:rvs:rv:equiv">Remark 2.5</a>.</p>
 </div>
-<p>Why is this result so important? As it turns out, establishing measurability of a function can be rather difficult. For instance, if the codomain is the real line <span class="math notranslate nohighlight">\(\mathbb R\)</span> and the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is <span class="math notranslate nohighlight">\(\mathcal R\)</span>, it might be really hard to establish that <a class="reference internal" href="#uv:mt:rvs:rv">Definition 2.12</a> holds for every possible element of the <span class="math notranslate nohighlight">\(\mathcal R\)</span> (this, of course, being because describing <span class="math notranslate nohighlight">\(\mathcal R\)</span> in and of itself is tedious if not impossible). However, we can describe generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>, and then we can use <a class="reference internal" href="#uv:mt:rvs:generator">Theorem 2.6</a> to evaluate whether a function is measurable (a random variable).</p>
+<p>Why is this result so important? As it turns out, establishing measurability of a function can be rather difficult. For instance, if the codomain is the real line <span class="math notranslate nohighlight">\(\mathbb R\)</span> and the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is <span class="math notranslate nohighlight">\(\mathcal R\)</span>, it might be really hard to establish that <a class="reference internal" href="#uv:mt:rvs:rv">Definition 2.12</a> holds for every possible element of the <span class="math notranslate nohighlight">\(\mathcal R\)</span> (this, of course, being because describing <span class="math notranslate nohighlight">\(\mathcal R\)</span> in and of itself is tedious if not impossible). However, we can describe generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>, and then we can use <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a> to evaluate whether a function is measurable (a random variable).</p>
+<p>Further, <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras can be generated by random variables, as well:</p>
+<div class="proof definition admonition" id="uv:mt:rvs:generator_rv">
+<p class="admonition-title"><span class="caption-number">Definition 2.13 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by random variable)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are measurable spaces. Then the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \sigma(X) &amp;\triangleq \{\{\omega : X(\omega) \in B\} : B \in \Sigma\} \equiv \{\{X \in B\} : B \in \Sigma\} \\
+    &amp;\equiv \{X^{-1}(B) : B \in \Sigma\}  = X^{-1}(\Sigma)\end{split}\]</div>
+</section>
+</div></section>
+<section id="elementary-operations">
+<h2><span class="section-number">2.2.3. </span>Elementary Operations<a class="headerlink" href="#elementary-operations" title="Permalink to this headline">#</a></h2>
+<p>Random variables can do lots of interesting and useful things. One of the easiest to wrap your head around is composition:</p>
+<div class="proof lemma admonition" id="lemma-8">
+<p class="admonition-title"><span class="caption-number">Lemma 2.3 </span> (Composition Lemma)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, and <span class="math notranslate nohighlight">\((T, \mathcal T)\)</span> are measurable spaces, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal T)\)</span>. Then <span class="math notranslate nohighlight">\(f \circ X = f(X) \in m(\mathcal F, \mathcal T)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Recall that for <span class="math notranslate nohighlight">\(f(X) \in m(\mathcal F, \mathcal T)\)</span>, that <span class="math notranslate nohighlight">\((f\circ X)^{-1} : \mathcal T \rightarrow \mathcal F\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(B \in \mathcal T\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \left\{(f\circ X)^{-1}(B)\right\} &amp;\equiv \left\{\omega : (f\circ X)(\omega) \in B\right\} \\
+    &amp;\equiv  \left\{\omega : f(X(\omega)) \in B\right\},\,\,\,\,\text{defn. composition} \\
+    &amp;= \left\{\omega : X(\omega) \in f^{-1}(B)\right\}\end{split}\]</div>
+<p>Notice that with <span class="math notranslate nohighlight">\(E = f^{-1}(B)\)</span>, that <span class="math notranslate nohighlight">\(E \in \Sigma\)</span>, since <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal T)\)</span>. Therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \left\{(f\circ X)^{-1}(B)\right\} &amp;= \left\{\omega : X(\omega) \in E\right\} \\
+    &amp;= X^{-1}(E) \in \mathcal F\end{split}\]</div>
+<p>which follows because <span class="math notranslate nohighlight">\(X \in m(\mathcal \Sigma, \mathcal F)\)</span>.</p>
+<p>Therefore <span class="math notranslate nohighlight">\(f \circ X \in m(\mathcal F, \mathcal T)\)</span>.</p>
+</div>
 </section>
 </section>
 
