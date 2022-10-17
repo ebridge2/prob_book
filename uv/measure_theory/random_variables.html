@@ -504,16 +504,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#induced-distributions">
-   2.2.4. Induced Distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distribution-functions">
-   2.2.5. Distribution functions
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -564,16 +554,6 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#induced-distributions">
-   2.2.4. Induced Distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distribution-functions">
-   2.2.5. Distribution functions
-  </a>
  </li>
 </ul>
 
@@ -783,13 +763,18 @@ title="Print to PDF"
 <p>Then note that by supposition that <span class="math notranslate nohighlight">\(\{h \leq \lambda\} \equiv h^{-1}(-\infty, \lambda] \in \mathcal F\)</span>, so for any <span class="math notranslate nohighlight">\(C \in \mathcal C\)</span>, <span class="math notranslate nohighlight">\(h^{-1}(C) \in \mathcal F\)</span>.</p>
 <p>Then by <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a>, <span class="math notranslate nohighlight">\(h \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </div>
-<p>Pretty neat, right? So, when the codomain is <span class="math notranslate nohighlight">\(\mathbb R\)</span>, all we need to do is prove it on generator sets. In the other direction, we also obtain that if we have a random variable, we can determine inequalities about it, which we’ll use later on extensively. It is not hard to conceptualize that we can use this property to deduce inequalities all of the other inequalities as well, by chaining this result together with <a class="reference internal" href="#uv:mt:rvs:elem:cont">Lemma 2.5</a> and using properties about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras. Let’s see how we can use it now.</p>
+<p>Pretty neat, right? So, when the codomain is <span class="math notranslate nohighlight">\(\mathbb R\)</span>, all we need to do is prove it on generator sets. In the other direction, we also obtain that if we have a random variable, we can determine inequalities about it, which we’ll use later on extensively.</p>
+<div class="proof remark admonition" id="remark-12">
+<p class="admonition-title"><span class="caption-number">Remark 2.7 </span></p>
+<section class="remark-content" id="proof-content">
+<p>It is not hard to conceptualize that we can use this property to deduce all of the other inequalities as well, by chaining this result together with <a class="reference internal" href="#uv:mt:rvs:elem:cont">Lemma 2.5</a> and using properties about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras (closures under complements, countable intersections, countable unions, and containing the event space). Let’s see how we can use it now. Note that we might refer back to this theorem with <em>other</em> generator sets, but you should have in your head that the process/intuitition is the same across all of these results.</p>
 </section>
+</div></section>
 <section id="mathematical-operations">
 <h3><span class="section-number">2.2.3.2. </span>Mathematical Operations<a class="headerlink" href="#mathematical-operations" title="Permalink to this headline">#</a></h3>
 <p>If we want to be able to use random variables, it would be extremely convenient if we could add, multiply, and rescale them. We’ll formalize these operations now, which if you take notice, will all be trivial applications of <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a> like we just discussed:</p>
 <div class="proof theorem admonition" id="uv:mt:rvs:elem:math:add">
-<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span> (Addition of Random Variables)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span> (Addition of random variables)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and that <span class="math notranslate nohighlight">\(X_1, X_2 \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>.  Then <span class="math notranslate nohighlight">\(X_1 \circ X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </section>
@@ -812,7 +797,7 @@ title="Print to PDF"
 <p>Then by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y = X_1 + X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </div>
 <div class="proof theorem admonition" id="uv:mt:rvs:elem:math:multiply">
-<p class="admonition-title"><span class="caption-number">Theorem 2.8 </span> (Multiplication of Random Variables)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.8 </span> (Multiplication of random variables)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and that <span class="math notranslate nohighlight">\(X_1, X_2 \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(X_1 + X_2 \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </section>
@@ -834,7 +819,7 @@ title="Print to PDF"
 </div>
 <p>In the preceding proof, we made our lives a lot easier with the WOLOG statement; you could also repeat (nearly) same argument, going case-by-case, for the cases where <span class="math notranslate nohighlight">\(X_1(\omega) &lt; 0\)</span> but <span class="math notranslate nohighlight">\(X_2(\omega) \geq 0\)</span>, so on and so-forth.</p>
 <div class="proof theorem admonition" id="uv:mt:rvs:elem:math:add">
-<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span> (Rescaling of Random Variables)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.9 </span> (Rescaling of random variables)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, that <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>, and <span class="math notranslate nohighlight">\(\lambda \in \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(\lambda X \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </section>
@@ -855,13 +840,57 @@ title="Print to PDF"
 </section>
 <section id="extrema">
 <h3><span class="section-number">2.2.3.3. </span>Extrema<a class="headerlink" href="#extrema" title="Permalink to this headline">#</a></h3>
+<p>Just like for sequences of real numbers from real analysis, we can consider important quantities that deal with sequences of random variables too. Let’s see how this works:</p>
+<div class="proof theorem admonition" id="uv:mt:rvs:elem:ext:inf">
+<p class="admonition-title"><span class="caption-number">Theorem 2.10 </span> (Infimum is measurable)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(X_n \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces. Then <span class="math notranslate nohighlight">\(Y = \inf_n X_n \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>.</p>
+<p>Recall that with <span class="math notranslate nohighlight">\(Y = \inf_n X_n\)</span>, that if <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(Y(\omega) \geq r\)</span> if for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(X_n(\omega) \geq r\)</span>, by definition of an infimum.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \{\omega : Y(\omega) \geq r\} &amp;= \left\{\omega : \left(\inf n X_n\right)(\omega) \geq r\right\} \\
+    &amp;= \bigcap_n \left\{\omega : X_n(\omega) \geq r\right\},\,\,\,\, Y \geq r \iff \forall n,\, X_n \geq r \\
+    &amp;= \bigcap_n \{X_n \geq r\} \\
+    &amp;\in \mathcal F\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\(X_n \in m(\mathcal F, \mathcal R)\)</span>, so <span class="math notranslate nohighlight">\(\{X_n \geq r\} \in \mathcal F\)</span> by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, and <span class="math notranslate nohighlight">\(\mathcal F\)</span> is closed under countable intersections.</p>
+<p>Then by <a class="reference internal" href="#uv:mt:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</div>
+<p>This theorem asserts that the infimum of a sequence <span class="math notranslate nohighlight">\((X_n)\)</span> of random variables is a random variable, too. The same holds for the supremum:</p>
+<div class="proof theorem admonition" id="uv:mt:rvs:elem:ext:sup">
+<p class="admonition-title"><span class="caption-number">Theorem 2.11 </span> (Supremum is measurable)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(X_n \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces. Then <span class="math notranslate nohighlight">\(Y = \sup_n X_n \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </section>
-<section id="induced-distributions">
-<h2><span class="section-number">2.2.4. </span>Induced Distributions<a class="headerlink" href="#induced-distributions" title="Permalink to this headline">#</a></h2>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>.</p>
+<p>Recall that with <span class="math notranslate nohighlight">\(Y = \sup_n X_n\)</span>, that with <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(Y(\omega) \leq r\)</span> if for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(X_n(\omega) \leq r\)</span>, by definition of a supremum.</p>
+<p>Proceed with the same argument to <a class="reference internal" href="#uv:mt:rvs:elem:ext:inf">Theorem 2.10</a>, instead using the sets <span class="math notranslate nohighlight">\(\{X_n \leq r\}\)</span> within the intersection.</p>
+</div>
+<p>Further, the <span class="math notranslate nohighlight">\(\liminf\)</span> and <span class="math notranslate nohighlight">\(\limsup\)</span> are random variables, too:</p>
+<div class="proof theorem admonition" id="theorem-18">
+<p class="admonition-title"><span class="caption-number">Theorem 2.12 </span> (<span class="math notranslate nohighlight">\(\liminf\)</span> is measurable)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(X_n \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces. Then <span class="math notranslate nohighlight">\(Y = \liminf_n X_n \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </section>
-<section id="distribution-functions">
-<h2><span class="section-number">2.2.5. </span>Distribution functions<a class="headerlink" href="#distribution-functions" title="Permalink to this headline">#</a></h2>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Recall that <span class="math notranslate nohighlight">\(\liminf_n X_n \equiv \sup_n \inf_{m \geq n} X_n\)</span>, and define <span class="math notranslate nohighlight">\(Y_n = \inf_{m \geq n} X_n\)</span>.</p>
+<p>Notice that <span class="math notranslate nohighlight">\(Y_n \in m(\mathcal F, \mathcal R)\)</span>, by <a class="reference internal" href="#uv:mt:rvs:elem:ext:inf">Theorem 2.10</a>.</p>
+<p>Then <span class="math notranslate nohighlight">\(Y = \sup_n Y_n \in m(\mathcal F, \mathcal R)\)</span>, by <a class="reference internal" href="#uv:mt:rvs:elem:ext:sup">Theorem 2.11</a>.</p>
+</div>
+<div class="proof theorem admonition" id="theorem-19">
+<p class="admonition-title"><span class="caption-number">Theorem 2.13 </span> (<span class="math notranslate nohighlight">\(\limsup\)</span> is measurable)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(X_n \in m(\mathcal F, \mathcal R) : \Omega \rightarrow \mathbb R\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces. Then <span class="math notranslate nohighlight">\(Y = \limsup_n X_n \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Recall that <span class="math notranslate nohighlight">\(\limsup_n X_n \equiv \inf_n \sup_{m \geq n} X_n\)</span>, and define <span class="math notranslate nohighlight">\(Y_n = \sup_{m \geq n} X_n\)</span>.</p>
+<p>Notice that <span class="math notranslate nohighlight">\(Y_n \in m(\mathcal F, \mathcal R)\)</span>, by <a class="reference internal" href="#uv:mt:rvs:elem:ext:sup">Theorem 2.11</a>.</p>
+<p>Then <span class="math notranslate nohighlight">\(Y = \sup_n Y_n \in m(\mathcal F, \mathcal R)\)</span>, by <a class="reference internal" href="#uv:mt:rvs:elem:ext:inf">Theorem 2.10</a>.</p>
+</div>
+</section>
 </section>
 </section>
 
