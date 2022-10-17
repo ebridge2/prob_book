@@ -23,6 +23,7 @@ parts:
           sections:
             - file: uv/measure_theory/probability_spaces
             - file: uv/measure_theory/random_variables
+            - file: uv/measure_theory/distns
             - file: uv/measure_theory/int
             - file: uv/measure_theory/prod_meas
         - file: uv/llns/llns
