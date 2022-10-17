@@ -473,8 +473,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurability">
+   2.2.1. Measurability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generators">
-   2.2.1. Generators
+   2.2.2. Generators
   </a>
  </li>
 </ul>
@@ -497,8 +502,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurability">
+   2.2.1. Measurability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#generators">
-   2.2.1. Generators
+   2.2.2. Generators
   </a>
  </li>
 </ul>
@@ -513,6 +523,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="random-variables">
 <span id="uv-mt-rvs"></span><h1><span class="section-number">2.2. </span>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this headline">#</a></h1>
+<section id="measurability">
+<h2><span class="section-number">2.2.1. </span>Measurability<a class="headerlink" href="#measurability" title="Permalink to this headline">#</a></h2>
 <p>Next up is one of the most misunderstood (and most unnecessarily terrifying) concepts of traditional probability and statistics courses: the random variable. Let’s start with a definition:</p>
 <div class="proof definition admonition" id="uv:mt:rvs:rv">
 <p class="admonition-title"><span class="caption-number">Definition 2.12 </span> (<span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-Random Variable)</p>
@@ -563,10 +575,16 @@ title="Print to PDF"
 <div class="proof remark admonition" id="uv:mt:rvs:rv:equiv">
 <p class="admonition-title"><span class="caption-number">Remark 2.5 </span> (Inverse map)</p>
 <section class="remark-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are two measurable spaces, and <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. An equivalent criterion to the definition of a random variable is that <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are two measurable spaces, and <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. An equivalent interpretation of the definition of a random variable is that <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 </section>
-</div><section id="generators">
-<h2><span class="section-number">2.2.1. </span>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">#</a></h2>
+</div><div class="proof remark admonition" id="remark-5">
+<p class="admonition-title"><span class="caption-number">Remark 2.6 </span></p>
+<section class="remark-content" id="proof-content">
+<p>You’ll often see us go back and forth throughout this book using the words measurable and random variable. Probability theorists tend to like the word random variable, and mathematicians tend to like the word measurable. We will tend to stick to the probability theory language later on, but it is important to cement in your head that there is nothing “random” about these things really; random variables (measurable functions), follow a prescribed set of rules, and really thinking hard about these rules will make them feel a little less mysterious.</p>
+</section>
+</div></section>
+<section id="generators">
+<h2><span class="section-number">2.2.2. </span>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">#</a></h2>
 <p>Just like we could identify <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras from generating sets, we can identify random variables from generating sets:</p>
 <div class="proof theorem admonition" id="uv:mt:rvs:generator">
 <p class="admonition-title"><span class="caption-number">Theorem 2.6 </span> (Random variable induced by generating sets)</p>
