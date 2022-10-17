@@ -486,6 +486,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#elementary-operations">
    2.2.3. Elementary Operations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-measurability">
+     2.2.3.1. Properties of Measurability
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -520,6 +527,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#elementary-operations">
    2.2.3. Elementary Operations
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-measurability">
+     2.2.3.1. Properties of Measurability
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -655,8 +669,8 @@ title="Print to PDF"
 <section id="elementary-operations">
 <h2><span class="section-number">2.2.3. </span>Elementary Operations<a class="headerlink" href="#elementary-operations" title="Permalink to this headline">#</a></h2>
 <p>Random variables can do lots of interesting and useful things. One of the easiest to wrap your head around is composition:</p>
-<div class="proof lemma admonition" id="lemma-8">
-<p class="admonition-title"><span class="caption-number">Lemma 2.3 </span> (Composition Lemma)</p>
+<div class="proof lemma admonition" id="uv:mt:rvs:elem:comp">
+<p class="admonition-title"><span class="caption-number">Lemma 2.5 </span> (Composition Lemma)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, and <span class="math notranslate nohighlight">\((T, \mathcal T)\)</span> are measurable spaces, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal T)\)</span>. Then <span class="math notranslate nohighlight">\(f \circ X = f(X) \in m(\mathcal F, \mathcal T)\)</span>.</p>
 </section>
@@ -675,6 +689,58 @@ title="Print to PDF"
 <p>which follows because <span class="math notranslate nohighlight">\(X \in m(\mathcal \Sigma, \mathcal F)\)</span>.</p>
 <p>Therefore <span class="math notranslate nohighlight">\(f \circ X \in m(\mathcal F, \mathcal T)\)</span>.</p>
 </div>
+<section id="properties-of-measurability">
+<h3><span class="section-number">2.2.3.1. </span>Properties of Measurability<a class="headerlink" href="#properties-of-measurability" title="Permalink to this headline">#</a></h3>
+<div class="proof lemma admonition" id="uv:mt:rvs:elem:set">
+<p class="admonition-title"><span class="caption-number">Lemma 2.4 </span> (Measurable functions preserve elementary set operations)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and further suppose that Suppose that <span class="math notranslate nohighlight">\(h : \Omega \rightarrow \mathbb R\)</span>, <span class="math notranslate nohighlight">\(F_i \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>. Then <span class="math notranslate nohighlight">\(h^{-1}\)</span> preserves elementary set operations; that is:</p>
+<div class="math notranslate nohighlight">
+\[h^{-1}\left(\bigcup_{i \in \mathcal I} F_i\right) = \bigcup_{i \in \mathcal I}h^{-1}(F_i)\;\text{ and }\;h^{-1}(F_i^c) = \left(h^{-1}(F_i)\right)^c\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. 1. Unions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}h^{-1}\left(\bigcup_{i \in \mathcal I} F_i\right) &amp;= \left\{\omega : h(\omega) \in \bigcup_{i \in \mathcal I} F_i\right\},\,\,\,\,\text{defn. preimage} \\
+&amp;= \left\{ \omega : \exists i \in \mathcal I : h(\omega) \in F_i\right\},\,\,\,\,\text{defn. union} \\
+&amp;= \bigcup_{i \in \mathcal I}\{\omega : h(\omega) \in F_i\} \\
+&amp;= \bigcup_{i \in \mathcal I}h^{-1}(F_i)\end{split}\]</div>
+<p>2. Complements:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}h^{-1}(F_i^c) &amp;= \{\omega : h(\omega) \in F_i^c\} \\
+&amp;= \{\omega : h(\omega) \not\in F_i\} \\
+&amp;= \Omega \setminus \{\omega : h(\omega) \in F_i\} \equiv \{\omega : h(\omega) \in F_i\}^c \\
+&amp;= \left(h^{-1}(F_i)\right)^c\end{split}\]</div>
+</div>
+<p>Next, we’ll see how continuity and measurability go hand-in-hand:</p>
+<div class="proof lemma admonition" id="uv:mt:rvs:elem:comp">
+<p class="admonition-title"><span class="caption-number">Lemma 2.5 </span> (Continuity implies measurability)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, and suppose that <span class="math notranslate nohighlight">\(h : \Omega \rightarrow \mathbb R\)</span> is continuous. Then <span class="math notranslate nohighlight">\(h \in m(\mathcal B(\Omega), \mathcal R)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Recall that <span class="math notranslate nohighlight">\(\mathcal B(\Omega) \triangleq \sigma(\{\text{open sets on }\Omega\})\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal C = \{\text{open sets on }\mathbb R\}\)</span>, where by definition, <span class="math notranslate nohighlight">\(\mathcal R = \sigma(\mathcal C)\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(h : \Omega \rightarrow \mathbb R\)</span> is continuous, then <span class="math notranslate nohighlight">\(h^{-1}(C)\)</span> for <span class="math notranslate nohighlight">\(c \in \mathcal C\)</span> is an open set <span class="math notranslate nohighlight">\(B\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span>. This follows since <span class="math notranslate nohighlight">\(C\)</span> is open, and the preimage of continuous functions on open sets is open.</p>
+<p>Then <span class="math notranslate nohighlight">\(B \subseteq \mathcal B(\Omega)\)</span>, for every <span class="math notranslate nohighlight">\(C \in \mathcal C\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(X^{-1} : \mathcal C \rightarrow \mathcal B(\Omega)\)</span>, so by <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a>, <span class="math notranslate nohighlight">\(X^{-1} : \sigma(\mathcal C) = \mathcal R \rightarrow \mathcal B(\Omega)\)</span>, and <span class="math notranslate nohighlight">\(X \in m(\mathcal B(\Omega), \mathcal R)\)</span>.</p>
+</div>
+<p>Finally, we’ll see an extremely useful corollary of <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a> when we are concerned with <span class="math notranslate nohighlight">\(\mathcal R\)</span>. This corollary will make proving measurability quite easy for some sets of functions:</p>
+<div class="proof corollary admonition" id="uv:mt:rvs:elem:comp">
+<p class="admonition-title"><span class="caption-number">Corollary 2.1 </span> (Generator sets of <span class="math notranslate nohighlight">\(\mathcal R\)</span>)</p>
+<section class="corollary-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces. Then <span class="math notranslate nohighlight">\(h \in m(\mathcal F, \mathcal R) \iff \{h \leq \lambda\} \in m(\mathcal F, \mathcal R)\)</span> for any <span class="math notranslate nohighlight">\(\lambda \in \mathbb R\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. 1. Suppose that <span class="math notranslate nohighlight">\(h \in m(\mathcal F, \mathcal R)\)</span>.</p>
+<p>Recall that sets of the form <span class="math notranslate nohighlight">\((-\infty, r] \in \mathcal R\)</span>, since <span class="math notranslate nohighlight">\(\{(-\infty, r] : r \in \mathbb R\}\)</span> is a generator of <span class="math notranslate nohighlight">\(\mathbb R\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(h^{-1}(-\infty, r] \equiv \{h \leq r\} \in \mathcal F\)</span>.</p>
+<p>2. Suppose that <span class="math notranslate nohighlight">\(\{h \leq \lambda\} \in \mathcal F\)</span>, for any <span class="math notranslate nohighlight">\(\lambda \in \mathbb R\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal C = \{(-\infty, \lambda] : \lambda \in \mathbb R\}\)</span> be another generator of <span class="math notranslate nohighlight">\(\mathcal R\)</span>.</p>
+<p>Then note that by supposition that <span class="math notranslate nohighlight">\(\{h \leq \lambda\} \equiv h^{-1}(-\infty, \lambda] \in \mathcal F\)</span>, so for any <span class="math notranslate nohighlight">\(C \in \mathcal C\)</span>, <span class="math notranslate nohighlight">\(h^{-1}(C) \in \mathcal F\)</span>.</p>
+<p>Then by <a class="reference internal" href="#uv:mt:rvs:generator_set">Theorem 2.6</a>, <span class="math notranslate nohighlight">\(h \in m(\mathcal F, \mathcal R)\)</span>.</p>
+</div>
+</section>
 </section>
 </section>
 
