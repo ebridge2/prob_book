@@ -21,6 +21,7 @@ parts:
       chapters:
         - file: uv/measure_theory/measure_theory
           sections:
+            - file: uv/measure_theory/set_theory
             - file: uv/measure_theory/probability_spaces
             - file: uv/measure_theory/random_variables
             - file: uv/measure_theory/distns
