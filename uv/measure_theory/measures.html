@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Distribution Functions &#8212; Measure Theoretic Probability Theory</title>
+    <title>Measures &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.5. Product Measures" href="prod_meas.html" />
-    <link rel="prev" title="2.3. Random Variables" href="random_variables.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -172,17 +168,17 @@ const thebe_selector_output = ".output, .cell_output"
   Univariate Probability Theory
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="measure_theory.html">
    2. Introduction to Measure Theory
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="set_theory.html">
      2.1. Set Theory
@@ -198,8 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.3. Random Variables
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="distns.html">
      2.4. Distribution Functions
     </a>
    </li>
@@ -318,7 +314,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/uv/measure_theory/distns.ipynb"
+        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/uv/measure_theory/measures.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -378,7 +374,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Fuv/measure_theory/distns.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Fuv/measure_theory/measures.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -395,7 +391,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/uv/measure_theory/distns.ipynb"
+        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/uv/measure_theory/measures.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -423,7 +419,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/uv/measure_theory/distns.ipynb"
+        <a href="../../_sources/uv/measure_theory/measures.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -460,60 +456,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inducing-distribution-functions">
-   2.4.1. Inducing distribution functions
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Distribution Functions</h1>
+                <h1>Measures</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inducing-distribution-functions">
-   2.4.1. Inducing distribution functions
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -521,52 +480,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="distribution-functions">
-<span id="uv-mt-distns"></span><h1><span class="section-number">2.4. </span>Distribution Functions<a class="headerlink" href="#distribution-functions" title="Permalink to this headline">#</a></h1>
-<p>So, now we have these concepts called random variables, which are really just measurable functions on a particular domain with respect to some codomain. We can perform all of the traditional mathematical operations with random variables, and still obtain random variables. What else do we need as far as machinery goes? We need to link these random variables to probabilities. This happens via the distribution function.</p>
-<section id="inducing-distribution-functions">
-<h2><span class="section-number">2.4.1. </span>Inducing distribution functions<a class="headerlink" href="#inducing-distribution-functions" title="Permalink to this headline">#</a></h2>
-<p>Now that we have random variables (measurable functions), if the domain is a probability space, we can use the definition of a random variable to deduce that it is certainly the case that for any set in the codomain, the preimage of the set in the codomain is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the corresponding probability space. Since this set is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the probability space, we can assign a probability to that set:</p>
-<div class="proof definition admonition" id="uv:mt:distns:law">
-<p class="admonition-title"><span class="caption-number">Definition 2.27 </span> (Law of a random variable)</p>
-<section class="definition-content" id="proof-content">
-<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable. Then the induced probability measure on <span class="math notranslate nohighlight">\(S\)</span> by <span class="math notranslate nohighlight">\(X\)</span>, also known as the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span>, is the measure <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> where for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}    \mathcal L_X(B) &amp;\triangleq \mathbb P\left(\{\omega : X(\omega) \in B\}\right) \\
-    &amp;\equiv \mathbb P\left(X^{-1}(B)\right) \\
-    &amp;\equiv \mathbb P(X \in B)\end{split}\]</div>
-</section>
-</div><p>The idea here is that we are, in some sense, finding which values of <span class="math notranslate nohighlight">\(\Omega\)</span> were mapped into <span class="math notranslate nohighlight">\(B\)</span> by <span class="math notranslate nohighlight">\(X\)</span> via <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> (which must be a set <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, by definition of a random variable), and then calculating the probability (via <span class="math notranslate nohighlight">\(\mathbb P\)</span>) of this set. Since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a probability measure with respect to the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, this is a possible thing that we can do. We call this particular induced probability measure the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span> because, as we will see shortly, it ascribes most of the behaviors about <span class="math notranslate nohighlight">\(X\)</span> that we will care about.</p>
-<p>Let’s consider this from another angle to describe what’s going on here. First, we know that <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>; that is, <span class="math notranslate nohighlight">\(X\)</span> is mapping elements of the event space to the codomain. <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span> (the definition of a <span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-random variable) takes us from subsets of the codomain (elements of <span class="math notranslate nohighlight">\(\Sigma\)</span>) to measurable subsets of the sample space (elements of <span class="math notranslate nohighlight">\(\mathcal F\)</span>). We can then use <span class="math notranslate nohighlight">\(\mathbb P\)</span> to measure these measurable subsets of the sample space.</p>
-<p>In other words, using compositions, we could describe <span class="math notranslate nohighlight">\(\mathcal L_X \triangleq \mathbb P \circ X^{-1}\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> represents the probability that under <span class="math notranslate nohighlight">\(X\)</span>, a draw from the event space <span class="math notranslate nohighlight">\(\omega\)</span> winds up in <span class="math notranslate nohighlight">\(B\)</span>. From the definition, it should be pretty clear that <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>:</p>
-<div class="proof proposition admonition" id="uv:mt:distns:law_is_meas">
-<p class="admonition-title"><span class="caption-number">Proposition 2.1 </span> (The law is a probability measure)</p>
-<section class="proposition-content" id="proof-content">
-<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable, and <span class="math notranslate nohighlight">\(\mathcal L_X = \mathbb P\circ X^{-1}\)</span> is the law of <span class="math notranslate nohighlight">\(X\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>.</p>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. test</p>
-</div>
-<p>If the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, we are ready to make a further claim about <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> using the distribution function:</p>
-<div class="proof definition admonition" id="uv:mt:distns:distn_fn">
-<p class="admonition-title"><span class="caption-number">Definition 2.28 </span> (Distribution function)</p>
-<section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R)\)</span> is a random variable with law <span class="math notranslate nohighlight">\(\mathcal L_X\)</span>. The distribution function is:</p>
-<div class="math notranslate nohighlight">
-\[    F_X(c) \triangleq \mathcal L_X((-\infty, c]) \equiv \mathbb P(X \leq c) \equiv \mathbb P\left(\omega \in \Omega : X(\omega) \leq c\right).\]</div>
-</section>
-</div><p>As it turns out, the distribution function <em>fully determines</em> the law:</p>
-<div class="proof theorem admonition" id="uv:mt:distns:distn_fn_dets_law">
-<p class="admonition-title"><span class="caption-number">Theorem 2.6 </span> (The distribution function fully determines the law of a random variable)</p>
-<section class="theorem-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R)\)</span> is a random variable. Then <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is fully determined by the function <span class="math notranslate nohighlight">\(F_X : \mathbb R \rightarrow [0, 1]\)</span>.</p>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. Note that <span class="math notranslate nohighlight">\(\mathcal P = \left\{(-\infty, c] : c \in \mathbb R\right\}\)</span> is a <span class="math notranslate nohighlight">\(\pi\)</span>-system on <span class="math notranslate nohighlight">\(\mathbb R\)</span>, where <span class="math notranslate nohighlight">\(\sigma(\mathcal P) = \mathcal R\)</span>.</p>
-<p>Further, note that on <span class="math notranslate nohighlight">\(\mathcal P\)</span>, that for any <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\mathcal L((-\infty, c]) = F_X(c)\)</span>, by definition, so <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> and <span class="math notranslate nohighlight">\(F_X\)</span> agree on all of <span class="math notranslate nohighlight">\(\mathcal P\)</span>.</p>
-<p>Then by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:unique">Lemma 2.3</a>, <span class="math notranslate nohighlight">\(\mathcal L_X = F_X\)</span> on <span class="math notranslate nohighlight">\(\sigma(\mathcal P) = \mathcal R\)</span>.</p>
-</div>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="measures">
+<h1>Measures<a class="headerlink" href="#measures" title="Permalink to this headline">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -596,20 +511,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="random_variables.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.3. </span>Random Variables</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="prod_meas.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Product Measures</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
