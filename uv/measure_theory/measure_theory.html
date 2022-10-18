@@ -51,9 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.1. Probability Spaces" href="probability_spaces.html" />
+    <link rel="next" title="2.1. Set Theory" href="set_theory.html" />
     <link rel="prev" title="1.3. Series" href="../../foundations/convergence_tests.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -182,23 +184,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="set_theory.html">
+     2.1. Set Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="probability_spaces.html">
-     2.1. Probability Spaces
+     2.2. Measures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="random_variables.html">
-     2.2. Random Variables
+     2.3. Random Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="distns.html">
-     2.3. Distribution Functions
+     2.4. Distribution Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="prod_meas.html">
-     2.4. Product Measures
+     2.5. Product Measures
     </a>
    </li>
   </ul>
@@ -481,8 +488,10 @@ title="Print to PDF"
 <span id="uv-mt"></span><h1><span class="section-number">2. </span>Introduction to Measure Theory<a class="headerlink" href="#introduction-to-measure-theory" title="Permalink to this headline">#</a></h1>
 <p>In this section, we’ll start to get down in the weeds mathematically. In math, there’s the (unfortunate or fortunate) reality that nearly everything is a special case of something else, in that almost any level of granularity you pick to write about a topic could be written made more generalizable (and therefore more applicable), or less generalizable (and therefore less applicable, but perhaps easier to understand). Here, we’ll choose a layer of granularity that gets you into the weeds and is completely and mathematically unambiguous, but hopefully keeps things relatively understandable. We’ll lay the ground work for random variables, which as you’ll see, aren’t scary objects with mythical properties: they are merely particularly defined functions with the same behavior as you’ve become used to in calculus courses. We have the following sections:</p>
 <ol class="simple">
-<li><p><a class="reference internal" href="probability_spaces.html#uv-mt-prob-spaces"><span class="std std-ref">Probability Spaces</span></a> introduces the ingredients for probability spaces, the fundamental units upon which we will build out random variables.</p></li>
-<li><p><a class="reference internal" href="random_variables.html#uv-mt-rvs"><span class="std std-ref">Random Variables</span></a> introduce random variables, which are particular types of functions which have properties that allow us to ascribe the operations you are used to (integration, ).</p></li>
+<li><p><a class="reference internal" href="set_theory.html#uv-mt-set-theory"><span class="std std-ref">Set Theory</span></a> introduces the basics of set theory, and classes of sets, that will be essential to understanding random variables. We will go over algebras and <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, which will be the units upon which we build measures.</p></li>
+<li><p><a class="reference internal" href="probability_spaces.html#uv-mt-prob-spaces"><span class="std std-ref">Measures</span></a> introduces the concepts of measures and builds out probability spaces, which will be the ingredients that we use to define random variables.</p></li>
+<li><p><a class="reference internal" href="random_variables.html#uv-mt-rvs"><span class="std std-ref">Random Variables</span></a> introduce random variables, which are particular types of functions which have properties that allow us to ascribe the operations you are used to (addition, multiplication, extrema, limits, etc.).</p></li>
+<li><p><a class="reference internal" href="distns.html#uv-mt-distns"><span class="std std-ref">Distribution Functions</span></a> introduce the concept of a distribution function, which is a manner in which random variables are often described.</p></li>
 <li><p><a class="reference internal" href="integration.html#uv-mt-integration"><span class="std std-ref">Integration</span></a> introduces the concept of integration, one of the most essential operations we will want to use with our random variables through the book.</p></li>
 <li><p><a class="reference internal" href="int_props.html#uv-mt-int-props"><span class="std std-ref">Properties of Integration</span></a> introduces the properties of integrals, which will be paramount to our study of random variables later on.</p></li>
 <li><p><a class="reference internal" href="prod_meas.html#uv-mt-prod-meas"><span class="std std-ref">Product Measures</span></a> introduces product measures,</p></li>
@@ -525,10 +534,10 @@ title="Print to PDF"
             <p class="prev-next-title"><span class="section-number">1.3. </span>Series</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="probability_spaces.html" title="next page">
+    <a class='right-next' id="next-link" href="set_theory.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.1. </span>Probability Spaces</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>Set Theory</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

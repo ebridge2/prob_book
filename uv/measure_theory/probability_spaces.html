@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1. Probability Spaces &#8212; Measure Theoretic Probability Theory</title>
+    <title>2.2. Measures &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2. Random Variables" href="random_variables.html" />
-    <link rel="prev" title="2. Introduction to Measure Theory" href="measure_theory.html" />
+    <link rel="next" title="2.3. Random Variables" href="random_variables.html" />
+    <link rel="prev" title="2.1. Set Theory" href="set_theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -183,24 +183,29 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="set_theory.html">
+     2.1. Set Theory
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.1. Probability Spaces
+     2.2. Measures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="random_variables.html">
-     2.2. Random Variables
+     2.3. Random Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="distns.html">
-     2.3. Distribution Functions
+     2.4. Distribution Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="prod_meas.html">
-     2.4. Product Measures
+     2.5. Product Measures
     </a>
    </li>
   </ul>
@@ -478,59 +483,35 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-wrong-with-traditional-probability-courses">
-   2.1.1. What is wrong with traditional probability courses?
+  <a class="reference internal nav-link" href="#set-functions">
+   2.2.1. Set functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#establishing-units-upon-which-we-can-understand-probabilities">
-   2.1.2. Establishing units upon which we can understand probabilities
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sigma-algebras">
-     2.1.2.1.
-     <span class="math notranslate nohighlight">
-      \(\sigma\)
-     </span>
-     -algebras
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#properties-of-sigma-algebras">
-     2.1.2.2. Properties of
-     <span class="math notranslate nohighlight">
-      \(\sigma\)
-     </span>
-     -algebras
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#borel-sigma-algebras">
-     2.1.2.3. Borel
-     <span class="math notranslate nohighlight">
-      \(\sigma\)
-     </span>
-     -algebras
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measures">
-   2.1.3. Measures
+  <a class="reference internal nav-link" href="#id1">
+   2.2.2. Measures
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#properties-of-measures">
-     2.1.3.1. Properties of measures
+     2.2.2.1. Properties of measures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#almost-everywhere">
+     2.2.2.2. Almost everywhere
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lebesgue-measure">
+     2.2.2.3. Lebesgue measure
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#probability-measures">
-   2.1.4. Probability measures
+   2.2.3. Probability measures
   </a>
  </li>
 </ul>
@@ -542,7 +523,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Probability Spaces</h1>
+                <h1>Measures</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -553,59 +534,35 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-wrong-with-traditional-probability-courses">
-   2.1.1. What is wrong with traditional probability courses?
+  <a class="reference internal nav-link" href="#set-functions">
+   2.2.1. Set functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#establishing-units-upon-which-we-can-understand-probabilities">
-   2.1.2. Establishing units upon which we can understand probabilities
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sigma-algebras">
-     2.1.2.1.
-     <span class="math notranslate nohighlight">
-      \(\sigma\)
-     </span>
-     -algebras
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#properties-of-sigma-algebras">
-     2.1.2.2. Properties of
-     <span class="math notranslate nohighlight">
-      \(\sigma\)
-     </span>
-     -algebras
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#borel-sigma-algebras">
-     2.1.2.3. Borel
-     <span class="math notranslate nohighlight">
-      \(\sigma\)
-     </span>
-     -algebras
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#measures">
-   2.1.3. Measures
+  <a class="reference internal nav-link" href="#id1">
+   2.2.2. Measures
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#properties-of-measures">
-     2.1.3.1. Properties of measures
+     2.2.2.1. Properties of measures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#almost-everywhere">
+     2.2.2.2. Almost everywhere
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lebesgue-measure">
+     2.2.2.3. Lebesgue measure
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#probability-measures">
-   2.1.4. Probability measures
+   2.2.3. Probability measures
   </a>
  </li>
 </ul>
@@ -618,153 +575,60 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="probability-spaces">
-<span id="uv-mt-prob-spaces"></span><h1><span class="section-number">2.1. </span>Probability Spaces<a class="headerlink" href="#probability-spaces" title="Permalink to this headline">#</a></h1>
-<section id="what-is-wrong-with-traditional-probability-courses">
-<h2><span class="section-number">2.1.1. </span>What is wrong with traditional probability courses?<a class="headerlink" href="#what-is-wrong-with-traditional-probability-courses" title="Permalink to this headline">#</a></h2>
-<p>By reading this book, I’m assuming you’ve thought about probability at some point in your life.</p>
-<p>When you think of probability, one of the first things that might come to your mind is something like a coin flip. The coin lands on heads with probability <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>, and tails with probability <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>. The computations you have inherently made here are that a coin can land on either heads or tails, and both of these outcomes are equally likely, so it makes sense to say that each have a probability of <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>. When there’s a finite number of possible outcomes, this is pretty easy to understand. When we are dealing with random quantities that have only finitely many possible outcomes, we call these quantities <em>discrete</em>.</p>
-<p>Let’s say, on the other hand, that I’m throwing a ball. What is the probability that I throw the ball <span class="math notranslate nohighlight">\(30\)</span> meters? <span class="math notranslate nohighlight">\(40\)</span> meters? <span class="math notranslate nohighlight">\(50\)</span> meters? <span class="math notranslate nohighlight">\(30.05\)</span> meters? <span class="math notranslate nohighlight">\(30.0001\)</span> meters? If we were to assign probabilities of any sort of mass to particular distance totals, we’d quickly run into a problem: there are uncountably many different distances I could possibly throw the ball! Stated another way, maybe it’s certain that I would throw the ball between <span class="math notranslate nohighlight">\(30\)</span> and <span class="math notranslate nohighlight">\(50\)</span> meters (I did play baseball and waterpolo for the better part of a decade), but there are uncountably many points on the real line between <span class="math notranslate nohighlight">\(30\)</span> and <span class="math notranslate nohighlight">\(50\)</span>. Let’s say we were to pick to ascribe probabilities every <span class="math notranslate nohighlight">\(.0001\)</span> meters, which would result in <span class="math notranslate nohighlight">\(\frac{20}{.0001} = 200000\)</span> possible locations I could throw the ball. If we could assume I’d hit each of these distance totals with equal probability, and say that for any gradation of <span class="math notranslate nohighlight">\(.0001\)</span> yards in between <span class="math notranslate nohighlight">\(30\)</span> and <span class="math notranslate nohighlight">\(50\)</span>, I throw the ball that particular distance with probability <span class="math notranslate nohighlight">\(\frac{1}{200000} = 0.000005\)</span>. So, the probability of me throwing the ball to the <span class="math notranslate nohighlight">\(30.0001\)</span> yards is <span class="math notranslate nohighlight">\(0.000005\)</span>. But now we’ve got a new problem: what if I threw the ball <span class="math notranslate nohighlight">\(30.00011\)</span> yards? Since I already “allocated” all possible distances with my <span class="math notranslate nohighlight">\(.0001\)</span> meter gradations, this distance has a probability of <span class="math notranslate nohighlight">\(0\)</span> that I throw the ball to it. This is absolutely puzzling and completely counter-intuitive, so I’d need a system that completely breaks with how I ascribe probabilities to the coin flip situation to how I ascribe probabilities with throwing the ball.</p>
-<p>The problem is that, in this context, the unit that we want to ascribe probabilities to, the distances of the throw, are <em>continuous</em>. We could certainly overcome this pretty easily: we could invent a probability system that works when the outcomes are finite (like the coin flips), and we could invent a totally different probability system for when the outcomes are continuous (like throwing the ball). However, this is pretty counter-intuitive: wouldn’t it be nice if you could conceptualize any probabilistic system with the same intuition? This is where <em>measure theory</em>, and in particular, <em>probability spaces</em>, will come into play. Figuring out how to have unified sets of rules, and unified sets of <em>intuition</em>, are what makes probability theory so powerful for both theorists and application specialists alike. Probability spaces will serve as the building blocks upon which we can ascribe unified sets of rules for random quantities.</p>
-</section>
-<section id="establishing-units-upon-which-we-can-understand-probabilities">
-<h2><span class="section-number">2.1.2. </span>Establishing units upon which we can understand probabilities<a class="headerlink" href="#establishing-units-upon-which-we-can-understand-probabilities" title="Permalink to this headline">#</a></h2>
-<section id="sigma-algebras">
-<h3><span class="section-number">2.1.2.1. </span><span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#sigma-algebras" title="Permalink to this headline">#</a></h3>
-<p>To begin to delineate how we can come to terms with this seeming inconsistency when we handle discrete outcomes (like coin flips) with continuous outcomes (like throwing a ball), we need to create a sort of homologous system on which we can ascribe probabilities, that works whether or not the units are discrete or continous. The first ingredient for this is called a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. A <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is defined on a set <span class="math notranslate nohighlight">\(\Omega\)</span>, which can be anything (such as the real line).</p>
-<div class="proof definition admonition" id="uv:mt:prob_spaces:sig">
-<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="measures">
+<span id="uv-mt-prob-spaces"></span><h1><span class="section-number">2.2. </span>Measures<a class="headerlink" href="#measures" title="Permalink to this headline">#</a></h1>
+<p>The main reason that <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are powerful for our field of study is that they are special mathematical objects to which we can assign something called a <em>measure</em>. To do this, we’ll build towards measures, first starting with set functions, which allow us to ascribe units to families of sets like algebras.</p>
+<section id="set-functions">
+<h2><span class="section-number">2.2.1. </span>Set functions<a class="headerlink" href="#set-functions" title="Permalink to this headline">#</a></h2>
+<p>Set functions are the basic building blocks we need to define measures. In effect, set functions allow us to ascribe some notion of <em>size</em> to sets in algebras:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:setfn">
+<p class="admonition-title"><span class="caption-number">Definition 2.9 </span> (Set function)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(\mathcal F\)</span> is called a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span> if it is a non-empty collection of <em>events</em> <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, s.t. <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>, where:</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be an algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. <span class="math notranslate nohighlight">\(\mu_0\)</span> is called a <em>set function</em> if <span class="math notranslate nohighlight">\(\mu_0 : \mathcal A \rightarrow \bar{\mathbb R}_{\geq 0}\)</span>.</p>
+</section>
+</div><p>The space <span class="math notranslate nohighlight">\(\bar{\mathbb R}\)</span> is called the <em>extended real numbers</em>, which just means that it includes <span class="math notranslate nohighlight">\(\infty\)</span> and <span class="math notranslate nohighlight">\(-\infty\)</span>. The subscript <span class="math notranslate nohighlight">\(\geq 0\)</span> just delineates that it is the non-negative component. Written another way, <span class="math notranslate nohighlight">\(\bar{\mathbb R}_{\geq 0} = [0, \infty]\)</span>.</p>
+<p>Just like algebras were closed under particular operations (finitely many unions), set functions have analogous operations, too. However, it is important to recognize that set functions <em>need not</em> have the below listed properties, which is why these types of set functions have special names:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:add_setfn">
+<p class="admonition-title"><span class="caption-number">Definition 2.10 </span> (Additive set function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be an algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. <span class="math notranslate nohighlight">\(\mu_0\)</span> is called an additive set function if:</p>
 <ol class="simple">
-<li><p>Contain event space: <span class="math notranslate nohighlight">\(\Omega \in \mathcal F\)</span>,</p></li>
-<li><p>Closure under complement: If <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(F^c \in \mathcal F\)</span>,</p></li>
-<li><p>Closure under countable unions: If <span class="math notranslate nohighlight">\((F_i)_{i \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, then <span class="math notranslate nohighlight">\(\bigcup_{i \in \mathbb N}F_i \in \mathcal F\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_0(\varnothing) = 0\)</span>, and</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(A_1, A_2 \in \mathcal A\)</span> are s.t. <span class="math notranslate nohighlight">\(A_1 \cap A_2 = \varnothing\)</span> (they are <em>disjoint</em>), then <span class="math notranslate nohighlight">\(\mu_0(A_1 \sqcup A_2) = \mu_0(A_1) + \mu_0(A_2)\)</span>.</p></li>
 </ol>
 </section>
-</div><p>You’ll notice that we called these “subsets” of <span class="math notranslate nohighlight">\(\mathcal F\)</span> “events”: the reason for this will be apparent before we get to the end of this section, so just bear with us for a second. We’ll often call this set <span class="math notranslate nohighlight">\(\Omega\)</span> the “event space”, because it is the set in which our “events” <span class="math notranslate nohighlight">\(F\)</span> live (<span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>). <span class="math notranslate nohighlight">\(\mathcal F\)</span> collects these events in a very particular way. It contains the entire “event space” <span class="math notranslate nohighlight">\(\Omega\)</span>, it is closed under complements, and if a set of events are in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, then the union of these events are also in <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
-</section>
-<section id="properties-of-sigma-algebras">
-<h3><span class="section-number">2.1.2.2. </span>Properties of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#properties-of-sigma-algebras" title="Permalink to this headline">#</a></h3>
-<p>The idea of a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is very simple to conceptualize; a set which contains sets which obey these <span class="math notranslate nohighlight">\(3\)</span> rules we described above. However, as we will see here, these <span class="math notranslate nohighlight">\(3\)</span> laws imply that <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras also follow many other critical properties. Together, the properties about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras (and tools that we can define on them, such as <em>measures</em>, which we will learn about later), will allow us to define many higher-order operations like integration.</p>
-<p>If we have a pair of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras (each of which is a collection of subsets of the event space), and we take the subsets of the event space that are in their intersection, what is the result? It turns out that the result is also a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra:</p>
-<div class="proof theorem admonition" id="uv:mt:prob_spaces:sig:intersection">
-<p class="admonition-title"><span class="caption-number">Theorem 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under intersections)</p>
-<section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\{F_n\}_{i \in \mathcal I}\)</span> be a collection of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras on <span class="math notranslate nohighlight">\(\Omega\)</span>, where <span class="math notranslate nohighlight">\(\mathcal I \neq \varnothing\)</span> is an arbitrary indexing set (which may be countable or uncountable). Then <span class="math notranslate nohighlight">\(\bigcap_{i \in \mathcal I} \mathcal F_i\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
-</section>
-</div><p>When proving things about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, you always need to show exactly the properties in the definition. This means that every proof where we seek to show something is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is going to have <span class="math notranslate nohighlight">\(3\)</span> parts, one for each delineation in the definition:</p>
-<div class="proof admonition" id="proof">
-<p>Proof. Denote <span class="math notranslate nohighlight">\(\mathcal F = \bigcap_{i \in \mathcal I} \mathcal F_i\)</span>. To see that it is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, note:</p>
-<p>1. Contains <span class="math notranslate nohighlight">\(\Omega\)</span>: Note that by definition, since <span class="math notranslate nohighlight">\(\mathcal F_i\)</span> are <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, then <span class="math notranslate nohighlight">\(\Omega \in \mathcal F_i\)</span>, for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>.</p>
-<p>Then since <span class="math notranslate nohighlight">\(\Omega \in \mathcal F_i\)</span> for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>, <span class="math notranslate nohighlight">\(\Omega \in \mathcal F\)</span>.</p>
-<p>2. Closed under complement: Let <span class="math notranslate nohighlight">\(A_j \in \mathcal F\)</span>.</p>
-<p>Then by definition of the intersection, <span class="math notranslate nohighlight">\(A_j \in \mathcal F_i\)</span>, for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>.</p>
-<p>Then since each <span class="math notranslate nohighlight">\(\mathcal F_i\)</span> are <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, then <span class="math notranslate nohighlight">\(A_j^c \in \mathcal F_i\)</span>, since <span class="math notranslate nohighlight">\(\mathcal F_i\)</span> are closed under intersection.</p>
-<p>Then since <span class="math notranslate nohighlight">\(A_j^c \in \mathcal F_i\)</span> for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>, <span class="math notranslate nohighlight">\(A_j^c \in \mathcal F\)</span>, by definition of the intersection.</p>
-<p>3. Closed under countable unions: Let <span class="math notranslate nohighlight">\(\{A_n\}_{n \in \mathbb N} \subseteq \mathcal F\)</span> be a countable set of elements of <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
-<p>Then by definition of the intersection, <span class="math notranslate nohighlight">\(\{A_n\}_{n \in \mathbb N} \subseteq \mathcal F_i\)</span>, for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>, by definition of the intersection operation.</p>
-<p>Then since <span class="math notranslate nohighlight">\(\mathcal F_i\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra and hence closed under countable unions, <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}A_n \in \mathcal F_i\)</span> for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}A_n \in \mathcal F\)</span>, by definition of the intersection.</p>
-</div>
-<p>If we have an event space <span class="math notranslate nohighlight">\(\Omega\)</span>, and a collection of sets that we are interested in <span class="math notranslate nohighlight">\(\mathcal A\)</span>, can we make a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra from the collection of sets we are interested in? The answer is yes, and it is called the <span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra:</p>
-<div class="proof definition admonition" id="uv:mt:prob_spaces:sig:siggen">
-<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra)</p>
-<section class="definition-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\Omega\)</span> be an event space, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be a collection of sets, where <span class="math notranslate nohighlight">\(A \in \mathcal A \Rightarrow A \subseteq \Omega\)</span>. Then the smallest <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing <span class="math notranslate nohighlight">\(\mathcal A\)</span> is denoted <span class="math notranslate nohighlight">\(\sigma(\mathcal A)\)</span>, and is defined:</p>
+</div><p>We can show that this property extends to finitely many operations, too:</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 2.1 </span></p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be an algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. Show that if <span class="math notranslate nohighlight">\(\mu_0\)</span> is an additive set function, then if <span class="math notranslate nohighlight">\(A_m \in \mathcal A\)</span> are <em>mutually disjoint</em> for <span class="math notranslate nohighlight">\(m \in [n]\)</span> where <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, that:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \sigma(\mathcal A) = \bigcap_{\mathcal F_i \in \left\{\mathcal F_i : \substack{\mathcal F_i \textrm{ is a $\sigma$-algebra } \\ \textrm{on $\Omega$ and $\mathcal A \subseteq \mathcal F_i$}}\right\}}\mathcal F_i\end{split}\]</div>
+\[    \mu_0\left(\bigcup_{m \in [n]}A_m\right) = \sum_{m \in [n]} \mu_0(A_m)\]</div>
 </section>
-</div><p>Notice that by <a class="reference internal" href="#uv:mt:prob_spaces:sig:intersection">Theorem 2.1</a>, that <span class="math notranslate nohighlight">\(\sigma(\mathcal A)\)</span> is also a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
-<p>We’ll often want to consider <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras generated by a particular type of sets, called <em>partitions</em>:</p>
-<div class="proof definition admonition" id="uv:mt:prob_spaces:sig:partition">
-<p class="admonition-title"><span class="caption-number">Definition 2.3 </span> (Partition)</p>
+</div><p>Countably additive set functions extend this property from finitely many operations to <em>countably</em> many operations:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:count_add_setfn">
+<p class="admonition-title"><span class="caption-number">Definition 2.11 </span> (Countably additive set function)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose the event space <span class="math notranslate nohighlight">\(\Omega\)</span>. A family of sets <span class="math notranslate nohighlight">\(\mathcal A\)</span> is called a partition if:</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be an algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. <span class="math notranslate nohighlight">\(\mu_0\)</span> is called a countably additive set function if:</p>
 <ol class="simple">
-<li><p>It does not contain the empty set: <span class="math notranslate nohighlight">\(\varnothing \not\in \mathcal A\)</span>,</p></li>
-<li><p>The sets are disjoint: If <span class="math notranslate nohighlight">\(\Omega_i, \Omega_j \in \mathcal A\)</span>, then <span class="math notranslate nohighlight">\(\Omega_i \cap \Omega_j = \varnothing\)</span>, and</p></li>
-<li><p>The sets in <span class="math notranslate nohighlight">\(\mathcal A\)</span> exhaust <span class="math notranslate nohighlight">\(\Omega\)</span>: <span class="math notranslate nohighlight">\(\bigsqcup_{\Omega_n \in \mathcal A}\Omega_i = \Omega\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_0(\varnothing) = 0\)</span>, and</p></li>
+<li><p>if <span class="math notranslate nohighlight">\((A_n)_{n \in \mathbb N} \subseteq \mathcal A\)</span> are a sequence of mutually disjoint sets, then:</p></li>
 </ol>
-</section>
-</div><p>Can we describe the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by these partitions easily? It turns out, we can:</p>
-<div class="proof lemma admonition" id="uv:mt:prob_spaces:sig:siggenpart">
-<p class="admonition-title"><span class="caption-number">Lemma 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by a partition)</p>
-<section class="lemma-content" id="proof-content">
-<p>Suppose the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, where <span class="math notranslate nohighlight">\(\{\Omega_i\}_{i \in \mathcal I} \subseteq \mathcal F\)</span> is a partition of <span class="math notranslate nohighlight">\(\Omega\)</span>. Then:</p>
 <div class="math notranslate nohighlight">
-\[    \sigma\left(\Omega_i : i \in \mathcal I\right) \equiv \mathcal G \triangleq \left\{\bigsqcup_{j \in \mathcal J : \mathcal J \subseteq \mathcal I}\Omega_j\right\}\]</div>
+\[    \mu_0\left(\bigcup_{n \in \mathbb N}A_n\right) = \sum_{n \in \mathbb N} \mu_0(A_n)\]</div>
 </section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. To start, we need to show that <span class="math notranslate nohighlight">\(\mathcal G\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. We can do this in <span class="math notranslate nohighlight">\(3\)</span> steps:
-1. Contains the event space: Let <span class="math notranslate nohighlight">\(\mathcal J = \mathcal I\)</span>, so <span class="math notranslate nohighlight">\(\bigsqcup_{\Omega_n \in \mathcal A}\Omega_i \in \mathcal G\)</span>.</p>
-<p>But since <span class="math notranslate nohighlight">\(\{\Omega_i\}_{i \in \mathcal I}\)</span> is a partition of <span class="math notranslate nohighlight">\(\omega\)</span>, <span class="math notranslate nohighlight">\(\bigsqcup_{\Omega_n \in \mathcal A}\Omega_i = \Omega \in \mathcal G\)</span>.</p>
-<p>2. Closed under complements: Suppose that <span class="math notranslate nohighlight">\(A \in \mathcal G\)</span>.</p>
-<p>Then by construction, there exists <span class="math notranslate nohighlight">\(\mathcal J \subseteq \mathcal I\)</span> s.t. <span class="math notranslate nohighlight">\(A = \bigsqcup_{j \in \mathcal J}\Omega_j\)</span>.</p>
-<p>Take <span class="math notranslate nohighlight">\(\mathcal T = \mathcal I \setminus \mathcal J\)</span>. By construction, <span class="math notranslate nohighlight">\(\mathcal T \subseteq \mathcal I\)</span>, and further, <span class="math notranslate nohighlight">\(\mathcal T \cap \mathcal J = \varnothing\)</span>.</p>
-<p>Define <span class="math notranslate nohighlight">\(B = \bigcap_{j \in \mathcal T}\Omega_j\)</span>. Since <span class="math notranslate nohighlight">\(\mathcal T \subseteq \mathcal I\)</span>, then <span class="math notranslate nohighlight">\(B \in \mathcal G\)</span>.</p>
-<p>Notice that <span class="math notranslate nohighlight">\(A \cap B = \varnothing\)</span>, and <span class="math notranslate nohighlight">\(A \cup B = \Omega\)</span>, so <span class="math notranslate nohighlight">\(B = \Omega \setminus A\)</span>, and <span class="math notranslate nohighlight">\(B \equiv A^c\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\(A^c \in \mathcal G\)</span>.</p>
-<p>3. Closed under countable unions: Suppose that <span class="math notranslate nohighlight">\(A_n \in \mathcal G\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>.</p>
-<p>Then there exists <span class="math notranslate nohighlight">\(\mathcal J_n\)</span>, s.t. <span class="math notranslate nohighlight">\(A_n = \bigcup_{j \in \mathcal J_n}\Omega_j\)</span>, by construction.</p>
-<p>Further, note that <span class="math notranslate nohighlight">\(\mathcal J' = \bigcup_{n \in \mathbb N}\mathcal J_n \subseteq \mathcal I\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\(A = \bigcup_{n \in \mathcal J'}A_n\)</span> has an indexing set <span class="math notranslate nohighlight">\(\mathcal J' \subseteq \mathcal I\)</span>, so <span class="math notranslate nohighlight">\(A \in \mathcal I\)</span>.</p>
-<p>To see that <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is equivalent to <span class="math notranslate nohighlight">\(\mathcal G\)</span>, we can do this in parts:</p>
-<p>1. <span class="math notranslate nohighlight">\(\mathcal G \supseteq \sigma(\Omega_i : i \in \mathcal I)\)</span>: Note that <span class="math notranslate nohighlight">\(\mathcal G\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing each <span class="math notranslate nohighlight">\(\Omega_i\)</span>, for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>, by taking <span class="math notranslate nohighlight">\(\mathcal J_i = \{i\}\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I) \subseteq \mathcal G\)</span>, since <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is the intersection of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\Omega_i\)</span>s by definition <a class="reference internal" href="#uv:mt:prob_spaces:sig:siggen">Definition 2.2</a>, and <span class="math notranslate nohighlight">\(\mathcal G\)</span> is one such <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
-<p>2. <span class="math notranslate nohighlight">\(\mathcal G \subseteq \sigma(\Omega_i : i \in \mathcal I)\)</span>: Suppose that <span class="math notranslate nohighlight">\(A \in \mathcal G\)</span>.</p>
-<p>Then by construction, there exists <span class="math notranslate nohighlight">\(\mathcal J \subseteq \mathcal I\)</span> s.t. <span class="math notranslate nohighlight">\(A = \bigcup_{j \in \mathcal J}\Omega_j\)</span>.</p>
-<p>Then since <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\{\Omega_i : i \in \mathcal I\}\)</span>, <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> must contain all of the countable unions of elements of <span class="math notranslate nohighlight">\(\{\Omega_i : i \in \mathcal I\}\)</span>, of which <span class="math notranslate nohighlight">\(A\)</span> is one.</p>
-<p>Then <span class="math notranslate nohighlight">\(A \in \sigma(\Omega_i : i \in \mathcal I)\)</span>.</p>
-</div>
-<p>Another interesting property is that <span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebras preserve the subset operation. While this might seem rather intuitive, it isn’t <em>immediately</em> obvious, but this lemma will be extremely helpful later on:</p>
-<div class="proof lemma admonition" id="uv:mt:prob_spaces:sig:preserve">
-<p class="admonition-title"><span class="caption-number">Lemma 2.2 </span> (Generated algebras preserve subsets)</p>
-<section class="lemma-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\(\Omega\)</span> be an event space, and let <span class="math notranslate nohighlight">\(\mathcal C, \mathcal F\)</span> be families of sets on <span class="math notranslate nohighlight">\(\Omega\)</span> (for every <span class="math notranslate nohighlight">\(C \in \mathcal C\)</span> and <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, <span class="math notranslate nohighlight">\(C, F \subseteq \Omega\)</span>). If <span class="math notranslate nohighlight">\(\mathcal C \subseteq \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(\sigma(\mathcal C) \subseteq \sigma(\mathcal F)\)</span>.</p>
-</section>
-</div><div class="proof admonition" id="proof">
-<p>Proof. By definition, <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> is the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra at the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
-<p>Since <span class="math notranslate nohighlight">\(\mathcal C \subseteq \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(\mathcal C \subseteq \sigma(\mathcal F)\)</span>, since <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> is the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\mathcal F\)</span> (and consequently, also contain <span class="math notranslate nohighlight">\(\mathcal C\)</span>) by definition of <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> <a class="reference internal" href="#uv:mt:prob_spaces:sig:siggen">Definition 2.2</a>.</p>
-<p>Then since <span class="math notranslate nohighlight">\(\sigma(\mathcal C)\)</span> is the intersection of every <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing <span class="math notranslate nohighlight">\(\mathcal C\)</span>, it is the intersection of <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> (since <span class="math notranslate nohighlight">\(\mathcal C \in \sigma(\mathcal F)\)</span>) with other <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras that contain <span class="math notranslate nohighlight">\(\mathcal C\)</span> but might not contain <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
-<p>Since the intersection operation of a set <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> with other sets will necessarily be at most <span class="math notranslate nohighlight">\(\sigma(\mathcal C)\)</span>, then <span class="math notranslate nohighlight">\(\sigma(\mathcal C) \subseteq \sigma(\mathcal F)\)</span>.</p>
-</div>
-</section>
-<section id="borel-sigma-algebras">
-<h3><span class="section-number">2.1.2.3. </span>Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#borel-sigma-algebras" title="Permalink to this headline">#</a></h3>
-<p>Next, we have one of the most important results about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras that we will use repeatedly throughout this book when looking at probabilities: the Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. The Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra will allow us to break up intervals of the (or the entire) real line into palatable open intervals. When we begin to define probability measures, we will generally define them using Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
-<div class="proof definition admonition" id="definition-6">
-<p class="admonition-title"><span class="caption-number">Definition 2.4 </span> (Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
-<section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. The borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is defined as:</p>
-<div class="math notranslate nohighlight">
-\[\mathcal B(\Omega) \triangleq \sigma\left(\left\{A \in \Omega : A \text{ is open}\right\}\right)\]</div>
-</section>
-</div><p>So, the Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by the family of sets containing all open sets in <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
-<p>There are a variety of special Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras that we will deal with in this book, for which we’ll use special notation to simplify things. They are:</p>
-<div class="proof remark admonition" id="uv:mt:prob_spaces:sig:borel">
-<p class="admonition-title"><span class="caption-number">Remark 2.1 </span> (Special Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras)</p>
-<section class="remark-content" id="proof-content">
-<ol class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(\Omega = \mathbb R\)</span>, then <span class="math notranslate nohighlight">\(\mathcal R \triangleq \mathcal B(\mathbb R)\)</span>,</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\Omega = \mathbb R^d\)</span>, then <span class="math notranslate nohighlight">\(\mathcal R^d \triangleq \mathcal B(\mathbb R^d)\)</span>,</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\Omega = [\alpha, \beta]\)</span>, is a closed interval s.g. <span class="math notranslate nohighlight">\(\Omega \subseteq \mathbb R\)</span>, then <span class="math notranslate nohighlight">\(\mathcal R[\alpha, \beta] \triangleq \mathcal B([\alpha, \beta])\)</span>,</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(\Omega = (\alpha, \beta)\)</span>, is a closed interval s.g. <span class="math notranslate nohighlight">\(\Omega \subseteq \mathbb R\)</span>, then <span class="math notranslate nohighlight">\(\mathcal R[\alpha, \beta] \triangleq \mathcal B((\alpha, \beta))\)</span></p></li>
-</ol>
-</section>
-</div><p>Next, we’ll introduce some sets which generate <span class="math notranslate nohighlight">\(\mathcal R\)</span>. These will be fundamental for many proofs you’ll find later on:</p>
-<div class="proof remark admonition" id="uv:mt:prob_spaces:sig:borel_gen">
-<p class="admonition-title"><span class="caption-number">Remark 2.2 </span> (Generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>)</p>
-<section class="remark-content" id="proof-content">
-<p>The families of sets <span class="math notranslate nohighlight">\(\mathcal A_{\mathbb R} = \{(-\infty, x] : x \in \mathbb R\}\)</span> and <span class="math notranslate nohighlight">\(\mathcal A_{\mathbb Q} = \{(-\infty, x) : x \in \mathbb Q\}\)</span> are generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>.</p>
+</div><p>It should be pretty obvious to you that a countably additive set function is additive:</p>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 2.2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be an algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. Show that if <span class="math notranslate nohighlight">\(\mu_0\)</span> is a countably additive set function, it is also additive.</p>
 </section>
 </div></section>
-</section>
-<section id="measures">
-<h2><span class="section-number">2.1.3. </span>Measures<a class="headerlink" href="#measures" title="Permalink to this headline">#</a></h2>
-<p>The main reason that <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are powerful for our field of study is that they are special mathematical objects to which we can assign something called a <em>measure</em>. Together, the event space (and a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on it) for this reason are called a measurable space:</p>
+<section id="id1">
+<h2><span class="section-number">2.2.2. </span>Measures<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Now that we have countably additive set functions, we are ready to wrap our heads around one of the most crucial topics that we will discuss so far: measures. The event space (and a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on it) are called a measurable space:</p>
 <div class="proof definition admonition" id="uv:mt:prob_spaces:measbl_sp">
-<p class="admonition-title"><span class="caption-number">Definition 2.5 </span> (Measurable Space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.12 </span> (Measurable Space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>)</p>
 <section class="definition-content" id="proof-content">
 <p>The tuple <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is called a measurable space, if:</p>
 <ol class="simple">
@@ -772,9 +636,9 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
 </ol>
 </section>
-</div><p>Now that we have measurable spaces, we can begin to think about things called <em>measures</em>. A measure, in effect, is a function which allows us to formalize the concept of <em>size</em>:</p>
+</div><p>A measure, in effect, allows us to formalize the concept of <em>relational size</em>, and unite it with what we’ve learned so far about countably additive set functions:</p>
 <div class="proof definition admonition" id="uv:mt:prob_spaces:meas">
-<p class="admonition-title"><span class="caption-number">Definition 2.6 </span> (Measure <span class="math notranslate nohighlight">\(\mu\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.13 </span> (Measure <span class="math notranslate nohighlight">\(\mu\)</span>)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> be a measurable space. A measure <span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> is a non-negative countably additive set function, where:</p>
 <ol class="simple">
@@ -785,117 +649,232 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[    \mu\left(\bigcup_{n \in \mathbb N}F_n\right) = \sum_{n \in \mathbb N}\mu(F_n)\]</div>
 </section>
-</div><p>By the sets being disjoint, what we means is that for all <span class="math notranslate nohighlight">\(i, j \in \mathbb N\)</span>, then <span class="math notranslate nohighlight">\(F_i \cap F_j = \varnothing\)</span>. When the sets are disjoint, we use the square union cup <span class="math notranslate nohighlight">\(\sqcup\)</span> instead of the union cup <span class="math notranslate nohighlight">\(\cup\)</span> to emphasize explicitly that the sets we are taking a union of are disjoint. The space <span class="math notranslate nohighlight">\(\bar{\mathbb R}\)</span> is called the <em>extended real numbers</em>, which just means that it includes <span class="math notranslate nohighlight">\(\infty\)</span> and <span class="math notranslate nohighlight">\(-\infty\)</span>. The subscript <span class="math notranslate nohighlight">\(\geq 0\)</span> just delineates that it is the non-negative component. Written another way, <span class="math notranslate nohighlight">\(\bar{\mathbb R}_{\geq 0} = [0, \infty]\)</span>. The concepts of a measurable space and a measure are united with the concept of a measure space:</p>
+</div><p>The idea here is that, as we stated, <em>set functions</em> allow us to ascribe a notiong of <em>size</em> to countably additive subsets of the algebra <span class="math notranslate nohighlight">\(\mathcal A\)</span>. However, since an algebra is closed under only finitely many unions, we have <em>no idea</em> whether the resulting thing we ascribed size to even makes sense with respect to the algebra (it only necessarily holds meaning with respect to the space upon which the algebra was defined, <span class="math notranslate nohighlight">\(\Omega\)</span>). However, the measure defined on a measurable space ascribes size to countable unions of mutually disjoint subsets of <span class="math notranslate nohighlight">\(\mathcal F\)</span> (which is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra). Therefore, this countable union of mutually disjoint subsets will <em>actually end up</em> being meaningful with respect to the measurable space (since the resulting countable union will also be contained in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, since <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under countable unions).</p>
+<p>Due to the fact that these two concepts of a measurable space and a measure are so complementary in this regard (one provides a set, and a family of sets upon which measures will ascribe reasonable notions of size to that are still within that family of sets), we often group these ideas together with the word <em>measure space</em>:</p>
 <div class="proof definition admonition" id="uv:mt:prob_spaces:meas_sp">
-<p class="admonition-title"><span class="caption-number">Definition 2.7 </span> (Measure Space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.14 </span> (Measure Space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>)</p>
 <section class="definition-content" id="proof-content">
 <p>The triple <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is called a measure space if:</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(\Omega\)</span> is a set,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on \Omega,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on \Omega, and</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \mathbb R\)</span> is a measure on <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>.</p></li>
 </ol>
 </section>
-</div><section id="properties-of-measures">
-<h3><span class="section-number">2.1.3.1. </span>Properties of measures<a class="headerlink" href="#properties-of-measures" title="Permalink to this headline">#</a></h3>
+</div><p>You’ll notice that the only restriction we placed on measures were that they were non-negative. This means that <span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \bar{\mathbb R}_{\geq 0}\)</span>, which means that we could, feasibly, have some sets with infinite measures. This theoretical note tends to not be particularly nice for our field of study, so we’ll introduce two related types of measures which remove this oddity:</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 2.15 </span> (Finite measure space)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space. The measure space, and the measure <span class="math notranslate nohighlight">\(\mu\)</span>, are called finite if <span class="math notranslate nohighlight">\(\mu(\Omega) &lt; \infty\)</span>.</p>
+</section>
+</div><p>As a consequence here, <span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \mathbb R_{\geq 0}\)</span>, non-inclusive of <span class="math notranslate nohighlight">\(\infty\)</span>. When you think about the properties of measures below, start to think about why the restriction that <span class="math notranslate nohighlight">\(\mu(\Omega) &lt; \infty\)</span> implies that for any <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, <span class="math notranslate nohighlight">\(\mu(F) &lt; \infty\)</span> for a finite measure.</p>
+<p>This definition, unfortunately, tends to be a little bit restrictive, for a reason that you’ll see in an exercise later on. For this reason, we can “tweak” this definition a little bit, and instead define measure spaces that are finite <em>only</em> for the sets we actually care about: subsets of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. This gives us the concept of a <span class="math notranslate nohighlight">\(\sigma\)</span>-finite measure space:</p>
+<div class="proof definition admonition" id="definition-9">
+<p class="admonition-title"><span class="caption-number">Definition 2.16 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-finite measure space)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space. The measure space, and the measure <span class="math notranslate nohighlight">\(\mu\)</span>, are called <span class="math notranslate nohighlight">\(\sigma\)</span>-finite if there exists a sequence <span class="math notranslate nohighlight">\((S_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span>, s.t.:</p>
+<ol class="simple">
+<li><p>For all <span class="math notranslate nohighlight">\(F_n\)</span>, <span class="math notranslate nohighlight">\(\mu(F_n) &lt; \infty\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}F_n = \Omega\)</span>.</p></li>
+</ol>
+</section>
+</div><p>With this definition, we can <em>still</em> have <span class="math notranslate nohighlight">\(\mu(\Omega) = \infty\)</span>, but we can still define countable sequences where <em>each element</em> has finite measure that unite to <span class="math notranslate nohighlight">\(\Omega\)</span>. This may feel kind of like an edge-case situation, but it is going to be ultra necessary any time we try to deal with spaces that are uncountably infinite such as <span class="math notranslate nohighlight">\(\mathbb R\)</span>.</p>
+<section id="properties-of-measures">
+<h3><span class="section-number">2.2.2.1. </span>Properties of measures<a class="headerlink" href="#properties-of-measures" title="Permalink to this headline">#</a></h3>
 <p>In this book, we will often use (and abuse) several basic properties of measures. We’ll go through some of these now. To start off, we have the monotonicity of measures:</p>
 <div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:monotone">
-<p class="admonition-title"><span class="caption-number">Theorem 2.2 </span> (Monotonicity of measures)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.3 </span> (Monotonicity of measures)</p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. Then if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(A, B \in \mathcal F\)</span>, <span class="math notranslate nohighlight">\(\mu(A) \leq \mu(B)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. Then if <span class="math notranslate nohighlight">\(F_1 \subseteq F_2\)</span> and <span class="math notranslate nohighlight">\(F_1, F_2 \in \mathcal F\)</span>, <span class="math notranslate nohighlight">\(\mu(F_1) \leq \mu(F_2)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Let <span class="math notranslate nohighlight">\(A, B \in \mathcal F\)</span>, where <span class="math notranslate nohighlight">\(A \subseteq B\)</span>.</p>
-<p>Recall that <span class="math notranslate nohighlight">\(B \setminus A = B \cap A^c\)</span>. This represents the elements of <span class="math notranslate nohighlight">\(B\)</span> that are not in <span class="math notranslate nohighlight">\(A\)</span>, so we could alternatively express <span class="math notranslate nohighlight">\(B = A \cup (B \setminus A)\)</span>.</p>
-<p>As <span class="math notranslate nohighlight">\(B \setminus A\)</span> is disjoint from <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<p>Proof. Let <span class="math notranslate nohighlight">\(F_1, F_2 \in \mathcal F\)</span>, where <span class="math notranslate nohighlight">\(F_1 \subseteq F_2\)</span>.</p>
+<p>Recall that <span class="math notranslate nohighlight">\(F_2 \setminus F_1 = F_2 \cap F_1^c\)</span>. This represents the elements of <span class="math notranslate nohighlight">\(F_2\)</span> that are not in <span class="math notranslate nohighlight">\(F_1\)</span>, so we could alternatively express <span class="math notranslate nohighlight">\(F_2 = F_1 \cup (F_2 \setminus F_1)\)</span>.</p>
+<p>As <span class="math notranslate nohighlight">\(F_2 \setminus F_1\)</span> is disjoint from <span class="math notranslate nohighlight">\(F_1\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \mu(B) &amp;= \mu\left(A \sqcup (B \setminus A)\right) \\
-    &amp;= \mu(A) + \mu(B \setminus A),\,\,\,\,\mu\text{ is countably additive} \\
-    &amp;\geq \mu(A),\,\,\,\,\mu(B \setminus A) \geq 0\text{ by definition of a measure}\end{split}\]</div>
+\[\begin{split}    \mu(F_2) &amp;= \mu\left(F_1 \sqcup (F_2 \setminus F_1)\right) \\
+    &amp;= \mu(F_1) + \mu(F_2 \setminus F_1),\,\,\,\,\mu\text{ is countably additive} \\
+    &amp;\geq \mu(F_1),\,\,\,\,\mu(F_2 \setminus F_1) \geq 0\text{ by definition of a measure}\end{split}\]</div>
 <p>as desired.</p>
 </div>
 <p>Intuitively, what this statement asserts is that the measure of a set which comprises another set must be at least the measure of the set it comprises. This concept extends to the case when <span class="math notranslate nohighlight">\(A\)</span> is a subset of a countable union of sets as well, and is called subadditivity:</p>
 <div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:subadd">
-<p class="admonition-title"><span class="caption-number">Theorem 2.5 </span> (Subadditivity of measures)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.6 </span> (Subadditivity of measures)</p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(A \subseteq \bigcup_{n \in \mathbb N}A_n\)</span> where <span class="math notranslate nohighlight">\(A, A_n \in \mathcal F\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F \subseteq \bigcup_{n \in \mathbb N}F_n\)</span> where <span class="math notranslate nohighlight">\(F, F_n \in \mathcal F\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
 <div class="math notranslate nohighlight">
-\[    \mu(A) \leq \sum_{n \in \mathbb N}\mu(A_n).\]</div>
+\[    \mu(F) \leq \sum_{n \in \mathbb N}\mu(F_n).\]</div>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Let <span class="math notranslate nohighlight">\(A_n' = A_n \cap A\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Like above, <span class="math notranslate nohighlight">\(A_n'\)</span> are the elements of <span class="math notranslate nohighlight">\(A_n\)</span> that are also in <span class="math notranslate nohighlight">\(A\)</span>.</p>
-<p>Define <span class="math notranslate nohighlight">\(F_1 = A_1'\)</span>, and let <span class="math notranslate nohighlight">\(F_n = A_n' \setminus \bigcup_{m = 1}^{n - 1}A_m'\)</span> for all <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <span class="math notranslate nohighlight">\(F_n\)</span> represents the elements of <span class="math notranslate nohighlight">\(A_n\)</span> that are in <span class="math notranslate nohighlight">\(A\)</span>, but are not in any of the preceding sets <span class="math notranslate nohighlight">\(F_m\)</span> where <span class="math notranslate nohighlight">\(m \leq n\)</span>.</p>
-<p>Note that <span class="math notranslate nohighlight">\(F_n\)</span> are disjoint by construction, since each set adds only the unique elements of <span class="math notranslate nohighlight">\(A_n\)</span> in <span class="math notranslate nohighlight">\(A\)</span> that are not in any of the preceding sets <span class="math notranslate nohighlight">\(F_m\)</span>, and that <span class="math notranslate nohighlight">\(A = \bigsqcup_{n \in \mathbb N}F_n\)</span>.</p>
-<p>Further, note that <span class="math notranslate nohighlight">\(F_n \subseteq A_n\)</span>, so:</p>
+<p>Proof. Let <span class="math notranslate nohighlight">\(F_n' = F_n \cap F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Like above, <span class="math notranslate nohighlight">\(F_n'\)</span> are the elements of <span class="math notranslate nohighlight">\(F_n\)</span> that are also in <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p>Define <span class="math notranslate nohighlight">\(A_1 = F_1'\)</span>, and let <span class="math notranslate nohighlight">\(A_n = F_n' \setminus \bigcup_{m = 1}^{n - 1}F_m'\)</span> for all <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <span class="math notranslate nohighlight">\(A_n\)</span> represents the elements of <span class="math notranslate nohighlight">\(F_n\)</span> that are in <span class="math notranslate nohighlight">\(F\)</span>, but are not in any of the preceding sets <span class="math notranslate nohighlight">\(A_m\)</span> where <span class="math notranslate nohighlight">\(m \leq n\)</span>.</p>
+<p>Note that <span class="math notranslate nohighlight">\(A_n\)</span> are disjoint by construction, since each set adds only the unique elements of <span class="math notranslate nohighlight">\(F_n\)</span> in <span class="math notranslate nohighlight">\(F\)</span> that are not in any of the preceding sets <span class="math notranslate nohighlight">\(A_m\)</span>, and that <span class="math notranslate nohighlight">\(F = \bigsqcup_{n \in \mathbb N}A_n\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(A_n \subseteq F_n\)</span>, so:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mu(A) &amp;= \mu\left(\bigsqcup_{n \in \mathbb N}F_n\right) \\
-&amp;= \sum_{n \in \mathbb N}\mu(F_n),\,\,\,\,\mu\text{ is countably additive} \\
-&amp;\leq \sum_{n \in \mathbb N}\mu(A_n).\,\,\,\,F_n \subseteq A_n \Rightarrow \mu(F_n) \leq \mu(A_n)\end{split}\]</div>
-<p>which follows by <a class="reference internal" href="#uv:mt:prob_spaces:meas:monotone">Theorem 2.2</a>.</p>
+\[\begin{split}\mu(F) &amp;= \mu\left(\bigsqcup_{n \in \mathbb N}A_n\right) \\
+&amp;= \sum_{n \in \mathbb N}\mu(A_n),\,\,\,\,\mu\text{ is countably additive} \\
+&amp;\leq \sum_{n \in \mathbb N}\mu(F_n).\,\,\,\,A_n \subseteq F_n \Rightarrow \mu(A_n) \leq \mu(F_n)\end{split}\]</div>
+<p>which follows by <a class="reference internal" href="#uv:mt:prob_spaces:meas:monotone">Theorem 2.3</a>.</p>
 </div>
 <p>Next, we’ll see that measures share some of the intuitive convergence concepts a lot like functions, except instead of operating on single points, they operate on sets. We’ll begin with a definition for sets and then apply it to the measure:</p>
-<div class="proof definition admonition" id="definition-14">
-<p class="admonition-title"><span class="caption-number">Definition 2.8 </span> (Set convergence from below)</p>
+<div class="proof definition admonition" id="definition-12">
+<p class="admonition-title"><span class="caption-number">Definition 2.17 </span> (Set convergence from below)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and that <span class="math notranslate nohighlight">\(A_n \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>. If <span class="math notranslate nohighlight">\(A_n \subseteq A_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}A_n = A \in \mathcal F\)</span>, then we say that <span class="math notranslate nohighlight">\(A_n \uparrow A\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and that <span class="math notranslate nohighlight">\(F_n \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>. If <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}F_n = F \in \mathcal F\)</span>, then we say that <span class="math notranslate nohighlight">\(F_n \uparrow F\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </section>
-</div><p>This is called <em>convergence from below</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(A_n\)</span> are “growing” to the set <span class="math notranslate nohighlight">\(A\)</span>. When the sets “grow” to <span class="math notranslate nohighlight">\(A\)</span>, the measures do, too:</p>
+</div><p>This is called <em>convergence from below</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(F_n\)</span> are “growing” to the set <span class="math notranslate nohighlight">\(A\)</span>. When the sets “grow” to <span class="math notranslate nohighlight">\(A\)</span>, the measures do, too:</p>
 <div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:convbelow">
-<p class="admonition-title"><span class="caption-number">Theorem 2.4 </span> (Measure convergence from below)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.5 </span> (Measure convergence from below)</p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(A_n \uparrow A\)</span>, then <span class="math notranslate nohighlight">\(\mu(A_n) \uparrow A\)</span>, as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_n \uparrow F\)</span>, then <span class="math notranslate nohighlight">\(\mu(F_n) \uparrow \mu(F)\)</span>, as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Let <span class="math notranslate nohighlight">\(F_1 = A_1\)</span>, and let <span class="math notranslate nohighlight">\(F_n = A_n \setminus A_{n - 1}\)</span> for <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <span class="math notranslate nohighlight">\(F_n\)</span> represents the unique elements of <span class="math notranslate nohighlight">\(A_n\)</span> from all of the preceding sets <span class="math notranslate nohighlight">\(A_m\)</span>, for <span class="math notranslate nohighlight">\(m \leq n\)</span>.</p>
-<p>Note that the <span class="math notranslate nohighlight">\(F_n\)</span> are disjoint by construction, that <span class="math notranslate nohighlight">\(\bigsqcup_{n \in \mathbb N}F_n = \bigcup_{n \in \mathbb N}A_n = A\)</span>, and that <span class="math notranslate nohighlight">\(\bigsqcup_{n = 1}^m F_n = A_m\)</span>.</p>
+<p>Proof. Let <span class="math notranslate nohighlight">\(A_1 = F_1\)</span>, and let <span class="math notranslate nohighlight">\(A_n = F_n \setminus F_{n - 1}\)</span> for <span class="math notranslate nohighlight">\(n &gt; 1\)</span>. <span class="math notranslate nohighlight">\(A_n\)</span> represents the unique elements of <span class="math notranslate nohighlight">\(F_n\)</span> from all of the preceding sets <span class="math notranslate nohighlight">\(F_m\)</span>, for <span class="math notranslate nohighlight">\(m \leq n\)</span>.</p>
+<p>Note that the <span class="math notranslate nohighlight">\(A_n\)</span> are disjoint by construction, that <span class="math notranslate nohighlight">\(\bigsqcup_{n \in \mathbb N}A_n = \bigcup_{n \in \mathbb N}F_n = F\)</span>, and that <span class="math notranslate nohighlight">\(\bigsqcup_{n = 1}^m A_n = F_m\)</span>.</p>
 <p>Then:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \mu(A) &amp;= \mu\left(\bigsqcup_{n \in \mathbb N}F_n\right) \\
-    &amp;= \sum_{n \in \mathbb N}\mu\left(F_n\right),\,\,\,\,\text{ countable additivity} \\
-    &amp;= \lim_{m \rightarrow \infty}\sum_{n = 1}^m \mu(F_n) \\
-    &amp;= \lim_{m \rightarrow \infty} \mu(A_n).\end{split}\]</div>
-<p>Which follows because <span class="math notranslate nohighlight">\(\bigsqcup_{n = 1}^m F_n = A_m \Rightarrow \sum_{n = 1}^m \mu(F_n) = \mu(A_m)\)</span>.</p>
+\[\begin{split}    \mu(F) &amp;= \mu\left(\bigsqcup_{n \in \mathbb N}A_n\right) \\
+    &amp;= \sum_{n \in \mathbb N}\mu\left(A_n\right),\,\,\,\,\text{ countable additivity} \\
+    &amp;= \lim_{m \rightarrow \infty}\sum_{n = 1}^m \mu(A_n) \\
+    &amp;= \lim_{m \rightarrow \infty} \mu(F_n).\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\(\bigsqcup_{n = 1}^m A_n = F_m \Rightarrow \sum_{n = 1}^m \mu(A_n) = \mu(F_m)\)</span>.</p>
 </div>
 <p>Wouldn’t it be great if this same property held in reverse, too? Good news:</p>
-<div class="proof definition admonition" id="definition-16">
-<p class="admonition-title"><span class="caption-number">Definition 2.9 </span> (Set convergence from above)</p>
+<div class="proof definition admonition" id="definition-14">
+<p class="admonition-title"><span class="caption-number">Definition 2.18 </span> (Set convergence from above)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and that <span class="math notranslate nohighlight">\(A_n \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>. If <span class="math notranslate nohighlight">\(A_n \supseteq A_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb N}A_n = A \in \mathcal F\)</span>, then we say that <span class="math notranslate nohighlight">\(A_n \downarrow A\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and that <span class="math notranslate nohighlight">\(F_n \in \mathcal F\)</span>, for <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>. If <span class="math notranslate nohighlight">\(F_n \supseteq F_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb N}F_n = F \in \mathcal F\)</span>, then we say that <span class="math notranslate nohighlight">\(F_n \downarrow F\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </section>
-</div><p>This is called <em>convergence from above</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(A_n\)</span> are “shrinking” to the set <span class="math notranslate nohighlight">\(A\)</span>. An important corollary of this is that <span class="math notranslate nohighlight">\(A \subseteq A_n\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, which follows since <span class="math notranslate nohighlight">\(A = \bigcap_{n \in \mathbb N}A_n\)</span>.</p>
-<p>When the sets “shrink” to <span class="math notranslate nohighlight">\(A\)</span>, the measures do, too:</p>
+</div><p>This is called <em>convergence from above</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(F_n\)</span> are “shrinking” to the set <span class="math notranslate nohighlight">\(A\)</span>. An important corollary of this is that <span class="math notranslate nohighlight">\(F \subseteq F_n\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, which follows since <span class="math notranslate nohighlight">\(F = \bigcap_{n \in \mathbb N}F_n\)</span>.</p>
+<p>When the sets “shrink” to <span class="math notranslate nohighlight">\(F\)</span>, the measures do, too:</p>
 <div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:subadd">
-<p class="admonition-title"><span class="caption-number">Theorem 2.5 </span> (Measure convergence from above)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2.6 </span> (Measure convergence from above)</p>
 <section class="theorem-content" id="proof-content">
-<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(A_n \downarrow A\)</span>, and further <span class="math notranslate nohighlight">\(\mu(A_k) &lt; \infty\)</span> for some <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>, then <span class="math notranslate nohighlight">\(\mu(A_n) \downarrow \mu(A)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_n \downarrow F\)</span>, and further <span class="math notranslate nohighlight">\(\mu(F_k) &lt; \infty\)</span> for some <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>, then <span class="math notranslate nohighlight">\(\mu(F_n) \downarrow \mu(F)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Without loss of generality (WOLOG), suppose that <span class="math notranslate nohighlight">\(k=1\)</span>. If it does not, simply shift <span class="math notranslate nohighlight">\((A_n)\)</span> over <span class="math notranslate nohighlight">\(k\)</span> places, until the first element has <span class="math notranslate nohighlight">\(A_1\)</span> where <span class="math notranslate nohighlight">\(\mu(A_1) &lt; \infty\)</span>.</p>
-<p>Notice that <span class="math notranslate nohighlight">\(A_1 \setminus A_n \uparrow A_1 \setminus A\)</span>, so then <span class="math notranslate nohighlight">\(\mu(A_1 \setminus A_n) \uparrow \mu(A_1 \setminus A)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, by <a class="reference internal" href="#uv:mt:prob_spaces:meas:convbelow">Theorem 2.4</a>.</p>
-<p>Observe that since <span class="math notranslate nohighlight">\(A \subseteq A_m\)</span>, that <span class="math notranslate nohighlight">\(A_m = A_m \setminus A \sqcup A\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\(\mu(A_m) = \mu(A_m \setminus A) + \mu(A)\)</span>, and consequently, <span class="math notranslate nohighlight">\(\mu(A_m \setminus A) = \mu(A_m) - \mu(A)\)</span>, which holds for any <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, since <span class="math notranslate nohighlight">\(A_n \downarrow A\)</span>. By the same argument, <span class="math notranslate nohighlight">\(\mu(A_1 \setminus A_m) = \mu(A_1) - \mu(A_m)\)</span>, as <span class="math notranslate nohighlight">\(A_m \subseteq A_1\)</span>.</p>
+<p>Proof. Without loss of generality (WOLOG), suppose that <span class="math notranslate nohighlight">\(k=1\)</span>. If it does not, simply shift <span class="math notranslate nohighlight">\((F_n)\)</span> over <span class="math notranslate nohighlight">\(k\)</span> places, until the first element has <span class="math notranslate nohighlight">\(F_1\)</span> where <span class="math notranslate nohighlight">\(\mu(F_1) &lt; \infty\)</span>.</p>
+<p>Notice that <span class="math notranslate nohighlight">\(F_1 \setminus F_n \uparrow F_1 \setminus F\)</span>, so then <span class="math notranslate nohighlight">\(\mu(F_1 \setminus F_n) \uparrow \mu(F_1 \setminus F)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, by <a class="reference internal" href="#uv:mt:prob_spaces:meas:convbelow">Theorem 2.5</a>.</p>
+<p>Observe that since <span class="math notranslate nohighlight">\(F \subseteq F_m\)</span>, that <span class="math notranslate nohighlight">\(F_m = F_m \setminus F \sqcup F\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(\mu(F_m) = \mu(F_m \setminus F) + \mu(F)\)</span>, and consequently, <span class="math notranslate nohighlight">\(\mu(F_m \setminus F) = \mu(F_m) - \mu(F)\)</span>, which holds for any <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, since <span class="math notranslate nohighlight">\(F_n \downarrow F\)</span>. By the same argument, <span class="math notranslate nohighlight">\(\mu(F_1 \setminus F_m) = \mu(F_1) - \mu(F_m)\)</span>, as <span class="math notranslate nohighlight">\(F_m \subseteq F_1\)</span>.</p>
 <p>Then:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \mu(A_1 \setminus A_n) &amp;\uparrow \mu(A_1 \setminus A), \\
-    \mu(A_1) - \mu(A_n) &amp;\uparrow \mu(A_1) - \mu(A),\,\,\,\,A_1 \supseteq A_n \supseteq A \\
-    -\mu(A_n) &amp;\uparrow \mu(A), \\
-   \Rightarrow \mu(A_n) &amp;\downarrow \mu(A),\end{split}\]</div>
+\[\begin{split}    \mu(F_1 \setminus F_n) &amp;\uparrow \mu(F_1 \setminus F), \\
+    \mu(F_1) - \mu(Q_n) &amp;\uparrow \mu(F_1) - \mu(F),\,\,\,\,F_1 \supseteq F_n \supseteq F \\
+    -\mu(F_n) &amp;\uparrow \mu(F), \\
+   \Rightarrow \mu(F_n) &amp;\downarrow \mu(F),\end{split}\]</div>
 <p>as desired.</p>
 </div>
-<p>What we did here was we effectively used the fact that the sets are “shrinking” to <span class="math notranslate nohighlight">\(A\)</span>, so <span class="math notranslate nohighlight">\(A_1\)</span> contains every succeeding set (and <span class="math notranslate nohighlight">\(A\)</span> itself).</p>
+<p>What we did here was we effectively used the fact that the sets are “shrinking” to <span class="math notranslate nohighlight">\(F\)</span>, so <span class="math notranslate nohighlight">\(F_1\)</span> contains every succeeding set (and <span class="math notranslate nohighlight">\(F\)</span> itself).</p>
+<p>Now, we’ll rattle off some other properties of measures. Try proving some of these as an exercise!</p>
+<div class="proof lemma admonition" id="lemma-16">
+<p class="admonition-title"><span class="caption-number">Lemma 2.3 </span> (Measure of difference)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_1, F_2 \in \mathcal F\)</span> and <span class="math notranslate nohighlight">\(F_1 \subseteq F_2\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu(F_2\setminus F_1) = \mu(F_2) - \mu(F_1).\]</div>
+</section>
+</div><div class="proof lemma admonition" id="lemma-17">
+<p class="admonition-title"><span class="caption-number">Lemma 2.4 </span> (Measure of union)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_1, F_2 \in \mathcal F\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu(F_1 \cup F_2) \leq \mu(F_1) + \mu(F_2).\]</div>
+</section>
+</div><div class="proof lemma admonition" id="lemma-18">
+<p class="admonition-title"><span class="caption-number">Lemma 2.5 </span> (Inclusion/Exclusion I)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_1, F_2 \in \mathcal F\)</span> where <span class="math notranslate nohighlight">\(\mu(F_1), \mu(F_2) &lt; \infty\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu(F_1 \cup F_2) = \mu(F_1) + \mu(F_2) - \mu(F_1 \cap F_2).\]</div>
+</section>
+</div><div class="proof lemma admonition" id="lemma-19">
+<p class="admonition-title"><span class="caption-number">Lemma 2.6 </span> (Inclusion/Exclusion II)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> and <span class="math notranslate nohighlight">\((F_m)_{m \in [n]} \subseteq \mathcal F\)</span> where for all <span class="math notranslate nohighlight">\(m \in [n]\)</span>, <span class="math notranslate nohighlight">\(\mu(F_m) &lt; \infty\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu\left(\bigcup_{m \in [n]} F_m\right) = \sum_{k = 1}^n \left[(-1)^{k - 1}\sum_{\mathcal M \subseteq [n] : |\mathcal M| = k}\mu(F_{\mathcal I})\right],\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_\mathcal I \triangleq \cap_{m \in \mathcal M}F_m\)</span>.</p>
+</section>
+</div></section>
+<section id="almost-everywhere">
+<h3><span class="section-number">2.2.2.2. </span>Almost everywhere<a class="headerlink" href="#almost-everywhere" title="Permalink to this headline">#</a></h3>
+<p>When making statements using measures, we might want to ascribe things to subsets of the sample space that might not, necessarily, hold true everywhere. As you will learn later in this book, in particular, we can say a lot of <em>really useful</em> things about the sample space that are, for all intents and purposes, nearly always true (but not, necessarily, absolutely <em>always</em> true). The key fine point here has to do with something called <span class="math notranslate nohighlight">\(\mu\)</span>-null elements of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra:</p>
+<div class="proof definition admonition" id="definition-20">
+<p class="admonition-title"><span class="caption-number">Definition 2.19 </span> (<span class="math notranslate nohighlight">\(\mu\)</span>-null element)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span> is called <span class="math notranslate nohighlight">\(\mu\)</span>-null if <span class="math notranslate nohighlight">\(\mu(F) = 0\)</span>.</p>
+</section>
+</div><p>Next, we’ll define the specific wording for what we are talking about here, which is called <em>almost everywhere</em>:</p>
+<div class="proof definition admonition" id="definition-21">
+<p class="admonition-title"><span class="caption-number">Definition 2.20 </span> (Almost everywhere (a.e.))</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space, and let <span class="math notranslate nohighlight">\(\mathcal S : \Omega \rightarrow \{0, 1\}\)</span> be a statement about points in the event space <span class="math notranslate nohighlight">\(\Omega\)</span> that is either true or false. The statement <span class="math notranslate nohighlight">\(\mathcal S\)</span> is said to hold almost everywhere (a.e.) if:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(F = \{\omega \in \Omega : \mathcal S(\omega)\text{ is false}\} \in \mathcal F\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu(F) = 0\)</span>.</p></li>
+</ol>
+</section>
+</div><p>The first condition of this definition asserts that, for a statement to hold almost everywhere, the places it does not hold must all be an element of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>. Further, the places the statement does not hold true must be <span class="math notranslate nohighlight">\(\mu\)</span>-null. So, by <em>almost everywhere</em>, what we mean is that it holds everywhere that has an appreciable (non-zero) size (measure isn’t <em>size</em> persay, but it can be conceptualized that way). The first place we can put this into practice so you can get a feel for what we mean is in the construction of the Lebesgue measure, which is an invaluable tool we will use more in the later sections of this chapter.</p>
+</section>
+<section id="lebesgue-measure">
+<h3><span class="section-number">2.2.2.3. </span>Lebesgue measure<a class="headerlink" href="#lebesgue-measure" title="Permalink to this headline">#</a></h3>
+<p>So; why did we talk about <span class="math notranslate nohighlight">\(\pi\)</span>-systems at all in this book? It wasn’t just because we thought they were cool, or interesting, it is because they are <em>essential</em> tools for building out the Lebesgue measure, which we’ll learn about now. The most interesting aspect of a <span class="math notranslate nohighlight">\(\pi\)</span>-system as it relates to probability theory is the following:</p>
+<div class="proof lemma admonition" id="uv:mt:prob_spaces:meas:unique">
+<p class="admonition-title"><span class="caption-number">Lemma 2.7 </span> (Uniqueness of extensions of measures from <span class="math notranslate nohighlight">\(\pi\)</span>-systems to <span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebras)</p>
+<section class="lemma-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\Omega\)</span> be the event space, and suppose that <span class="math notranslate nohighlight">\(\mathcal P\)</span> is a <span class="math notranslate nohighlight">\(\pi\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span>, where <span class="math notranslate nohighlight">\(\mathcal F = \sigma(\mathcal P)\)</span>. Suppose that <span class="math notranslate nohighlight">\(\mu_1, \mu_2\)</span> are measures on the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>. Further, suppose:</p>
+<ol class="simple">
+<li><p>For every <span class="math notranslate nohighlight">\(P \in \mathcal P\)</span>, <span class="math notranslate nohighlight">\(\mu_1(P) = \mu_2(P)\)</span>, and</p></li>
+<li><p>The measures are finite: <span class="math notranslate nohighlight">\(\mu_1(\Omega) = \mu_2(\Omega) &lt; \infty\)</span>.
+Then for every <span class="math notranslate nohighlight">\(F \in \mathcal F = \sigma(\mathcal P)\)</span>, <span class="math notranslate nohighlight">\(\mu_1(F) = \mu_2(F)\)</span>.</p></li>
+</ol>
+</section>
+</div><p>To state this a little more succinctly, if two measures agree on a <span class="math notranslate nohighlight">\(\pi\)</span>-system, they also agree on the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by that <span class="math notranslate nohighlight">\(\pi\)</span>-system. The “kind of” obscure second criterion, that the measures are <em>finite</em>, simply ensures that we don’t have a situation where we are trying to justify that <span class="math notranslate nohighlight">\(\infty = \infty\)</span>, and in fact, this lemma turns out to be <em>false</em> if we omit this condition (while the reason it is false falls somewhat out of the scope of this book, we’d encourage you to look around and gain some intuition as to why).</p>
+<p>Now is where the real magic happens:</p>
+<div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:carotheodory">
+<p class="admonition-title"><span class="caption-number">Theorem 2.7 </span> (Caroth’eodory’s Extension)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\Omega\)</span> be an event space, let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be an algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>, and let <span class="math notranslate nohighlight">\(\mathcal F = \sigma(\mathcal A)\)</span>. Then if <span class="math notranslate nohighlight">\(\mu_0 : \mathcal A \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> is a countably additive map, <span class="math notranslate nohighlight">\(\exists \mu\)</span> on <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> s.t. <span class="math notranslate nohighlight">\(\mu = \mu_0\)</span> on <span class="math notranslate nohighlight">\(\mathcal A\)</span>.</p>
+</section>
+</div><p>So, what is this telling us? This is telling us that, if we can define a measure on an algebra <span class="math notranslate nohighlight">\(\mathcal A\)</span>, we can extend it to the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <em>generated</em> by that algebra, <span class="math notranslate nohighlight">\(\mathcal F = \sigma(\mathcal A)\)</span>, for free! Further, when we combine this with <a class="reference internal" href="#uv:mt:prob_spaces:meas:unique">Lemma 2.7</a>, we can also conclude that this measure is unique. Cool, right? Let’s see how this helps us for defining the Lebesgue measure:</p>
+<div class="proof definition admonition" id="uv:mt:prob_spaces:meas:lebesgue">
+<p class="admonition-title"><span class="caption-number">Definition 2.21 </span> (Lebesgue measure on <span class="math notranslate nohighlight">\((\alpha, \beta]\)</span>)</p>
+<section class="definition-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\Omega = (\alpha, \beta]\)</span>, and define the algebra:</p>
+<div class="math notranslate nohighlight">
+\[    \mathcal A_\lambda \triangleq \left\{\bigcup_{i \in [k]}(a_i, b_i] : k \in \mathbb N, \alpha \leq a_1 &lt; b_1 \leq a_2 &lt; b_2 \leq ... \leq a_k &lt; b_k \leq \beta \right\}\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> is an algebra (and hence, also a <span class="math notranslate nohighlight">\(\pi\)</span>-system) on <span class="math notranslate nohighlight">\(\Omega\)</span>, and <span class="math notranslate nohighlight">\(\mathcal F_\lambda = \sigma(\mathcal A_\lambda) = \mathcal B(\alpha, \beta]\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(A \in \mathcal A_\lambda\)</span>. Define:</p>
+<div class="math notranslate nohighlight">
+\[    \lambda_0(A) = \sum_{i \in [k]} b_i - a_i\]</div>
+<p>Then we define the Lebesgue measure <span class="math notranslate nohighlight">\(\lambda\)</span> to be the unique measure that extends <span class="math notranslate nohighlight">\(\lambda_0\)</span> from <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> to <span class="math notranslate nohighlight">\(\mathcal F_\lambda\)</span>.</p>
+</section>
+</div><p>So, what is this statement saying? In effect, what we are doing here is first, we define an algebra that is pretty easy to understand: Basically, the sets in the algebra defined on <span class="math notranslate nohighlight">\(\Omega\)</span> are just all of the different ways that we could take (countable) unions of (non-overlapping) sub-intervals on <span class="math notranslate nohighlight">\((\alpha, \beta]\)</span>. The <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by this algebra is, in fact, the Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. We define a somewhat intuitive countably additive set function on this algebra, by just taking the value to be the sum of the (non-overlapping) interval lengths. We don’t bother to describe the Lebesgue measure much more in-depth, because we don’t have to:</p>
+<div class="proof theorem admonition" id="uv:mt:prob_spaces:meas:lebesgue:exist_unique">
+<p class="admonition-title"><span class="caption-number">Theorem 2.8 </span> (Existence and uniqueness of the Lebesgue measure)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose the Lebesgue measure <span class="math notranslate nohighlight">\(\lambda\)</span> is defined as in <a class="reference internal" href="#uv:mt:prob_spaces:meas:lebesgue">Definition 2.21</a> on the measurable space <span class="math notranslate nohighlight">\(\left(\Omega, \mathcal F_\lambda\right)\)</span> where <span class="math notranslate nohighlight">\(\Omega = (\alpha, \beta]\)</span> is an interval. <span class="math notranslate nohighlight">\(\lambda\)</span> exists and is unique.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Existence: by <a class="reference internal" href="#uv:mt:prob_spaces:meas:carotheodory">Theorem 2.7</a>, a measure <span class="math notranslate nohighlight">\(\lambda^*\)</span> as the measure that extends <span class="math notranslate nohighlight">\(\lambda_0\)</span> from <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> to <span class="math notranslate nohighlight">\(\mathcal F_\lambda = \sigma(\mathcal A_\lambda)\)</span> exists.</p>
+<p>Uniqueness: By <a class="reference internal" href="#uv:mt:prob_spaces:meas:unique">Lemma 2.7</a>, since <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> is an algebra (and hence, also a <span class="math notranslate nohighlight">\(\pi\)</span>-system), this measure is unique on <span class="math notranslate nohighlight">\(\mathcal F_\lambda = \sigma(\mathcal A_\lambda)\)</span>.</p>
+</div>
+<p>In effect, what this means is that the relatively intuitive description we gave in the definition for <span class="math notranslate nohighlight">\(\lambda_0\)</span> was <em>plenty</em> for us to know that there is a unique measure <span class="math notranslate nohighlight">\(\lambda\)</span> that behaves exactly this way on <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> (and extends it to <span class="math notranslate nohighlight">\(\mathcal F_\lambda\)</span>), and that measure is the Lebesgue measure.</p>
+<p>If you’re careful, you’ll also notice that the measure we just defined has another interesting property: one of the sets in <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> is the set where <span class="math notranslate nohighlight">\(k = 1\)</span>, and <span class="math notranslate nohighlight">\(a_1 = \alpha\)</span>, and <span class="math notranslate nohighlight">\(b_1 = \beta\)</span>. As you can see as we defined it, <span class="math notranslate nohighlight">\(\lambda((a_1, b_2]) \equiv \lambda_0((a_1, b_1])= \beta - \alpha\)</span>. Further, note that <span class="math notranslate nohighlight">\((a_1, b_1] = (\alpha, \beta] = \Omega\)</span>. This means that <span class="math notranslate nohighlight">\(\lambda(\Omega) = \beta - \alpha\)</span>. Then if we were to take <span class="math notranslate nohighlight">\(\beta = 1\)</span> and <span class="math notranslate nohighlight">\(\alpha = 0\)</span>, the Lebesgue measure in this case is something special: it is a <em>probability</em> measure. Let’s take a look at what this means.</p>
 </section>
 </section>
 <section id="probability-measures">
-<h2><span class="section-number">2.1.4. </span>Probability measures<a class="headerlink" href="#probability-measures" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.3. </span>Probability measures<a class="headerlink" href="#probability-measures" title="Permalink to this headline">#</a></h2>
 <p>Finally, we are ready for the most important concept of this section: the probability measure. To define a probability measure, we really don’t need to do much: we just add a single property to the definition of measure. Since probability measures are measures (but reverse need not be true), all of those nice properties we just learned about measures extend to probability measures, too:</p>
-<div class="proof definition admonition" id="definition-18">
-<p class="admonition-title"><span class="caption-number">Definition 2.10 </span> (Probability Measure)</p>
+<div class="proof definition admonition" id="definition-26">
+<p class="admonition-title"><span class="caption-number">Definition 2.22 </span> (Probability Measure)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. We say that <span class="math notranslate nohighlight">\(\mu\)</span> is a probability measure if <span class="math notranslate nohighlight">\(\mu(\Omega) = 1\)</span>, and we typically denote such measures with <span class="math notranslate nohighlight">\(\mathbb P\)</span>.</p>
 </section>
 </div><p>Nothing to it: all we added was the condition that the measure, or the <em>probability</em>, of the entire event space was <span class="math notranslate nohighlight">\(1\)</span>. Likewise, we have probability spaces:</p>
-<div class="proof definition admonition" id="definition-19">
-<p class="admonition-title"><span class="caption-number">Definition 2.11 </span> (Probability Space)</p>
+<div class="proof definition admonition" id="definition-27">
+<p class="admonition-title"><span class="caption-number">Definition 2.23 </span> (Probability Space)</p>
 <section class="definition-content" id="proof-content">
 <p>The triple <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is called a probability space, where:</p>
 <ol class="simple">
@@ -904,7 +883,7 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\mathbb P: \mathcal F \rightarrow [0, 1]\)</span> is a probability measure that assigns probabilities to events.</p></li>
 </ol>
 </section>
-</div><p>In that last definition, we snuck in a fact about probability measures <span class="math notranslate nohighlight">\(\mathbb P\)</span>: that their upper bound is always <span class="math notranslate nohighlight">\(1\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb P\)</span> ascribes values in <span class="math notranslate nohighlight">\([0, 1]\)</span>), which wasn’t <em>quite</em> what the definition of a probability measure states unless you look closely. This is a consequence of the fact that any <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>; e.g., <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>, so therefore <span class="math notranslate nohighlight">\(\mathbb P(F) \leq \mathbb P(\Omega) = 1\)</span>, simply by <a class="reference internal" href="#uv:mt:prob_spaces:meas:monotone">Theorem 2.2</a>.</p>
+</div><p>In that last definition, we snuck in a fact about probability measures <span class="math notranslate nohighlight">\(\mathbb P\)</span>: that their upper bound is always <span class="math notranslate nohighlight">\(1\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb P\)</span> ascribes values in <span class="math notranslate nohighlight">\([0, 1]\)</span>), which wasn’t <em>quite</em> what the definition of a probability measure states unless you look closely. This is a consequence of the fact that any <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>; e.g., <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>, so therefore <span class="math notranslate nohighlight">\(\mathbb P(F) \leq \mathbb P(\Omega) = 1\)</span>, simply by <a class="reference internal" href="#uv:mt:prob_spaces:meas:monotone">Theorem 2.3</a>.</p>
 </section>
 </section>
 
@@ -935,17 +914,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="measure_theory.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="set_theory.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Measure Theory</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span>Set Theory</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="random_variables.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Random Variables</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Random Variables</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
