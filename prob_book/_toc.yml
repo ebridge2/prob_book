@@ -16,20 +16,31 @@ parts:
             - file: foundations/limits 
             - file: foundations/useful_results
             - file: foundations/convergence_tests
-    - caption: Univariate Probability Theory
+    - caption: Introduction to Measure Theory
       numbered: True
       chapters:
-        - file: uv/measure_theory/measure_theory
+        - file: mt/intro/intro
           sections:
-            - file: uv/measure_theory/set_theory
-            - file: uv/measure_theory/probability_spaces
-            - file: uv/measure_theory/random_variables
-            - file: uv/measure_theory/distns
-            - file: uv/measure_theory/int
-            - file: uv/measure_theory/prod_meas
-        - file: uv/llns/llns
+            - file: mt/intro/set_theory
+            - file: mt/intro/probability_spaces
+            - file: mt/intro/random_variables
+            - file: mt/intro/distns
+        - file: mt/integration/integration
+          sections:
+            - file: mt/integration/basics
+            - file: mt/integration/props
+            - file: mt/integration/exp
+            - file: mt/integration/prod_meas
+        - file: mt/classes/classes
 #          sections:
-        - file: uv/clts/clts
+    - caption: Asymptotic Probability Theory
+      numbered: True
+      chapters:
+        - file: asy/llns/llns
+#          sections:
+        - file: asy/clts/clts
+#          sections:
+        - file: asy/conc/conc
 #          sections:
     - caption: Markov Chain Theory
       numbered: True
@@ -38,11 +49,3 @@ parts:
 #          sections:
         - file: mc/mc/mc
 #          sections:
-    - caption: Multivariate Probability Theory
-      numbered: True
-      chapters:
-        - file: mv/classes/classes
-#          sections:
-        - file: mv/rvs/rvs
-#          sections:
-        - file: mv/rmats/rmats
