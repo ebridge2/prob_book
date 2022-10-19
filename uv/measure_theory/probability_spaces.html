@@ -713,7 +713,7 @@ title="Print to PDF"
 </div>
 <p>Intuitively, what this statement asserts is that the measure of a set which comprises another set must be at least the measure of the set it comprises. This concept extends to the case when <span class="math notranslate nohighlight">\(A\)</span> is a subset of a countable union of sets as well, and is called subadditivity:</p>
 <div class="proof property admonition" id="uv:mt:prob_spaces:meas:subadd">
-<p class="admonition-title"><span class="caption-number">Property 2.6 </span> (Subadditivity of measures)</p>
+<p class="admonition-title"><span class="caption-number">Property 2.4 </span> (Subadditivity of measures)</p>
 <section class="property-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F \subseteq \bigcup_{n \in \mathbb N}F_n\)</span> where <span class="math notranslate nohighlight">\(F, F_n \in \mathcal F\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
 <div class="math notranslate nohighlight">
@@ -761,7 +761,7 @@ title="Print to PDF"
 </section>
 </div><p>This is called <em>convergence from above</em>, and the basic idea is that the sets <span class="math notranslate nohighlight">\(F_n\)</span> are “shrinking” to the set <span class="math notranslate nohighlight">\(A\)</span>. An important corollary of this is that <span class="math notranslate nohighlight">\(F \subseteq F_n\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, which follows since <span class="math notranslate nohighlight">\(F = \bigcap_{n \in \mathbb N}F_n\)</span>.</p>
 <p>When the sets “shrink” to <span class="math notranslate nohighlight">\(F\)</span>, the measures do, too:</p>
-<div class="proof property admonition" id="uv:mt:prob_spaces:meas:subadd">
+<div class="proof property admonition" id="uv:mt:prob_spaces:meas:convabove">
 <p class="admonition-title"><span class="caption-number">Property 2.6 </span> (Measure convergence from above)</p>
 <section class="property-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_n \downarrow F\)</span>, and further <span class="math notranslate nohighlight">\(\mu(F_k) &lt; \infty\)</span> for some <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>, then <span class="math notranslate nohighlight">\(\mu(F_n) \downarrow \mu(F)\)</span>.</p>
@@ -781,7 +781,7 @@ title="Print to PDF"
 </div>
 <p>What we did here was we effectively used the fact that the sets are “shrinking” to <span class="math notranslate nohighlight">\(F\)</span>, so <span class="math notranslate nohighlight">\(F_1\)</span> contains every succeeding set (and <span class="math notranslate nohighlight">\(F\)</span> itself).</p>
 <p>Now, we’ll rattle off some other properties of measures. Try proving some of these as an exercise!</p>
-<div class="proof property admonition" id="property-16">
+<div class="proof property admonition" id="uv:mt:prob_spaces:meas:measdiff">
 <p class="admonition-title"><span class="caption-number">Property 2.7 </span> (Measure of difference)</p>
 <section class="property-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> be a measure space. If <span class="math notranslate nohighlight">\(F_1, F_2 \in \mathcal F\)</span> and <span class="math notranslate nohighlight">\(F_1 \subseteq F_2\)</span>, then:</p>

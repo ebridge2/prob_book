@@ -644,8 +644,8 @@ title="Print to PDF"
 <p>Then with <span class="math notranslate nohighlight">\(A_n = \{X \leq x_n\}\)</span>, it is clear that <span class="math notranslate nohighlight">\(A_n \downarrow \varnothing\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. This is because the codomain for <span class="math notranslate nohighlight">\(X\)</span> is lower-bounded by <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
 <p>Then:</p>
 <div class="math notranslate nohighlight">
-\[    F(x_n) &amp;\equiv \mathbb P(X \leq x_n) = \mathbb P(A_n) \downarrow \mathbb P(\varnothing) = 0,\]</div>
-<p>where the convergence from above is by <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">uv:mt:prob_spaces:meas:convabove</span></code>.</p>
+\[    F(x_n) \equiv \mathbb P(X \leq x_n) = \mathbb P(A_n) \downarrow \mathbb P(\varnothing) = 0,\]</div>
+<p>where the convergence from above is by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:convabove">Property 2.6</a>.</p>
 </div>
 <p>Another property we will make substantial use of with respect to distribution functions is that they are right continuous, and not (necessarily) left-continuous:</p>
 <div class="proof property admonition" id="property-7">
@@ -654,14 +654,44 @@ title="Print to PDF"
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. <span class="math notranslate nohighlight">\(\lim_{y \downarrow x}F(y) = F(x)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Suppose that <span class="math notranslate nohighlight">\((x_n)_{n \in \mathbb N} \subset \mathbb R\)</span> is a countable sequence where <span class="math notranslate nohighlight">\(x_n \downarrow \mathbb R\)</span>.</p>
-<p>Note that for any such <span class="math notranslate nohighlight">\(x_n\)</span>, that <span class="math notranslate nohighlight">\(F_n \triangleq \{\omega : X(\omega) \leq x_n\} \supset \{\omega : X(\omega) \leq x\}\)</span>, since <span class="math notranslate nohighlight">\(x_n &gt; x\)</span>.</p>
-<p>Further, note that <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb n} F_n = \{X \leq x\} \equiv \{\omega : X(\omega) \leq x\}\)</span>, because for any <span class="math notranslate nohighlight">\(\epsilon\)</span>, <span class="math notranslate nohighlight">\(\exists N\)</span> s.t. for all <span class="math notranslate nohighlight">\(m &gt; N\)</span>, <span class="math notranslate nohighlight">\(x_m - x &lt; \epsilon\)</span>, by definition of <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\((x_n)_{n \in \mathbb N} \subset \mathbb R\)</span> is a countable sequence where <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span>, and <span class="math notranslate nohighlight">\(x \not \in (x_n)_{n \in \mathbb N}\)</span>. Such a sequence exists, by the completeness of the reals.</p>
+<p>Note that for any such <span class="math notranslate nohighlight">\(x_n\)</span>, that <span class="math notranslate nohighlight">\(A_n \triangleq \{\omega : X(\omega) \leq x_n\} \supset \{\omega : X(\omega) \leq x\}\)</span>, since <span class="math notranslate nohighlight">\(x_n &gt; x\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb n} A_n = \{X \leq x\} \equiv \{\omega : X(\omega) \leq x\}\)</span>, because for any <span class="math notranslate nohighlight">\(\epsilon\)</span>, <span class="math notranslate nohighlight">\(\exists N\)</span> s.t. for all <span class="math notranslate nohighlight">\(m &gt; N\)</span>, <span class="math notranslate nohighlight">\(x_m - x &lt; \epsilon\)</span>, by definition of <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 <p>Then:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    F(x_n) &amp;\equiv \mathbb P(X \leq x_n) \equiv \mathbb P(\{\omega : X(\omega) \leq x_n\}) \\
+\[\begin{split}    F(x_n) &amp;= \mathbb P(A_n) \\
     &amp;\downarrow \mathbb P(X \leq x) \equiv \mathbb P(\{\omega : X(\omega) \leq x\}) = F(x).\end{split}\]</div>
-<p>where the convergence from above is by <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">uv:mt:prob_spaces:meas:convabove</span></code>.</p>
+<p>where the convergence from above is by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:convabove">Property 2.6</a>.</p>
+</div>
+<p>The key fine point here for the (potential) lack of left-continuity is that, as we see here, the right-hand side of the following equality is <span class="math notranslate nohighlight">\(\mathbb P(X &lt; x)\)</span>, and <em>not</em> <span class="math notranslate nohighlight">\(F(x) = \mathbb P(X \leq x)\)</span>:</p>
+<div class="proof property admonition" id="property-8">
+<p class="admonition-title"><span class="caption-number">Property 2.22 </span> (Distribution functions (not necessarily) left-continuous)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(F(x^-) \triangleq \lim_{y \uparrow x}F(y) = \mathbb P(X &lt; x)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\((x_n)_{n \in \mathbb N}\subset \mathbb R\)</span> is a countable sequence where <span class="math notranslate nohighlight">\(x_n \uparrow x\)</span>, and <span class="math notranslate nohighlight">\(x \not \in (x_n)_{n \in \mathbb N}\)</span>. Such a sequence exists, by the completeness of the reals.</p>
+<p>Note that for any such <span class="math notranslate nohighlight">\(x_n\)</span>, that <span class="math notranslate nohighlight">\(A_n \triangleq \{X \leq x_n\} \equiv \{\omega : X(\omega) \leq x_n\} \subset \{\omega : X(\omega) \leq x\} \equiv \{X \leq x\}\)</span>, since <span class="math notranslate nohighlight">\(x_n &gt; x\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}A_n = \{\omega : X(\omega) &lt; x\}\)</span>. This follows because <span class="math notranslate nohighlight">\(x \not \in (x_n)_{n \in \mathbb N}\)</span> by construction, and by applying the definition of the countable set union. This holds for any countable sequence as-described.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F(x_n) &amp;= \mathbb P(A_n) \\
+    &amp;\uparrow \mathbb P(X &lt; x) \equiv \mathbb P(\{\omega : X(\omega) &lt; x\}).\end{split}\]</div>
+<p>where the convergence from below is by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:convbelow">Property 2.5</a>.</p>
+</div>
+<p>Finally, the probability at any particular point can be taken to be the difference in the distribution function at that value, minus the limit point we defined above:</p>
+<div class="proof property admonition" id="property-9">
+<p class="admonition-title"><span class="caption-number">Property 2.23 </span> (Probability at a point)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(\mathbb P(X = x) = F(x) - F(x^-)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Note that <span class="math notranslate nohighlight">\(\{\omega : X(\omega) = x\} = \{\omega : X(\omega) \leq x\} \setminus \{\omega : X(\omega) &lt; x\}\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\{\omega : X(\omega) \leq x\} \supseteq \{\omega : X(\omega) &lt; x\}\)</span>. Then by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:measdiff">Property 2.7</a>, since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a measure:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathbb P(X = x) &amp;= \mathbb P\left(\{X \leq x\} \setminus \{X &lt; x\}\right) \\
+    &amp;= \mathbb P\left(X \leq x) - \mathbb P(X &lt; x) \\
+    \equiv F(x) - F(x^-).\end{split}\]</div>
 </div>
 </section>
 <section id="the-skorokhod-representation">
