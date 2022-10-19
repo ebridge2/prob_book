@@ -169,12 +169,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Univariate Probability Theory
+  Introduction to Measure Theory
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../uv/measure_theory/measure_theory.html">
+  <a class="reference internal" href="../mt/intro/intro.html">
    2. Introduction to Measure Theory
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -184,40 +184,84 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../uv/measure_theory/set_theory.html">
+    <a class="reference internal" href="../mt/intro/set_theory.html">
      2.1. Set Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../uv/measure_theory/probability_spaces.html">
+    <a class="reference internal" href="../mt/intro/probability_spaces.html">
      2.2. Measures
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../uv/measure_theory/random_variables.html">
+    <a class="reference internal" href="../mt/intro/random_variables.html">
      2.3. Random Variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../uv/measure_theory/distns.html">
+    <a class="reference internal" href="../mt/intro/distns.html">
      2.4. Distribution Functions
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../mt/integration/integration.html">
+   3. Integration and Expectation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../uv/measure_theory/prod_meas.html">
-     2.5. Product Measures
+    <a class="reference internal" href="../mt/integration/basics.html">
+     3.1. Defining Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mt/integration/props.html">
+     3.2. Properties of Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mt/integration/exp.html">
+     3.3. Expectation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mt/integration/prod_meas.html">
+     3.4. Product Measures
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../uv/llns/llns.html">
-   3. Laws of Large Numbers
+  <a class="reference internal" href="../mt/classes/classes.html">
+   4. Classes of Random Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Asymptotic Probability Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../asy/llns/llns.html">
+   5. Laws of Large Numbers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../uv/clts/clts.html">
-   4. Central Limit Theorems
+  <a class="reference internal" href="../asy/clts/clts.html">
+   6. Central Limit Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../asy/conc/conc.html">
+   7. Concentration
   </a>
  </li>
 </ul>
@@ -229,34 +273,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../mc/martingales/martingales.html">
-   5. Martingales
+   8. Martingales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../mc/mc/mc.html">
-   6. Markov Chains
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Multivariate Probability Theory
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../mv/classes/classes.html">
-   7. Classes of Random Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mv/rvs/rvs.html">
-   8. Random Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mv/rmats/rmats.html">
-   9. Random Matrices
+   9. Markov Chains
   </a>
  </li>
 </ul>
@@ -667,7 +689,7 @@ title="Print to PDF"
 <p>However, the question remains: how can <em>you</em> contribute to these new problems? While the problems of today aren’t always dice and coin flips, the problems are <em>still</em> extremely complicated. You might be studying a genome with millions of individual base-pairs, and you want to be able to deduce whether particular sequences of base pairs make someone more, or less, likely to get cancer later in their life. You might be studying financial data with thousands of past time points, and may want to see whether you can learn to forecast how the market might look in a few months. You might be studying social networking data with billions of users, and want to determine users who with high probability are bots.</p>
 <p>The problem, and the beauty, is that, as the data has gotten bigger, our need to understand probability theory has grown even more important. The fact remains that, no matter how much computation power grows, we only have a finite capacity to understand the universe. We cannot simply know the exact state of the entire world, and use this knowledge to determine exactly what its next state will be at some point in the future. What we can do is, we can conduct <em>experiments</em>, delineate sets of rules that we think these experiments might loosely follow, and then learn about how our experiment tells us something about the world. What we learn from these experiments, and how confident we are in what we learn, are amongst the most crucial applications from probability theory.</p>
 <p>So: where does this book fit in? When determining how to interpret the results of an experiment, you are often going to capture the things you don’t know about this experiment with <em>randomness</em>. For instance, if the experiment is a coin flip, you probably won’t be able to say, with certainty, that the coin is going to land on heads or tails with certainty in your experiment. Rather, you’re going to capture this randomness with probability. You might say that the coin has a probability that it will land on heads, and a probability that it will land on tails. What if you flipped the coin <span class="math notranslate nohighlight">\(100\)</span> times, and you attempted to use the ratio of the number of times it landed on heads divided by the number of flips to <em>guess</em> the probability of this coin? Is this guess <em>reasonable</em>? How often is it going to be <em>close</em> to the true probability of the coin? What happens if you’re no longer dealing with a coin, but you’re measuring the expected temperature? What happens if you’re dealing with a genome?</p>
-<p>Determining how things that are random behave during experiments is hard work. As a theorist, your job is going to involve a good deal of math, a bit of knowledge of statistics, and a bit of experimentation. In this book, we’re going to attempt to give you the tools that you will need to, first and foremost, understand what exactly randomness is. There are a number of ways you can conceptualize randomness, some of which are easier to work with than others. The particular approach that we’re going to use to conceptualize randomness is called <em>measure theory</em>. Under some assumptions, you can capture the behavior of random things using things called <em>probability measures</em>, which we’ll talk more about in <a class="reference internal" href="../uv/measure_theory/measure_theory.html#uv-mt"><span class="std std-ref">Introduction to Measure Theory</span></a>. These ascribe <em>rules</em> to the behavior of a particular set of functions that can be described by these probability measures called <em>random variables</em>. As you’ll hopefully see later, random variables are not, like some statistics courses may lead you to believe, scary letters that have a bunch of rules attached to them. With the right intuition, in fact, they are quite intuitive, and most of the work you have learned so far in courses like calculus have already prepared you to understand how random variables work. Hopefully, by the end of this book, we’ll have equipped you with the knowledge to understand how, exactly, you can conceptualize and understand random variables, so that those scary letters and scary formulas are a bit less scary and easy to read.</p>
+<p>Determining how things that are random behave during experiments is hard work. As a theorist, your job is going to involve a good deal of math, a bit of knowledge of statistics, and a bit of experimentation. In this book, we’re going to attempt to give you the tools that you will need to, first and foremost, understand what exactly randomness is. There are a number of ways you can conceptualize randomness, some of which are easier to work with than others. The particular approach that we’re going to use to conceptualize randomness is called <em>measure theory</em>. Under some assumptions, you can capture the behavior of random things using things called <em>probability measures</em>, which we’ll talk more about in <span class="xref std std-ref">uv:mt</span>. These ascribe <em>rules</em> to the behavior of a particular set of functions that can be described by these probability measures called <em>random variables</em>. As you’ll hopefully see later, random variables are not, like some statistics courses may lead you to believe, scary letters that have a bunch of rules attached to them. With the right intuition, in fact, they are quite intuitive, and most of the work you have learned so far in courses like calculus have already prepared you to understand how random variables work. Hopefully, by the end of this book, we’ll have equipped you with the knowledge to understand how, exactly, you can conceptualize and understand random variables, so that those scary letters and scary formulas are a bit less scary and easy to read.</p>
 </section>
 <section id="objectives-and-approach">
 <h2>Objectives and Approach<a class="headerlink" href="#objectives-and-approach" title="Permalink to this headline">#</a></h2>

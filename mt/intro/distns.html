@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.4. Distribution Functions &#8212; Measure Theoretic Probability Theory</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Integration and Expectation" href="../integration/integration.html" />
+    <link rel="prev" title="2.3. Random Variables" href="random_variables.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Measure Theoretic Probability Theory</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../coverpage.html">
+                    Measure Theoretic Probability Theory
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro/preface.html">
+   Preface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro/terminology.html">
+   Terminology
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../foundations/foundations.html">
+   1. Foundations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../foundations/limits.html">
+     1.1. Limits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../foundations/useful_results.html">
+     1.2. Useful Results
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../foundations/convergence_tests.html">
+     1.3. Series
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introduction to Measure Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   2. Introduction to Measure Theory
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="set_theory.html">
+     2.1. Set Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="probability_spaces.html">
+     2.2. Measures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="random_variables.html">
+     2.3. Random Variables
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4. Distribution Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../integration/integration.html">
+   3. Integration and Expectation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integration/basics.html">
+     3.1. Defining Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integration/props.html">
+     3.2. Properties of Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integration/exp.html">
+     3.3. Expectation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../integration/prod_meas.html">
+     3.4. Product Measures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../classes/classes.html">
+   4. Classes of Random Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Asymptotic Probability Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../asy/llns/llns.html">
+   5. Laws of Large Numbers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../asy/clts/clts.html">
+   6. Central Limit Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../asy/conc/conc.html">
+   7. Concentration
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Markov Chain Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mc/martingales/martingales.html">
+   8. Martingales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../mc/mc/mc.html">
+   9. Markov Chains
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/mt/intro/distns.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ebridge2/prob_book/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Fmt/intro/distns.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/mt/intro/distns.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/mt/intro/distns.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inducing-distribution-functions">
+   2.4.1. Inducing distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-distribution-functions">
+   2.4.2. Properties of distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-skorokhod-representation">
+   2.4.3. The Skorokhod Representation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Distribution Functions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inducing-distribution-functions">
+   2.4.1. Inducing distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-distribution-functions">
+   2.4.2. Properties of distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-skorokhod-representation">
+   2.4.3. The Skorokhod Representation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="distribution-functions">
+<span id="mt-intro-distns"></span><h1><span class="section-number">2.4. </span>Distribution Functions<a class="headerlink" href="#distribution-functions" title="Permalink to this headline">#</a></h1>
+<p>So, now we have these concepts called random variables, which are really just measurable functions on a particular domain with respect to some codomain. We can perform all of the traditional mathematical operations with random variables, and still obtain random variables. What else do we need as far as machinery goes? We need to link these random variables to probabilities. This happens via the distribution function.</p>
+<section id="inducing-distribution-functions">
+<h2><span class="section-number">2.4.1. </span>Inducing distribution functions<a class="headerlink" href="#inducing-distribution-functions" title="Permalink to this headline">#</a></h2>
+<p>Now that we have random variables (measurable functions), if the domain is a probability space, we can use the definition of a random variable to deduce that it is certainly the case that for any set in the codomain, the preimage of the set in the codomain is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the corresponding probability space. Since this set is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the probability space, we can assign a probability to that set:</p>
+<div class="proof definition admonition" id="mt:intro:distns:law">
+<p class="admonition-title"><span class="caption-number">Definition 2.27 </span> (Law of a random variable)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable. Then the induced probability measure on <span class="math notranslate nohighlight">\(S\)</span> by <span class="math notranslate nohighlight">\(X\)</span>, also known as the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span>, is the measure <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> where for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;\triangleq \mathbb P\left(\{\omega : X(\omega) \in B\}\right) \\
+    &amp;\equiv \mathbb P\left(X^{-1}(B)\right) \\
+    &amp;\equiv \mathbb P(X \in B)\end{split}\]</div>
+</section>
+</div><p>The idea here is that we are, in some sense, finding which values of <span class="math notranslate nohighlight">\(\Omega\)</span> were mapped into <span class="math notranslate nohighlight">\(B\)</span> by <span class="math notranslate nohighlight">\(X\)</span> via <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> (which must be a set <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, by definition of a random variable), and then calculating the probability (via <span class="math notranslate nohighlight">\(\mathbb P\)</span>) of this set. Since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a probability measure with respect to the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, this is a possible thing that we can do. We call this particular induced probability measure the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span> because, as we will see shortly, it ascribes most of the behaviors about <span class="math notranslate nohighlight">\(X\)</span> that we will care about.</p>
+<p>Let’s consider this from another angle to describe what’s going on here. First, we know that <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>; that is, <span class="math notranslate nohighlight">\(X\)</span> is mapping elements of the event space to the codomain. <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span> (the definition of a <span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-random variable) takes us from subsets of the codomain (elements of <span class="math notranslate nohighlight">\(\Sigma\)</span>) to measurable subsets of the sample space (elements of <span class="math notranslate nohighlight">\(\mathcal F\)</span>). We can then use <span class="math notranslate nohighlight">\(\mathbb P\)</span> to measure these measurable subsets of the sample space.</p>
+<p>In other words, using compositions, we could describe <span class="math notranslate nohighlight">\(\mathcal L_X \triangleq \mathbb P \circ X^{-1}\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> represents the probability that under <span class="math notranslate nohighlight">\(X\)</span>, a draw from the event space <span class="math notranslate nohighlight">\(\omega\)</span> winds up in <span class="math notranslate nohighlight">\(B\)</span>. From the definition, it should be pretty clear that <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>:</p>
+<div class="proof proposition admonition" id="mt:intro:distns:law_is_meas">
+<p class="admonition-title"><span class="caption-number">Proposition 2.1 </span> (The law is a probability measure)</p>
+<section class="proposition-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable, and <span class="math notranslate nohighlight">\(\mathcal L_X = \mathbb P\circ X^{-1}\)</span> is the law of <span class="math notranslate nohighlight">\(X\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. 1. <span class="math notranslate nohighlight">\(\mathcal L_X(B) \geq 0\)</span> for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;= \mathbb P(X \in B) \equiv \mathbb P(\{\omega : X(\omega) \in B\}) \\
+    &amp;\geq 0\end{split}\]</div>
+<p>since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a probability measure.</p>
+<p>2. <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(S) &amp;= \mathbb P(X \in S) \equiv \mathbb P(\{\omega : X(\omega) \in S\}) \\
+    &amp;= 1\end{split}\]</div>
+<p>which follows because <span class="math notranslate nohighlight">\(X : \omega \mapsto X(\omega) \in S\)</span> for any <span class="math notranslate nohighlight">\(\omega\)</span> by definition of <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>.</p>
+<p>3. Countably additive: Suppose that <span class="math notranslate nohighlight">\((B_n)_{n \in \mathbb N} \subseteq \Sigma\)</span> are disjoint. Since <span class="math notranslate nohighlight">\(\Sigma\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, then <span class="math notranslate nohighlight">\(B = \bigcup_{n \in \mathbb N}B_n \in \Sigma\)</span>, and:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;= \mathcal L_X\left(\bigcup_{n \in \mathbb N}B_n\right) \\
+    &amp;= \mathbb P\left(X \in \bigcup_{n \in \mathbb N}B_n\right) \equiv  P\left(\left\{\omega : X(\omega) \in \bigcup_{n \in \mathbb N}B_n\right\}\right) \\
+    &amp;= \mathbb P\left(\bigcup_{n \in \mathbb N}(X \in B_n)\right) \equiv \mathbb P\left(\bigcup_{n \in \mathbb N}\{\omega : X(\omega) \in B_n\}\right),\,\,\,\,\text{defn. of union}\end{split}\]</div>
+<p>As <span class="math notranslate nohighlight">\(X\)</span> is a function, each <span class="math notranslate nohighlight">\(X^{-1}(B_n)\)</span> are disjoint because <span class="math notranslate nohighlight">\(X\)</span> can only map each <span class="math notranslate nohighlight">\(\omega\)</span> to one value in <span class="math notranslate nohighlight">\(S\)</span>. Therefore, we can use the countable additivity of <span class="math notranslate nohighlight">\(\mathbb P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;= \sum_{n \in \mathbb N}\mathbb P(X \in B_n) \equiv \sum_{n \in \mathbb N}\mathbb P(\{\omega : X(\omega) \in B_n\}),\,\,\,\,\text{countable additivity of }\mathbb P \\
+    &amp;= \sum_{n \in \mathbb N}\mathcal L_X(B_n).\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\mathcal L_X : \mathcal \Sigma \rightarrow [0, 1]\)</span>, <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>, and is countably additive, it is a probability measure.</p>
+</div>
+<p>If the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, we are ready to make a further claim about <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> using the distribution function:</p>
+<div class="proof definition admonition" id="mt:intro:distns:distn_fn">
+<p class="admonition-title"><span class="caption-number">Definition 2.28 </span> (Distribution function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R)\)</span> is a random variable with law <span class="math notranslate nohighlight">\(\mathcal L_X\)</span>. The distribution function is:</p>
+<div class="math notranslate nohighlight">
+\[    F_X(c) \triangleq \mathcal L_X((-\infty, c]) \equiv \mathbb P(X \leq c) \equiv \mathbb P\left(\omega \in \Omega : X(\omega) \leq c\right).\]</div>
+</section>
+</div><p>As it turns out, the distribution function <em>fully determines</em> the law:</p>
+<div class="proof theorem admonition" id="mt:intro:distns:distn_fn_dets_law">
+<p class="admonition-title"><span class="caption-number">Theorem 2.6 </span> (The distribution function fully determines the law of a random variable)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R)\)</span> is a random variable. Then <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is fully determined by the function <span class="math notranslate nohighlight">\(F_X : \mathbb R \rightarrow [0, 1]\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Note that <span class="math notranslate nohighlight">\(\mathcal P = \left\{(-\infty, c] : c \in \mathbb R\right\}\)</span> is a <span class="math notranslate nohighlight">\(\pi\)</span>-system on <span class="math notranslate nohighlight">\(\mathbb R\)</span>, where <span class="math notranslate nohighlight">\(\sigma(\mathcal P) = \mathcal R\)</span>.</p>
+<p>Further, note that on <span class="math notranslate nohighlight">\(\mathcal P\)</span>, that for any <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\mathcal L((-\infty, c]) = F_X(c)\)</span>, by definition, so <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> and <span class="math notranslate nohighlight">\(F_X\)</span> agree on all of <span class="math notranslate nohighlight">\(\mathcal P\)</span>.</p>
+<p>Then by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:unique">Lemma 2.3</a>, <span class="math notranslate nohighlight">\(\mathcal L_X = F_X\)</span> on <span class="math notranslate nohighlight">\(\sigma(\mathcal P) = \mathcal R\)</span>.</p>
+</div>
+<p>In general, when we work with random variables, we will work with the distribution function for many of our proofs that we consider.</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 2.7 </span> (The codomain will be <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>)</p>
+<section class="remark-content" id="proof-content">
+<p>For the remainder of this section, we will work where the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>. For this reason, we’ll omit explicitly stating the codomain every single time for brevity.</p>
+</section>
+</div></section>
+<section id="properties-of-distribution-functions">
+<h2><span class="section-number">2.4.2. </span>Properties of distribution functions<a class="headerlink" href="#properties-of-distribution-functions" title="Permalink to this headline">#</a></h2>
+<p>Distribution functions have some nice properties that will be convenient for building up intuition about the law of random variables. First up is monotonicity:</p>
+<div class="proof property admonition" id="property-5">
+<p class="admonition-title"><span class="caption-number">Property 2.19 </span> (Monotonicity of distribution functions)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then if <span class="math notranslate nohighlight">\(x \leq y \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(F(x) \leq F(y)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Since <span class="math notranslate nohighlight">\(x \leq y\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \{\omega : X(\omega) \leq x\} \equiv \{X \leq x\} \subseteq \{X \leq y\} \equiv \{\omega : X(\omega) \leq y\}\]</div>
+<p>Then since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a measure, <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:monotone">Property 2.3</a>, <span class="math notranslate nohighlight">\(F(x) \equiv \mathbb P(X \leq x) \leq \mathbb P(X \leq y) \equiv F(y)\)</span>.</p>
+</div>
+<p>So, what this establishes is that <span class="math notranslate nohighlight">\(F\)</span> is monotone non-decreasing. Further, we can establish properties about the tails of <span class="math notranslate nohighlight">\(F\)</span>, too. These results borrow the monotone convergence (from above and below) of measures:</p>
+<div class="proof property admonition" id="property-6">
+<p class="admonition-title"><span class="caption-number">Property 2.20 </span> (Tails of the distribution function)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{x \rightarrow \infty}F(x) = 1\)</span>, and <span class="math notranslate nohighlight">\(\lim_{x \rightarrow -\infty}F(x) = 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. 1. Suppose that for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(x_n \uparrow \infty\)</span>.</p>
+<p>Then with <span class="math notranslate nohighlight">\(A_n = \{X \leq x_n\} \equiv \{\omega : X(\omega) \leq x\}\)</span>, it is clear that <span class="math notranslate nohighlight">\(A_n \uparrow \Omega\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. This follows because the codomain for <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, is upper-bounded by <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F(x_n) &amp;\equiv \mathbb P(X \leq x_n) \equiv \mathbb P(A_n) \equiv \mathbb P(\{\omega : X(\omega) \leq x_n\}) \\
+    &amp;\uparrow \mathbb P(\Omega) = 1,\end{split}\]</div>
+<p>where the convergence from below is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convbelow">Property 2.5</a>.</p>
+<p>2. Suppose that for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(x_n \downarrow -\infty\)</span>.</p>
+<p>Then with <span class="math notranslate nohighlight">\(A_n = \{X \leq x_n\}\)</span>, it is clear that <span class="math notranslate nohighlight">\(A_n \downarrow \varnothing\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. This is because the codomain for <span class="math notranslate nohighlight">\(X\)</span> is lower-bounded by <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    F(x_n) \equiv \mathbb P(X \leq x_n) = \mathbb P(A_n) \downarrow \mathbb P(\varnothing) = 0,\]</div>
+<p>where the convergence from above is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convabove">Property 2.6</a>.</p>
+</div>
+<p>Another property we will make substantial use of with respect to distribution functions is that they are right continuous, and not (necessarily) left-continuous:</p>
+<div class="proof property admonition" id="property-7">
+<p class="admonition-title"><span class="caption-number">Property 2.21 </span> (Right-continuity of distribution function)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. <span class="math notranslate nohighlight">\(\lim_{y \downarrow x}F(y) = F(x)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\((x_n)_{n \in \mathbb N} \subset \mathbb R\)</span> is a countable sequence where <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span>, and <span class="math notranslate nohighlight">\(x \not \in (x_n)_{n \in \mathbb N}\)</span>. Such a sequence exists, by the completeness of the reals.</p>
+<p>Note that for any such <span class="math notranslate nohighlight">\(x_n\)</span>, that <span class="math notranslate nohighlight">\(A_n \triangleq \{\omega : X(\omega) \leq x_n\} \supset \{\omega : X(\omega) \leq x\}\)</span>, since <span class="math notranslate nohighlight">\(x_n &gt; x\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb n} A_n = \{X \leq x\} \equiv \{\omega : X(\omega) \leq x\}\)</span>, because for any <span class="math notranslate nohighlight">\(\epsilon\)</span>, <span class="math notranslate nohighlight">\(\exists N\)</span> s.t. for all <span class="math notranslate nohighlight">\(m &gt; N\)</span>, <span class="math notranslate nohighlight">\(x_m - x &lt; \epsilon\)</span>, by definition of <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F(x_n) &amp;= \mathbb P(A_n) \\
+    &amp;\downarrow \mathbb P(X \leq x) \equiv \mathbb P(\{\omega : X(\omega) \leq x\}) = F(x).\end{split}\]</div>
+<p>where the convergence from above is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convabove">Property 2.6</a>.</p>
+</div>
+<p>The key fine point here for the (potential) lack of left-continuity is that, as we see here, the right-hand side of the following equality is <span class="math notranslate nohighlight">\(\mathbb P(X &lt; x)\)</span>, and <em>not</em> <span class="math notranslate nohighlight">\(F(x) = \mathbb P(X \leq x)\)</span>:</p>
+<div class="proof property admonition" id="property-8">
+<p class="admonition-title"><span class="caption-number">Property 2.22 </span> (Distribution functions (not necessarily) left-continuous)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(F(x^-) \triangleq \lim_{y \uparrow x}F(y) = \mathbb P(X &lt; x)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\((x_n)_{n \in \mathbb N}\subset \mathbb R\)</span> is a countable sequence where <span class="math notranslate nohighlight">\(x_n \uparrow x\)</span>, and <span class="math notranslate nohighlight">\(x \not \in (x_n)_{n \in \mathbb N}\)</span>. Such a sequence exists, by the completeness of the reals.</p>
+<p>Note that for any such <span class="math notranslate nohighlight">\(x_n\)</span>, that <span class="math notranslate nohighlight">\(A_n \triangleq \{X \leq x_n\} \equiv \{\omega : X(\omega) \leq x_n\} \subset \{\omega : X(\omega) \leq x\} \equiv \{X \leq x\}\)</span>, since <span class="math notranslate nohighlight">\(x_n &gt; x\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}A_n = \{\omega : X(\omega) &lt; x\}\)</span>. This follows because <span class="math notranslate nohighlight">\(x \not \in (x_n)_{n \in \mathbb N}\)</span> by construction, and by applying the definition of the countable set union. This holds for any countable sequence as-described.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F(x_n) &amp;= \mathbb P(A_n) \\
+    &amp;\uparrow \mathbb P(X &lt; x) \equiv \mathbb P(\{\omega : X(\omega) &lt; x\}).\end{split}\]</div>
+<p>where the convergence from below is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convbelow">Property 2.5</a>.</p>
+</div>
+<p>Finally, the probability at any particular point can be taken to be the difference in the distribution function at that value, minus the limit point we defined above:</p>
+<div class="proof property admonition" id="property-9">
+<p class="admonition-title"><span class="caption-number">Property 2.23 </span> (Probability at a point)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(\mathbb P(X = x) = F(x) - F(x^-)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Note that <span class="math notranslate nohighlight">\(\{\omega : X(\omega) = x\} = \{\omega : X(\omega) \leq x\} \setminus \{\omega : X(\omega) &lt; x\}\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\{\omega : X(\omega) \leq x\} \supseteq \{\omega : X(\omega) &lt; x\}\)</span>. Then by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:measdiff">Property 2.7</a>, since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a measure:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathbb P(X = x) &amp;= \mathbb P\left(\{X \leq x\} \setminus \{X &lt; x\}\right) \\
+    &amp;= \mathbb P(X \leq x) - \mathbb P(X &lt; x) \\
+    &amp;\equiv F(x) - F(x^-).\end{split}\]</div>
+</div>
+</section>
+<section id="the-skorokhod-representation">
+<h2><span class="section-number">2.4.3. </span>The Skorokhod Representation<a class="headerlink" href="#the-skorokhod-representation" title="Permalink to this headline">#</a></h2>
+<p>When the distribution function <span class="math notranslate nohighlight">\(F\)</span> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is invertible (that is, <span class="math notranslate nohighlight">\(F^{-1} : \mathbb R \rightarrow [0, 1]\)</span> exists), we obtain some nice properties; particularly, that <span class="math notranslate nohighlight">\(F^{-1}\)</span> serves as something known as the <em>quantile function</em> of the random variable. This property is solidified by the Skorokhod representation for <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 2.29 </span> (Skorokhod Representation)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is an r.v., and <span class="math notranslate nohighlight">\(F : \mathbb R \rightarrow [0, 1]\)</span> is the distribution function for <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>Then with another probability space <span class="math notranslate nohighlight">\(([0, 1], \mathcal F, \lambda)\)</span>, <span class="math notranslate nohighlight">\(\exists U \in m(\mathcal B[0, 1], \mathcal R): [0, 1] \rightarrow \mathbb R\)</span> where <span class="math notranslate nohighlight">\(U(\omega) = \omega\)</span> for any <span class="math notranslate nohighlight">\(\omega \in [0, 1]\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(F^{-1}\)</span> exists, define <span class="math notranslate nohighlight">\(X(\omega) = F^{-1}(U(\omega))\)</span> (e.g., <span class="math notranslate nohighlight">\(X = F^{-1} \circ U\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathbb P(X \leq x) &amp;= \mathbb P(\{\omega : X(\omega) \leq x\}) \\
+    &amp;= \mathbb P\left(\{\omega : F^{-1}(U(\omega)) \leq x\}\right) \\
+    &amp;= \mathbb P\left(\{\omega : U(\omega) \leq F(x)\}\right) \\
+    &amp;\equiv \mathbb P(U \leq F(x)) = \lambda(0, F(x)) \\
+    &amp;= F(x).\end{split}\]</div>
+</section>
+</div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mt/intro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="random_variables.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>Random Variables</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../integration/integration.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Integration and Expectation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Eric W. Bridgeford<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -171,12 +171,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Univariate Probability Theory
+  Introduction to Measure Theory
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="uv/measure_theory/measure_theory.html">
+  <a class="reference internal" href="mt/intro/intro.html">
    2. Introduction to Measure Theory
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -186,40 +186,84 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="uv/measure_theory/set_theory.html">
+    <a class="reference internal" href="mt/intro/set_theory.html">
      2.1. Set Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="uv/measure_theory/probability_spaces.html">
+    <a class="reference internal" href="mt/intro/probability_spaces.html">
      2.2. Measures
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="uv/measure_theory/random_variables.html">
+    <a class="reference internal" href="mt/intro/random_variables.html">
      2.3. Random Variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="uv/measure_theory/distns.html">
+    <a class="reference internal" href="mt/intro/distns.html">
      2.4. Distribution Functions
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="mt/integration/integration.html">
+   3. Integration and Expectation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="uv/measure_theory/prod_meas.html">
-     2.5. Product Measures
+    <a class="reference internal" href="mt/integration/basics.html">
+     3.1. Defining Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mt/integration/props.html">
+     3.2. Properties of Integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mt/integration/exp.html">
+     3.3. Expectation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mt/integration/prod_meas.html">
+     3.4. Product Measures
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="uv/llns/llns.html">
-   3. Laws of Large Numbers
+  <a class="reference internal" href="mt/classes/classes.html">
+   4. Classes of Random Variables
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Asymptotic Probability Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="asy/llns/llns.html">
+   5. Laws of Large Numbers
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="uv/clts/clts.html">
-   4. Central Limit Theorems
+  <a class="reference internal" href="asy/clts/clts.html">
+   6. Central Limit Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="asy/conc/conc.html">
+   7. Concentration
   </a>
  </li>
 </ul>
@@ -231,34 +275,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="mc/martingales/martingales.html">
-   5. Martingales
+   8. Martingales
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mc/mc/mc.html">
-   6. Markov Chains
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Multivariate Probability Theory
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="mv/classes/classes.html">
-   7. Classes of Random Variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mv/rvs/rvs.html">
-   8. Random Vectors
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mv/rmats/rmats.html">
-   9. Random Matrices
+   9. Markov Chains
   </a>
  </li>
 </ul>
@@ -452,6 +474,52 @@ title="Open an issue"
    <a href="#cap-lemma-21"><strong>lemma-21</strong></a> | 
    <a href="#cap-lemma-22"><strong>lemma-22</strong></a> | 
    <a href="#cap-lemma-9"><strong>lemma-9</strong></a> | 
+   <a href="#cap-mt:intro:distns:distn_fn"><strong>mt:intro:distns:distn_fn</strong></a> | 
+   <a href="#cap-mt:intro:distns:distn_fn_dets_law"><strong>mt:intro:distns:distn_fn_dets_law</strong></a> | 
+   <a href="#cap-mt:intro:distns:law"><strong>mt:intro:distns:law</strong></a> | 
+   <a href="#cap-mt:intro:distns:law_is_meas"><strong>mt:intro:distns:law_is_meas</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:add_setfn"><strong>mt:intro:prob_spaces:add_setfn</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:count_add_setfn"><strong>mt:intro:prob_spaces:count_add_setfn</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas"><strong>mt:intro:prob_spaces:meas</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:ae"><strong>mt:intro:prob_spaces:meas:ae</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:as"><strong>mt:intro:prob_spaces:meas:as</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:carotheodory"><strong>mt:intro:prob_spaces:meas:carotheodory</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:convabove"><strong>mt:intro:prob_spaces:meas:convabove</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:convbelow"><strong>mt:intro:prob_spaces:meas:convbelow</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:lebesgue"><strong>mt:intro:prob_spaces:meas:lebesgue</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:lebesgue:exist_unique"><strong>mt:intro:prob_spaces:meas:lebesgue:exist_unique</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:measdiff"><strong>mt:intro:prob_spaces:meas:measdiff</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:monotone"><strong>mt:intro:prob_spaces:meas:monotone</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:subadd"><strong>mt:intro:prob_spaces:meas:subadd</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:unique"><strong>mt:intro:prob_spaces:meas:unique</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas_sp"><strong>mt:intro:prob_spaces:meas_sp</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:measbl_sp"><strong>mt:intro:prob_spaces:measbl_sp</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:setfn"><strong>mt:intro:prob_spaces:setfn</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:comp"><strong>mt:intro:rvs:elem:comp</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:cont"><strong>mt:intro:rvs:elem:cont</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:ext:inf"><strong>mt:intro:rvs:elem:ext:inf</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:ext:sup"><strong>mt:intro:rvs:elem:ext:sup</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:gen_sets_borel"><strong>mt:intro:rvs:elem:gen_sets_borel</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:math:add"><strong>mt:intro:rvs:elem:math:add</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:math:multiply"><strong>mt:intro:rvs:elem:math:multiply</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:math:rescale"><strong>mt:intro:rvs:elem:math:rescale</strong></a> | 
+   <a href="#cap-mt:intro:rvs:elem:set"><strong>mt:intro:rvs:elem:set</strong></a> | 
+   <a href="#cap-mt:intro:rvs:generator_rv"><strong>mt:intro:rvs:generator_rv</strong></a> | 
+   <a href="#cap-mt:intro:rvs:generator_set"><strong>mt:intro:rvs:generator_set</strong></a> | 
+   <a href="#cap-mt:intro:rvs:indicator"><strong>mt:intro:rvs:indicator</strong></a> | 
+   <a href="#cap-mt:intro:rvs:rv"><strong>mt:intro:rvs:rv</strong></a> | 
+   <a href="#cap-mt:intro:rvs:rv:equiv"><strong>mt:intro:rvs:rv:equiv</strong></a> | 
+   <a href="#cap-mt:intro:set:alg_is_pi"><strong>mt:intro:set:alg_is_pi</strong></a> | 
+   <a href="#cap-mt:intro:set:algebra"><strong>mt:intro:set:algebra</strong></a> | 
+   <a href="#cap-mt:intro:set:pi"><strong>mt:intro:set:pi</strong></a> | 
+   <a href="#cap-mt:intro:set:sig"><strong>mt:intro:set:sig</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:borel"><strong>mt:intro:set:sig:borel</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:borel_gen"><strong>mt:intro:set:sig:borel_gen</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:intersection"><strong>mt:intro:set:sig:intersection</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:partition"><strong>mt:intro:set:sig:partition</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:preserve"><strong>mt:intro:set:sig:preserve</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:siggen"><strong>mt:intro:set:sig:siggen</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:siggenpart"><strong>mt:intro:set:sig:siggenpart</strong></a> | 
    <a href="#cap-pref:dummy-lemma"><strong>pref:dummy-lemma</strong></a> | 
    <a href="#cap-pref:dummy-theorem"><strong>pref:dummy-theorem</strong></a> | 
    <a href="#cap-pref:dummy-theorem2"><strong>pref:dummy-theorem2</strong></a> | 
@@ -473,52 +541,7 @@ title="Open an issue"
    <a href="#cap-remark-4"><strong>remark-4</strong></a> | 
    <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
    <a href="#cap-theorem-18"><strong>theorem-18</strong></a> | 
-   <a href="#cap-thm:found:lim:limequality"><strong>thm:found:lim:limequality</strong></a> | 
-   <a href="#cap-uv:mt:distns:distn_fn"><strong>uv:mt:distns:distn_fn</strong></a> | 
-   <a href="#cap-uv:mt:distns:distn_fn_dets_law"><strong>uv:mt:distns:distn_fn_dets_law</strong></a> | 
-   <a href="#cap-uv:mt:distns:law"><strong>uv:mt:distns:law</strong></a> | 
-   <a href="#cap-uv:mt:distns:law_is_meas"><strong>uv:mt:distns:law_is_meas</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:add_setfn"><strong>uv:mt:prob_spaces:add_setfn</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:count_add_setfn"><strong>uv:mt:prob_spaces:count_add_setfn</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas"><strong>uv:mt:prob_spaces:meas</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:ae"><strong>uv:mt:prob_spaces:meas:ae</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:as"><strong>uv:mt:prob_spaces:meas:as</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:carotheodory"><strong>uv:mt:prob_spaces:meas:carotheodory</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:convabove"><strong>uv:mt:prob_spaces:meas:convabove</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:convbelow"><strong>uv:mt:prob_spaces:meas:convbelow</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:lebesgue"><strong>uv:mt:prob_spaces:meas:lebesgue</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:lebesgue:exist_unique"><strong>uv:mt:prob_spaces:meas:lebesgue:exist_unique</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:measdiff"><strong>uv:mt:prob_spaces:meas:measdiff</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:monotone"><strong>uv:mt:prob_spaces:meas:monotone</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:subadd"><strong>uv:mt:prob_spaces:meas:subadd</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas:unique"><strong>uv:mt:prob_spaces:meas:unique</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:meas_sp"><strong>uv:mt:prob_spaces:meas_sp</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:measbl_sp"><strong>uv:mt:prob_spaces:measbl_sp</strong></a> | 
-   <a href="#cap-uv:mt:prob_spaces:setfn"><strong>uv:mt:prob_spaces:setfn</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:comp"><strong>uv:mt:rvs:elem:comp</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:cont"><strong>uv:mt:rvs:elem:cont</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:ext:inf"><strong>uv:mt:rvs:elem:ext:inf</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:ext:sup"><strong>uv:mt:rvs:elem:ext:sup</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:gen_sets_borel"><strong>uv:mt:rvs:elem:gen_sets_borel</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:math:add"><strong>uv:mt:rvs:elem:math:add</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:math:multiply"><strong>uv:mt:rvs:elem:math:multiply</strong></a> | 
-   <a href="#cap-uv:mt:rvs:elem:set"><strong>uv:mt:rvs:elem:set</strong></a> | 
-   <a href="#cap-uv:mt:rvs:generator_rv"><strong>uv:mt:rvs:generator_rv</strong></a> | 
-   <a href="#cap-uv:mt:rvs:generator_set"><strong>uv:mt:rvs:generator_set</strong></a> | 
-   <a href="#cap-uv:mt:rvs:indicator"><strong>uv:mt:rvs:indicator</strong></a> | 
-   <a href="#cap-uv:mt:rvs:rv"><strong>uv:mt:rvs:rv</strong></a> | 
-   <a href="#cap-uv:mt:rvs:rv:equiv"><strong>uv:mt:rvs:rv:equiv</strong></a> | 
-   <a href="#cap-uv:mt:set:alg_is_pi"><strong>uv:mt:set:alg_is_pi</strong></a> | 
-   <a href="#cap-uv:mt:set:algebra"><strong>uv:mt:set:algebra</strong></a> | 
-   <a href="#cap-uv:mt:set:pi"><strong>uv:mt:set:pi</strong></a> | 
-   <a href="#cap-uv:mt:set:sig"><strong>uv:mt:set:sig</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:borel"><strong>uv:mt:set:sig:borel</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:borel_gen"><strong>uv:mt:set:sig:borel_gen</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:intersection"><strong>uv:mt:set:sig:intersection</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:partition"><strong>uv:mt:set:sig:partition</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:preserve"><strong>uv:mt:set:sig:preserve</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:siggen"><strong>uv:mt:set:sig:siggen</strong></a> | 
-   <a href="#cap-uv:mt:set:sig:siggenpart"><strong>uv:mt:set:sig:siggenpart</strong></a>
+   <a href="#cap-thm:found:lim:limequality"><strong>thm:found:lim:limequality</strong></a>
    </div>
 
    <table class="indextable modindextable">
@@ -616,7 +639,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#definition-0"><code class="xref">definition-0</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#definition-0"><code class="xref">definition-0</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-1"><td></td><td>
@@ -624,7 +647,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#definition-1"><code class="xref">definition-1</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#definition-1"><code class="xref">definition-1</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-10"><td></td><td>
@@ -632,7 +655,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#definition-10"><code class="xref">definition-10</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#definition-10"><code class="xref">definition-10</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-12"><td></td><td>
@@ -640,7 +663,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-12"><code class="xref">definition-12</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-12"><code class="xref">definition-12</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-14"><td></td><td>
@@ -648,7 +671,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-14"><code class="xref">definition-14</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-14"><code class="xref">definition-14</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-16"><td></td><td>
@@ -656,7 +679,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#definition-16"><code class="xref">definition-16</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#definition-16"><code class="xref">definition-16</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-20"><td></td><td>
@@ -664,7 +687,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-20"><code class="xref">definition-20</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-20"><code class="xref">definition-20</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-26"><td></td><td>
@@ -672,7 +695,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-26"><code class="xref">definition-26</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-26"><code class="xref">definition-26</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-27"><td></td><td>
@@ -680,7 +703,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-27"><code class="xref">definition-27</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-27"><code class="xref">definition-27</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-8"><td></td><td>
@@ -688,7 +711,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-8"><code class="xref">definition-8</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-8"><code class="xref">definition-8</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-9"><td></td><td>
@@ -696,7 +719,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#definition-9"><code class="xref">definition-9</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#definition-9"><code class="xref">definition-9</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex:foundations:series:conv_tests:integral"><td></td><td>
@@ -736,7 +759,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#example-2"><code class="xref">example-2</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#example-2"><code class="xref">example-2</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-3"><td></td><td>
@@ -744,7 +767,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#example-3"><code class="xref">example-3</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#example-3"><code class="xref">example-3</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-4"><td></td><td>
@@ -752,7 +775,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#example-4"><code class="xref">example-4</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#example-4"><code class="xref">example-4</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-5"><td></td><td>
@@ -760,7 +783,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#example-5"><code class="xref">example-5</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#example-5"><code class="xref">example-5</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-6"><td></td><td>
@@ -768,7 +791,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#example-6"><code class="xref">example-6</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#example-6"><code class="xref">example-6</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-foundations:series:defs:partsum"><td></td><td>
@@ -955,6 +978,374 @@ title="Open an issue"
        <a href="foundations/convergence_tests.html#lemma-9"><code class="xref">lemma-9</code></a> <em>(foundations/convergence_tests)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:distns:distn_fn"><td></td><td>
+       <strong>mt:intro:distns:distn_fn</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#mt:intro:distns:distn_fn"><code class="xref">mt:intro:distns:distn_fn</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:distns:distn_fn_dets_law"><td></td><td>
+       <strong>mt:intro:distns:distn_fn_dets_law</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#mt:intro:distns:distn_fn_dets_law"><code class="xref">mt:intro:distns:distn_fn_dets_law</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:distns:law"><td></td><td>
+       <strong>mt:intro:distns:law</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#mt:intro:distns:law"><code class="xref">mt:intro:distns:law</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:distns:law_is_meas"><td></td><td>
+       <strong>mt:intro:distns:law_is_meas</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#mt:intro:distns:law_is_meas"><code class="xref">mt:intro:distns:law_is_meas</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:add_setfn"><td></td><td>
+       <strong>mt:intro:prob_spaces:add_setfn</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:add_setfn"><code class="xref">mt:intro:prob_spaces:add_setfn</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:count_add_setfn"><td></td><td>
+       <strong>mt:intro:prob_spaces:count_add_setfn</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:count_add_setfn"><code class="xref">mt:intro:prob_spaces:count_add_setfn</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas"><code class="xref">mt:intro:prob_spaces:meas</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:ae"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:ae</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:ae"><code class="xref">mt:intro:prob_spaces:meas:ae</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:as"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:as</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:as"><code class="xref">mt:intro:prob_spaces:meas:as</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:carotheodory"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:carotheodory</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:carotheodory"><code class="xref">mt:intro:prob_spaces:meas:carotheodory</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:convabove"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:convabove</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:convabove"><code class="xref">mt:intro:prob_spaces:meas:convabove</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:convbelow"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:convbelow</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:convbelow"><code class="xref">mt:intro:prob_spaces:meas:convbelow</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:lebesgue"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:lebesgue</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:lebesgue"><code class="xref">mt:intro:prob_spaces:meas:lebesgue</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:lebesgue:exist_unique"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:lebesgue:exist_unique</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:lebesgue:exist_unique"><code class="xref">mt:intro:prob_spaces:meas:lebesgue:exist_unique</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:measdiff"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:measdiff</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:measdiff"><code class="xref">mt:intro:prob_spaces:meas:measdiff</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:monotone"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:monotone</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:monotone"><code class="xref">mt:intro:prob_spaces:meas:monotone</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:subadd"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:subadd</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:subadd"><code class="xref">mt:intro:prob_spaces:meas:subadd</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:unique"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:unique</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:unique"><code class="xref">mt:intro:prob_spaces:meas:unique</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas_sp"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas_sp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas_sp"><code class="xref">mt:intro:prob_spaces:meas_sp</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:measbl_sp"><td></td><td>
+       <strong>mt:intro:prob_spaces:measbl_sp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:measbl_sp"><code class="xref">mt:intro:prob_spaces:measbl_sp</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:setfn"><td></td><td>
+       <strong>mt:intro:prob_spaces:setfn</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:setfn"><code class="xref">mt:intro:prob_spaces:setfn</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:comp"><td></td><td>
+       <strong>mt:intro:rvs:elem:comp</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:comp"><code class="xref">mt:intro:rvs:elem:comp</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:cont"><td></td><td>
+       <strong>mt:intro:rvs:elem:cont</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:cont"><code class="xref">mt:intro:rvs:elem:cont</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:ext:inf"><td></td><td>
+       <strong>mt:intro:rvs:elem:ext:inf</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:ext:inf"><code class="xref">mt:intro:rvs:elem:ext:inf</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:ext:sup"><td></td><td>
+       <strong>mt:intro:rvs:elem:ext:sup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:ext:sup"><code class="xref">mt:intro:rvs:elem:ext:sup</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:gen_sets_borel"><td></td><td>
+       <strong>mt:intro:rvs:elem:gen_sets_borel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:gen_sets_borel"><code class="xref">mt:intro:rvs:elem:gen_sets_borel</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>corollary</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:math:add"><td></td><td>
+       <strong>mt:intro:rvs:elem:math:add</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:math:add"><code class="xref">mt:intro:rvs:elem:math:add</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:math:multiply"><td></td><td>
+       <strong>mt:intro:rvs:elem:math:multiply</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:math:multiply"><code class="xref">mt:intro:rvs:elem:math:multiply</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:math:rescale"><td></td><td>
+       <strong>mt:intro:rvs:elem:math:rescale</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:math:rescale"><code class="xref">mt:intro:rvs:elem:math:rescale</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:elem:set"><td></td><td>
+       <strong>mt:intro:rvs:elem:set</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:elem:set"><code class="xref">mt:intro:rvs:elem:set</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:generator_rv"><td></td><td>
+       <strong>mt:intro:rvs:generator_rv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:generator_rv"><code class="xref">mt:intro:rvs:generator_rv</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:generator_set"><td></td><td>
+       <strong>mt:intro:rvs:generator_set</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:generator_set"><code class="xref">mt:intro:rvs:generator_set</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:indicator"><td></td><td>
+       <strong>mt:intro:rvs:indicator</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:indicator"><code class="xref">mt:intro:rvs:indicator</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:rv"><td></td><td>
+       <strong>mt:intro:rvs:rv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:rv"><code class="xref">mt:intro:rvs:rv</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:rvs:rv:equiv"><td></td><td>
+       <strong>mt:intro:rvs:rv:equiv</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/random_variables.html#mt:intro:rvs:rv:equiv"><code class="xref">mt:intro:rvs:rv:equiv</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:alg_is_pi"><td></td><td>
+       <strong>mt:intro:set:alg_is_pi</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:alg_is_pi"><code class="xref">mt:intro:set:alg_is_pi</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:algebra"><td></td><td>
+       <strong>mt:intro:set:algebra</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:algebra"><code class="xref">mt:intro:set:algebra</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:pi"><td></td><td>
+       <strong>mt:intro:set:pi</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:pi"><code class="xref">mt:intro:set:pi</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig"><td></td><td>
+       <strong>mt:intro:set:sig</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig"><code class="xref">mt:intro:set:sig</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:borel"><td></td><td>
+       <strong>mt:intro:set:sig:borel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:borel"><code class="xref">mt:intro:set:sig:borel</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:borel_gen"><td></td><td>
+       <strong>mt:intro:set:sig:borel_gen</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:borel_gen"><code class="xref">mt:intro:set:sig:borel_gen</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:intersection"><td></td><td>
+       <strong>mt:intro:set:sig:intersection</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:intersection"><code class="xref">mt:intro:set:sig:intersection</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:partition"><td></td><td>
+       <strong>mt:intro:set:sig:partition</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:partition"><code class="xref">mt:intro:set:sig:partition</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:preserve"><td></td><td>
+       <strong>mt:intro:set:sig:preserve</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:preserve"><code class="xref">mt:intro:set:sig:preserve</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:siggen"><td></td><td>
+       <strong>mt:intro:set:sig:siggen</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:siggen"><code class="xref">mt:intro:set:sig:siggen</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:siggenpart"><td></td><td>
+       <strong>mt:intro:set:sig:siggenpart</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:siggenpart"><code class="xref">mt:intro:set:sig:siggenpart</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-pref:dummy-lemma"><td></td><td>
        <strong>pref:dummy-lemma</strong></td><td></td></tr>
      <tr>
@@ -992,7 +1383,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/set_theory.html#property-10"><code class="xref">property-10</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#property-10"><code class="xref">property-10</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-17"><td></td><td>
@@ -1000,7 +1391,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#property-17"><code class="xref">property-17</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#property-17"><code class="xref">property-17</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-18"><td></td><td>
@@ -1008,7 +1399,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/probability_spaces.html#property-18"><code class="xref">property-18</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#property-18"><code class="xref">property-18</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-19"><td></td><td>
@@ -1016,7 +1407,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/random_variables.html#property-19"><code class="xref">property-19</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
+       <a href="mt/intro/random_variables.html#property-19"><code class="xref">property-19</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-2"><td></td><td>
@@ -1032,7 +1423,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#property-5"><code class="xref">property-5</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#property-5"><code class="xref">property-5</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-6"><td></td><td>
@@ -1040,7 +1431,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#property-6"><code class="xref">property-6</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#property-6"><code class="xref">property-6</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-7"><td></td><td>
@@ -1048,7 +1439,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#property-7"><code class="xref">property-7</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#property-7"><code class="xref">property-7</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-8"><td></td><td>
@@ -1056,7 +1447,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#property-8"><code class="xref">property-8</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#property-8"><code class="xref">property-8</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-9"><td></td><td>
@@ -1064,7 +1455,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#property-9"><code class="xref">property-9</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#property-9"><code class="xref">property-9</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-0"><td></td><td>
@@ -1080,7 +1471,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/random_variables.html#remark-1"><code class="xref">remark-1</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
+       <a href="mt/intro/random_variables.html#remark-1"><code class="xref">remark-1</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-12"><td></td><td>
@@ -1088,7 +1479,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/random_variables.html#remark-12"><code class="xref">remark-12</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
+       <a href="mt/intro/random_variables.html#remark-12"><code class="xref">remark-12</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-2"><td></td><td>
@@ -1096,7 +1487,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/random_variables.html#remark-2"><code class="xref">remark-2</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
+       <a href="mt/intro/random_variables.html#remark-2"><code class="xref">remark-2</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-4"><td></td><td>
@@ -1104,7 +1495,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/distns.html#remark-4"><code class="xref">remark-4</code></a> <em>(uv/measure_theory/distns)</em></td><td>
+       <a href="mt/intro/distns.html#remark-4"><code class="xref">remark-4</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-5"><td></td><td>
@@ -1112,7 +1503,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/random_variables.html#remark-5"><code class="xref">remark-5</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
+       <a href="mt/intro/random_variables.html#remark-5"><code class="xref">remark-5</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-18"><td></td><td>
@@ -1120,7 +1511,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="uv/measure_theory/random_variables.html#theorem-18"><code class="xref">theorem-18</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
+       <a href="mt/intro/random_variables.html#theorem-18"><code class="xref">theorem-18</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-thm:found:lim:limequality"><td></td><td>
@@ -1130,366 +1521,6 @@ title="Open an issue"
        <td>
        <a href="foundations/limits.html#thm:found:lim:limequality"><code class="xref">thm:found:lim:limequality</code></a> <em>(foundations/limits)</em></td><td>
        <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:distns:distn_fn"><td></td><td>
-       <strong>uv:mt:distns:distn_fn</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/distns.html#uv:mt:distns:distn_fn"><code class="xref">uv:mt:distns:distn_fn</code></a> <em>(uv/measure_theory/distns)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:distns:distn_fn_dets_law"><td></td><td>
-       <strong>uv:mt:distns:distn_fn_dets_law</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/distns.html#uv:mt:distns:distn_fn_dets_law"><code class="xref">uv:mt:distns:distn_fn_dets_law</code></a> <em>(uv/measure_theory/distns)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:distns:law"><td></td><td>
-       <strong>uv:mt:distns:law</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/distns.html#uv:mt:distns:law"><code class="xref">uv:mt:distns:law</code></a> <em>(uv/measure_theory/distns)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:distns:law_is_meas"><td></td><td>
-       <strong>uv:mt:distns:law_is_meas</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/distns.html#uv:mt:distns:law_is_meas"><code class="xref">uv:mt:distns:law_is_meas</code></a> <em>(uv/measure_theory/distns)</em></td><td>
-       <em>proposition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:add_setfn"><td></td><td>
-       <strong>uv:mt:prob_spaces:add_setfn</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:add_setfn"><code class="xref">uv:mt:prob_spaces:add_setfn</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:count_add_setfn"><td></td><td>
-       <strong>uv:mt:prob_spaces:count_add_setfn</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:count_add_setfn"><code class="xref">uv:mt:prob_spaces:count_add_setfn</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas"><code class="xref">uv:mt:prob_spaces:meas</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:ae"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:ae</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:ae"><code class="xref">uv:mt:prob_spaces:meas:ae</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:as"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:as</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:as"><code class="xref">uv:mt:prob_spaces:meas:as</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:carotheodory"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:carotheodory</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:carotheodory"><code class="xref">uv:mt:prob_spaces:meas:carotheodory</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:convabove"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:convabove</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:convabove"><code class="xref">uv:mt:prob_spaces:meas:convabove</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:convbelow"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:convbelow</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:convbelow"><code class="xref">uv:mt:prob_spaces:meas:convbelow</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:lebesgue"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:lebesgue</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:lebesgue"><code class="xref">uv:mt:prob_spaces:meas:lebesgue</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:lebesgue:exist_unique"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:lebesgue:exist_unique</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:lebesgue:exist_unique"><code class="xref">uv:mt:prob_spaces:meas:lebesgue:exist_unique</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:measdiff"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:measdiff</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:measdiff"><code class="xref">uv:mt:prob_spaces:meas:measdiff</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:monotone"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:monotone</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:monotone"><code class="xref">uv:mt:prob_spaces:meas:monotone</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:subadd"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:subadd</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:subadd"><code class="xref">uv:mt:prob_spaces:meas:subadd</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas:unique"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas:unique</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas:unique"><code class="xref">uv:mt:prob_spaces:meas:unique</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>lemma</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:meas_sp"><td></td><td>
-       <strong>uv:mt:prob_spaces:meas_sp</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:meas_sp"><code class="xref">uv:mt:prob_spaces:meas_sp</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:measbl_sp"><td></td><td>
-       <strong>uv:mt:prob_spaces:measbl_sp</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:measbl_sp"><code class="xref">uv:mt:prob_spaces:measbl_sp</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:prob_spaces:setfn"><td></td><td>
-       <strong>uv:mt:prob_spaces:setfn</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/probability_spaces.html#uv:mt:prob_spaces:setfn"><code class="xref">uv:mt:prob_spaces:setfn</code></a> <em>(uv/measure_theory/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:comp"><td></td><td>
-       <strong>uv:mt:rvs:elem:comp</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:comp"><code class="xref">uv:mt:rvs:elem:comp</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>lemma</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:cont"><td></td><td>
-       <strong>uv:mt:rvs:elem:cont</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:cont"><code class="xref">uv:mt:rvs:elem:cont</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:ext:inf"><td></td><td>
-       <strong>uv:mt:rvs:elem:ext:inf</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:ext:inf"><code class="xref">uv:mt:rvs:elem:ext:inf</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:ext:sup"><td></td><td>
-       <strong>uv:mt:rvs:elem:ext:sup</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:ext:sup"><code class="xref">uv:mt:rvs:elem:ext:sup</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:gen_sets_borel"><td></td><td>
-       <strong>uv:mt:rvs:elem:gen_sets_borel</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:gen_sets_borel"><code class="xref">uv:mt:rvs:elem:gen_sets_borel</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>corollary</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:math:add"><td></td><td>
-       <strong>uv:mt:rvs:elem:math:add</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:math:add"><code class="xref">uv:mt:rvs:elem:math:add</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:math:multiply"><td></td><td>
-       <strong>uv:mt:rvs:elem:math:multiply</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:math:multiply"><code class="xref">uv:mt:rvs:elem:math:multiply</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:elem:set"><td></td><td>
-       <strong>uv:mt:rvs:elem:set</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:elem:set"><code class="xref">uv:mt:rvs:elem:set</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:generator_rv"><td></td><td>
-       <strong>uv:mt:rvs:generator_rv</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:generator_rv"><code class="xref">uv:mt:rvs:generator_rv</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:generator_set"><td></td><td>
-       <strong>uv:mt:rvs:generator_set</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:generator_set"><code class="xref">uv:mt:rvs:generator_set</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:indicator"><td></td><td>
-       <strong>uv:mt:rvs:indicator</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:indicator"><code class="xref">uv:mt:rvs:indicator</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:rv"><td></td><td>
-       <strong>uv:mt:rvs:rv</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:rv"><code class="xref">uv:mt:rvs:rv</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:rvs:rv:equiv"><td></td><td>
-       <strong>uv:mt:rvs:rv:equiv</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/random_variables.html#uv:mt:rvs:rv:equiv"><code class="xref">uv:mt:rvs:rv:equiv</code></a> <em>(uv/measure_theory/random_variables)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:alg_is_pi"><td></td><td>
-       <strong>uv:mt:set:alg_is_pi</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:alg_is_pi"><code class="xref">uv:mt:set:alg_is_pi</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>theorem</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:algebra"><td></td><td>
-       <strong>uv:mt:set:algebra</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:algebra"><code class="xref">uv:mt:set:algebra</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:pi"><td></td><td>
-       <strong>uv:mt:set:pi</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:pi"><code class="xref">uv:mt:set:pi</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig"><td></td><td>
-       <strong>uv:mt:set:sig</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig"><code class="xref">uv:mt:set:sig</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:borel"><td></td><td>
-       <strong>uv:mt:set:sig:borel</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:borel"><code class="xref">uv:mt:set:sig:borel</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:borel_gen"><td></td><td>
-       <strong>uv:mt:set:sig:borel_gen</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:borel_gen"><code class="xref">uv:mt:set:sig:borel_gen</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:intersection"><td></td><td>
-       <strong>uv:mt:set:sig:intersection</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:intersection"><code class="xref">uv:mt:set:sig:intersection</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:partition"><td></td><td>
-       <strong>uv:mt:set:sig:partition</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:partition"><code class="xref">uv:mt:set:sig:partition</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:preserve"><td></td><td>
-       <strong>uv:mt:set:sig:preserve</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:preserve"><code class="xref">uv:mt:set:sig:preserve</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>lemma</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:siggen"><td></td><td>
-       <strong>uv:mt:set:sig:siggen</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:siggen"><code class="xref">uv:mt:set:sig:siggen</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-uv:mt:set:sig:siggenpart"><td></td><td>
-       <strong>uv:mt:set:sig:siggenpart</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="uv/measure_theory/set_theory.html#uv:mt:set:sig:siggenpart"><code class="xref">uv:mt:set:sig:siggenpart</code></a> <em>(uv/measure_theory/set_theory)</em></td><td>
-       <em>lemma</em></td></tr>
    </table>
 
 
