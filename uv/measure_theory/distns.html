@@ -487,6 +487,16 @@ title="Print to PDF"
    2.4.1. Inducing distribution functions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-distribution-functions">
+   2.4.2. Properties of distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-skorokhod-representation">
+   2.4.3. The Skorokhod Representation
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -509,6 +519,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inducing-distribution-functions">
    2.4.1. Inducing distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-distribution-functions">
+   2.4.2. Properties of distribution functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-skorokhod-representation">
+   2.4.3. The Skorokhod Representation
   </a>
  </li>
 </ul>
@@ -545,7 +565,26 @@ title="Print to PDF"
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable, and <span class="math notranslate nohighlight">\(\mathcal L_X = \mathbb P\circ X^{-1}\)</span> is the law of <span class="math notranslate nohighlight">\(X\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. test</p>
+<p>Proof. 1. <span class="math notranslate nohighlight">\(\mathcal L_X(B) \geq 0\)</span> for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;= \mathbb P(X \in B) \equiv \mathbb P(\{\omega : X(\omega) \in B\}) \\
+    &amp;\geq 0\end{split}\]</div>
+<p>since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a probability measure.</p>
+<p>2. <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(S) &amp;= \mathbb P(X \in S) \equiv \mathbb P(\{\omega : X(\omega) \in S\}) \\
+    &amp;= 1\end{split}\]</div>
+<p>which follows because <span class="math notranslate nohighlight">\(X : \omega \mapsto X(\omega) \in S\)</span> for any <span class="math notranslate nohighlight">\(\omega\)</span> by definition of <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>.</p>
+<p>3. Countably additive: Suppose that <span class="math notranslate nohighlight">\((B_n)_{n \in \mathbb N} \subseteq \Sigma\)</span> are disjoint. Since <span class="math notranslate nohighlight">\(\Sigma\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, then <span class="math notranslate nohighlight">\(B = \bigcup_{n \in \mathbb N}B_n \in \Sigma\)</span>, and:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;= \mathcal L_X\left(\bigcup_{n \in \mathbb N}B_n\right) \\
+    &amp;= \mathbb P\left(X \in \bigcup_{n \in \mathbb N}B_n\right) \equiv  P\left(\left\{\omega : X(\omega) \in \bigcup_{n \in \mathbb N}B_n\right\}\right) \\
+    &amp;= \mathbb P\left(\bigcup_{n \in \mathbb N}(X \in B_n)\right) \equiv \mathbb P\left(\bigcup_{n \in \mathbb N}\{\omega : X(\omega) \in B_n\}\right),\,\,\,\,\text{defn. of union}\end{split}\]</div>
+<p>As <span class="math notranslate nohighlight">\(X\)</span> is a function, each <span class="math notranslate nohighlight">\(X^{-1}(B_n)\)</span> are disjoint because <span class="math notranslate nohighlight">\(X\)</span> can only map each <span class="math notranslate nohighlight">\(\omega\)</span> to one value in <span class="math notranslate nohighlight">\(S\)</span>. Therefore, we can use the countable additivity of <span class="math notranslate nohighlight">\(\mathbb P\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathcal L_X(B) &amp;= \sum_{n \in \mathbb N}\mathbb P(X \in B_n) \equiv \sum_{n \in \mathbb N}\mathbb P(\{\omega : X(\omega) \in B_n\}),\,\,\,\,\text{countable additivity of }\mathbb P \\
+    &amp;= \sum_{n \in \mathbb N}\mathcal L_X(B_n).\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\mathcal L_X : \mathcal \Sigma \rightarrow [0, 1]\)</span>, <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>, and is countably additive, it is a probability measure.</p>
 </div>
 <p>If the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, we are ready to make a further claim about <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> using the distribution function:</p>
 <div class="proof definition admonition" id="uv:mt:distns:distn_fn">
@@ -566,6 +605,67 @@ title="Print to PDF"
 <p>Further, note that on <span class="math notranslate nohighlight">\(\mathcal P\)</span>, that for any <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\mathcal L((-\infty, c]) = F_X(c)\)</span>, by definition, so <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> and <span class="math notranslate nohighlight">\(F_X\)</span> agree on all of <span class="math notranslate nohighlight">\(\mathcal P\)</span>.</p>
 <p>Then by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:unique">Lemma 2.3</a>, <span class="math notranslate nohighlight">\(\mathcal L_X = F_X\)</span> on <span class="math notranslate nohighlight">\(\sigma(\mathcal P) = \mathcal R\)</span>.</p>
 </div>
+<p>In general, when we work with random variables, we will work with the distribution function for many of our proofs that we consider.</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 2.7 </span> (The codomain will be <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>)</p>
+<section class="remark-content" id="proof-content">
+<p>For the remainder of this section, we will work where the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>. For this reason, we’ll omit explicitly stating the codomain every single time for brevity.</p>
+</section>
+</div></section>
+<section id="properties-of-distribution-functions">
+<h2><span class="section-number">2.4.2. </span>Properties of distribution functions<a class="headerlink" href="#properties-of-distribution-functions" title="Permalink to this headline">#</a></h2>
+<p>Distribution functions have some nice properties that will be convenient for building up intuition about the law of random variables. First up is monotonicity:</p>
+<div class="proof property admonition" id="property-5">
+<p class="admonition-title"><span class="caption-number">Property 2.19 </span> (Monotonicity of distribution functions)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then if <span class="math notranslate nohighlight">\(x \leq y \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(F(x) \leq F(y)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Since <span class="math notranslate nohighlight">\(x \leq y\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \{\omega : X(\omega) \leq x\} \equiv \{X \leq x\} \subseteq \{X \leq y\} \equiv \{\omega : X(\omega) \leq y\}\]</div>
+<p>Then since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a measure, <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:monotone">Property 2.3</a>, <span class="math notranslate nohighlight">\(F(x) \equiv \mathbb P(X \leq x) \leq \mathbb P(X \leq y) \equiv F(y)\)</span>.</p>
+</div>
+<p>So, what this establishes is that <span class="math notranslate nohighlight">\(F\)</span> is monotone non-decreasing. Further, we can establish properties about the tails of <span class="math notranslate nohighlight">\(F\)</span>, too. These results borrow the monotone convergence (from above and below) of measures:</p>
+<div class="proof property admonition" id="property-6">
+<p class="admonition-title"><span class="caption-number">Property 2.20 </span> (Tails of the distribution function)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{x \rightarrow \infty}F(x) = 1\)</span>, and <span class="math notranslate nohighlight">\(\lim_{x \rightarrow -\infty}F(x) = 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. 1. Suppose that for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(x_n \uparrow \infty\)</span>.</p>
+<p>Then with <span class="math notranslate nohighlight">\(A_n = \{X \leq x_n\} \equiv \{\omega : X(\omega) \leq x\}\)</span>, it is clear that <span class="math notranslate nohighlight">\(A_n \uparrow \Omega\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. This follows because the codomain for <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, is upper-bounded by <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F(x_n) &amp;\equiv \mathbb P(X \leq x_n) \equiv \mathbb P(A_n) \equiv \mathbb P(\{\omega : X(\omega) \leq x_n\}) \\
+    &amp;\uparrow \mathbb P(\Omega) = 1,\end{split}\]</div>
+<p>where the convergence from below is by <a class="reference internal" href="probability_spaces.html#uv:mt:prob_spaces:meas:convbelow">Property 2.5</a>.</p>
+<p>2. Suppose that for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(x_n \downarrow -\infty\)</span>.</p>
+<p>Then with <span class="math notranslate nohighlight">\(A_n = \{X \leq x_n\}\)</span>, it is clear that <span class="math notranslate nohighlight">\(A_n \downarrow \varnothing\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. This is because the codomain for <span class="math notranslate nohighlight">\(X\)</span> is lower-bounded by <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    F(x_n) &amp;\equiv \mathbb P(X \leq x_n) = \mathbb P(A_n) \downarrow \mathbb P(\varnothing) = 0,\]</div>
+<p>where the convergence from above is by <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">uv:mt:prob_spaces:meas:convabove</span></code>.</p>
+</div>
+<p>Another property we will make substantial use of with respect to distribution functions is that they are right continuous, and not (necessarily) left-continuous:</p>
+<div class="proof property admonition" id="property-7">
+<p class="admonition-title"><span class="caption-number">Property 2.21 </span> (Right-continuity of distribution function)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. <span class="math notranslate nohighlight">\(\lim_{y \downarrow x}F(y) = F(x)\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\((x_n)_{n \in \mathbb N} \subset \mathbb R\)</span> is a countable sequence where <span class="math notranslate nohighlight">\(x_n \downarrow \mathbb R\)</span>.</p>
+<p>Note that for any such <span class="math notranslate nohighlight">\(x_n\)</span>, that <span class="math notranslate nohighlight">\(F_n \triangleq \{\omega : X(\omega) \leq x_n\} \supset \{\omega : X(\omega) \leq x\}\)</span>, since <span class="math notranslate nohighlight">\(x_n &gt; x\)</span>.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb n} F_n = \{X \leq x\} \equiv \{\omega : X(\omega) \leq x\}\)</span>, because for any <span class="math notranslate nohighlight">\(\epsilon\)</span>, <span class="math notranslate nohighlight">\(\exists N\)</span> s.t. for all <span class="math notranslate nohighlight">\(m &gt; N\)</span>, <span class="math notranslate nohighlight">\(x_m - x &lt; \epsilon\)</span>, by definition of <span class="math notranslate nohighlight">\(x_n \downarrow x\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F(x_n) &amp;\equiv \mathbb P(X \leq x_n) \equiv \mathbb P(\{\omega : X(\omega) \leq x_n\}) \\
+    &amp;\downarrow \mathbb P(X \leq x) \equiv \mathbb P(\{\omega : X(\omega) \leq x\}) = F(x).\end{split}\]</div>
+<p>where the convergence from above is by <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">uv:mt:prob_spaces:meas:convabove</span></code>.</p>
+</div>
+</section>
+<section id="the-skorokhod-representation">
+<h2><span class="section-number">2.4.3. </span>The Skorokhod Representation<a class="headerlink" href="#the-skorokhod-representation" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
