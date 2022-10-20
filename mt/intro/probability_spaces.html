@@ -641,7 +641,14 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[    \mu_0\left(\bigcup_{m \in [n]}A_m\right) = \sum_{m \in [n]} \mu_0(A_m)\]</div>
 </section>
-</div><p>Countably additive set functions extend this property from finitely many operations to <em>countably</em> many operations:</p>
+</div><p>Let’s see an example of this, with a figure:</p>
+<figure class="align-default" id="mt-intro-rvs-fin-add">
+<a class="reference internal image-reference" href="../../_images/countable_add.png"><img alt="../../_images/countable_add.png" src="../../_images/countable_add.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Here, we show the sample space <span class="math notranslate nohighlight">\(\Omega\)</span> in blue. In this and succeeding figures, you can conceptualize the measure of a set to be its area (e.g., this example shows a finite measure, since <span class="math notranslate nohighlight">\(\mu(\Omega) &lt; \infty\)</span>). The sets <span class="math notranslate nohighlight">\(A_i\)</span> are the shapes shown, where each <span class="math notranslate nohighlight">\(A_i\)</span> has a different color. Notice, in particular, that the sets are <em>disjoint</em>, in that they are not overlapping. If we wanted to measure (compute the <em>area</em>, in this context) of the union of such disjoint sets, the measure of the area of all of these disjoint objects would just be the sum of the area of each disjoint object individually (e.g., compute the area of each shaded region corresponding to an <span class="math notranslate nohighlight">\(A_i\)</span>, and then sum them up).</span><a class="headerlink" href="#mt-intro-rvs-fin-add" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Countably additive set functions extend this property from finitely many operations to <em>countably</em> many operations:</p>
 <div class="proof definition admonition" id="mt:intro:prob_spaces:count_add_setfn">
 <p class="admonition-title"><span class="caption-number">Definition 2.11 </span> (Countably additive set function)</p>
 <section class="definition-content" id="proof-content">
@@ -733,7 +740,14 @@ title="Print to PDF"
     &amp;\geq \mu(F_1),\,\,\,\,\mu(F_2 \setminus F_1) \geq 0\text{ by definition of a measure}\end{split}\]</div>
 <p>as desired.</p>
 </div>
-<p>Intuitively, what this statement asserts is that the measure of a set which comprises another set must be at least the measure of the set it comprises. This concept extends to the case when <span class="math notranslate nohighlight">\(A\)</span> is a subset of a countable union of sets as well, and is called subadditivity:</p>
+<p>Intuitively, what this statement asserts is that the measure of a set which comprises another set must be at least the measure of the set it comprises. Let’s take a look at a picture which explains what’s going on:</p>
+<figure class="align-default" id="mt-intro-rvs-monotone">
+<a class="reference internal image-reference" href="../../_images/monotone.png"><img alt="../../_images/monotone.png" src="../../_images/monotone.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Here, we show the sample space <span class="math notranslate nohighlight">\(\Omega\)</span> in blue. In this and succeeding figures, you can conceptualize the measure of a set to be its area (e.g., this example shows a finite measure, since <span class="math notranslate nohighlight">\(\mu(\Omega) &lt; \infty\)</span>). Here, the <span class="math notranslate nohighlight">\(F_2\)</span> (in red) <span class="math notranslate nohighlight">\(\subseteq F_1\)</span> (in blue; since it is contained within <span class="math notranslate nohighlight">\(F_2\)</span>, it looks purple). Notice that in this case, the measure (the area) <span class="math notranslate nohighlight">\(\mu(F_2) \geq \mu(F_1)\)</span>.</span><a class="headerlink" href="#mt-intro-rvs-monotone" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This concept extends to the case when <span class="math notranslate nohighlight">\(A\)</span> is a subset of a countable union of sets as well, and is called subadditivity:</p>
 <div class="proof property admonition" id="mt:intro:prob_spaces:meas:subadd">
 <p class="admonition-title"><span class="caption-number">Property 2.4 </span> (Subadditivity of measures)</p>
 <section class="property-content" id="proof-content">
@@ -752,6 +766,13 @@ title="Print to PDF"
 &amp;\leq \sum_{n \in \mathbb N}\mu(F_n).\,\,\,\,A_n \subseteq F_n \Rightarrow \mu(A_n) \leq \mu(F_n)\end{split}\]</div>
 <p>which follows by <a class="reference internal" href="#mt:intro:prob_spaces:meas:monotone">Property 2.3</a>.</p>
 </div>
+<p>This proof is a little tough, so let’s see a quick figure explaining the proof:</p>
+<figure class="align-default" id="mt-intro-rvs-preimage-fig">
+<a class="reference internal image-reference" href="../../_images/subadd.png"><img alt="../../_images/subadd.png" src="../../_images/subadd.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">This figure shows a finite example of subadditivity. <strong>(A)</strong> We have three sets <span class="math notranslate nohighlight">\(F_1\)</span>, <span class="math notranslate nohighlight">\(F_2\)</span>, and <span class="math notranslate nohighlight">\(F_3\)</span>, where <span class="math notranslate nohighlight">\(F \in \bigcup_{n \in [3]} F_n\)</span>. <strong>(B)</strong> First, we compute the <span class="math notranslate nohighlight">\(F_n'\)</span>s by intersecting each set with <span class="math notranslate nohighlight">\(F\)</span>. Since <span class="math notranslate nohighlight">\(F_3\)</span> doesn’t intersect with <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(F_3'\)</span> is the empty set. <strong>(C)</strong> Next, we construct <span class="math notranslate nohighlight">\(A_n\)</span> sequentially, first by setting <span class="math notranslate nohighlight">\(A_1 = F_1\)</span>, and then defining <span class="math notranslate nohighlight">\(A_2\)</span> to be the portion of <span class="math notranslate nohighlight">\(F_2'\)</span> that isn’t already allocated by <span class="math notranslate nohighlight">\(F_1'\)</span>. Together, these remaining <span class="math notranslate nohighlight">\(A_n\)</span> (disjoint) sets have the measure of <span class="math notranslate nohighlight">\(F\)</span>. Finally, note that these two sets have far smaller measure than the original sets <span class="math notranslate nohighlight">\(F_n\)</span> originally, giving the result.</span><a class="headerlink" href="#mt-intro-rvs-preimage-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Next, we’ll see that measures share some of the intuitive convergence concepts a lot like functions, except instead of operating on single points, they operate on sets. We’ll begin with a definition for sets and then apply it to the measure:</p>
 <div class="proof definition admonition" id="definition-12">
 <p class="admonition-title"><span class="caption-number">Definition 2.17 </span> (Set convergence from below)</p>
@@ -796,13 +817,19 @@ title="Print to PDF"
 <p>Then:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \mu(F_1 \setminus F_n) &amp;\uparrow \mu(F_1 \setminus F), \\
-    \mu(F_1) - \mu(Q_n) &amp;\uparrow \mu(F_1) - \mu(F),\,\,\,\,F_1 \supseteq F_n \supseteq F \\
+    \mu(F_1) - \mu(F_n) &amp;\uparrow \mu(F_1) - \mu(F),\,\,\,\,F_1 \supseteq F_n \supseteq F \\
     -\mu(F_n) &amp;\uparrow -\mu(F), \\
    \Rightarrow \mu(F_n) &amp;\downarrow \mu(F),\end{split}\]</div>
 <p>as desired.</p>
 </div>
 <p>What we did here was we effectively used the fact that the sets are “shrinking” to <span class="math notranslate nohighlight">\(F\)</span>, so <span class="math notranslate nohighlight">\(F_1\)</span> contains every succeeding set (and <span class="math notranslate nohighlight">\(F\)</span> itself).</p>
-<p>Now, we’ll rattle off some other properties of measures. Try proving some of these as an exercise!</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/conv.png"><img alt="../../_images/conv.png" src="../../_images/conv.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Here we demonstrate convergence concepts for measures. <strong>(A)</strong> The sets <span class="math notranslate nohighlight">\(F_n\)</span> (in blue) converge to <span class="math notranslate nohighlight">\(F\)</span> (in red) from above. Notice that their measures get closer and closer to that of <span class="math notranslate nohighlight">\(F\)</span>, from above, as well. <strong>(B)</strong> The sets <span class="math notranslate nohighlight">\(F_n\)</span> (in blue) converge to <span class="math notranslate nohighlight">\(F\)</span> (outermost set) from below. Notice that their measures get closer and closer to that of <span class="math notranslate nohighlight">\(F\)</span>, from below, as well.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now, we’ll rattle off some other properties of measures. Try proving some of these as an exercise! Bonus: for your intuition, it is often <em>extremely</em> helpful to conceptualize these different properties with pictures like the above of your own.</p>
 <div class="proof property admonition" id="mt:intro:prob_spaces:meas:measdiff">
 <p class="admonition-title"><span class="caption-number">Property 2.7 </span> (Measure of difference)</p>
 <section class="property-content" id="proof-content">
@@ -886,7 +913,14 @@ Then for every <span class="math notranslate nohighlight">\(F \in \mathcal F = \
 \[    \lambda_0(A) = \sum_{i \in [k]} b_i - a_i\]</div>
 <p>Then we define the Lebesgue measure <span class="math notranslate nohighlight">\(\lambda\)</span> to be the unique measure that extends <span class="math notranslate nohighlight">\(\lambda_0\)</span> from <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span> to <span class="math notranslate nohighlight">\(\mathcal F_\lambda\)</span>.</p>
 </section>
-</div><p>So, what is this statement saying? In effect, what we are doing here is first, we define an algebra that is pretty easy to understand: Basically, the sets in the algebra defined on <span class="math notranslate nohighlight">\(\Omega\)</span> are just all of the different ways that we could take (countable) unions of (non-overlapping) sub-intervals on <span class="math notranslate nohighlight">\((\alpha, \beta]\)</span>. The <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by this algebra is, in fact, the Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. We define a somewhat intuitive countably additive set function on this algebra, by just taking the value to be the sum of the (non-overlapping) interval lengths. We don’t bother to describe the Lebesgue measure much more in-depth, because we don’t have to:</p>
+</div><p>So, what is this statement saying? In effect, what we are doing here is first, we define an algebra that is pretty easy to understand: Basically, the sets in the algebra defined on <span class="math notranslate nohighlight">\(\Omega\)</span> are just all of the different ways that we could take (countable) unions of (non-overlapping) sub-intervals on <span class="math notranslate nohighlight">\((\alpha, \beta]\)</span>. The <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by this algebra is, in fact, the Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. We define a somewhat intuitive countably additive set function on this algebra, by just taking the value to be the sum of the (non-overlapping) interval lengths. Let’s see what elements of <span class="math notranslate nohighlight">\(A_\lambda\)</span> look like:</p>
+<figure class="align-default" id="mt-intro-rvs-leb">
+<a class="reference internal image-reference" href="../../_images/leb_alg.png"><img alt="../../_images/leb_alg.png" src="../../_images/leb_alg.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">An example of a set in <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span>, where <span class="math notranslate nohighlight">\(k = 7\)</span>. <span class="math notranslate nohighlight">\(A_\lambda\)</span> contains the union of all of the points expressed by the intervals <span class="math notranslate nohighlight">\((a_i, b_i]\)</span>, for <span class="math notranslate nohighlight">\(k \in [7]\)</span>, shown above (the union of these items being a single set in <span class="math notranslate nohighlight">\(\mathcal A_\lambda\)</span>). It also includes all possible sets we could express in this way, where we could pick <span class="math notranslate nohighlight">\(a_i\)</span>s and <span class="math notranslate nohighlight">\(b_i\)</span>s, and still be left with <span class="math notranslate nohighlight">\(\alpha \leq a_1 &lt; b_1 \leq ... \leq a_7 &lt; b_7 \leq \beta\)</span>. Finally, it repeats this for <em>every single</em> natural number, <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>. On such a set, the measure <span class="math notranslate nohighlight">\(\lambda_0\)</span> is defined as the width of the intervals that the set is comprised of, shown in red.</span><a class="headerlink" href="#mt-intro-rvs-leb" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We don’t bother to describe the Lebesgue measure much more in-depth, because we don’t have to:</p>
 <div class="proof theorem admonition" id="mt:intro:prob_spaces:meas:lebesgue:exist_unique">
 <p class="admonition-title"><span class="caption-number">Theorem 2.3 </span> (Existence and uniqueness of the Lebesgue measure)</p>
 <section class="theorem-content" id="proof-content">
