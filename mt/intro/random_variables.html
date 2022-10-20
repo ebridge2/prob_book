@@ -883,7 +883,7 @@ title="Print to PDF"
 <p>Recall that with <span class="math notranslate nohighlight">\(Y = \inf_n X_n\)</span>, that if <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(Y(\omega) \geq r\)</span> if for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(X_n(\omega) \geq r\)</span>, by definition of an infimum.</p>
 <p>Then:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \{\omega : Y(\omega) \geq r\} &amp;= \left\{\omega : \left(\inf n X_n\right)(\omega) \geq r\right\} \\
+\[\begin{split}    \{\omega : Y(\omega) \geq r\} &amp;= \left\{\omega : \left(\inf_n X_n\right)(\omega) \geq r\right\} \\
     &amp;= \bigcap_n \left\{\omega : X_n(\omega) \geq r\right\},\,\,\,\, Y \geq r \iff \forall n,\, X_n \geq r \\
     &amp;= \bigcap_n \{X_n \geq r\} \\
     &amp;\in \mathcal F\end{split}\]</div>
@@ -899,7 +899,7 @@ title="Print to PDF"
 </div><div class="proof admonition" id="proof">
 <p>Proof. Suppose that <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>.</p>
 <p>Recall that with <span class="math notranslate nohighlight">\(Y = \sup_n X_n\)</span>, that with <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(Y(\omega) \leq r\)</span> if for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(X_n(\omega) \leq r\)</span>, by definition of a supremum.</p>
-<p>Proceed with the same argument to <a class="reference internal" href="#mt:intro:rvs:elem:ext:inf">Property 2.16</a>, instead using the sets <span class="math notranslate nohighlight">\(\{X_n \leq r\}\)</span> within the intersection.</p>
+<p>Proceed with the same argument to <a class="reference internal" href="#mt:intro:rvs:elem:ext:inf">Property 2.16</a>, instead using the sets <span class="math notranslate nohighlight">\(\{X_n \leq r\}\)</span> in the intersections.</p>
 </div>
 <p>Further, the <span class="math notranslate nohighlight">\(\liminf\)</span> and <span class="math notranslate nohighlight">\(\limsup\)</span> are random variables, too:</p>
 <div class="proof theorem admonition" id="theorem-18">
