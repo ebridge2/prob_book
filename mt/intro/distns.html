@@ -514,11 +514,6 @@ title="Print to PDF"
    2.4.2. Properties of distribution functions
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-skorokhod-representation">
-   2.4.3. The Skorokhod Representation
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -546,11 +541,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#properties-of-distribution-functions">
    2.4.2. Properties of distribution functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-skorokhod-representation">
-   2.4.3. The Skorokhod Representation
   </a>
  </li>
 </ul>
@@ -730,23 +720,6 @@ title="Print to PDF"
     &amp;\equiv F(x) - F(x^-).\end{split}\]</div>
 </div>
 </section>
-<section id="the-skorokhod-representation">
-<h2><span class="section-number">2.4.3. </span>The Skorokhod Representation<a class="headerlink" href="#the-skorokhod-representation" title="Permalink to this headline">#</a></h2>
-<p>When the distribution function <span class="math notranslate nohighlight">\(F\)</span> of a random variable <span class="math notranslate nohighlight">\(X\)</span> is invertible (that is, <span class="math notranslate nohighlight">\(F^{-1} : \mathbb R \rightarrow [0, 1]\)</span> exists), we obtain some nice properties; particularly, that <span class="math notranslate nohighlight">\(F^{-1}\)</span> serves as something known as the <em>quantile function</em> of the random variable. This property is solidified by the Skorokhod representation for <span class="math notranslate nohighlight">\(X\)</span>:</p>
-<div class="proof definition admonition" id="definition-10">
-<p class="admonition-title"><span class="caption-number">Definition 2.29 </span> (Skorokhod Representation)</p>
-<section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is an r.v., and <span class="math notranslate nohighlight">\(F : \mathbb R \rightarrow [0, 1]\)</span> is the distribution function for <span class="math notranslate nohighlight">\(X\)</span>.</p>
-<p>Then with another probability space <span class="math notranslate nohighlight">\(([0, 1], \mathcal F, \lambda)\)</span>, <span class="math notranslate nohighlight">\(\exists U \in m(\mathcal B[0, 1], \mathcal R): [0, 1] \rightarrow \mathbb R\)</span> where <span class="math notranslate nohighlight">\(U(\omega) = \omega\)</span> for any <span class="math notranslate nohighlight">\(\omega \in [0, 1]\)</span>.</p>
-<p>If <span class="math notranslate nohighlight">\(F^{-1}\)</span> exists, define <span class="math notranslate nohighlight">\(X(\omega) = F^{-1}(U(\omega))\)</span> (e.g., <span class="math notranslate nohighlight">\(X = F^{-1} \circ U\)</span>. Then:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}    \mathbb P(X \leq x) &amp;= \mathbb P(\{\omega : X(\omega) \leq x\}) \\
-    &amp;= \mathbb P\left(\{\omega : F^{-1}(U(\omega)) \leq x\}\right) \\
-    &amp;= \mathbb P\left(\{\omega : U(\omega) \leq F(x)\}\right) \\
-    &amp;\equiv \mathbb P(U \leq F(x)) = \lambda(0, F(x)) \\
-    &amp;= F(x).\end{split}\]</div>
-</section>
-</div></section>
 </section>
 
     <script type="text/x-thebe-config">
