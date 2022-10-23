@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.2. Properties of Integration" href="props.html" />
@@ -480,12 +482,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-functions">
+   3.1.1. Simple functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-integral-for-simple-functions">
+     3.1.1.1. Properties of the integral for simple functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#corollaries-of-integration">
+   3.1.2. Corollaries of integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bounded-functions">
+   3.1.3. Bounded functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-integral-for-bounded-functions">
+     3.1.3.1. Properties of the integral for bounded functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-negative-functions">
+   3.1.4. Non-negative functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-the-integral-for-non-negative-functions">
+   3.1.5. Properties of the integral for non-negative functions
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -497,6 +557,53 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-functions">
+   3.1.1. Simple functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-integral-for-simple-functions">
+     3.1.1.1. Properties of the integral for simple functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#corollaries-of-integration">
+   3.1.2. Corollaries of integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bounded-functions">
+   3.1.3. Bounded functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-integral-for-bounded-functions">
+     3.1.3.1. Properties of the integral for bounded functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-negative-functions">
+   3.1.4. Non-negative functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-the-integral-for-non-negative-functions">
+   3.1.5. Properties of the integral for non-negative functions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -506,6 +613,418 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="defining-integration">
 <span id="mt-int-basics"></span><h1><span class="section-number">3.1. </span>Defining Integration<a class="headerlink" href="#defining-integration" title="Permalink to this headline">#</a></h1>
+<p>In many of your mathematics courses to date, you have probably been exposed to integrals (especially, the popular Riemann integral). Here, we’re going to build up a more generic definition of an integral; that is, the ability to perform integration on <em>any</em> measurable space, rather than just Riemann ones. The way we’re going to do this is rather straightforward, and likely matches how your real analysis class built the Riemann integral: we’re going to start with the most basic of functions (<em>simple</em> functions), and demonstrate that these simple definitions obey desirable and intuitive rules for the integral to have. Then, we’re going to gradually relax this extremely simple operation to more and more complicated sorts of functions, until we have general rules for integration that will be sufficient for our treatment of probability theory.</p>
+<section id="simple-functions">
+<h2><span class="section-number">3.1.1. </span>Simple functions<a class="headerlink" href="#simple-functions" title="Permalink to this headline">#</a></h2>
+<p>To build up integration rules, one of the most basic ways to do so is with something called simple functions:</p>
+<div class="proof definition admonition" id="mt:int:basics:simplefn">
+<p class="admonition-title"><span class="caption-number">Definition 3.1 </span> (Simple function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((\mathbb C, \Sigma)\)</span> are measurable spaces, where <span class="math notranslate nohighlight">\(\mu\)</span> is a measure on <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>. A function <span class="math notranslate nohighlight">\(\varphi \in m(\mathcal F, \Sigma)\)</span> is said to be <strong>simple</strong> if, for disjoint sets <span class="math notranslate nohighlight">\(\{F_n\}_{n \in [N]}\)</span> are s.t. <span class="math notranslate nohighlight">\(\mu(F_n) &lt; \infty\)</span> (that is, a <span class="math notranslate nohighlight">\(\mu\)</span>-finite sequence of disjoint measurable sets), then for all <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \varphi(\omega) = \sum_{n \in [N]}\alpha_n \mathbb 1_{\{F_n\}}(\omega)\]</div>
+<p>for a sequence <span class="math notranslate nohighlight">\((\alpha_n)_{n \in [N]} \subseteq \mathbb C\)</span>.</p>
+</section>
+</div><p>Remember that since <span class="math notranslate nohighlight">\(\varphi \in m(\mathcal F, \Sigma)\)</span>, then for any <span class="math notranslate nohighlight">\(E \in \Sigma\)</span>, <span class="math notranslate nohighlight">\(\varphi^{-1}(E) = \{\omega \in \Omega : \varphi(\omega) \in E\} \in \mathcal F\)</span>. The function need not have a unique representation to be simple; that is, the sets, and the coefficients, don’t necessarily have to be distinct. Let’s see an example:</p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 3.1 </span> (Simple function is not unique)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega = [0, 1]\)</span>, and <span class="math notranslate nohighlight">\(F_1 = [0, 0.5)\)</span> and <span class="math notranslate nohighlight">\(F_2 = [0.5, 1]\)</span>, and the measure <span class="math notranslate nohighlight">\(\mu\)</span> is the Lebesgue measure. note that <span class="math notranslate nohighlight">\(F_1\)</span> and <span class="math notranslate nohighlight">\(F_2\)</span> are a partition of <span class="math notranslate nohighlight">\(\Omega\)</span>, and therefore disjoint, where <span class="math notranslate nohighlight">\(\lambda(F_n) = 0.5 &lt; \infty\)</span>. If <span class="math notranslate nohighlight">\(\alpha_1 = 1\)</span> and <span class="math notranslate nohighlight">\(\alpha_2 = 2\)</span>, we could further split the disjoint sets into <span class="math notranslate nohighlight">\(F_1' = [0, 0.25)\)</span>, <span class="math notranslate nohighlight">\(F_2 = [0.25, 0.5)\)</span>, <span class="math notranslate nohighlight">\(F_3' = [0.5, 0.75)\)</span>, and <span class="math notranslate nohighlight">\(F_4' = [0.75, 1]\)</span>, where <span class="math notranslate nohighlight">\(\alpha_1' = \alpha_2' = 1\)</span>, and <span class="math notranslate nohighlight">\(\alpha_3' = \alpha_4' 2\)</span>. Here, <span class="math notranslate nohighlight">\(\lambda(F_n') = 0.25 &lt; \infty\)</span>. If <span class="math notranslate nohighlight">\(\varphi(\omega) = \sum_{n \in [N]} \alpha_n \mathbb 1_{F_n}(\omega)\)</span> and <span class="math notranslate nohighlight">\(\varphi(\omega) = \sum_{n \in [N]} \alpha_n' \mathbb 1_{F_n'}(\omega)\)</span>, we can see that the representation is not unique, because <span class="math notranslate nohighlight">\(\varphi(\omega) = \varphi'(\omega)\)</span> for all <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>.</p>
+</section>
+</div><p>We start by defining the integral of a simple function, rather intuitively:</p>
+<div class="proof definition admonition" id="mt:int:basics:int:simplefn">
+<p class="admonition-title"><span class="caption-number">Definition 3.2 </span></p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\varphi : (\Omega, \mathcal F) \rightarrow (\mathbb C, \Sigma)\)</span> is a simple function, with corresponding coefficients/disjoint sets <span class="math notranslate nohighlight">\(\{(\alpha_n, F_n)\}_{n \in [N]} \subseteq \mathbb C \times \Sigma\)</span>. We define the integral:</p>
+<div class="math notranslate nohighlight">
+\[    \int \varphi \,\text d \mu \triangleq \sum_{n \in [N]}\alpha_n \mu(F_n).\]</div>
+</section>
+</div><p>Conceptually, what is going on here is, we define the integral as an association with indicator functions, which we briefly touched on in the last chapter. The idea is that the “integral” of a single disjoint set is the “area” (measure) of the amount of “space” that each <span class="math notranslate nohighlight">\(F_n\)</span> occupies in <span class="math notranslate nohighlight">\(\Omega\)</span>, and then we weight that by the corresponding coefficient <span class="math notranslate nohighlight">\(\alpha_n\)</span>.</p>
+<section id="properties-of-the-integral-for-simple-functions">
+<h3><span class="section-number">3.1.1.1. </span>Properties of the integral for simple functions<a class="headerlink" href="#properties-of-the-integral-for-simple-functions" title="Permalink to this headline">#</a></h3>
+<p>To show that the integral holds desirable properties, we need to extend a concept we defined previously: statements <span class="math notranslate nohighlight">\(\mathcal S\)</span> that are <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. Remember that we defined this term in <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:ae">Definition 2.20</a>. Recalling that definition, we can now extend this concept to a very particular set of statements, <em>relations</em>:</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 3.3 </span> (Relation holds almost everywhere)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space. Assume that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (S, \Sigma)\)</span> are two functions. We say that a relation <span class="math notranslate nohighlight">\(\mathcal R : S \times S \rightarrow \{0, 1\}\)</span> holds <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. if there exists <span class="math notranslate nohighlight">\(N \in \mathcal F\)</span> s.t.:</p>
+<div class="math notranslate nohighlight">
+\[    \mu\left(\{\omega \in N : \mathcal R\left(\varphi(\omega), \psi(\omega)\right) = 0\}\right) = 0\]</div>
+<p>and for every <span class="math notranslate nohighlight">\(\omega \in \Omega \setminus N\)</span>, <span class="math notranslate nohighlight">\(\mathcal R\left(\varphi(\omega), \psi(\omega)\right) = 1\)</span>.</p>
+<p>and we write that <span class="math notranslate nohighlight">\(\mathcal R(\varphi, \psi)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. If the measure is implied, we shorten this to a.e.</p>
+</section>
+</div><p>The idea here is that for some subset of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the domain, the relation does <em>not</em> hold, but that the measure of this set of points where the relation does not hold has measure <span class="math notranslate nohighlight">\(0\)</span>. For every other point in the domain, the relation holds.</p>
+<p>For instance, let’s take an example to be <span class="math notranslate nohighlight">\(\mathcal R(a, b) = a \geq b\)</span>. Then <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} \psi\)</span> means that <span class="math notranslate nohighlight">\(\mu\left(\left\{\omega \in \Omega : \varphi(\omega) &lt; \psi(\omega)\right\}\right) = 0\)</span>. Let’s see how we can use this with the integral.</p>
+<p>Intuitively, non-negative simple functions have non-negative integrals:</p>
+<div class="proof property admonition" id="mt:int:basics:int:prop:nnintegral">
+<p class="admonition-title"><span class="caption-number">Property 3.1 </span> (Non-negative simple function has non-negative integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> is a simple function. Then if <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} 0\)</span>, <span class="math notranslate nohighlight">\(\int \varphi\,\text d \mu \geq 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. If <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} 0\)</span> is simple, let:</p>
+<div class="math notranslate nohighlight">
+\[    \varphi(\omega) = \sum_{n \in [N]} \alpha_n \mathbb 1_{\{F_n\}}(\omega)\]</div>
+<p>be a (potentially non-unique) representation of it, which exists by <a class="reference internal" href="#mt:int:basics:simplefn">Definition 3.1</a> as <span class="math notranslate nohighlight">\(\varphi\)</span> is simple.</p>
+<p>Since <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} 0\)</span>, then <span class="math notranslate nohighlight">\(\alpha_n \geq 0\)</span> for every <span class="math notranslate nohighlight">\(n\)</span> except a subset of indexing sets <span class="math notranslate nohighlight">\(\mathcal M \subseteq [N]\)</span>, where for <span class="math notranslate nohighlight">\(m \in \mathcal M\)</span>, <span class="math notranslate nohighlight">\(\mu(F_m) = 0\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int \varphi \,\text d \mu &amp;= \sum_{n \in [N] \setminus \mathcal M}\alpha_n \mu(F_n) + \sum_{n \in \mathcal M} \alpha_n \mu(F_n) \\
+    &amp;= \sum_{n \in [N] \setminus \mathcal M}\alpha_n \mu(F_n) + 0\sum_{n \in \mathcal M}\alpha_n,\,\,\,\,\mu(F_n) = 0\text{ for }n \in \mathcal M \\
+    &amp;\geq 0.\end{split}\]</div>
+</div>
+<p>We can rescale simple functions by constants, and the integral of the rescaled function is just the rescaled integral:</p>
+<div class="proof property admonition" id="mt:int:basics:int:prop:rescale">
+<p class="admonition-title"><span class="caption-number">Property 3.2 </span> (Rescaling simple function has rescaled integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> is a simple function. For any <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(\int r\varphi \,\text d \mu = r\int \varphi \,\text d\mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. If <span class="math notranslate nohighlight">\(\varphi\)</span> is simple and <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    r\varphi(\omega) = \sum_{n \in [N]} r\alpha_n \mathbb 1_{\{F_n\}}(\omega)\]</div>
+<p>So <span class="math notranslate nohighlight">\(r\varphi\)</span> is also simple with coefficients <span class="math notranslate nohighlight">\(\{r\alpha_n\}_{n \in [N]}\)</span>.</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int r\varphi \,\text d\mu &amp;= \sum_{n \in [N]}r\alpha_n \mu(F_n) \\
+    &amp;= r\sum_{n \in [N]}\alpha_n \mu(F_n) \\
+    &amp;= r\int \varphi \,\text d\mu.\end{split}\]</div>
+</div>
+<p>Further, we can add simple functions and the integral of their sum is the sum of their integrals. This sounds rather trivial, but due to a slight amount of nuance, we need a new definition first. Notice that the subsets, <span class="math notranslate nohighlight">\(\{F_n\}_{n \in [N]}\)</span> of <a class="reference internal" href="#mt:int:basics:simplefn">Definition 3.1</a> <em>need not</em> necessarily be a partition of <span class="math notranslate nohighlight">\(\Omega\)</span>; we might be left with a set of points <span class="math notranslate nohighlight">\(\Omega \setminus \bigsqcup_{n \in [N]} F_n\)</span> where <span class="math notranslate nohighlight">\(\omega \in N \Rightarrow \varphi(\omega) = 0\)</span>. This is the concept underlying the <em>support</em> of a function:</p>
+<div class="proof definition admonition" id="mt:int:basics:int:prop:support">
+<p class="admonition-title"><span class="caption-number">Definition 3.4 </span> (Support of a function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb C, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f : (\Omega, \mathcal F) \rightarrow (\mathbb C, \Sigma)\)</span> is a function. Then the support of <span class="math notranslate nohighlight">\(f\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[    \text{support}(f) \triangleq \left\{\omega \in \Omega : f(\omega) \neq 0\right\}\]</div>
+</section>
+</div><p>Now, we can address the problem of integrating the sum of simple functions. To do so, we need a quick lemma: the sum of simple functions is simple:</p>
+<div class="proof lemma admonition" id="mt:int:basics:int:prop:sum_simple_fn_simple">
+<p class="admonition-title"><span class="caption-number">Lemma 3.1 </span> (Sum of simple functions is simple)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are simple functions. Then <span class="math notranslate nohighlight">\(\varphi + \psi\)</span> is simple.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Since <span class="math notranslate nohighlight">\(\varphi, \psi\)</span> are simple, then:</p>
+<div class="math notranslate nohighlight">
+\[    \varphi(\omega) = \sum_{n = 1}^N \alpha_n \mathbb 1_{\{A_n\}}(\omega) \text{ and } \psi(\omega) = \sum_{m = 1}^M \beta_m \mathbb 1_{\{B_m\}}(\omega).\]</div>
+<p>We need to show that their sum is a simple function.</p>
+<p>Problematically, <span class="math notranslate nohighlight">\(\varphi\)</span> and <span class="math notranslate nohighlight">\(\psi\)</span> might not have the same <em>support</em>; that is, <span class="math notranslate nohighlight">\(\bigsqcup_{n \in [N]} A_n\)</span> might not necessarily be <span class="math notranslate nohighlight">\(\bigsqcup_{m \in [M]} B_m\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(A_0  \bigsqcup_{m \in [M]} B_m \setminus \bigsqcup_{n \in [N]}A_n\)</span>, and <span class="math notranslate nohighlight">\(B_0 = \bigsqcup_{n \in [N]} A_n \setminus \bigsqcup_{m \in [M]}B_m\)</span>. Here, <span class="math notranslate nohighlight">\(A_0\)</span> is the set of all elements in <span class="math notranslate nohighlight">\(\bigsqcup_{m \in [M]} B_m\)</span> that are not in <span class="math notranslate nohighlight">\(\bigsqcup_{n \in [N]} A_n\)</span>, and vice-versa. Note now that <span class="math notranslate nohighlight">\(\bigsqcup_{m = 0}^M B_m = \bigsqcup_{n = 0}^N A_n\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(\{B_m\}_{m = 0}^M\)</span> are still disjoint, then for every <span class="math notranslate nohighlight">\(\omega \in A_n\)</span>, there exists one <span class="math notranslate nohighlight">\(m \in \{0, ..., M\}\)</span> where <span class="math notranslate nohighlight">\(\omega \in B_m\)</span> (and only one, since <span class="math notranslate nohighlight">\(B_m\)</span> are disjoint). Therefore, <span class="math notranslate nohighlight">\(A_n = \bigsqcup_{m = 0}^M A_n \cap B_m\)</span>, and <span class="math notranslate nohighlight">\(\mathbb 1_{\{A_n\}}(\omega) = \sum_{m = 0}^M \mathbb 1_{\{A_n \cap B_m\}}(\omega)\)</span>.</p>
+<p>So:</p>
+<div class="math notranslate nohighlight">
+\[    \varphi(\omega) = \sum_{n = 1}^N \alpha_n \sum_{m = 0}^M \mathbb 1_{\{A_n \cap B_m\}}(\omega)\]</div>
+<p>and vice-versa for <span class="math notranslate nohighlight">\(\psi(\omega)\)</span>.</p>
+<p>Letting <span class="math notranslate nohighlight">\(\alpha_0 = \beta_0 = 0\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \varphi(\omega) + \psi(\omega) = \sum_{n = 0}^N \sum_{m = 0}^M (\alpha_n + \beta_m) \mathbb 1_{\{A_n \cap B_m\}}(\omega)\]</div>
+<p>By construction, since <span class="math notranslate nohighlight">\(\{A_n\}_n\)</span> are mutually disjoint and <span class="math notranslate nohighlight">\(\{B_m\}_m\)</span> are mutually disjoint, that <span class="math notranslate nohighlight">\(\{A_n \cap B_m\}_{n, m}\)</span> are also mutually disjoint, so <span class="math notranslate nohighlight">\(\varphi(\omega) + \psi(\omega)\)</span> is simple.</p>
+</div>
+<p>and we are ready to address the quantity of interest:</p>
+<div class="proof property admonition" id="mt:int:basics:int:prop:sum_int">
+<p class="admonition-title"><span class="caption-number">Property 3.3 </span> (Summing simple functions have summed integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are simple functions. Then <span class="math notranslate nohighlight">\(\int(\varphi : \psi) \,\text d \mu = \int \varphi \,\text d \mu + \int \psi \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(A_0, B_0, \alpha_0, \beta_0\)</span> be defined as in <a class="reference internal" href="#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int \varphi + \psi \,\text d \mu &amp;= \sum_{n = 0}^N \sum_{m = 0}^M (\alpha_n + \beta_m) \mu(A_n \cap B_m) \\
+    &amp;= \sum_{n = 0}^N \sum_{m = 0}^M \alpha_n \mu(A_n \cap B_m) + \sum_{n = 0}^N \sum_{m = 0}^M \beta_m \mu(A_n \cap B_m) \\
+    &amp;= \sum_{n = 0}^N \alpha_n \sum_{m = 0}^M \mu(A_n \cap B_m) + \sum_{m = 0}^M\beta_m \sum_{n = 0}^N \mu(A_n \cap B_m)\end{split}\]</div>
+<p>Observe that since <span class="math notranslate nohighlight">\(\bigsqcup_{m = 0}^MB_m \supseteq A_n\)</span> and for some <span class="math notranslate nohighlight">\(n\)</span> that <span class="math notranslate nohighlight">\(\bigsqcup_{m = 0}^M \{A_n \cap B_m\} = A_n\)</span>, that <span class="math notranslate nohighlight">\(\sum_{m = 0}^M \mu(A_n \cap B_m) = \mu(A_n)\)</span>, by countable additivity <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:count_add_setfn">Definition 2.11</a>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int \varphi + \psi \,\text d \mu &amp;= \sum_{n = 0}^N \alpha_n \mu(A_n) + \sum_{m = 0}^M\beta_m \mu(B_m) \\
+    &amp;= \int \varphi \,\text d \mu + \int \psi \,\text d \mu.\end{split}\]</div>
+</div>
+<p>Using only these <em>three</em> foundational properties, we will be able to extend the extremely trivial concept of an integral that we outlined in <a class="reference internal" href="#mt:int:basics:int:simplefn">Definition 3.2</a> to much more complicated functions. Let’s move to some corollaries of integration.</p>
+</section>
+</section>
+<section id="corollaries-of-integration">
+<span id="mt-int-basics-corollaries"></span><h2><span class="section-number">3.1.2. </span>Corollaries of integration<a class="headerlink" href="#corollaries-of-integration" title="Permalink to this headline">#</a></h2>
+<p>If these three properties hold for some class of functions, we obtain (for free) three more desirable results of integration. Notice that these results do <em>not</em> make any statements about the functions being simple; they just assume that the functions are in a class of functions where some of the properties we just discussed hold. This means we can pre-prepare some corollaries of integration wherein, if we can define other classes of functions in which those properties <em>also</em> hold, these corollaries will extend to those classes of functions, too:</p>
+<div class="proof corollary admonition" id="mt:int:basics:int:cor:ineq">
+<p class="admonition-title"><span class="caption-number">Corollary 3.1 </span> (Integration preserves inequalities)</p>
+<section class="corollary-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are in classes of functions which preserve non-negativity, summation, and rescaling by <span class="math notranslate nohighlight">\(-1\)</span> under integration. Then if <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\leq} \psi\)</span>, <span class="math notranslate nohighlight">\(\int \varphi\,\text d \mu \leq \int \psi \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Since integration preserves summation and rescaling (here, by <span class="math notranslate nohighlight">\(-1\)</span>) by supposition, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int (\psi - \varphi)\,\text d \mu &amp;= \int \psi \,\text d \mu - \int \varphi \,\text d \mu \\
+\Rightarrow \int \psi \,\text d \mu &amp;= \int \varphi \,\text d \mu + \int(\psi - \varphi)\,\text d \mu.\end{split}\]</div>
+<p>Note that if <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\leq} \psi\)</span>, then <span class="math notranslate nohighlight">\(\psi - \varphi \overset{a.e.}{\geq} 0\)</span>, so <span class="math notranslate nohighlight">\(\int (\psi - \varphi) \,\text d \mu \geq 0\)</span>, by the non-negativity property. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int \psi \,\text d \mu &amp;= \int \varphi \,\text d \mu + \int(\psi - \varphi)\,\text d \mu\\
+\Rightarrow \int \psi\,\text d \mu &amp;\geq \int \varphi \,\text d \mu.\end{split}\]</div>
+</div>
+<p>Using the inequality preservation, we obtain equality preservation, too:</p>
+<div class="proof corollary admonition" id="mt:int:basics:int:cor:eq">
+<p class="admonition-title"><span class="caption-number">Corollary 3.2 </span> (Integration preserves equality)</p>
+<section class="corollary-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are in classes of functions which preserve non-negativity, summation, and rescaling by <span class="math notranslate nohighlight">\(-1\)</span> under integration. Then if <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{=} \psi\)</span>, <span class="math notranslate nohighlight">\(\int \varphi\,\text d \mu = \int \psi \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Note that since <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{=} \psi\)</span>, that <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\leq} \psi\)</span> and <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} \psi\)</span>.</p>
+<p>Then by <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a>:</p>
+<div class="math notranslate nohighlight">
+\[    \int \psi\,\text d \mu \geq \int \varphi \,\text d \mu \text{ and } 
+    \int \psi\,\text d \mu \leq \int \varphi \,\text d \mu.\]</div>
+<p>Together, these two statements imply:</p>
+<div class="math notranslate nohighlight">
+\[    \int \psi\,\text d \mu = \int \varphi \,\text d \mu.\]</div>
+</div>
+<p>Finally, the inequality preservation also gives us an intuitive result for absolute values:</p>
+<div class="proof corollary admonition" id="mt:int:basics:int:cor:abs">
+<p class="admonition-title"><span class="caption-number">Corollary 3.3 </span> (Absolute value upper bounds)</p>
+<section class="corollary-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> is in a class of functions which preserve non-negativity, summation, and rescaling by <span class="math notranslate nohighlight">\(-1\)</span> under integration. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \left|\int \varphi \,\text d \mu\right| \leq \int |\varphi| \,\text d \mu.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. By definition of <span class="math notranslate nohighlight">\(|\cdot|\)</span> (the absolute value), note that for every <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(\varphi(\omega) \leq |\varphi(\omega)|\)</span>, so <span class="math notranslate nohighlight">\(\varphi \leq |\varphi|\)</span> in absolute terms (and consequently, also almost everywhere; e.g., <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\leq} |\varphi|\)</span>, since absolute inequality is stronger than almost everywhere inequality).</p>
+<p>Then by <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a>:</p>
+<div class="math notranslate nohighlight">
+\[    \int \varphi \,\text d \mu \leq \int |\varphi| \,\text d \mu.\]</div>
+<p>Further, note that <span class="math notranslate nohighlight">\(-\varphi \leq |\varphi|\)</span> (both absolutely and a.e.), so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int -\varphi \,\text d \mu &amp;= -\int \varphi \,\text d \mu,\,\,\,\,\text{rescale by $-1$} \\
+    &amp;\leq \int |\varphi| \,\text d \mu,\end{split}\]</div>
+<p>where the last line follows, also by <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a>.</p>
+<p>Recalling that <span class="math notranslate nohighlight">\(|y| = y \vee -y\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \left|\int \varphi \,\text d \mu\right| \leq \int |\varphi| \,\text d \mu.\]</div>
+</div>
+<p>Remember that <span class="math notranslate nohighlight">\(a \wedge b\)</span> notationally means <span class="math notranslate nohighlight">\(\min(a, b)\)</span>, and <span class="math notranslate nohighlight">\(a \vee b\)</span> notationally means <span class="math notranslate nohighlight">\(\max(a, b)\)</span>, so <span class="math notranslate nohighlight">\(|y| = y \vee -y \equiv \max(y, -y)\)</span> is just another way to write the absolute value.</p>
+<p>We can use these properties of integrals of simple functions, as well as the corollaries, to show that integration can be defined for more complicated functions, too. Let’s try bounded functions.</p>
+</section>
+<section id="bounded-functions">
+<h2><span class="section-number">3.1.3. </span>Bounded functions<a class="headerlink" href="#bounded-functions" title="Permalink to this headline">#</a></h2>
+<p>The idea behind a bounded function is basically just that the function has an upper bound. You are probably pretty familiar with this idea from real analysis, so we’ll just define it formally here for you:</p>
+<div class="proof definition admonition" id="definition-12">
+<p class="admonition-title"><span class="caption-number">Definition 3.5 </span> (Bounded function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space and <span class="math notranslate nohighlight">\((\mathbb C, \Sigma)\)</span> is a measurable space. A function <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is called <strong>bounded</strong> if there exists <span class="math notranslate nohighlight">\(M \in \mathbb R\)</span> s.t. for any <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(|f(\omega)| \leq M\)</span>. For such a function, we write <span class="math notranslate nohighlight">\(|f| \leq M\)</span>.</p>
+</section>
+</div><p>As it turns out, we can <em>approximate</em> the integral of bounded functions using simple functions. Basically, the idea is that we will use simple functions that approximate the bounded function from above, and then simple functions that approximate the bounded function from below. As we make the simple functions sequentially closer and closer approximations (from above and below) of our bounded function, the integrals of the simple functions we are using converge. We can then use the quantity these simple functions converge to as the integral of the bounded function. Since we already have integrals of simple functions, this quantity they converge to (from above and below) is therefore a well-defined quantity (it <em>exists</em>), and can be taken to be the integral of the bounded function:</p>
+<div class="proof theorem admonition" id="mt:int:basics:bounded_int">
+<p class="admonition-title"><span class="caption-number">Theorem 3.1 </span> (Bounded functions can be approximated by simple functions)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. Suppose that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are in the class of simple functions, and <span class="math notranslate nohighlight">\(f : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> is a bounded function. Suppose further that <span class="math notranslate nohighlight">\(E \subseteq \Omega\)</span> is a subset s.t. <span class="math notranslate nohighlight">\(\mu(E) &lt; \infty\)</span>, and for any <span class="math notranslate nohighlight">\(\omega \in E^c\)</span>, <span class="math notranslate nohighlight">\(f(\omega) = 0\)</span> (<span class="math notranslate nohighlight">\(f\)</span> <em>vanishes</em> on <span class="math notranslate nohighlight">\(E^c\)</span>). Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int f \,\text d \mu = \sup_{\varphi \leq f} \int \varphi \,\text d \mu = \inf_{\psi \geq f} \int \psi \,\text d \mu.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\(\varphi, \psi\)</span> vanish on <span class="math notranslate nohighlight">\(E^c\)</span>, and that <span class="math notranslate nohighlight">\(f\)</span> is bounded by <span class="math notranslate nohighlight">\(M \in \mathbb R\)</span>.</p>
+<p>First, we need to show that the sets of these simple functions <span class="math notranslate nohighlight">\(\psi : \psi \geq f\)</span> and <span class="math notranslate nohighlight">\(\varphi : \varphi \leq f\)</span> are non-empty. Letting <span class="math notranslate nohighlight">\(\psi(\omega) = M\)</span> and <span class="math notranslate nohighlight">\(\varphi(\omega) = -M\)</span> on <span class="math notranslate nohighlight">\(E\)</span> gives the desired result.</p>
+<p>Recall that it suffices to show that if <span class="math notranslate nohighlight">\(\sup_{\varphi \leq f} \int \varphi \,\text d \mu = \inf_{\psi \geq f}\int \psi \,\text d \mu\)</span>, then by the sandwich theorem as <span class="math notranslate nohighlight">\(\varphi \leq f \leq \psi\)</span>, the desired result holds.</p>
+<p>We will show the desired result in two steps:</p>
+<p>1. <span class="math notranslate nohighlight">\(\sup_{\varphi \leq f} \int \varphi \,\text d \mu \leq \inf_{\psi \geq f} \int \psi \,\text d \mu\)</span>:</p>
+<p>Since <span class="math notranslate nohighlight">\(\varphi \leq f \leq \psi\)</span> for all <span class="math notranslate nohighlight">\(\varphi, \psi\)</span> that the supremum/infimum are being considered with respect to absolutely, then <span class="math notranslate nohighlight">\(\varphi \leq \psi\)</span> absolutely (and hence also a.e., since absolute inequality is stronger than a.e. inequality).</p>
+<p>As <span class="math notranslate nohighlight">\(\varphi, \psi\)</span> are simple (and simple functions preserve non-negativity and summation properties of integration), the desired result holds by <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a>.</p>
+<p>2. <span class="math notranslate nohighlight">\(\sup_{\varphi \leq f} \int \varphi \,\text d \mu \geq \inf_{\psi \geq f} \int \psi \,\text d \mu\)</span>:</p>
+<p>For each <span class="math notranslate nohighlight">\(k \in \mathbb Z\)</span> where <span class="math notranslate nohighlight">\(-n + 1 \leq k \leq n\)</span>, let:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    E_{n, k} &amp;= \left\{\omega \in E : \frac{kM}{n} \geq f(\omega) &gt; \frac{(k - 1)M}{n}\right\}, \\
+    \psi_n(\omega) &amp;= \sum_{k = -n}^n \frac{kM}{n}\mathbb 1_{\{E_{n,k}\}}(\omega) \text{ and }\varphi_n(\omega) = \sum_{k = -n}^n \frac{(k-1)M}{n}\mathbb 1_{\{E_{n,k}\}}(\omega).\end{split}\]</div>
+<p>See <a class="reference internal" href="#mt-int-basics-bounding"><span class="std std-numref">Fig. 3.1</span></a> for details, and note that by construction, <span class="math notranslate nohighlight">\(\varphi_n, \psi_n\)</span> are simple functions. By construction, for each <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, that <span class="math notranslate nohighlight">\(\bigsqcup_k E_{n,k} = E\)</span>, and further, <span class="math notranslate nohighlight">\(\psi_n(\omega) - \varphi_n(\omega) = \frac{M}{n}\mathbb 1_{\{E\}}(\omega)\)</span> (since the equality is absolute, it also holds a.e.), so by <a class="reference internal" href="#mt:int:basics:int:cor:eq">Corollary 3.2</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int (\psi_n - \varphi_n)\,\text d \mu &amp;= \int \frac{M}{n}\mathbb 1_{\{E\}}\,\text d \mu, \\
+    &amp;= \frac{M}{n} \mu(E).\end{split}\]</div>
+<p>Further, since simple functions preserve summation by <a class="reference internal" href="#mt:int:basics:int:prop:sum_int">Property 3.3</a> and rescaling by <span class="math notranslate nohighlight">\(-1\)</span> by <a class="reference internal" href="#mt:int:basics:int:prop:rescale">Property 3.2</a>, then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int (\psi_n - \varphi_n)\,\text d \mu &amp;= \int \psi_n\,\text d \mu - \int \varphi_n \,\text d \mu = \frac{M}{n} \mu(E) \\
+    \Rightarrow\int \varphi_n \,\text d \mu &amp;=  \int \psi_n\,\text d \mu - \frac{M}{n} \mu(E).\end{split}\]</div>
+<p>As <span class="math notranslate nohighlight">\(\varphi_n(\omega) \leq f(\omega) \leq \psi_n(\omega)\)</span> by construction, then by <a class="reference internal" href="#mt:int:basics:int:prop:sum_int">Property 3.3</a>, and noting that as <span class="math notranslate nohighlight">\(\varphi_n \in \{\varphi : \varphi \leq f,\varphi \text{ is simple}\}\)</span> and <span class="math notranslate nohighlight">\(\psi_n \in \{\varphi : \varphi \geq f,\psi \text{ is simple}\}\)</span>, then for all <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \sup_{\varphi \leq f} \int \varphi \,\text d \mu &amp;\geq \int \varphi_n \,\text d \mu \\
+    &amp;= -\frac{M}{n}\mu(E) + \int \psi_n \,\text d \mu \\
+    &amp;\geq -\frac{M}{n}\mu(E) + \inf_{\psi \geq f}\int \psi \,\text d \mu \\
+    \xrightarrow[n \rightarrow \infty]{} \sup_{\varphi \geq f}\int \varphi \,\text d \mu&amp;\geq \inf_{\psi \geq f}\int \psi \,\text d \mu,\end{split}\]</div>
+<p>which follows because <span class="math notranslate nohighlight">\(\mu(E)\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are fixed while <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>Then by the sandwich theorem since <span class="math notranslate nohighlight">\(\varphi \leq f \leq \psi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \int f \,\text d \mu = \sup_{\varphi \leq f} \int \varphi \,\text d \mu = \inf_{\psi \geq f} \int \psi \,\text d \mu.\]</div>
+</div>
+<p>To break this proof down a little bit, let’s take a look at this figure, which explains conceptually what’s going on:</p>
+<figure class="align-default" id="mt-int-basics-bounding">
+<a class="reference internal image-reference" href="../../_images/bounding.png"><img alt="../../_images/bounding.png" src="../../_images/bounding.png" style="width: 900px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text"><strong>(A)</strong> the function <span class="math notranslate nohighlight">\(f(\omega)\)</span> is shown in blue, where <span class="math notranslate nohighlight">\(f : \mathbb R \rightarrow \mathbb R\)</span> is bounded by <span class="math notranslate nohighlight">\(M = 2\)</span> (that is, <span class="math notranslate nohighlight">\(|f| \leq 2\)</span>). The sample space is split into three subsets, where <span class="math notranslate nohighlight">\(E^c\)</span> (shaded red box) is the vanishing subset, and the non-vanishing portions are <span class="math notranslate nohighlight">\(E_{1,0}\)</span> (shaded blue box) and <span class="math notranslate nohighlight">\(E_{1,1}\)</span> (shaded green box). The non-vanishing subset must have finite measure. <span class="math notranslate nohighlight">\(\psi_1\)</span> and <span class="math notranslate nohighlight">\(\varphi_1\)</span> are simple functions defined as in the proof. <strong>(B)</strong> we repeat this process, for <span class="math notranslate nohighlight">\(n=2\)</span>. As <span class="math notranslate nohighlight">\(n\)</span> increases, the simple functions become more and more complex, providing better and better approximations of <span class="math notranslate nohighlight">\(f\)</span>, from above (<span class="math notranslate nohighlight">\(\psi_n\)</span>) and below (<span class="math notranslate nohighlight">\(\varphi_n\)</span>).</span><a class="headerlink" href="#mt-int-basics-bounding" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since we pre-supposed that we had finite measure for the non-vanishing subset, the integrals for these simple functions <span class="math notranslate nohighlight">\(\varphi_n\)</span> and <span class="math notranslate nohighlight">\(\psi_n\)</span> will be well-defined quantities, because they form a partition of the non-vanishing subset (and hence, individually, their measures will be finite as well, which satisfies the assumption in <a class="reference internal" href="#mt:int:basics:simplefn">Definition 3.1</a> for them to be simple functions).</p>
+<section id="properties-of-the-integral-for-bounded-functions">
+<h3><span class="section-number">3.1.3.1. </span>Properties of the integral for bounded functions<a class="headerlink" href="#properties-of-the-integral-for-bounded-functions" title="Permalink to this headline">#</a></h3>
+<p>When functions are bounded on a finite non-vanishing measurable subset of the event space, we can extend all of the properties that we found with simple functions directly to bounded functions. Note that we are going to, in effect, use the fact that we defined the integral as in <a class="reference internal" href="#mt:int:basics:bounded_int">Theorem 3.1</a> as a supremum/infimum of simple functions, and just “borrow” the properties we learned about integrals for simple functions to show the results we want. Let’s get started:</p>
+<div class="proof property admonition" id="mt:int:basics:bounded:prop:nn">
+<p class="admonition-title"><span class="caption-number">Property 3.4 </span> (Non-negative bounded function has non-negative integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is a bounded function that vanishes on a set <span class="math notranslate nohighlight">\(E^c\)</span>, where <span class="math notranslate nohighlight">\(\mu(E) &lt; \infty\)</span>. Then if <span class="math notranslate nohighlight">\(f \overset{a.e.}{\geq} 0\)</span>, <span class="math notranslate nohighlight">\(\int f \,\text d \mu \geq 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span> be the set on which <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Let <span class="math notranslate nohighlight">\(\varphi_0(\omega) = 0\)</span> for every <span class="math notranslate nohighlight">\(\omega \in F\)</span>, and let <span class="math notranslate nohighlight">\(\varphi_0(\omega) = -M\)</span> for every <span class="math notranslate nohighlight">\(\omega \in F^c\)</span>, which is a simple function. Since <span class="math notranslate nohighlight">\(f \overset{a.e.}{\geq} 0\)</span>, then <span class="math notranslate nohighlight">\(\mu(F^c) = 0\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(\varphi_0\)</span> is simple, then by <a class="reference internal" href="#mt:int:basics:int:simplefn">Definition 3.2</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int \varphi_0\,\text d \mu &amp;= 0\mu(F) + -M\mu(F^c) \\
+    &amp;= 0.\end{split}\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(\varphi_0 \in \{\varphi : \varphi \leq f, \varphi\text{ is simple}\}\)</span> from the supremum condition <a class="reference internal" href="#mt:int:basics:bounded_int">Theorem 3.1</a>, so:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int f \,\text d \mu &amp;=  \sup_{\varphi \leq f}\int \varphi \,\text d\mu\\
+    &amp;\geq \int \varphi_0 \,\text d\mu = 0,\end{split}\]</div>
+<p>because the supremum might be over other simple functions as well.</p>
+</div>
+<p>So what we did here was, we defined a simple function (the <em>zero</em> function) for the entire part of the sample space on which <span class="math notranslate nohighlight">\(f \geq 0\)</span>, and set its other values using the bound on <span class="math notranslate nohighlight">\(f\)</span> to definitively obtain a simple function that is <span class="math notranslate nohighlight">\(\leq f\)</span>. Then, we used that the supremum would be at least as large as the integral of one of the member functions to establish the appropriate bound.</p>
+<div class="proof property admonition" id="mt:int:basics:bounded:prop:rescale">
+<p class="admonition-title"><span class="caption-number">Property 3.5 </span> (Rescaled bounded function has rescaled integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> is a bounded function that vanishes on a set <span class="math notranslate nohighlight">\(E^c\)</span>, where <span class="math notranslate nohighlight">\(\mu(E) &lt; \infty\)</span>. Then if <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(\int r f \,\text d \mu = r\int f \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose WOLOG that <span class="math notranslate nohighlight">\(r &gt; 0\)</span>. Then <span class="math notranslate nohighlight">\(r \varphi \leq r f \iff \varphi \leq f\)</span>, and consequently by <a class="reference internal" href="#mt:int:basics:bounded_int">Theorem 3.1</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int rf \,\text d \mu &amp;= \sup_{\varphi \leq f}\int r\varphi \,\text d \mu \\
+    &amp;= \sup_{\varphi \leq f }r \int \varphi \,\text d \mu,\end{split}\]</div>
+<p>which is because <span class="math notranslate nohighlight">\(\varphi\)</span> are simple, and by <a class="reference internal" href="#mt:int:basics:int:prop:rescale">Property 3.2</a>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int rf \,\text d \mu &amp;= \sup_{\varphi \leq f }r \int \varphi \,\text d \mu \\
+    &amp;=  r\sup_{\varphi \leq f } \int \varphi \,\text d \mu \\
+    &amp;= r\int f \,\text d \mu,\end{split}\]</div>
+<p>which is by <a class="reference internal" href="#mt:int:basics:bounded_int">Theorem 3.1</a>.</p>
+</div>
+<div class="proof property admonition" id="mt:int:basics:bounded:prop:sum">
+<p class="admonition-title"><span class="caption-number">Property 3.6 </span> (Summed bounded functions have summed integrals)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f,g : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are bounded functions that vanishes on a set <span class="math notranslate nohighlight">\(E^c\)</span>, where <span class="math notranslate nohighlight">\(\mu(E) &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu = \inf f \,\text d \mu + \int g \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Note that if <span class="math notranslate nohighlight">\(\psi_1 \geq f\)</span> and <span class="math notranslate nohighlight">\(\psi_2 \geq g\)</span>, then <span class="math notranslate nohighlight">\(\psi_1 + \psi_2 \geq f + g\)</span>. Further, note that <span class="math notranslate nohighlight">\(\{\psi : \psi \geq f + g\} \subseteq \{ \psi_1 + \psi_2 : \psi_1 \geq f, \psi_2 \geq g\}\)</span>. Consequently:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int (f + g) \,\text d \mu &amp;= \inf_{\psi \geq f + g}\int \psi \,\text d \mu \\
+    &amp;\leq \inf\left\{\int (\psi_1 + \psi_2) \,\text d \mu : \psi_1 \geq f, \psi_2 \geq g\right\} \\
+    &amp;= \inf\left\{\int \psi_1 \,\text d \mu + \int \psi_2 \,\text d \mu : \psi_1 \geq f, \psi_2 \geq g\right\},\end{split}\]</div>
+<p>which is by <a class="reference internal" href="#mt:int:basics:int:prop:sum_int">Property 3.3</a> since <span class="math notranslate nohighlight">\(\psi_1, \psi_2\)</span> are simple. Continuing:</p>
+<div class="math notranslate nohighlight" id="equation-mt-int-basics-bounded-prop-sum-eqhelp1">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-mt-int-basics-bounded-prop-sum-eqhelp1" title="Permalink to this equation">#</a></span>\[\begin{split}    \int (f + g) \,\text d \mu &amp;\leq \inf\left\{\int \psi_1 \,\text d \mu + \int \psi_2 \,\text d \mu : \psi_1 \geq f, \psi_2 \geq g\right\} \\
+    &amp;= \inf_{\psi_1 \geq f}\int \psi_1 \,\text d \mu  + \inf_{\psi_2 \geq g}\int \psi_2 \,\text d \mu \\
+    &amp;= \int f \,\text d \mu + \int g \,\text d \mu.\end{split}\]</div>
+<p>Repeating the same argument on <span class="math notranslate nohighlight">\(-f\)</span> and <span class="math notranslate nohighlight">\(-g\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight" id="equation-mt-int-basics-bounded-prop-sum-eqhelp2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-mt-int-basics-bounded-prop-sum-eqhelp2" title="Permalink to this equation">#</a></span>\[\begin{split}    \int -(f + g) \,\text d \mu \leq -\int f \,\text d \mu - \int g \,\text d \mu \\
+    \Rightarrow \int (f + g) \,\text d \mu \geq \int f \,\text d \mu + \int g \,\text d \mu,\end{split}\]</div>
+<p>which is by rescaling by <span class="math notranslate nohighlight">\(-1\)</span> from <a class="reference internal" href="#mt:int:basics:bounded:prop:rescale">Property 3.5</a>. Combining <a class="reference internal" href="#equation-mt-int-basics-bounded-prop-sum-eqhelp1">(3.1)</a> and <a class="reference internal" href="#equation-mt-int-basics-bounded-prop-sum-eqhelp2">(3.2)</a>:</p>
+<div class="math notranslate nohighlight">
+\[\int (f + g) \,\text d \mu \geq \int f \,\text d \mu + \int g \,\text d \mu.\]</div>
+</div>
+<p>Notice that since bounded functions obey inequalities with respect to <span class="math notranslate nohighlight">\(0\)</span>, are rescalable by <span class="math notranslate nohighlight">\(-1\)</span>, and their sums have summed integrals, that we obtain all of the integration corollaries in <a class="reference internal" href="#mt-int-basics-corollaries"><span class="std std-numref">Section 3.1.2</span></a> for free!</p>
+</section>
+</section>
+<section id="non-negative-functions">
+<h2><span class="section-number">3.1.4. </span>Non-negative functions<a class="headerlink" href="#non-negative-functions" title="Permalink to this headline">#</a></h2>
+<p>Next, we’re going to extend our repetoire of functions with well-defined integrals to the non-negative functions:</p>
+<div class="proof definition admonition" id="definition-17">
+<p class="admonition-title"><span class="caption-number">Definition 3.6 </span> (Non-negative function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measure space. A function <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is called <strong>non-negative</strong> if for every <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(f(\omega) \geq 0\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is a non-negative function, we write <span class="math notranslate nohighlight">\(f \geq 0\)</span>.</p>
+</section>
+</div><p>To begin to define the integral of a non-negative function, we need to be able to integrate over sets:</p>
+<div class="proof definition admonition" id="definition-18">
+<p class="admonition-title"><span class="caption-number">Definition 3.7 </span> (Integral over a set)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span>. The integral over a set <span class="math notranslate nohighlight">\(E \in \mathcal F\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[    \int_E f \,\text d \mu \triangleq \int f \cdot \mathbb 1_{\{E\}}\,\text d \mu.\]</div>
+</section>
+</div><p>Now, we are ready to define the integral of a non-negative function:</p>
+<div class="proof definition admonition" id="mt:int:basics:nn:int_def">
+<p class="admonition-title"><span class="caption-number">Definition 3.8 </span> (Integral of a non-negative function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measure space, and a function <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is s.t. <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int f \,\text d \mu \triangleq \sup \left\{\int h \,\text d \mu : 0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\}.\]</div>
+</section>
+</div><p>As we can see, this quantity is clearly well-defined (it contains at least one element): simply take <span class="math notranslate nohighlight">\(h(\omega) = 0\)</span> for all <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>. Further, it is the supremum of the integrals of bounded functions, so it also could be non-finite. To calculate the integral of a bounded function, remember we just introduced a method of computing the integral from simple functions which approximated <span class="math notranslate nohighlight">\(f\)</span> from above and below. As we made these coarse simple functions more fine, their integrals ended up converging, so we ended up being able to sandwich the integral of our bounded function between them.</p>
+<p>Similarly, we also need an approach to calculate the integral for non-negative functions, so we’ll introduce this lemma:</p>
+<div class="proof lemma admonition" id="mt:int:basics:nn:int_compute">
+<p class="admonition-title"><span class="caption-number">Lemma 3.2 </span> (Computing integral of non-negative function)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measure space, and a function <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is s.t. <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Then if <span class="math notranslate nohighlight">\((F_n) \subseteq \mathcal F\)</span> is s.t. <span class="math notranslate nohighlight">\(F_n \uparrow \Omega\)</span> and <span class="math notranslate nohighlight">\(\mu(F_n) &lt; \infty\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \int_{F_n} (f \wedge n) \,\text d \mu \uparrow \int f \,\text d \mu\text{ as }n \rightarrow \infty.\]</div>
+</section>
+</div><p>Remember that <span class="math notranslate nohighlight">\(f \wedge n\)</span> means <span class="math notranslate nohighlight">\(\min(f, n)\)</span>. So, in effect here, what we are doing is “chopping off” <span class="math notranslate nohighlight">\(f\)</span> at a suitable upper bound <span class="math notranslate nohighlight">\(n\)</span> along a <span class="math notranslate nohighlight">\(\mu\)</span>-finite subset of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra that is converging (from below) to the event space. The non-negativity assumption of <span class="math notranslate nohighlight">\(f\)</span> suggests that this quantity “should” keep growing; it’s pretty obvious that <span class="math notranslate nohighlight">\(\int_{F_n} f \wedge n \,\text d \mu \leq  \int f \,\text d \mu\)</span>. The problem is that, along this convergent sequence of sets, we could end up with an accumulation point <em>below</em> the value we are interested in, <span class="math notranslate nohighlight">\(\int f \,\text d \mu\)</span>. The purpose of this lemma is to establish that the desired quantity is, in fact, a <em>limit</em> and not just an upper bound.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(h_n \triangleq (f \wedge n)\mathbb 1_{\{F_n\}}\)</span>, and suppose that <span class="math notranslate nohighlight">\(M_n\)</span> is an upper bound for <span class="math notranslate nohighlight">\(h_n\)</span>. Note that this upper bound clearly exists, as by construction, <span class="math notranslate nohighlight">\(h_n \leq n\)</span>.</p>
+<p>It is clear that for each <span class="math notranslate nohighlight">\(h_n \in \left\{0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\}\)</span>, so each <span class="math notranslate nohighlight">\(h_n\)</span> is a possibility for <span class="math notranslate nohighlight">\(h\)</span> in the supremum.</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(\int h_n \,\text d \mu\)</span> is a monotone non-decreasing subset, as for every <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int h_n \,\text d \mu &amp;= \int_{F_n}(f \wedge n) \,\text d \mu \\
+    &amp;\leq \int_{F_n}(f \wedge n + 1) \,\text d \mu + \int_{F_{n + 1} \setminus F_n}(f \wedge n + 1) \,\text d \mu,\,\,\,\,\int_{F_{n + 1} \setminus F_n}(f \wedge n + 1) \,\text d \mu \geq 0 \\
+    &amp;= \int_{F_{n + 1}}(f \wedge n + 1) \,\text d \mu \\
+    &amp;= \int h_n \,\text d \mu\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\((n + 1) \geq n\)</span>, <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>, and <span class="math notranslate nohighlight">\((f \wedge n + 1) \geq 0\)</span> is upper-bounded by <span class="math notranslate nohighlight">\(M_n\)</span> so <a class="reference internal" href="#mt:int:basics:bounded:prop:nn">Property 3.4</a> gives that the integral is non-negative.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(h \in \left\{0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\}\)</span> is an arbitrary element of the supremum set with an upper bound <span class="math notranslate nohighlight">\(M\)</span>. Then for any <span class="math notranslate nohighlight">\(n \geq M\)</span>, we obtain:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_{F_n} f \wedge n \,\text d \mu &amp;= \int h_n \,\text d \mu \equiv \int_{F_n} h_n \,\text d \mu \\
+    &amp;\geq \int_{F_n} h \,\text d \mu,\,\,\,\,0 \leq h \leq f, h \leq M \Rightarrow h \leq h_n\end{split}\]</div>
+<p>The bottom line follows because <span class="math notranslate nohighlight">\(h_n = f \wedge n\)</span>, and <span class="math notranslate nohighlight">\(n \geq M\)</span>, so <span class="math notranslate nohighlight">\(h_n \geq f \wedge M\)</span>. Further, <span class="math notranslate nohighlight">\(h\)</span> is upper bounded by <span class="math notranslate nohighlight">\(M\)</span> and at most the value of <span class="math notranslate nohighlight">\(f\)</span>, so <span class="math notranslate nohighlight">\(h \leq f \wedge M \leq h_n\)</span>. Then since <span class="math notranslate nohighlight">\(h \leq h_n\)</span>, it follows by <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a> that <span class="math notranslate nohighlight">\(\int_{F_n} h \,\text d \mu \leq \int_{F_n} h_n \,\text d \mu\)</span>. Continuing and applying <a class="reference internal" href="#mt:int:basics:bounded:prop:sum">Property 3.6</a>:</p>
+<div class="math notranslate nohighlight" id="equation-mt-int-basics-nn-int-def-helper1">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-mt-int-basics-nn-int-def-helper1" title="Permalink to this equation">#</a></span>\[    \int_{F_n} f \wedge n \,\text d \mu \geq \int h \,\text d \mu - \int_{F_n^c} h \,\text d \mu.\]</div>
+<p>Which follows by noting that <span class="math notranslate nohighlight">\(h = h \mathbb 1_{\{F_n\}} + h\mathbb 1_{\{F_n^c\}}\)</span>, and using the definition of the integral over a set.</p>
+<p>Noting that <span class="math notranslate nohighlight">\(0 \leq h \leq M\)</span>, then by <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_{F_n^c}0 \,\text d \mu &amp;\leq \int_{F_n^c}h \,\text d \mu \leq \int_{F_n^c}M \,\text d \mu \\
+    \Rightarrow 0 &amp;\leq \int_{F_n^c}h \,\text d \mu \leq M\mu\left(F_n^c \right) \downarrow 0\text{ as }n \rightarrow \infty \\
+    \Rightarrow \int_{F_n^c}h \,\text d \mu &amp;\xrightarrow[n \rightarrow \infty]{} 0,\,\,\,\,\text{ Sandwich Theorem}\end{split}\]</div>
+<p>Which follows because <span class="math notranslate nohighlight">\(F_n \uparrow \Omega\)</span> implies that <span class="math notranslate nohighlight">\(F_n^c \downarrow \varnothing\)</span>, so by convergence from above <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:convabove">Property 2.6</a>, <span class="math notranslate nohighlight">\(\mu(F_n^c) \downarrow 0\)</span>.</p>
+<p>Therefore combining this with <a class="reference internal" href="#equation-mt-int-basics-nn-int-def-helper1">(3.3)</a> gives that for every <span class="math notranslate nohighlight">\(h \in  \left\{0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \liminf_{n \rightarrow \infty} \int_{F_n}(f \wedge n) \,\text d \mu \geq \int h \,\text d \mu.\]</div>
+</div>
+</section>
+<section id="properties-of-the-integral-for-non-negative-functions">
+<h2><span class="section-number">3.1.5. </span>Properties of the integral for non-negative functions<a class="headerlink" href="#properties-of-the-integral-for-non-negative-functions" title="Permalink to this headline">#</a></h2>
+<p>At this point, you are probably becoming pretty accustomed to the procedures we are going here. Since we just defined the integral of a non-negative function in terms of bounded functions in <a class="reference internal" href="#mt:int:basics:nn:int_def">Definition 3.8</a>, we’re going to use properties about integrals of bounded functions to prove properties about the integrals of non-negative functions. Let’s get started:</p>
+<div class="proof property admonition" id="property-21">
+<p class="admonition-title"><span class="caption-number">Property 3.7 </span> (Non-negative function has non-negative integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is s.t. <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Then <span class="math notranslate nohighlight">\(\int f \text d \mu \geq 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Take <span class="math notranslate nohighlight">\(h(\omega) = 0\)</span> for all <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>. Note that <span class="math notranslate nohighlight">\(h \in \left\{h : 0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\}\)</span>.</p>
+<p>Further, by <a class="reference internal" href="#mt:int:basics:int:simplefn">Definition 3.2</a>, <span class="math notranslate nohighlight">\(\int h\,\text d \mu = 0\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(\int f \,\text d \mu \geq \int h\,\text d \mu = 0\)</span>, since <span class="math notranslate nohighlight">\(\int f \, \text d\mu\)</span> is a supremum over elements including <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</div>
+<p>Well, that one was pretty obvious, let’s try rescaling:</p>
+<div class="proof property admonition" id="property-22">
+<p class="admonition-title"><span class="caption-number">Property 3.8 </span> (Rescaled non-negative function has rescaled integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is s.t. <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Then <span class="math notranslate nohighlight">\(\int rf \,\text d \mu = r\int f \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. If <span class="math notranslate nohighlight">\(r = 0\)</span>, the result is immediate, so we’ll consider the case where <span class="math notranslate nohighlight">\(r \neq 0\)</span>.</p>
+<p>WOLOG suppose that <span class="math notranslate nohighlight">\(r &gt; 0\)</span>.</p>
+<p>Then using <a class="reference internal" href="#mt:int:basics:nn:int_def">Definition 3.8</a>, for <span class="math notranslate nohighlight">\(r &gt; 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int rf \,\text d \mu &amp;= \sup \left\{\int q \,\text d \mu : 0 \leq q \leq rf, q \text{ is bounded}, \mu\left(\{\omega \in \Omega : q(\omega) &gt; 0\}\right) &lt; \infty\right\} \\
+    &amp;= \sup \left\{\int rh \,\text d \mu : 0 \leq \frac{h}{r} \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : q(\omega) &gt; 0\}\right) &lt; \infty\right\}\end{split}\]</div>
+<p>Notice that:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(q \leq rf \iff \frac{q}{r} \leq f\)</span> for <span class="math notranslate nohighlight">\(r &gt; 0\)</span>,</p></li>
+<li><p>that <span class="math notranslate nohighlight">\(\{q(\omega) &gt; 0\} = \{\frac{q}{r}(\omega) &gt; 0\} \Rightarrow \mu(q &gt; 0) = \mu\left(\frac{q}{r} &gt; 0\right)\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(q\)</span> is bounded by <span class="math notranslate nohighlight">\(M\)</span> <span class="math notranslate nohighlight">\(\iff\)</span> <span class="math notranslate nohighlight">\(\frac{q}{r}\)</span> is bounded by <span class="math notranslate nohighlight">\(\frac{M}{r}\)</span>.</p></li>
+</ol>
+<p>Letting <span class="math notranslate nohighlight">\(h \triangleq \frac{q}{r}\)</span> gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int rf \,\text d \mu &amp;= \sup \left\{\int rh \,\text d \mu : 0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\} \\
+    &amp;= \sup \left\{r\int h \,\text d \mu : 0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\},\end{split}\]</div>
+<p>where we exchanged the integral of the rescaling with the rescaled integral by <a class="reference internal" href="#mt:int:basics:bounded:prop:rescale">Property 3.5</a>. Continuing:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int rf \,\text d \mu &amp;= r\sup \left\{\int h \,\text d \mu : 0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\} \\
+    &amp;= r\int f \,\text d \mu.\end{split}\]</div>
+</div>
+<p>This one is also pretty obvious, and basically come down to the fact that we were taking a supremum over what was, effectively, the same set (just rescaled) due to the equivalences and <span class="math notranslate nohighlight">\(\iff\)</span> statements, and then using that <span class="math notranslate nohighlight">\(r &gt; 0\)</span> implied that the supremum of the rescaled values was the rescaling of the supremum of the original values. We could repeat this proof with <span class="math notranslate nohighlight">\(r &lt; 0\)</span> to obtain a virtually identical result.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
