@@ -537,11 +537,33 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#non-negative-functions">
    3.1.4. Non-negative functions
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-integral-for-non-negative-functions">
+     3.1.4.1. Properties of the integral for non-negative functions
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#properties-of-the-integral-for-non-negative-functions">
-   3.1.5. Properties of the integral for non-negative functions
+  <a class="reference internal nav-link" href="#mu-integrable-functions">
+   3.1.5.
+   <span class="math notranslate nohighlight">
+    \(\mu\)
+   </span>
+   -integrable functions
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-mu-integrable-functions">
+     3.1.5.1. Properties of
+     <span class="math notranslate nohighlight">
+      \(\mu\)
+     </span>
+     -integrable functions
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -595,11 +617,33 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#non-negative-functions">
    3.1.4. Non-negative functions
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-the-integral-for-non-negative-functions">
+     3.1.4.1. Properties of the integral for non-negative functions
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#properties-of-the-integral-for-non-negative-functions">
-   3.1.5. Properties of the integral for non-negative functions
+  <a class="reference internal nav-link" href="#mu-integrable-functions">
+   3.1.5.
+   <span class="math notranslate nohighlight">
+    \(\mu\)
+   </span>
+   -integrable functions
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-mu-integrable-functions">
+     3.1.5.1. Properties of
+     <span class="math notranslate nohighlight">
+      \(\mu\)
+     </span>
+     -integrable functions
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -895,7 +939,7 @@ title="Print to PDF"
 <div class="proof property admonition" id="mt:int:basics:bounded:prop:sum">
 <p class="admonition-title"><span class="caption-number">Property 3.6 </span> (Summed bounded functions have summed integrals)</p>
 <section class="property-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f,g : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are bounded functions that vanishes on a set <span class="math notranslate nohighlight">\(E^c\)</span>, where <span class="math notranslate nohighlight">\(\mu(E) &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu = \inf f \,\text d \mu + \int g \,\text d \mu\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f,g : (\Omega, \mathcal F) \rightarrow (\mathbb R, \Sigma)\)</span> are bounded functions that vanishes on a set <span class="math notranslate nohighlight">\(E^c\)</span>, where <span class="math notranslate nohighlight">\(\mu(E) &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu = \int f \,\text d \mu + \int g \,\text d \mu\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Note that if <span class="math notranslate nohighlight">\(\psi_1 \geq f\)</span> and <span class="math notranslate nohighlight">\(\psi_2 \geq g\)</span>, then <span class="math notranslate nohighlight">\(\psi_1 + \psi_2 \geq f + g\)</span>. Further, note that <span class="math notranslate nohighlight">\(\{\psi : \psi \geq f + g\} \subseteq \{ \psi_1 + \psi_2 : \psi_1 \geq f, \psi_2 \geq g\}\)</span>. Consequently:</p>
@@ -928,7 +972,7 @@ title="Print to PDF"
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measure space. A function <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is called <strong>non-negative</strong> if for every <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, <span class="math notranslate nohighlight">\(f(\omega) \geq 0\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> is a non-negative function, we write <span class="math notranslate nohighlight">\(f \geq 0\)</span>.</p>
 </section>
 </div><p>To begin to define the integral of a non-negative function, we need to be able to integrate over sets:</p>
-<div class="proof definition admonition" id="definition-18">
+<div class="proof definition admonition" id="mt:int:basics:set_int">
 <p class="admonition-title"><span class="caption-number">Definition 3.7 </span> (Integral over a set)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span>. The integral over a set <span class="math notranslate nohighlight">\(E \in \mathcal F\)</span> is:</p>
@@ -981,11 +1025,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[    \liminf_{n \rightarrow \infty} \int_{F_n}(f \wedge n) \,\text d \mu \geq \int h \,\text d \mu.\]</div>
 </div>
-</section>
 <section id="properties-of-the-integral-for-non-negative-functions">
-<h2><span class="section-number">3.1.5. </span>Properties of the integral for non-negative functions<a class="headerlink" href="#properties-of-the-integral-for-non-negative-functions" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">3.1.4.1. </span>Properties of the integral for non-negative functions<a class="headerlink" href="#properties-of-the-integral-for-non-negative-functions" title="Permalink to this headline">#</a></h3>
 <p>At this point, you are probably becoming pretty accustomed to the procedures we are going here. Since we just defined the integral of a non-negative function in terms of bounded functions in <a class="reference internal" href="#mt:int:basics:nn:int_def">Definition 3.8</a>, we’re going to use properties about integrals of bounded functions to prove properties about the integrals of non-negative functions. Let’s get started:</p>
-<div class="proof property admonition" id="property-21">
+<div class="proof property admonition" id="mt:int:basics:nn:nn">
 <p class="admonition-title"><span class="caption-number">Property 3.7 </span> (Non-negative function has non-negative integral)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is s.t. <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Then <span class="math notranslate nohighlight">\(\int f \text d \mu \geq 0\)</span>.</p>
@@ -996,7 +1039,7 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(\int f \,\text d \mu \geq \int h\,\text d \mu = 0\)</span>, since <span class="math notranslate nohighlight">\(\int f \, \text d\mu\)</span> is a supremum over elements including <span class="math notranslate nohighlight">\(0\)</span>.</p>
 </div>
 <p>Well, that one was pretty obvious, let’s try rescaling:</p>
-<div class="proof property admonition" id="property-22">
+<div class="proof property admonition" id="mt:int:basics:nn:rescale">
 <p class="admonition-title"><span class="caption-number">Property 3.8 </span> (Rescaled non-negative function has rescaled integral)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is s.t. <span class="math notranslate nohighlight">\(f \geq 0\)</span>. Then <span class="math notranslate nohighlight">\(\int rf \,\text d \mu = r\int f \,\text d \mu\)</span>.</p>
@@ -1023,7 +1066,174 @@ title="Print to PDF"
 \[\begin{split}    \int rf \,\text d \mu &amp;= r\sup \left\{\int h \,\text d \mu : 0 \leq h \leq f, h \text{ is bounded}, \mu\left(\{\omega \in \Omega : h(\omega) &gt; 0\}\right) &lt; \infty\right\} \\
     &amp;= r\int f \,\text d \mu.\end{split}\]</div>
 </div>
-<p>This one is also pretty obvious, and basically come down to the fact that we were taking a supremum over what was, effectively, the same set (just rescaled) due to the equivalences and <span class="math notranslate nohighlight">\(\iff\)</span> statements, and then using that <span class="math notranslate nohighlight">\(r &gt; 0\)</span> implied that the supremum of the rescaled values was the rescaling of the supremum of the original values. We could repeat this proof with <span class="math notranslate nohighlight">\(r &lt; 0\)</span> to obtain a virtually identical result.</p>
+<p>This one is also pretty obvious, and basically come down to the fact that we were taking a supremum over what was, effectively, the same set (just rescaled) due to the equivalences and <span class="math notranslate nohighlight">\(\iff\)</span> statements, and then using that <span class="math notranslate nohighlight">\(r &gt; 0\)</span> implied that the supremum of the rescaled values was the rescaling of the supremum of the original values. We could repeat this proof with <span class="math notranslate nohighlight">\(r &lt; 0\)</span> to obtain that the result holds for <em>any</em> <span class="math notranslate nohighlight">\(r\)</span>, with suitable adjustments of the inequalities to accomodate the negative values (hence, the WOLOG).</p>
+<p>Now, our final aim is summation:</p>
+<div class="proof property admonition" id="mt:int:basics:nn:sum">
+<p class="admonition-title"><span class="caption-number">Property 3.9 </span> (Summed non-negative functions have summed integrals)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f, g \in m(\mathcal F, \Sigma)\)</span> are s.t. <span class="math notranslate nohighlight">\(f, g \geq 0\)</span>. Then <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu = \int f \,\text d \mu + \int g \,\text d \mu\)</span>.</p>
+</section>
+</div><p>We’ll address this by showing that Left <span class="math notranslate nohighlight">\(\leq\)</span> RHS, and RHS <span class="math notranslate nohighlight">\(\leq\)</span> LHS, and therefore RHS <span class="math notranslate nohighlight">\(=\)</span> LHS:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. 1. <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu \leq \int f \,\text d \mu + \int g \,\text d \mu\)</span>:</p>
+<p>Note that <span class="math notranslate nohighlight">\((a + b)\wedge n \leq (a \wedge n) + (b \wedge n)\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\((F_n) \subseteq \mathcal F\)</span> be a <span class="math notranslate nohighlight">\(\mu\)</span>-finite sequence where <span class="math notranslate nohighlight">\(F_n \uparrow \Omega\)</span> from below. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_{F_n} (f + g)\wedge n \,\text d \mu &amp;\leq \int_{F_n} \left[(f \wedge n) + (g \wedge n)\right]\,\text d \mu \\
+    &amp;= \int_{F_n} (f \wedge n)\,\text d \mu + \int_{F_n}(g \wedge n)\,\text d \mu,\end{split}\]</div>
+<p>which is because <span class="math notranslate nohighlight">\((f \wedge n) \mathbb 1_{F_n}\)</span> and <span class="math notranslate nohighlight">\((g \wedge n) \mathbb 1_{F_n}\)</span> are bounded, so application of <a class="reference internal" href="#mt:int:basics:bounded:prop:sum">Property 3.6</a> gives the desired result. Then by <a class="reference internal" href="#mt:int:basics:nn:int_compute">Lemma 3.2</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{F_n} (f + g)\wedge n \,\text d \mu &amp;\leq \int_{F_n} (f \wedge n)\,\text d \mu + \int_{F_n}(g \wedge n)\,\text d \mu \\
+&amp;\uparrow \int f\,\text d \mu + \int g\,\text d \mu.\end{split}\]</div>
+<p>2. <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu \geq \int f \,\text d \mu + \int g \,\text d \mu\)</span>:</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(h \in \{h : 0 \leq h \leq f,h \text{ is bounded}, \mu(h &gt; 0) &lt; \infty\}\)</span>, and that <span class="math notranslate nohighlight">\(k \in \{k : 0 \leq k \leq g,k \text{ is bounded}, \mu(k &gt; 0) &lt; \infty\}\)</span>. Then by definition, it follows that <span class="math notranslate nohighlight">\(h \leq f, k \leq g\)</span>, so <span class="math notranslate nohighlight">\(h + k \leq f + g\)</span>.</p>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\left\{q : 0 \leq q \leq f + g, q \text{ is bounded}, \mu\left(q &gt; 0\right) &lt; \infty\right\} \supseteq \\
+&amp;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\bigg\{\int (h + k) \,\text d \mu : 0 \leq h \leq f, 0 \leq k \leq g, h\text{ and }k \text{ are bounded},\\
+&amp;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\mu\left(q &gt; 0\right), \mu(k &gt; 0) &lt; \infty\bigg\}.\end{split}\]</div>
+<p>So:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int (f + g) \,\text d \mu &amp;= \sup \left\{\int q \,\text d \mu : 0 \leq q \leq f + g, q \text{ is bounded}, \mu\left(q &gt; 0\right) &lt; \infty\right\} \\
+    &amp;\geq \sup\bigg\{\int (h + k) \,\text d \mu : 0 \leq h \leq f, 0 \leq k \leq g, h\text{ and }k \text{ are bounded}, \\
+    &amp;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\mu\left(q &gt; 0\right), \mu(k &gt; 0) &lt; \infty\bigg\} \\
+    &amp;=  \sup \left\{\int h \,\text d \mu : 0 \leq h \leq f, h \text{ is bounded}, \mu(h &gt; 0) &lt; \infty\right\} + \\
+    &amp; \;\;\;\;\;\;\;\;\;\sup \left\{\int k \,\text d \mu : 0 \leq k \leq g, k \text{ is bounded}, \mu(k &gt; 0) &lt; \infty\right\} \\
+    &amp;= \int f \,\text d \mu + \int g \,\text d \mu,\end{split}\]</div>
+<p>which follows by the <a class="reference internal" href="#mt:int:basics:nn:int_def">Definition 3.8</a>, the integral of a non-negative function.</p>
+</div>
+<p>As before, since non-negative functions obey inequalities with respect to <span class="math notranslate nohighlight">\(0\)</span>, are rescalable by <span class="math notranslate nohighlight">\(-1\)</span>, and their sums have summed integrals, we obtain all of the integration corollaries in <a class="reference internal" href="#mt-int-basics-corollaries"><span class="std std-numref">Section 3.1.2</span></a>.</p>
+<p>We are now ready to relax the class of functions we can integrate to the broadest class of functions we will deal with in this course: the integrable functions.</p>
+</section>
+</section>
+<section id="mu-integrable-functions">
+<h2><span class="section-number">3.1.5. </span><span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions<a class="headerlink" href="#mu-integrable-functions" title="Permalink to this headline">#</a></h2>
+<p>Let’s start with a quick definition:</p>
+<div class="proof definition admonition" id="mt:int:basics:muint_fn">
+<p class="admonition-title"><span class="caption-number">Definition 3.9 </span> (<span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space. We say that <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\pmb\mu\)</span>-<strong>integrable</strong> if <span class="math notranslate nohighlight">\(\int |f| \,\text d \mu &lt; \infty\)</span>.</p>
+</section>
+</div><p>Like before, we’ll now start with a definition of an integral for a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function:</p>
+<div class="proof definition admonition" id="mt:int:basics:muint:int">
+<p class="admonition-title"><span class="caption-number">Definition 3.10 </span> (Integral of a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, and for each <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, define:</p>
+<div class="math notranslate nohighlight">
+\[    f^+(\omega) \triangleq f(\omega) \wedge 0 \text{ and }f^-(\omega) \triangleq (-f(\omega)) \wedge 0.\]</div>
+<p>Then the integral is:</p>
+<div class="math notranslate nohighlight">
+\[    \int f \,\text d \mu = \int f^+ \,\text d \mu - \int f^- \,\text d \mu.\]</div>
+</section>
+</div><p>It should be pretty immediately clear to you that for every <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, that <span class="math notranslate nohighlight">\(f(\omega) = f^+(\omega) - f^-(\omega)\)</span>, and that <span class="math notranslate nohighlight">\(|f(\omega)| = f^+(\omega) + f^-(\omega)\)</span>, just by construction. Another pretty easy interesting note to conclude that <span class="math notranslate nohighlight">\(f^+(\omega), f^-(\omega) \leq |f(\omega)|\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(f^+ \geq 0\)</span> and <span class="math notranslate nohighlight">\(f^- \geq 0\)</span>, by <a class="reference internal" href="#mt:int:basics:nn:int_def">Definition 3.8</a> and <a class="reference internal" href="#mt:int:basics:int:cor:ineq">Corollary 3.1</a> if <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable:</p>
+<div class="math notranslate nohighlight" id="equation-mt-int-basics-muint-helper">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-mt-int-basics-muint-helper" title="Permalink to this equation">#</a></span>\[    \int f^+ \,\text d \mu,\int f^- \,\text d \mu &lt; \int |f| \,\text d \mu &lt; \infty\]</div>
+<p>Just by looking off at the <a class="reference internal" href="#mt:int:basics:muint_fn">Definition 3.9</a> for a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function, which also directly that the quantity is well-defined.</p>
+<section id="properties-of-mu-integrable-functions">
+<h3><span class="section-number">3.1.5.1. </span>Properties of <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions<a class="headerlink" href="#properties-of-mu-integrable-functions" title="Permalink to this headline">#</a></h3>
+<p>Well, this time we know that we can compute the integral using <code class="xref eq docutils literal notranslate"><span class="pre">mt:int:basics:muint:compute</span></code>, as well as the corresponding discussion that we had. But we still need some more machinery to show that our basic properties of integration hold like before:</p>
+<div class="proof lemma admonition" id="mt:int:basics:muint:intdiff">
+<p class="admonition-title"><span class="caption-number">Lemma 3.3 </span> (Integral of a difference)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, where <span class="math notranslate nohighlight">\(f = f_1 - f_2\)</span>, and <span class="math notranslate nohighlight">\(f_1, f_2 \geq 0\)</span>, where for each <span class="math notranslate nohighlight">\(i \in \{1, 2\}\)</span>, <span class="math notranslate nohighlight">\(\int f_i \,\text d \mu &lt; \infty\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int f \,\text d \mu = \int f_1 \, \text d \mu - \int f_2 \,\text d \mu.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Note that with <span class="math notranslate nohighlight">\(f^+, f^-\)</span> as defined above, that <span class="math notranslate nohighlight">\(f = f^+ - f^- = f_1 - f_2\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[    f_1 + f^- = f_2 + f^+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f^+, f^-, f_1, f_2 \geq 0\)</span>.</p>
+<p>Then by repeatedly applying <a class="reference internal" href="#mt:int:basics:int:cor:eq">Corollary 3.2</a> for non-negative functions and <a class="reference internal" href="#mt:int:basics:nn:sum">Property 3.9</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int f_1 \text d \mu + \int f^- \text d \mu &amp;= \int f_1 + f^- \text d \mu \\
+    &amp;= \int f_2 + f^+ \text d \mu \\
+    &amp;= \int f_2 \text d \mu + \int f^+ \text d \mu \\
+    \Rightarrow \int f_1 \text d \mu - \int f_2 \text d \mu &amp;= \int f^+ \text d \mu - \int f^- \text d \mu \\
+    &amp;= \int f \text d \mu,\end{split}\]</div>
+<p>Since RHS is the definition of a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function’s integral, <a class="reference internal" href="#mt:int:basics:muint:int">Definition 3.10</a>.</p>
+</div>
+<p>And now, onto our properties. This first one seems <em>extremely</em> obvious, but as it turns out, it requires a little bit of nuance. We’ll introduce a general purpose lemma here, which will let us handle this in the future:</p>
+<div class="proof lemma admonition" id="mt:int:basics:muint:munull:nn">
+<p class="admonition-title"><span class="caption-number">Lemma 3.4 </span> (Integral of non-negative function on a <span class="math notranslate nohighlight">\(\mu\)</span>-null set is <span class="math notranslate nohighlight">\(0\)</span>)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is non-negative. Then if <span class="math notranslate nohighlight">\(F\)</span> is a <span class="math notranslate nohighlight">\(\mu\)</span>-null set, <span class="math notranslate nohighlight">\(\int_{F} f \,\text d \mu = 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Recall that <span class="math notranslate nohighlight">\(\int_{\{F\}} f \,\text d \mu \triangleq \int f\mathbb 1_{\{F\}} \,\text d \mu\)</span>, by <a class="reference internal" href="#mt:int:basics:set_int">Definition 3.7</a>.</p>
+<p>With <span class="math notranslate nohighlight">\(h \triangleq f \mathbb 1_{\{F\}}\)</span>, note that the integral of <span class="math notranslate nohighlight">\(f\)</span> itself is defined as a supremum over bounded functions by <a class="reference internal" href="#mt:int:basics:nn:int_def">Definition 3.8</a>, which are defined as a supremum over simple functions by <a class="reference internal" href="#mt:int:basics:bounded_int">Theorem 3.1</a>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\varphi\)</span> is any such simple function, and let <span class="math notranslate nohighlight">\(\{(\alpha_n, E_n)\}_{n \in [N]} \subseteq \mathcal F\)</span> be the coefficients/disjoint sets with which each are defined, by <a class="reference internal" href="#mt:int:basics:int:simplefn">Definition 3.2</a>.</p>
+<p>Note that with <span class="math notranslate nohighlight">\(h \triangleq f \mathbb 1_{\{F\}}\)</span>, that the simple functions which are used to define the integral of <span class="math notranslate nohighlight">\(h\)</span> will be <span class="math notranslate nohighlight">\(\varphi \mathbb 1_{\{F\}}\)</span>, and will have coefficients/disjoint sets <span class="math notranslate nohighlight">\(\{(\alpha_n, E_n \cap F)\}_{n \in [N]}\)</span>. However, for every such simple function:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int \varphi \mathbb 1_{\{F\}}\text d \mu &amp;= \sum_{n \in [N]}\alpha_n \mu(E_n \cap F) \\
+    &amp;= 0\sum_{n \in [N]}\alpha_n = 0,\end{split}\]</div>
+<p>because <span class="math notranslate nohighlight">\(0 \leq \mu(E_n \cap F) \leq \mu(F) = 0\)</span>.</p>
+<p>Working back upwards, all of the simple functions, all of the bounded functions, and consequently <span class="math notranslate nohighlight">\(h\)</span> will have an integral <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</div>
+<p>And we can extend it extremely trivially to <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions, too (try it!):</p>
+<div class="proof corollary admonition" id="mt:int:basics:muint:munull:muint">
+<p class="admonition-title"><span class="caption-number">Corollary 3.4 </span> (Integral of <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function on a <span class="math notranslate nohighlight">\(\mu\)</span>-null set is <span class="math notranslate nohighlight">\(0\)</span>)</p>
+<section class="corollary-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable. Then if <span class="math notranslate nohighlight">\(F\)</span> is a <span class="math notranslate nohighlight">\(\mu\)</span>-null set, <span class="math notranslate nohighlight">\(\int_{F} f \,\text d \mu = 0\)</span>.</p>
+</section>
+</div><p>Since bounded and simple functions are special cases of <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions, the machinery will readily apply to those cases, too.</p>
+<p>Now, we are ready to handle the properties:</p>
+<div class="proof property admonition" id="property-29">
+<p class="admonition-title"><span class="caption-number">Property 3.10 </span> (Non-negative <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function has non-negative integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable where <span class="math notranslate nohighlight">\(f \overset{a.e.}{\geq} 0\)</span>. Then <span class="math notranslate nohighlight">\(\int f \,\text d \mu \geq 0\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(F^c\)</span> be the <span class="math notranslate nohighlight">\(\mu\)</span>-null set on which <span class="math notranslate nohighlight">\(f(\omega) &lt; 0\)</span>, and define <span class="math notranslate nohighlight">\(f^+\)</span> and <span class="math notranslate nohighlight">\(f^-\)</span> as in <a class="reference internal" href="#mt:int:basics:muint:int">Definition 3.10</a>. By construction, note that <span class="math notranslate nohighlight">\((f^-) \mathbb 1_{\{F^c\}} \equiv f^- \geq 0\)</span>. Then by <a class="reference internal" href="#mt:int:basics:muint:munull:nn">Lemma 3.4</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int f^- \,\text d \mu &amp;= \int f^- \mathbb 1_{\{F^c\}}\,\text{d} \mu \\
+    &amp;= 0.\end{split}\]</div>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int f \,\text d \mu &amp;= \int f^+ \,\text d \mu - \int f^- \,\text d \mu \\
+    &amp;= \int f^+ \,\text d \mu \geq 0,\end{split}\]</div>
+<p>which is by <a class="reference internal" href="#mt:int:basics:nn:nn">Property 3.7</a> since <span class="math notranslate nohighlight">\(f^+ \geq 0\)</span>.</p>
+</div>
+<p>We can rescale them:</p>
+<div class="proof property admonition" id="property-30">
+<p class="admonition-title"><span class="caption-number">Property 3.11 </span> (Rescaled <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions have rescaled integrals)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, and <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(\int r f \,\text d \mu = r \int f \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Define <span class="math notranslate nohighlight">\(f^+\)</span> and <span class="math notranslate nohighlight">\(f^-\)</span> as in <a class="reference internal" href="#mt:int:basics:muint:int">Definition 3.10</a>. Note that since <span class="math notranslate nohighlight">\(f^+\)</span> and <span class="math notranslate nohighlight">\(f^-\)</span> are non-negative, then by <a class="reference internal" href="#mt:int:basics:nn:sum">Property 3.9</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int rf \,\text d \mu &amp;= \int r(f^+ - f^-) \,\text d \mu \\
+    &amp;= \int rf^+ \,\text d \mu - \int rf^- \,\text d \mu \\
+    &amp;= r\left(\int rf^+ \,\text d \mu - \int f^- \,\text d \mu\right) \\
+    &amp;= r \int f \,\text d \mu,\end{split}\]</div>
+<p>where the second-to-last line follows by <a class="reference internal" href="#mt:int:basics:nn:rescale">Property 3.8</a>.</p>
+</div>
+<p>and finally, we can sum them:</p>
+<div class="proof property admonition" id="property-31">
+<p class="admonition-title"><span class="caption-number">Property 3.12 </span> (Summed <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions have summed integral)</p>
+<section class="property-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, <span class="math notranslate nohighlight">\(f,g \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable. Then <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu = \int f \,\text d \mu + \int g \,\text d \mu\)</span>.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Define <span class="math notranslate nohighlight">\(f^+, f^-, g^+, g^-\)</span> as in <a class="reference internal" href="#mt:int:basics:muint:int">Definition 3.10</a>. Note that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    f + g &amp;= (f^+ - f^-) + (g^+ - g^-) \\
+    &amp;= (f^+ + g^+) - (f^- + g^-).\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\((f^+ + g^+), (f^- + g^-) \geq 0\)</span>, and further, have finite integrals since <span class="math notranslate nohighlight">\(f, g\)</span> are <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, the sum of non-negative functions are non-negative, and then application of <a class="reference internal" href="#equation-mt-int-basics-muint-helper">(3.4)</a>.</p>
+<p>Note further that <span class="math notranslate nohighlight">\(|f + g| \leq |f| + |g|\)</span> by the triangle inequality, so <span class="math notranslate nohighlight">\(f, g\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>-integrable implies that <span class="math notranslate nohighlight">\(f + g\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable. Then by <a class="reference internal" href="#mt:int:basics:muint:intdiff">Lemma 3.3</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int(f + g)\,\text d \mu &amp;= \int (f^+ + g^+)\,\text d\mu - \int (f^- + g^-)\,\text d\mu \\
+    &amp;= \int f^+\,\text d\mu + \int g^+\,\text d\mu - \left(\int f^-\,\text d\mu + \int g^-\,\text d\mu\right),\end{split}\]</div>
+<p>which is because <span class="math notranslate nohighlight">\(f^+, g^+, f^-, g^- \geq 0\)</span> by <a class="reference internal" href="#mt:int:basics:nn:sum">Property 3.9</a>. Simply rearranging terms:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int(f + g)\,\text d \mu &amp;= \int f^+\,\text d\mu - \int f^-\,\text d\mu + \int g^+\,\text d\mu - \int g^-\,\text d\mu \\
+    &amp;= \int f \,\text d \mu + \int g \,\text d \mu,\end{split}\]</div>
+<p>since these are their definitions given by <a class="reference internal" href="#mt:int:basics:muint:int">Definition 3.10</a>.</p>
+</div>
+<p>As always, we obtain all of the integration corollaries in <a class="reference internal" href="#mt-int-basics-corollaries"><span class="std std-numref">Section 3.1.2</span></a> due to these three properties holding for <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions.</p>
+</section>
 </section>
 </section>
 
