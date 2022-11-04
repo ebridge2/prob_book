@@ -834,14 +834,14 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Contain event space: <span class="math notranslate nohighlight">\(\Omega \in \mathcal F\)</span>,</p></li>
 <li><p>Closure under complement: If <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(F^c \in \mathcal F\)</span>,</p></li>
-<li><p>Closure under countable unions: If <span class="math notranslate nohighlight">\((F_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, then <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}F_n \in \mathcal F\)</span>.</p></li>
+<li><p>Closure under countable unions: If <span class="math notranslate nohighlight">\(\{F_n\}_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, then <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}F_n \in \mathcal F\)</span>.</p></li>
 </ol>
 </section>
 </div><p>You’ll notice that we called these “subsets” of <span class="math notranslate nohighlight">\(\mathcal F\)</span> “events” instead of just subsets (the language we used for <span class="math notranslate nohighlight">\(\pi\)</span>-systems and algebras): the reason for this will become a little more apparent in a section or two, so just bear with us for a few pages. We’ll often call the entire set <span class="math notranslate nohighlight">\(\Omega\)</span> the “event space”, because it is the set in which our “events” <span class="math notranslate nohighlight">\(F\)</span> live (<span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>). <span class="math notranslate nohighlight">\(\mathcal F\)</span> collects these events in a very particular way. It contains the entire “event space” <span class="math notranslate nohighlight">\(\Omega\)</span>, it is closed under complements, and if a <em>countable</em> set of events are in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, then the union of these events are also in <span class="math notranslate nohighlight">\(\mathcal F\)</span> (closure under countable unions). Using similar insight to the insight you used for algebras in <a class="reference internal" href="#mt:intro:set:alg_is_pi">Theorem 2.1</a>, you can also conclude that <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under countable intersections, as well, which is a property we’ll use a bit more later on:</p>
 <div class="proof property admonition" id="property-18">
 <p class="admonition-title"><span class="caption-number">Property 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under countable intersections)</p>
 <section class="property-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. Show that if <span class="math notranslate nohighlight">\((F_i)_{i \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb N} F_n \in \mathcal F\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. Show that if <span class="math notranslate nohighlight">\(\{F_i\}_{i \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb N} F_n \in \mathcal F\)</span>.</p>
 </section>
 </div><section id="properties-of-sigma-algebras">
 <h3><span class="section-number">2.1.6.1. </span>Properties of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#properties-of-sigma-algebras" title="Permalink to this headline">#</a></h3>
@@ -1003,7 +1003,7 @@ title="Print to PDF"
 <div class="proof example admonition" id="mt:intro:set:sig:set_theor">
 <p class="admonition-title"><span class="caption-number">Example 2.8 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is closed under set-theoretic limits)</p>
 <section class="example-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, and <span class="math notranslate nohighlight">\((F_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a sequence of sets in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. Show that <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}F_n\)</span> and <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty} F_n\)</span> are also in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, and <span class="math notranslate nohighlight">\(\{F_n\}_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a sequence of sets in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. Show that <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}F_n\)</span> and <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty} F_n\)</span> are also in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
 <p>Hint: use your result from <a class="reference internal" href="#mt:intro:set:sig:extr_closure">Example 2.7</a> and borrow from the definition of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
 </section>
 </div><p>We can further clarify some special situations where the set-theoretic limit, <span class="math notranslate nohighlight">\(\lim\)</span>, of a sequence of sets exists, using <em>monotone</em> sequences of sets:</p>
@@ -1012,13 +1012,13 @@ title="Print to PDF"
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a sequence of sets. Then:</p>
 <ol class="simple">
-<li><p><span class="math notranslate nohighlight">\((F_n)\)</span> is called <strong>monotone non-increasing</strong> if for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(F_{n + 1} \subseteq F_n\)</span>, and</p></li>
-<li><p><span class="math notranslate nohighlight">\((F_n)\)</span> is called <strong>monotone non-decreasing</strong> if for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{F_n\}\)</span> is called <strong>monotone non-increasing</strong> if for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(F_{n + 1} \subseteq F_n\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{F_n\}\)</span> is called <strong>monotone non-decreasing</strong> if for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>.</p></li>
 </ol>
 </section>
 </div><p>The ideas here are that, like for sequences of numbers, monotonicity here refers to the composition of elements in the sets. Monotone non-increasing sets are those where every sequential set is <em>contained</em> in the preceding set, and monotone non-decreasing sets are those where every sequential set <em>contains</em> the preceding set.</p>
 <p>If we have a sequence of sets which is monotone, the set-theoretic limits exist:</p>
-<div class="proof lemma admonition" id="lemma-33">
+<div class="proof lemma admonition" id="mt:intro:set:sig:monotone_sets:lim">
 <p class="admonition-title"><span class="caption-number">Lemma 2.3 </span> (Monotone sequences of sets have limits)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a monotone (non-increasing or non-decreasing) sequence of sets. Then:</p>
@@ -1026,9 +1026,9 @@ title="Print to PDF"
 \[    \lim_{n \rightarrow \infty}F_n = \liminf_{n \rightarrow \infty}F_n = \limsup_{n \rightarrow \infty}F_n.\]</div>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. We have two cases, the case where <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-increasing or non-decreasing:
+<p>Proof. We have two cases, the case where <span class="math notranslate nohighlight">\(\{F_n\}\)</span> is monotone non-increasing or non-decreasing:
 1. Monotone non-increasing:
-If <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-increasing, then for any <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
+If <span class="math notranslate nohighlight">\(\{F_n\}\)</span> is monotone non-increasing, then for any <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \bigcap_{m \in \mathbb N}F_m &amp;= \bigcap_{m \geq n}F_m,\\
     F_n &amp;= \bigcup_{m \geq n}F_m,\end{split}\]</div>
@@ -1042,7 +1042,7 @@ If <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-i
     &amp;= \inf_{n \in \mathbb N}\sup_{m \geq n}F_m \\
     &amp;= \limsup_{n \rightarrow \infty}F_n.\end{split}\]</div>
 <p>2. Monotone non-decreasing:</p>
-<p>Repeat the same argument, noting that if <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-increasing, then <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>, so for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
+<p>Repeat the same argument, noting that if <span class="math notranslate nohighlight">\(\{F_n\}\)</span> is monotone non-increasing, then <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>, so for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    F_n &amp;= \bigcap_{m \geq n}F_m,\\
     \bigcup_{m \in \mathbb N}F_m &amp;= \bigcup_{m \geq n}F_m.\end{split}\]</div>

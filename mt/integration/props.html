@@ -762,22 +762,63 @@ title="Print to PDF"
 <section id="convergence-concepts">
 <h3><span class="section-number">3.2.2.1. </span>Convergence Concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h3>
 <p>Next, we get to the convergence theorems for integrals. To do this, we first need two quick definitions to get us started:</p>
-<div class="proof definition admonition" id="definition-7">
+<div class="proof definition admonition" id="mt:int:props:conv:convae">
 <p class="admonition-title"><span class="caption-number">Definition 3.14 </span> (Convergence Almost Everywhere)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subset m\mathcal F\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span> if for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, then:</p>
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span> if:</p>
 <div class="math notranslate nohighlight">
 \[    \mu\left(\left\{\omega \in \Omega : \lim_{n \rightarrow \infty}f_n(\omega) \neq f(\omega)\right\}\right) \equiv \mu(\lim_{n \rightarrow \infty}f_n \neq f) = 0.\]</div>
 </section>
-</div><p>The idea here is that for all but a set of measure <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(f_n(\omega) \xrightarrow[n \rightarrow \infty]{} f(\omega)\)</span>. Stated another way, we have pointwise convergence of <span class="math notranslate nohighlight">\(f_n\)</span> to <span class="math notranslate nohighlight">\(f\)</span> almost everywhere. Next, we get to a practically distinct definition, which <em>almost</em> looks the same. This concept is called convergence in measure:</p>
+</div><p>The idea here is that for all but a set of measure <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(f_n(\omega) \xrightarrow[n \rightarrow \infty]{} f(\omega)\)</span>. Stated another way, we have pointwise convergence of <span class="math notranslate nohighlight">\(f_n\)</span> to <span class="math notranslate nohighlight">\(f\)</span> almost everywhere.</p>
+<p>We can also understand this definition using the concept of the <span class="math notranslate nohighlight">\(\limsup\)</span> of a set, in an <span class="math notranslate nohighlight">\(\epsilon\)</span> sort of way like you are used to in real analysis:</p>
 <div class="proof definition admonition" id="definition-8">
-<p class="admonition-title"><span class="caption-number">Definition 3.15 </span> (Convergence in measure)</p>
+<p class="admonition-title"><span class="caption-number">Definition 3.15 </span> (Equivalent definition for convergence almost everywhere)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subset m\mathcal F\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \rightarrow f\)</span> in measure if for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, then:</p>
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span> if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \mu\left(\limsup_{n \rightarrow \infty}\left\{\omega \in \Omega : |X_n(\omega) - X(\omega)| &gt; \epsilon\right\}\right) = 0.\]</div>
+</section>
+</div><p>In this definition, the intuition is that we are focusing on a sequence of sets (indexed by <span class="math notranslate nohighlight">\(n\)</span>) which are the points <span class="math notranslate nohighlight">\(\omega\)</span> of the sample space <span class="math notranslate nohighlight">\(\Omega\)</span> which are <em>not</em> <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span>. These are the sets of the form:</p>
+<div class="math notranslate nohighlight">
+\[    \left\{\omega \in \Omega : |f_n(\omega) - f(\omega)| &gt; \epsilon\right\}\right\}_{n \in \mathbb N}.\]</div>
+<p>Remember that <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}\)</span> of a sequence of sets can be more specifically be understood to be the <span class="math notranslate nohighlight">\(\inf_{n \rightarrow\infty}\sup_{m \geq n}\)</span>, so we are concerned with the <span class="math notranslate nohighlight">\(\inf\)</span> of sets of the form:</p>
+<div class="math notranslate nohighlight">
+\[    F_n = \sup_{m \geq n}\left\{\omega \in \Omega : |X_m(\omega) - X(\omega)| &gt; \epsilon\right\}\right\}\]</div>
+<p>So, the interpretation of <span class="math notranslate nohighlight">\(F_n\)</span> here is that it’s the <em>largest possible</em> measurable set of the sample space where for every <span class="math notranslate nohighlight">\(m \geq n\)</span>, <span class="math notranslate nohighlight">\(|f_m(\omega) - f(\omega)| &gt; \epsilon\)</span> (which is the definition of <span class="math notranslate nohighlight">\(f_m(\omega)\)</span> <em>not</em> being <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> which is a condition for the limit to be <span class="math notranslate nohighlight">\(f(\omega)\)</span>). The nuance here is that we use a supremum, which is because it’s not immediately clear that the largest possible set that fulfills this criterion will <em>necessarily</em> be measurable (but, as-per <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:elem:ext:sup">Property 2.17</a>, we know for sure that the supremum <em>is</em> measurable).</p>
+<p>By construction, since <span class="math notranslate nohighlight">\(n\)</span> is increasing, notice that <span class="math notranslate nohighlight">\(\{F_n\}_{n \in \mathbb N}\)</span> are monotone <em>non-increasing</em>: <span class="math notranslate nohighlight">\(F_n \supseteq F_{n + 1}\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Intuitively, since it is bounded (from below by <span class="math notranslate nohighlight">\(\varnothing\)</span>) and monotone non-increasing, the infimum of these sequences of sets exist (by <a class="reference internal" href="../intro/set_theory.html#mt:intro:set:sig:monotone_sets:lim">Lemma 2.3</a>). We know for sure that the resulting set is further measurable by just checking <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:elem:ext:inf">Property 2.16</a>.</p>
+<p>Next, we get to a practically distinct definition, which <em>almost</em> looks the same. This concept is called convergence in measure:</p>
+<div class="proof definition admonition" id="mt:int:props:conv:convmeas">
+<p class="admonition-title"><span class="caption-number">Definition 3.16 </span> (Convergence in measure)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{} f\)</span> in measure if for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, then:</p>
 <div class="math notranslate nohighlight">
 \[    \mu\left(\left\{\omega \in \Omega : |f_n(\omega) - f(\omega)| &gt; \epsilon\right\}\right) \equiv \mu(|f_n - f| &gt; \epsilon) \xrightarrow[n \rightarrow \infty]{} 0.\]</div>
 </section>
-</div><p>While these definitions almost look the same, the practical distinction is that the limit, this time, is <em>outside</em> of the measure statement. The idea here is that, as <span class="math notranslate nohighlight">\(n\)</span> grows, the measure of the set of points <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> is converging to zero. This contrasts from the fact that in the preceding statement, the measure of the set of points <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> <em>is</em> zero. Intuitively, convergence almost everywhere, in fact, <em>implies</em> convergence in measure (with the slight note that the entire space <span class="math notranslate nohighlight">\(\Omega\)</span> must have finite measure). Let’s see what these two concepts will allow us to do.</p>
+</div><p>While these definitions almost look the same, the practical distinction is that the limit, this time, is <em>outside</em> of the measure statement. The idea here is that, as <span class="math notranslate nohighlight">\(n\)</span> grows, the measure of the set of points <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> is converging to zero. This contrasts from the fact that in the preceding statement, the measure of the set of points <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> <em>is</em> zero. Intuitively, convergence almost everywhere, in fact, <em>implies</em> convergence in measure (with the slight note that the entire space <span class="math notranslate nohighlight">\(\Omega\)</span> must have finite measure). Let’s formalize this up a bit:</p>
+<div class="proof lemma admonition" id="mt:int:props:conv:convae_implies_convinmeas">
+<p class="admonition-title"><span class="caption-number">Lemma 3.7 </span> (Convergence almost everywhere implies convergence in measure)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subset m\mathcal F\)</span>. If <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span> and <span class="math notranslate nohighlight">\(\mu(\omega) &lt; \infty\)</span>, then <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{} f\)</span> in measure.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\(f_n  \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\Omega_1 \triangleq \{\omega \in \Omega : \lim_{n \rightarrow \infty}f_n(\omega) = f(\omega)\}\)</span>, and <span class="math notranslate nohighlight">\(\Omega_1^c = \Omega \setminus \Omega_1\)</span>. By construction, note that <span class="math notranslate nohighlight">\(\mu(\Omega_1^c) = 0\)</span>.</p>
+<p>By definition of <span class="math notranslate nohighlight">\(\xrightarrow[n \rightarrow \infty]{a.e.}\)</span>, then <span class="math notranslate nohighlight">\(\mu(\Omega_1^c) = 0\)</span>. Fix <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, and consider the sequence of sets:</p>
+<div class="math notranslate nohighlight">
+\[F_n \triangleq \bigcup_{m \geq n}\left\{|f_n - f| &gt; \epsilon\right\}.\]</div>
+<p>By construction, note that <span class="math notranslate nohighlight">\(F_n \supseteq F_{n + 1}\)</span>, where <span class="math notranslate nohighlight">\(F_n \downarrow F_\infty = \bigcap_{n \in \mathbb N}F_n\)</span>.</p>
+<p>Further, note that by design, for any <span class="math notranslate nohighlight">\(\omega \in \Omega_1\)</span>, that <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}f_n(\omega) = f(\omega)\)</span>. Then for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists <span class="math notranslate nohighlight">\(N_\epsilon\)</span> s.t. for all <span class="math notranslate nohighlight">\(n \geq N_\epsilon\)</span>, <span class="math notranslate nohighlight">\(|f_n(\omega) - f(\omega)| \leq \epsilon\)</span>, by definition of a limit.</p>
+<p>Then for all <span class="math notranslate nohighlight">\(n &gt; N_\epsilon\)</span>, <span class="math notranslate nohighlight">\(\omega \not \in F_n\)</span>, and consequently <span class="math notranslate nohighlight">\(\omega \not \in F_\infty\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(F_\infty \cap \Omega_1 = \varnothing\)</span>; that is, <span class="math notranslate nohighlight">\(F_\infty \subseteq \Omega_1^c\)</span>.</p>
+<p>Then by definition of a measure, <span class="math notranslate nohighlight">\(\mu(F_\infty) \leq \mu(\Omega_1^c) = 0\)</span> by the way we constructed <span class="math notranslate nohighlight">\(\mu(\Omega_1)^c\)</span>. Further, since measures are lower-bounded by <span class="math notranslate nohighlight">\(0\)</span>, this implies that <span class="math notranslate nohighlight">\(\mu(F_\infty) = 0\)</span>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(F_n \downarrow F_\infty\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mu(|X_n - X| &gt; \epsilon) &amp;\leq \mu(F_n),\,\,\,\,\{|X_n - X| &gt; \epsilon\} \subseteq F_n \\
+    &amp;\downarrow \mathbb P(A_\infty) = 0\text{ as $n \rightarrow \infty$},\end{split}\]</div>
+<p>by the convergence from above property of measures, <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:convabove">Property 2.6</a>.</p>
+</div>
+<p>We aren’t <em>quite</em> ready to handle the result that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{} f\)</span> is measure does <em>not</em> imply that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span>, so we’ll rotate back to this a little later in the course.</p>
+<p>Let’s see what these two concepts will allow us to do.</p>
 </section>
 <section id="convergence-theorems">
 <h3><span class="section-number">3.2.2.2. </span>Convergence Theorems<a class="headerlink" href="#convergence-theorems" title="Permalink to this headline">#</a></h3>
@@ -811,9 +852,9 @@ title="Print to PDF"
 <p>since <span class="math notranslate nohighlight">\(\mu(B_n) \xrightarrow[n \rightarrow \infty]{} 0\)</span> by definition of <span class="math notranslate nohighlight">\(f_n \rightarrow f\)</span> in measure. Noting that <span class="math notranslate nohighlight">\(0 \leq \mu(F) &lt; \infty\)</span> by supposition, and that <span class="math notranslate nohighlight">\(\epsilon\)</span> was arbitrary, gives the desired result.</p>
 </div>
 <p>So, intuitively, as the functions <span class="math notranslate nohighlight">\(f_n\)</span> get closer to <span class="math notranslate nohighlight">\(f\)</span> <em>in measure</em> (the sets on which they disagree have measure converging to <span class="math notranslate nohighlight">\(0\)</span>), somewhat intuitively, the integrals converge, too. The key here is that the <em>bounded</em> convergence theorem applies for <em>bounded</em> functions. We have a somewhat equivalent, albeit practically much more applicable, result for non-negative functions:</p>
-<div class="proof theorem admonition" id="mt:int:props:conv:fatou">
-<p class="admonition-title"><span class="caption-number">Theorem 3.5 </span> (Fatou)</p>
-<section class="theorem-content" id="proof-content">
+<div class="proof lemma admonition" id="mt:int:props:conv:fatou">
+<p class="admonition-title"><span class="caption-number">Lemma 3.8 </span> (Fatou)</p>
+<section class="lemma-content" id="proof-content">
 <p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of non-negative functions; e.g., <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>. Then:</p>
 <div class="math notranslate nohighlight">
 \[    \liminf_{n \rightarrow \infty} \int f_n \,\text d \mu \geq \int \liminf_{n \rightarrow \infty} f_n \,\text d \mu.\]</div>
@@ -846,16 +887,16 @@ title="Print to PDF"
 <p>This is clearly much more general than the Bounded Convergence Theorem: the only restriction we have here is that we have a sequence of non-negative functions; we don’t need a sequence of functions which is bounded and converging in measure.</p>
 <p>When the functions are converging below, we can further clarify the nature of the convergence with a slight extension of Fatou’s Lemma: the integrals will also converge from below. In other words, functions converging “monotonely” have “monotonely” converging integrals:</p>
 <div class="proof theorem admonition" id="mt:int:props:conv:mct">
-<p class="admonition-title"><span class="caption-number">Theorem 3.6 </span> (Monotone Convergence)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 3.5 </span> (Monotone Convergence)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of non-negative functions; e.g., <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>, where <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. (<span class="math notranslate nohighlight">\(f_n\)</span> is monotone increasing to <span class="math notranslate nohighlight">\(f\)</span>). Then:</p>
 <div class="math notranslate nohighlight">
 \[    \int f_n\,\text d \mu \uparrow \int f\,\text d \mu,\]</div>
 <p>as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </section>
-</div><p>As you notice, this theorem statement looks a lot like the statement from Fatou’s Lemma <a class="reference internal" href="#mt:int:props:conv:fatou">Theorem 3.5</a>, and in fact, we’ll use some of the intuition from Fatou’s Lemma to make this proof rigorous:</p>
+</div><p>As you notice, this theorem statement looks a lot like the statement from Fatou’s Lemma <a class="reference internal" href="#mt:int:props:conv:fatou">Lemma 3.8</a>, and in fact, we’ll use some of the intuition from Fatou’s Lemma to make this proof rigorous:</p>
 <div class="proof admonition" id="proof">
-<p>Proof. By Fatou’s Lemma <a class="reference internal" href="#mt:int:props:conv:fatou">Theorem 3.5</a>, <span class="math notranslate nohighlight">\(f_n \geq 0\)</span> implies that:</p>
+<p>Proof. By Fatou’s Lemma <a class="reference internal" href="#mt:int:props:conv:fatou">Lemma 3.8</a>, <span class="math notranslate nohighlight">\(f_n \geq 0\)</span> implies that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \liminf_{n \rightarrow \infty} \int f_n\,\text d \mu &amp;\geq \int \liminf_{n \rightarrow \infty}f_n\,\text d \mu \\
     &amp;= \int f \,\text d \mu,\end{split}\]</div>
@@ -875,7 +916,7 @@ title="Print to PDF"
 </div>
 <p>Next, we’ll see another application of Fatou’s Lemma, which is called the Dominated Convergence Theorem. Basically, what this theorem asserts is that if a sequence of measurable functions <span class="math notranslate nohighlight">\(f_n\)</span> are converging almost surely to another function <span class="math notranslate nohighlight">\(f\)</span>, and can be <em>dominated</em> by a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function, then the integrals converge, too:</p>
 <div class="proof theorem admonition" id="mt:int:props:conv:dct">
-<p class="admonition-title"><span class="caption-number">Theorem 3.7 </span> (Dominated Convergence)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 3.6 </span> (Dominated Convergence)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where:</p>
 <ol class="simple">
@@ -908,7 +949,7 @@ title="Print to PDF"
 <p>The final building block we will need in integration is the concept of measure restrictions. As its name somewhat suggests, a <em>measure restriction</em> basically lets us take an existing measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and define a <em>new</em> measure space from only a subset <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span> that <em>agrees with</em> <span class="math notranslate nohighlight">\(\mu\)</span> on a new <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra that is, intuitively, induced by <span class="math notranslate nohighlight">\(F\)</span>. In some sense, this is kind of the opposite of the extension theorems we saw previously.</p>
 <p>If you recall, we built machinery that worked on <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras by building machinery on much simpler families of sets (such as algebras), and then simply argued that the machinery also, by construction <em>had</em> to work on the <span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra, too. Here, we’re going to take existing machinery that works on a measure space, and show that we can take arbitrary subsets of the event space <span class="math notranslate nohighlight">\(\Omega\)</span> and use it to produce new measurable spaces.</p>
 <p>Let’s give this idea a go:</p>
-<div class="proof corollary admonition" id="corollary-13">
+<div class="proof corollary admonition" id="corollary-15">
 <p class="admonition-title"><span class="caption-number">Corollary 3.5 </span> (Defining a measure by restriction)</p>
 <section class="corollary-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and let:</p>
@@ -931,7 +972,7 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(|f_m| \leq f\)</span> for all <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span> by construction since <span class="math notranslate nohighlight">\(F_m \subseteq F\)</span>, and</p></li>
 <li><p><span class="math notranslate nohighlight">\(\int |f|\,\text d \mu &lt; \infty\)</span>, since by supposition, <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable.</p></li>
 </ol>
-<p>Then by the Dominated Convergence <a class="reference internal" href="#mt:int:props:conv:dct">Theorem 3.7</a>:</p>
+<p>Then by the Dominated Convergence <a class="reference internal" href="#mt:int:props:conv:dct">Theorem 3.6</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \int_F f\,\text d \mu = \int f_F \,\text d \mu &amp;\equiv \int \lim_{m \rightarrow \infty}f \mathbb 1_{\left\{\bigsqcup_{n \in [m]}F_n\right\}}\,\text d\mu \\
     &amp;= \lim_{m \rightarrow \infty}\int_{\bigsqcup_{n \in [m]}F_n} f \,\text d \mu,\,\,\,\,\text{DCT}\\
