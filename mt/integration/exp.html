@@ -829,14 +829,14 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 \[    \lim_{n \rightarrow \infty}\mathbb P\left(\left\{\omega \in \Omega : |X_n(\omega) - X(\omega)| \leq \epsilon\right\}\right) \equiv \lim_{n \rightarrow \infty}\mathbb P\left(|X_n - X| \leq \epsilon\right) = 1.\]</div>
 </section>
 </div><p>So, the idea here is that a random variable converges almost surely if the set of points <span class="math notranslate nohighlight">\(\omega\)</span> mapped to <span class="math notranslate nohighlight">\(X_n(\omega)\)</span> that are <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(X(\omega)\)</span> for every <span class="math notranslate nohighlight">\(n\)</span> that is large enough has a probability that converges to <span class="math notranslate nohighlight">\(1\)</span>. We can also use that the probability of the complement of a set is <span class="math notranslate nohighlight">\(1 - \)</span> the probability of the set to deduce that equivalently, <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\mathbb P\left(|X_n - X| &gt; \epsilon\right) = 0\)</span>.</p>
-<p>Further, we have the same catch as we did with convergence almost everywhere implying convergence in measure:</p>
+<p>Further, we have the same catch as we did with convergence almost surely implying convergence in probability:</p>
 <div class="proof lemma admonition" id="mt:int:exp:conv:convas_implies_convprob">
 <p class="admonition-title"><span class="caption-number">Lemma 3.11 </span> (Convergence almost surely implies convergence in probability)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. Then if <span class="math notranslate nohighlight">\(X_n \xrightarrow[n \rightarrow \infty]{a.s} X\)</span>, <span class="math notranslate nohighlight">\(X_n \xrightarrow \infty]{\mathcal P} X\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Direct application of <a class="reference internal" href="props.html#mt:int:props:conv:convae_implies_convinmeas">Lemma 3.7</a>, noting that a probability space is <span class="math notranslate nohighlight">\(\mu\)</span>-finite.</p>
+<p>Proof. Direct application of <a class="reference internal" href="props.html#mt:int:props:conv:convae_implies_convinmeas">Lemma 3.7</a>, noting that a probability space is <span class="math notranslate nohighlight">\(\mu\)</span>-finite, and by noting the equivalent conditions for the definitions of convergence almost surely is <span class="math notranslate nohighlight">\(\mathbb P\left(\lim_{n \rightarrow \infty}X_n \neq X\right) = 0\)</span> and convergence in probability is <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\mathbb P\left(|X_n - X| &gt; \epsilon\right) = 0\)</span>.</p>
 </div>
 </section>
 <section id="the-rest-of-the-convergence-concepts">
