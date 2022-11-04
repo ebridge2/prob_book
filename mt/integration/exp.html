@@ -733,11 +733,20 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 </section>
 </div><p>What we are saying here is that we can find a direct relationship between the probability of the portion of the domain where <span class="math notranslate nohighlight">\(|X| \geq b\)</span>; e.g., the measurable set <span class="math notranslate nohighlight">\(\{\omega \in \Omega : |X(\omega)| \geq b\}\)</span>, and <span class="math notranslate nohighlight">\(\mathbb EX^2\)</span>, which is quite a powerful result if you think about it. Even if you don’t think about it, you will in a few more chapters later on!</p>
 <div class="proof admonition" id="proof">
-<p>Proof. Define <span class="math notranslate nohighlight">\(\varphi(x) \triangleq x^p\)</span>.</p>
+<p>Proof. Define <span class="math notranslate nohighlight">\(\varphi(x) \triangleq x^2\)</span>.</p>
 <p>Note that <span class="math notranslate nohighlight">\(\varphi(x)\)</span> is convex, by the second derivative test, as <span class="math notranslate nohighlight">\(\varphi''(x) = 2 \geq 0\)</span>.</p>
 <p>Applying <a class="reference internal" href="#mt:int:exp:ss:markov">Theorem 3.10</a> gives the desired result.</p>
 </div>
 <p>In practice, you might see Markov’s inequality called Chebyshev’s inequality, but we’ll stick to the nomenclature we described so that we can be explicit.</p>
+<p>Another powerful corollary of Markov’s inequality is that if the expectation of the absolute value random variable is finite, then the random variable is finite almost surely:</p>
+<p>Notice that here, we slightly abused the fact that if an event (here, finiteness) happens almost surely, it also occurs almost everywhere (the space on which finiteness does <em>not</em> hold has probability <span class="math notranslate nohighlight">\(0\)</span>).</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(\varphi(x) = |x|\)</span>, which is convex, and let <span class="math notranslate nohighlight">\(B = \{x : |x| \geq b\}\)</span>.</p>
+<p>Then by <a class="reference internal" href="#mt:int:exp:ss:markov">Theorem 3.10</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathbb P(|X| \geq b) &amp;\leq \frac{\mathbb E|X|}{b} = \frac{M}{b} \\
+    &amp;\xrightarrow[b \rightarrow \infty]{} 0.\end{split}\]</div>
+</div>
 </section>
 </section>
 
