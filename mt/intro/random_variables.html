@@ -530,8 +530,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extrema">
-     2.3.3.3. Extrema
+    <a class="reference internal nav-link" href="#measurable-limits-and-extrema">
+     2.3.3.3. Measurable limits and extrema
     </a>
    </li>
   </ul>
@@ -581,8 +581,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extrema">
-     2.3.3.3. Extrema
+    <a class="reference internal nav-link" href="#measurable-limits-and-extrema">
+     2.3.3.3. Measurable limits and extrema
     </a>
    </li>
   </ul>
@@ -603,7 +603,7 @@ title="Print to PDF"
 <h2><span class="section-number">2.3.1. </span>Measurability<a class="headerlink" href="#measurability" title="Permalink to this headline">#</a></h2>
 <p>Next up is one of the most misunderstood (and most unnecessarily terrifying) concepts of traditional probability and statistics courses: the random variable. Let’s start with a definition:</p>
 <div class="proof definition admonition" id="mt:intro:rvs:rv">
-<p class="admonition-title"><span class="caption-number">Definition 2.25 </span> (<span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-Random Variable)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.36 </span> (<span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-Random Variable)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are two measurable spaces. A function <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span> is said to be a measurable map from <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> to <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> if for all <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -628,7 +628,7 @@ title="Print to PDF"
 <section class="remark-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are two measurable spaces, and <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. An equivalent interpretation of the definition of a random variable is that <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 </section>
-</div><p>This formulation is identical to <a class="reference internal" href="#mt:intro:rvs:rv">Definition 2.25</a> and says it in a lot less words/math speak, and gives you a better idea regarding what’s going on. Further, as we’ll see later, use of this characterization will make proofs a little more obvious. So, all that’s happening here is that, for the elements of the sample space that got mapped to <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, the <em>preimage</em> of the set <span class="math notranslate nohighlight">\(B \in \Sigma\)</span> under <span class="math notranslate nohighlight">\(X\)</span> (basically, the <em>inverse</em>), written <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span>, is the set of blue dots shown below:</p>
+</div><p>This formulation is identical to <a class="reference internal" href="#mt:intro:rvs:rv">Definition 2.36</a> and says it in a lot less words/math speak, and gives you a better idea regarding what’s going on. Further, as we’ll see later, use of this characterization will make proofs a little more obvious. So, all that’s happening here is that, for the elements of the sample space that got mapped to <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, the <em>preimage</em> of the set <span class="math notranslate nohighlight">\(B \in \Sigma\)</span> under <span class="math notranslate nohighlight">\(X\)</span> (basically, the <em>inverse</em>), written <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span>, is the set of blue dots shown below:</p>
 <figure class="align-default" id="mt-intro-rvs-preimage-fig">
 <a class="reference internal image-reference" href="../../_images/preimage.png"><img alt="../../_images/preimage.png" src="../../_images/preimage.png" style="width: 700px;" /></a>
 <figcaption>
@@ -650,7 +650,7 @@ title="Print to PDF"
 </section>
 </div><p>An important example of a random variable is the indicator random variable:</p>
 <div class="proof example admonition" id="mt:intro:rvs:indicator">
-<p class="admonition-title"><span class="caption-number">Example 2.8 </span> (Indicator function)</p>
+<p class="admonition-title"><span class="caption-number">Example 2.11 </span> (Indicator function)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(A \in \mathcal F\)</span>. Then the function:</p>
 <div class="math notranslate nohighlight">
@@ -707,10 +707,10 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, by <a class="reference internal" href="#mt:intro:rvs:rv:equiv">Remark 2.2</a>.</p>
 </div>
-<p>Why is this result so important? As it turns out, establishing measurability of a function can be rather difficult. For instance, if the codomain is the real line <span class="math notranslate nohighlight">\(\mathbb R\)</span> and the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is <span class="math notranslate nohighlight">\(\mathcal R\)</span>, it might be really hard to establish that <a class="reference internal" href="#mt:intro:rvs:rv">Definition 2.25</a> holds for every possible element of the <span class="math notranslate nohighlight">\(\mathcal R\)</span> (this, of course, being because describing <span class="math notranslate nohighlight">\(\mathcal R\)</span> in and of itself is tedious if not impossible). However, we can describe generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>, and then we can use <a class="reference internal" href="#mt:intro:rvs:generator_set">Theorem 2.4</a> to evaluate whether a function is measurable (a random variable).</p>
+<p>Why is this result so important? As it turns out, establishing measurability of a function can be rather difficult. For instance, if the codomain is the real line <span class="math notranslate nohighlight">\(\mathbb R\)</span> and the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is <span class="math notranslate nohighlight">\(\mathcal R\)</span>, it might be really hard to establish that <a class="reference internal" href="#mt:intro:rvs:rv">Definition 2.36</a> holds for every possible element of the <span class="math notranslate nohighlight">\(\mathcal R\)</span> (this, of course, being because describing <span class="math notranslate nohighlight">\(\mathcal R\)</span> in and of itself is tedious if not impossible). However, we can describe generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>, and then we can use <a class="reference internal" href="#mt:intro:rvs:generator_set">Theorem 2.4</a> to evaluate whether a function is measurable (a random variable).</p>
 <p>Further, <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras can be generated by random variables, as well:</p>
 <div class="proof definition admonition" id="mt:intro:rvs:generator_rv">
-<p class="admonition-title"><span class="caption-number">Definition 2.26 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by random variable)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.37 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by random variable)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> are measurable spaces. Then the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is:</p>
 <div class="math notranslate nohighlight">
@@ -870,9 +870,9 @@ title="Print to PDF"
 <p>Then by <a class="reference internal" href="#mt:intro:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y = \lambda X \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </div>
 </section>
-<section id="extrema">
-<h3><span class="section-number">2.3.3.3. </span>Extrema<a class="headerlink" href="#extrema" title="Permalink to this headline">#</a></h3>
-<p>Just like for sequences of real numbers from real analysis, we can consider important quantities that deal with sequences of random variables too. Let’s see how this works:</p>
+<section id="measurable-limits-and-extrema">
+<h3><span class="section-number">2.3.3.3. </span>Measurable limits and extrema<a class="headerlink" href="#measurable-limits-and-extrema" title="Permalink to this headline">#</a></h3>
+<p>I’d recommend that you take a look back at <a class="reference internal" href="set_theory.html#mt-intro-set-theory-extrema"><span class="std std-numref">Section 2.1.7</span></a> for a quick recap of set-theoretic limits before proceeding with this next section since we haven’t quite used these ideas all that much thus far. Let’s see how this works:</p>
 <div class="proof property admonition" id="mt:intro:rvs:elem:ext:inf">
 <p class="admonition-title"><span class="caption-number">Property 2.16 </span> (Infimum is measurable)</p>
 <section class="property-content" id="proof-content">

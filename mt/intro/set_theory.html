@@ -562,6 +562,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-theoretic-limits-and-extrema">
+   2.1.7. Set-Theoretic Limits and extrema
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -639,6 +644,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-theoretic-limits-and-extrema">
+   2.1.7. Set-Theoretic Limits and extrema
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -660,20 +670,72 @@ title="Print to PDF"
 </section>
 <section id="set-theory-basics">
 <h2><span class="section-number">2.1.2. </span>Set theory basics<a class="headerlink" href="#set-theory-basics" title="Permalink to this headline">#</a></h2>
-<p>To start our coverage here, we need to know some elementary basics about sets. I am assuming you are already pretty familiar with sets, so this should be largely review:</p>
+<p>To start our coverage here, we need to know some elementary basics about sets. I am assuming you are already relatively familiar with sets, so this should be largely review:</p>
 <div class="proof definition admonition" id="definition-0">
-<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Disjoint sets)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.1 </span> (Set union)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(A, B\)</span> are sets. The union of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is the set:</p>
+<div class="math notranslate nohighlight">
+\[    A \cup B \triangleq \left\{\omega : \omega \in A\text{ or }\omega \in B\right\}.\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-1">
+<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Set intersection)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(A, B\)</span> are sets. The intersection of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is the set:</p>
+<div class="math notranslate nohighlight">
+\[    A \cap B \triangleq \left\{\omega : \omega \in A\text{ and }\omega \in B\right\}.\]</div>
+</section>
+</div><div class="proof definition admonition" id="definition-2">
+<p class="admonition-title"><span class="caption-number">Definition 2.3 </span> (Subset)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span> if for every <span class="math notranslate nohighlight">\(\omega \in A\)</span>, then <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>. We denote this as <span class="math notranslate nohighlight">\(A \subseteq \Omega\)</span>.</p>
+</section>
+</div><p>This definition is what is usually used for subsets, but it turns out this is actually called an <em>improper subset</em>. The distinction is extremely small, but notice here that <span class="math notranslate nohighlight">\(A \subseteq A\)</span> (a set is a subset of itself). For this reason, we have a further term, a <em>proper subset</em>:</p>
+<div class="proof definition admonition" id="definition-3">
+<p class="admonition-title"><span class="caption-number">Definition 2.4 </span> (Proper subset)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(A\)</span> is a proper subset of <span class="math notranslate nohighlight">\(\Omega\)</span> if for every <span class="math notranslate nohighlight">\(\omega \in A\)</span>, then <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, but <span class="math notranslate nohighlight">\(A \neq \Omega\)</span>. We denote this as <span class="math notranslate nohighlight">\(A \subset \Omega\)</span>.</p>
+</section>
+</div><p>So, in the proper subset definition here, <span class="math notranslate nohighlight">\(\Omega\)</span> <em>necessarily</em> contains elements <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span> where <span class="math notranslate nohighlight">\(\omega \not \in A\)</span>. Further, we can flip these two definitions around, and obtain their equivalent <em>superset</em> definitions: <span class="math notranslate nohighlight">\(\Omega \supseteq A\)</span> and <span class="math notranslate nohighlight">\(\Omega \supset A\)</span>, respectively.</p>
+<p>We can use this to define the set complement:</p>
+<div class="proof definition admonition" id="definition-4">
+<p class="admonition-title"><span class="caption-number">Definition 2.5 </span> (Set complement)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(A \subseteq \Omega\)</span>. The complement of <span class="math notranslate nohighlight">\(A\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[    A^c(\Omega) \triangleq \{\omega \in \Omega : \omega \not \in A\}.\]</div>
+</section>
+</div><p>This can get extremely cumbersome, and when we are talking about sets, the it’s usually really clear what the superset is, so we’ll generally abbreviate this <span class="math notranslate nohighlight">\(A^c\)</span>.</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 2.6 </span> (Disjoint sets)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(A, B\)</span> are sets. <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are called <em>disjoint</em> if <span class="math notranslate nohighlight">\(A \cap B = \varnothing\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are disjoint, their union <span class="math notranslate nohighlight">\(A \cup B\)</span> is abbreviated <span class="math notranslate nohighlight">\(A \sqcup B\)</span>, to emphasize that it is a <em>disjoint union</em>.</p>
 </section>
-</div><p>So the idea here is that <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> simply contain nothing in common, and <span class="math notranslate nohighlight">\(A \sqcup B\)</span> is just notation which emphasizes that it is a union of disjoint sets. Sometimes we’ll be explicit when we’re talking about disjoint sets, and other times we’ll use the abbreviated version above (<span class="math notranslate nohighlight">\(A \cap B = \varnothing\)</span>). This can be extended to sequences of sets, too:</p>
-<div class="proof definition admonition" id="definition-1">
-<p class="admonition-title"><span class="caption-number">Definition 2.2 </span> (Mutually disjoint sets)</p>
+</div><p>So the idea here is that <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> simply contain nothing in common, and <span class="math notranslate nohighlight">\(A \sqcup B\)</span> is just notation which emphasizes that it is a union of disjoint sets. Sometimes we’ll be explicit when we’re talking about disjoint sets, and other times we’ll use the abbreviated version above (<span class="math notranslate nohighlight">\(A \cap B = \varnothing\)</span>).</p>
+<p>All of these terms can be extended to countable (or uncountable) sequences of sets, too:</p>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 2.7 </span> (Arbitrary union)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((A_m)_{n \in \mathbb N}\)</span> are a sequence of sets. <span class="math notranslate nohighlight">\((A_m)_{m \in \mathbb N}\)</span> are called <em>mutually disjoint</em> if for all <span class="math notranslate nohighlight">\(i, j \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(A_i \cap A_j = \varnothing\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((A_i)_{i \in \mathcal I}\)</span> are a sequence of sets. Their union is:</p>
+<div class="math notranslate nohighlight">
+\[    \bigcup_{i \in \mathcal I}A_i \triangleq \left\{\omega : \exists i\text{ where }\omega \in A_i\right\}.\]</div>
+</section>
+</div><p>Basically, the union is the set that contains <em>all</em> of the elements of the arbitrary sequence of sets. Likewise, we can define an arbitrary intersection:</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 2.8 </span> (Arbitrary union)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(A, B\)</span> are sets. The union of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is the set:</p>
+<div class="math notranslate nohighlight">
+\[    \bigcap_{i \in \mathcal I}A_i \triangleq \left\{\omega : \omega \in A_i\text{ for all }i \in \mathcal I\right\}.\]</div>
+</section>
+</div><p>Here, the union is the set that contains the elements which are <em>common</em> to all of the arbitrary sequence of sets. We can use this to obtain arbitrary sequences of mutually disjoint sets, too:</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 2.9 </span> (Mutually disjoint sets)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((A_i)_{i \in \mathcal I}\)</span> are a sequence of sets, where <span class="math notranslate nohighlight">\(\mathcal I\)</span> is an indexing set (countable or uncountable). <span class="math notranslate nohighlight">\((A_i)_{i \in \mathcal I}\)</span> are called <em>mutually disjoint</em> if for all <span class="math notranslate nohighlight">\(i, j \in \mathcal I\)</span>, <span class="math notranslate nohighlight">\(A_i \cap A_j = \varnothing\)</span>.</p>
 </section>
 </div><p>As a quick primer, take a chance to prove De Morgan’s laws:</p>
-<div class="proof example admonition" id="example-2">
+<div class="proof example admonition" id="example-9">
 <p class="admonition-title"><span class="caption-number">Example 2.1 </span> (De Morgan’s Laws I)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(A, B \subseteq \Omega\)</span>. Then:</p>
@@ -684,7 +746,7 @@ title="Print to PDF"
 <p>Hint: Do this by showing that if an element is in each resulting set on the left, that it follows boolean properties (either <span class="math notranslate nohighlight">\(\in\)</span> or <span class="math notranslate nohighlight">\(\not\in\)</span>) <span class="math notranslate nohighlight">\(A\)</span> and/or <span class="math notranslate nohighlight">\(B\)</span>, respectively.</p>
 </section>
 </div><p>When you conceptualize sets, you should know these two properties inside and out! As a quick follow-up exercise, show that these laws extend to finitely many operations, too:</p>
-<div class="proof example admonition" id="example-3">
+<div class="proof example admonition" id="example-10">
 <p class="admonition-title"><span class="caption-number">Example 2.2 </span> (De Morgan’s Laws II)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(A_m \subseteq \Omega\)</span>, for all <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>. Then if <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
@@ -693,6 +755,17 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\left(\bigcap_{m \in [n]} A_m\right)^c = \bigcup_{m \in [n]} A_m^c\)</span>.</p></li>
 </ol>
 <p>Hint: Use De Morgan’s Laws I.</p>
+</section>
+</div><p>These also extend to arbitrary indexing sets:</p>
+<div class="proof example admonition" id="example-11">
+<p class="admonition-title"><span class="caption-number">Example 2.3 </span> (De Morgan’s Laws III)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(A_i \subseteq \Omega\)</span>, for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>, where <span class="math notranslate nohighlight">\(\mathcal I\)</span> is an arbitrary indexing set (countable or uncountable). Then:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\left(\bigcup_{n \in \mathbb N} A_m\right)^c = \bigcap_{m \in [n]} A_m^c\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\left(\bigcap_{n \in \mathbb N} A_m\right)^c = \bigcup_{m \in [n]} A_m^c\)</span>.</p></li>
+</ol>
+<p>Hint: Use a similar proofing approach to De Morgan’s Laws I.</p>
 </section>
 </div></section>
 <section id="establishing-units-upon-which-we-can-build-random-variables">
@@ -703,20 +776,20 @@ title="Print to PDF"
 <h2><span class="section-number">2.1.4. </span><span class="math notranslate nohighlight">\(\pi\)</span>-systems<a class="headerlink" href="#pi-systems" title="Permalink to this headline">#</a></h2>
 <p>The first, and simplest, family of sets that we’re going to see so far is called a <span class="math notranslate nohighlight">\(\pi\)</span>-system. A <span class="math notranslate nohighlight">\(\pi\)</span>-system is defined on a set <span class="math notranslate nohighlight">\(\Omega\)</span>, which can be anything (such as the real line).</p>
 <div class="proof definition admonition" id="mt:intro:set:pi">
-<p class="admonition-title"><span class="caption-number">Definition 2.3 </span> (<span class="math notranslate nohighlight">\(\pi\)</span>-system)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.10 </span> (<span class="math notranslate nohighlight">\(\pi\)</span>-system)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(\mathcal P\)</span> is called a <span class="math notranslate nohighlight">\(\pi\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span> if it is a non-empty collection of subsets <span class="math notranslate nohighlight">\(P\)</span> of <span class="math notranslate nohighlight">\(\Omega\)</span>, where if <span class="math notranslate nohighlight">\(P_1, P_2 \in \mathcal P\)</span>, then <span class="math notranslate nohighlight">\(P_1 \cap P_2 \in \mathcal P\)</span>.</p>
 </section>
 </div><p>In words, a <span class="math notranslate nohighlight">\(\pi\)</span>-system is a non-empty family of sets <span class="math notranslate nohighlight">\(\mathcal P\)</span> that is <em>closed</em> under <em>finitely</em> many intersections. Here, a set being <em>closed</em> under an operation means that, if you were to consider this operation on elements of that set, the result would still be in the set. That it is closed under finitely many interesections means that if you had sets any collection of <span class="math notranslate nohighlight">\(n\)</span>-many sets (<span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is <em>finite</em>) where <span class="math notranslate nohighlight">\(P_m \in \mathcal P\)</span> for <span class="math notranslate nohighlight">\(m \in [n]\)</span> (stated another way, <span class="math notranslate nohighlight">\((P_m)_{m \in [n]} \subseteq \mathcal P\)</span>), that <span class="math notranslate nohighlight">\(\bigcap_{m \in [n]}P_m \in \mathcal P\)</span>, too.</p>
-<div class="proof example admonition" id="example-5">
-<p class="admonition-title"><span class="caption-number">Example 2.3 </span> (Example of a simple <span class="math notranslate nohighlight">\(\pi\)</span>-system)</p>
+<div class="proof example admonition" id="example-13">
+<p class="admonition-title"><span class="caption-number">Example 2.4 </span> (Example of a simple <span class="math notranslate nohighlight">\(\pi\)</span>-system)</p>
 <section class="example-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\Omega = \{1, 2, 3\}\)</span>. Show that a <span class="math notranslate nohighlight">\(\pi\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(\mathcal P = \{\varnothing, \{1\}, \{1, 2\}, \{1, 3\}\}\)</span> is a <span class="math notranslate nohighlight">\(\pi\)</span>-system.</p>
 </section>
 </div><p>One note that is going to be important later on is that a <span class="math notranslate nohighlight">\(\pi\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span> does not, necessarily, contain the entire set <span class="math notranslate nohighlight">\(\Omega\)</span> itself.</p>
 <p>As we build up, <span class="math notranslate nohighlight">\(\pi\)</span>-systems are going to be extremely useful because, as you can see above, the statement for a <span class="math notranslate nohighlight">\(\pi\)</span>-system is pretty easy to wrap your head around: closed under finitely many intersections. When we prove things later on about much, much more complicated families of sets, there will be some extremely nice results about <span class="math notranslate nohighlight">\(\pi\)</span>-systems that will come in handy. In effect, what we are going to do later on is we are going to make statements that hold on <span class="math notranslate nohighlight">\(\pi\)</span>-systems, and then use extremely basic extensions about the particularities that differentiate <span class="math notranslate nohighlight">\(\pi\)</span>-systems from these more complicated families of sets to make much more general statements taht are true about the complicated family of sets. So, for now, you can put <span class="math notranslate nohighlight">\(\pi\)</span>-systems in the back of your head, but they will come up pretty soon.</p>
-<div class="proof example admonition" id="example-6">
-<p class="admonition-title"><span class="caption-number">Example 2.4 </span> (<span class="math notranslate nohighlight">\(\pi\)</span>-systems are closed under finitely many intersections)</p>
+<div class="proof example admonition" id="example-14">
+<p class="admonition-title"><span class="caption-number">Example 2.5 </span> (<span class="math notranslate nohighlight">\(\pi\)</span>-systems are closed under finitely many intersections)</p>
 <section class="example-content" id="proof-content">
 <p>Show that if <span class="math notranslate nohighlight">\(\mathcal P\)</span> is a <span class="math notranslate nohighlight">\(\pi\)</span>-system on a set <span class="math notranslate nohighlight">\(\Omega\)</span>, that if <span class="math notranslate nohighlight">\((P_m)_{m \in [n]} \subseteq \mathcal P\)</span>, that <span class="math notranslate nohighlight">\(\bigcap_{m \in [n]}P_m \in \mathcal P\)</span>, too.</p>
 </section>
@@ -725,7 +798,7 @@ title="Print to PDF"
 <h2><span class="section-number">2.1.5. </span>Algebras<a class="headerlink" href="#algebras" title="Permalink to this headline">#</a></h2>
 <p>The next simplest family of sets are called <em>algebras</em>. An algebra can be thought of as an extension of a <span class="math notranslate nohighlight">\(\pi\)</span>-system, in that it is also defined on a set <span class="math notranslate nohighlight">\(\Omega\)</span>, and it <em>includes</em> closure under finitely many intersections like a <span class="math notranslate nohighlight">\(\pi\)</span>-system, but it adds a few interesting properties:</p>
 <div class="proof definition admonition" id="mt:intro:set:algebra">
-<p class="admonition-title"><span class="caption-number">Definition 2.4 </span> (Algebra)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.11 </span> (Algebra)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(\mathcal A\)</span> is called an <em>algebra</em> on <span class="math notranslate nohighlight">\(\Omega\)</span> if it is a non-empty collection of subsets <span class="math notranslate nohighlight">\(A \in \mathcal F\)</span>, s.t. <span class="math notranslate nohighlight">\(A \subseteq \Omega\)</span>, where:</p>
 <ol class="simple">
@@ -755,7 +828,7 @@ title="Print to PDF"
 <h2><span class="section-number">2.1.6. </span><span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#sigma-algebras" title="Permalink to this headline">#</a></h2>
 <p>The first ingredient for us to build this homologous system that we’ve been working towards is called a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. A <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is defined on a set <span class="math notranslate nohighlight">\(\Omega\)</span>, which can be anything (such as the real line). <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are going to take the property of closure under finitely many unions from algebras, and take it a step further:</p>
 <div class="proof definition admonition" id="mt:intro:set:sig">
-<p class="admonition-title"><span class="caption-number">Definition 2.5 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.12 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(\mathcal F\)</span> is called a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span> if it is a non-empty collection of <em>events</em> <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, s.t. <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>, where:</p>
 <ol class="simple">
@@ -765,7 +838,7 @@ title="Print to PDF"
 </ol>
 </section>
 </div><p>You’ll notice that we called these “subsets” of <span class="math notranslate nohighlight">\(\mathcal F\)</span> “events” instead of just subsets (the language we used for <span class="math notranslate nohighlight">\(\pi\)</span>-systems and algebras): the reason for this will become a little more apparent in a section or two, so just bear with us for a few pages. We’ll often call the entire set <span class="math notranslate nohighlight">\(\Omega\)</span> the “event space”, because it is the set in which our “events” <span class="math notranslate nohighlight">\(F\)</span> live (<span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span>). <span class="math notranslate nohighlight">\(\mathcal F\)</span> collects these events in a very particular way. It contains the entire “event space” <span class="math notranslate nohighlight">\(\Omega\)</span>, it is closed under complements, and if a <em>countable</em> set of events are in <span class="math notranslate nohighlight">\(\mathcal F\)</span>, then the union of these events are also in <span class="math notranslate nohighlight">\(\mathcal F\)</span> (closure under countable unions). Using similar insight to the insight you used for algebras in <a class="reference internal" href="#mt:intro:set:alg_is_pi">Theorem 2.1</a>, you can also conclude that <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under countable intersections, as well, which is a property we’ll use a bit more later on:</p>
-<div class="proof property admonition" id="property-10">
+<div class="proof property admonition" id="property-18">
 <p class="admonition-title"><span class="caption-number">Property 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under countable intersections)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span>. Show that if <span class="math notranslate nohighlight">\((F_i)_{i \in \mathbb N} \subseteq \mathcal F\)</span> is a countable sequence of events, <span class="math notranslate nohighlight">\(\bigcap_{n \in \mathbb N} F_n \in \mathcal F\)</span>.</p>
@@ -796,7 +869,7 @@ title="Print to PDF"
 </div>
 <p>If we have an event space <span class="math notranslate nohighlight">\(\Omega\)</span>, and a collection of sets that we are interested in <span class="math notranslate nohighlight">\(\mathcal A\)</span>, can we make a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra from the collection of sets we are interested in? The answer is yes, and it is called the <span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra:</p>
 <div class="proof definition admonition" id="mt:intro:set:sig:siggen">
-<p class="admonition-title"><span class="caption-number">Definition 2.6 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.13 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra)</p>
 <section class="definition-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\Omega\)</span> be an event space, and let <span class="math notranslate nohighlight">\(\mathcal A\)</span> be a collection of sets, where <span class="math notranslate nohighlight">\(A \in \mathcal A \Rightarrow A \subseteq \Omega\)</span>. Then the smallest <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing <span class="math notranslate nohighlight">\(\mathcal A\)</span> is denoted <span class="math notranslate nohighlight">\(\sigma(\mathcal A)\)</span>, and is defined:</p>
 <div class="math notranslate nohighlight">
@@ -805,7 +878,7 @@ title="Print to PDF"
 </div><p>Notice that by <a class="reference internal" href="#mt:intro:set:sig:intersection">Property 2.2</a>, that <span class="math notranslate nohighlight">\(\sigma(\mathcal A)\)</span> is also a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
 <p>We’ll often want to consider <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras generated by a particular type of sets, called <em>partitions</em>:</p>
 <div class="proof definition admonition" id="mt:intro:set:sig:partition">
-<p class="admonition-title"><span class="caption-number">Definition 2.7 </span> (Partition)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.14 </span> (Partition)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose the event space <span class="math notranslate nohighlight">\(\Omega\)</span>. A family of sets <span class="math notranslate nohighlight">\(\mathcal A\)</span> is called a partition if:</p>
 <ol class="simple">
@@ -818,7 +891,7 @@ title="Print to PDF"
 <div class="proof lemma admonition" id="mt:intro:set:sig:siggenpart">
 <p class="admonition-title"><span class="caption-number">Lemma 2.1 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by a partition)</p>
 <section class="lemma-content" id="proof-content">
-<p>Suppose the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, where <span class="math notranslate nohighlight">\(\{\Omega_i\}_{i \in \mathcal I} \subseteq \mathcal F\)</span> is a partition of <span class="math notranslate nohighlight">\(\Omega\)</span>. Then:</p>
+<p>Let <span class="math notranslate nohighlight">\(\Omega\)</span> be an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, where <span class="math notranslate nohighlight">\(\{\Omega_i\}_{i \in \mathcal I} \subseteq \mathcal F\)</span> is a partition of <span class="math notranslate nohighlight">\(\Omega\)</span>. Then:</p>
 <div class="math notranslate nohighlight">
 \[    \sigma\left(\Omega_i : i \in \mathcal I\right) \equiv \mathcal G \triangleq \left\{\bigsqcup_{j \in \mathcal J : \mathcal J \subseteq \mathcal I}\Omega_j\right\}\]</div>
 </section>
@@ -838,7 +911,7 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(A = \bigcup_{n \in \mathcal J'}A_n\)</span> has an indexing set <span class="math notranslate nohighlight">\(\mathcal J' \subseteq \mathcal I\)</span>, so <span class="math notranslate nohighlight">\(A \in \mathcal I\)</span>.</p>
 <p>To see that <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is equivalent to <span class="math notranslate nohighlight">\(\mathcal G\)</span>, we can do this in parts:</p>
 <p>1. <span class="math notranslate nohighlight">\(\mathcal G \supseteq \sigma(\Omega_i : i \in \mathcal I)\)</span>: Note that <span class="math notranslate nohighlight">\(\mathcal G\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing each <span class="math notranslate nohighlight">\(\Omega_i\)</span>, for all <span class="math notranslate nohighlight">\(i \in \mathcal I\)</span>, by taking <span class="math notranslate nohighlight">\(\mathcal J_i = \{i\}\)</span>.</p>
-<p>Then <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I) \subseteq \mathcal G\)</span>, since <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is the intersection of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\Omega_i\)</span>s by definition <a class="reference internal" href="#mt:intro:set:sig:siggen">Definition 2.6</a>, and <span class="math notranslate nohighlight">\(\mathcal G\)</span> is one such <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
+<p>Then <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I) \subseteq \mathcal G\)</span>, since <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is the intersection of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\Omega_i\)</span>s by definition <a class="reference internal" href="#mt:intro:set:sig:siggen">Definition 2.13</a>, and <span class="math notranslate nohighlight">\(\mathcal G\)</span> is one such <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
 <p>2. <span class="math notranslate nohighlight">\(\mathcal G \subseteq \sigma(\Omega_i : i \in \mathcal I)\)</span>: Suppose that <span class="math notranslate nohighlight">\(A \in \mathcal G\)</span>.</p>
 <p>Then by construction, there exists <span class="math notranslate nohighlight">\(\mathcal J \subseteq \mathcal I\)</span> s.t. <span class="math notranslate nohighlight">\(A = \bigcup_{j \in \mathcal J}\Omega_j\)</span>.</p>
 <p>Then since <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> is the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\{\Omega_i : i \in \mathcal I\}\)</span>, <span class="math notranslate nohighlight">\(\sigma(\Omega_i : i \in \mathcal I)\)</span> must contain all of the countable unions of elements of <span class="math notranslate nohighlight">\(\{\Omega_i : i \in \mathcal I\}\)</span>, of which <span class="math notranslate nohighlight">\(A\)</span> is one.</p>
@@ -852,7 +925,7 @@ title="Print to PDF"
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. By definition, <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> is the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra at the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
-<p>Since <span class="math notranslate nohighlight">\(\mathcal C \subseteq \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(\mathcal C \subseteq \sigma(\mathcal F)\)</span>, since <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> is the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\mathcal F\)</span> (and consequently, also contain <span class="math notranslate nohighlight">\(\mathcal C\)</span>) by definition of <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> <a class="reference internal" href="#mt:intro:set:sig:siggen">Definition 2.6</a>.</p>
+<p>Since <span class="math notranslate nohighlight">\(\mathcal C \subseteq \mathcal F\)</span>, then <span class="math notranslate nohighlight">\(\mathcal C \subseteq \sigma(\mathcal F)\)</span>, since <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> is the intersection of all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras containing <span class="math notranslate nohighlight">\(\mathcal F\)</span> (and consequently, also contain <span class="math notranslate nohighlight">\(\mathcal C\)</span>) by definition of <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> <a class="reference internal" href="#mt:intro:set:sig:siggen">Definition 2.13</a>.</p>
 <p>Then since <span class="math notranslate nohighlight">\(\sigma(\mathcal C)\)</span> is the intersection of every <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing <span class="math notranslate nohighlight">\(\mathcal C\)</span>, it is the intersection of <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> (since <span class="math notranslate nohighlight">\(\mathcal C \in \sigma(\mathcal F)\)</span>) with other <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras that contain <span class="math notranslate nohighlight">\(\mathcal C\)</span> but might not contain <span class="math notranslate nohighlight">\(\mathcal F\)</span>.</p>
 <p>Since the intersection operation of a set <span class="math notranslate nohighlight">\(\sigma(\mathcal F)\)</span> with other sets will necessarily be at most <span class="math notranslate nohighlight">\(\sigma(\mathcal C)\)</span>, then <span class="math notranslate nohighlight">\(\sigma(\mathcal C) \subseteq \sigma(\mathcal F)\)</span>.</p>
 </div>
@@ -860,8 +933,8 @@ title="Print to PDF"
 <section id="borel-sigma-algebras">
 <h3><span class="section-number">2.1.6.2. </span>Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#borel-sigma-algebras" title="Permalink to this headline">#</a></h3>
 <p>Next, we have one of the most important results about <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras that we will use repeatedly throughout this book when looking at probabilities: the Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. The Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra will allow us to break up intervals of the (or the entire) real line into palatable open intervals. When we begin to define probability measures, we will generally define them using Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
-<div class="proof definition admonition" id="definition-16">
-<p class="admonition-title"><span class="caption-number">Definition 2.8 </span> (Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
+<div class="proof definition admonition" id="definition-24">
+<p class="admonition-title"><span class="caption-number">Definition 2.15 </span> (Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. The borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is defined as:</p>
 <div class="math notranslate nohighlight">
@@ -881,7 +954,7 @@ title="Print to PDF"
 </section>
 </div><p>Next, we’ll introduce some sets which generate <span class="math notranslate nohighlight">\(\mathcal R\)</span>. These will be fundamental for many proofs you’ll find later on:</p>
 <div class="proof example admonition" id="mt:intro:set:sig:borel_gen">
-<p class="admonition-title"><span class="caption-number">Example 2.5 </span> (Generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>)</p>
+<p class="admonition-title"><span class="caption-number">Example 2.6 </span> (Generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>)</p>
 <section class="example-content" id="proof-content">
 <p>Show that the families of sets <span class="math notranslate nohighlight">\(\mathcal P_{\mathbb R} = \{(-\infty, x] : x \in \mathbb R\}\)</span> and <span class="math notranslate nohighlight">\(\mathcal P_{\mathbb Q} = \{(-\infty, x) : x \in \mathbb Q\}\)</span> are generators of <span class="math notranslate nohighlight">\(\mathcal R\)</span>.</p>
 <p>Hint: Begin by showing that <span class="math notranslate nohighlight">\(\mathcal P_{\mathbb R}\)</span> and <span class="math notranslate nohighlight">\(\mathcal P_{\mathbb Q}\)</span> are <span class="math notranslate nohighlight">\(\pi\)</span>-systems on <span class="math notranslate nohighlight">\(\mathbb R\)</span>.</p>
@@ -889,6 +962,50 @@ title="Print to PDF"
 </section>
 </div></section>
 </section>
+<section id="set-theoretic-limits-and-extrema">
+<span id="mt-intro-set-theory-extrema"></span><h2><span class="section-number">2.1.7. </span>Set-Theoretic Limits and extrema<a class="headerlink" href="#set-theoretic-limits-and-extrema" title="Permalink to this headline">#</a></h2>
+<p>Just like we have extrama of sequences, we can conceptualize extrama of sets, too.</p>
+<div class="proof definition admonition" id="definition-27">
+<p class="admonition-title"><span class="caption-number">Definition 2.16 </span> (Supremum of sets)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a sequence of sets. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \sup_{n \in \mathbb N} F_n \triangleq \bigcup_{n \in \mathbb N}F_n.\]</div>
+</section>
+</div><p>The idea here is that the supremum of a sequence of sets is just the union of the whole sequence of sets. To draw an analogy to the definition of a supremum of a sequence, you can understand this as the supremum of a sequence of sets is the <em>smallest possible set</em> (in terms of the number of elements in it) which contains all of the elements of the entire sequence. Intuitively, this idea is just the union. Likewise, we can conceptualize the infimum:</p>
+<div class="proof definition admonition" id="definition-28">
+<p class="admonition-title"><span class="caption-number">Definition 2.17 </span> (Infimum of sets)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a sequence of sets. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \inf_{n \in \mathbb N}F_n \triangleq \bigcap_{n \in \mathbb N} F_n.\]</div>
+</section>
+</div><p>Likewise, here the idea is that the infinmum of a sequence of sets is just the intersection of the whole sequence of sets. Extending our analogy, the infimum of a sequence of sets is the <em>largest possible set</em> which contains elements common to the entire sequence of sets. This idea is captured by an intersection. Try to see what happens when, further, the sequence of sets is captured by a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra:</p>
+<div class="proof example admonition" id="mt:intro:set:sig:extr_closure">
+<p class="admonition-title"><span class="caption-number">Example 2.8 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under extrema)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, and <span class="math notranslate nohighlight">\((F_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a sequence of sets in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. Show that <span class="math notranslate nohighlight">\(\sup_{n \in \mathbb N}F_n\)</span> and <span class="math notranslate nohighlight">\(\inf_{n \in \mathbb N} F_n\)</span> are also in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
+<p>Hint: these proofs should be short and sweet, and borrow from the definition of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras and De Morgan’s Law III.</p>
+</section>
+</div><p>Likewise, we can conceptualize set-theoretic versions of the limits you have come to appreciate in real analysis:</p>
+<div class="proof definition admonition" id="definition-30">
+<p class="admonition-title"><span class="caption-number">Definition 2.18 </span> (Set-theoretic limits of sets)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a sequence of sets. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \liminf_{n \rightarrow \infty} F_n \triangleq \inf_{n \in \mathbb N}\sup_{m \geq n} F_n \equiv \bigcap_{n \in \mathbb N}\bigcup_{m \geq n}F_n,
+    \limsup_{n \rightarrow \infty} F_n \triangleq \inf_{n \in \mathbb N}\sup_{m \geq n} F_n \equiv \bigcap_{n \in \mathbb N}\bigcup_{m \geq n}F_n,\]</div>
+<p>and further, if <span class="math notranslate nohighlight">\(\limsup_{n \in \mathbb N} F_n = \liminf_{n \in \mathbb N} F_n\)</span>, and we say that:</p>
+<div class="math notranslate nohighlight">
+\[    \lim_{n \rightarrow \infty}F_n = \liminf_{n \rightarrow \infty}F_n = \limsup_{n \rightarrow \infty}F_n\]</div>
+</section>
+</div><div class="proof example admonition" id="mt:intro:set:sig:extr_closure">
+<p class="admonition-title"><span class="caption-number">Example 2.8 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is closed under extrema and set-theoretic limits)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, and <span class="math notranslate nohighlight">\((F_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a sequence of sets in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. Show that <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}F_n\)</span> and <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty} F_n\)</span> are also in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
+<p>Hint: use your result from <a class="reference internal" href="#mt:intro:set:sig:extr_closure">Example 2.8</a> and borrow from the definition of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

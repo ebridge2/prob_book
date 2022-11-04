@@ -566,7 +566,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="expectation">
 <span id="mt-int-exp"></span><h1><span class="section-number">3.3. </span>Expectation<a class="headerlink" href="#expectation" title="Permalink to this headline">#</a></h1>
 <p>In this section, we’ll learn about a particular type of integral. Remember that an integral is defined on a measurable space and with respect to a measure; e.g., the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>. As we learned, when we have simple, bounded, non-negative, or integrable measurable functions <span class="math notranslate nohighlight">\(f\)</span>, the integral is the operation that is denoted symbolically as <span class="math notranslate nohighlight">\(\int f \,\text d \mu\)</span>.</p>
-<p>When this measure is <em>further</em> a probability measure <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:probmeas:def">Definition 2.22</a>, we call this integral something special: we call it an expectation, or expected value. Let’s start with a definition.</p>
+<p>When this measure is <em>further</em> a probability measure <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:probmeas:def">Definition 2.33</a>, we call this integral something special: we call it an expectation, or expected value. Let’s start with a definition.</p>
 <div class="proof definition admonition" id="mt:int:exp:defn">
 <p class="admonition-title"><span class="caption-number">Definition 3.16 </span> (Expected value)</p>
 <section class="definition-content" id="proof-content">
@@ -599,7 +599,7 @@ title="Print to PDF"
 \[    \mathbb P\left(\left\{\omega \in \Omega : \rho(X(\omega), Y(\omega)) = 0\right\}\right) = 1.\]</div>
 <p>We write that <span class="math notranslate nohighlight">\(\rho(X, Y)\)</span> is a.s.</p>
 </section>
-</div><p>You will notice that this statement is basically <em>exactly</em> the same as the statement that we made when it came to a relation holding almost everywhere back in <a class="reference internal" href="basics.html#mt:int:basics:relae">Definition 3.3</a>, <em>except</em> for the fact that the domain in this case is a probability space. Again, if a relation holds almost surely, it also holds almost everywhere, but not necessarily the reverse (for the reason we gave back when we first introduced almost sure statements in <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:as">Definition 2.24</a>).</p>
+</div><p>You will notice that this statement is basically <em>exactly</em> the same as the statement that we made when it came to a relation holding almost everywhere back in <a class="reference internal" href="basics.html#mt:int:basics:relae">Definition 3.3</a>, <em>except</em> for the fact that the domain in this case is a probability space. Again, if a relation holds almost surely, it also holds almost everywhere, but not necessarily the reverse (for the reason we gave back when we first introduced almost sure statements in <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:as">Definition 2.35</a>).</p>
 <div class="proof property admonition" id="mt:int:exp:basics">
 <p class="admonition-title"><span class="caption-number">Property 3.13 </span> (Expectation basics)</p>
 <section class="property-content" id="proof-content">
@@ -720,7 +720,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <p>which is because <span class="math notranslate nohighlight">\(\varphi \geq 0\)</span>, so <span class="math notranslate nohighlight">\(\varphi \circ X \geq 0\)</span>.</p>
 <p>Then with <a class="reference internal" href="#mt:int:exp:basics">Property 3.13</a>(3), taking the expectation preserves the inequalities, and by <a class="reference internal" href="#mt:int:exp:basics">Property 3.13</a>(2) rescaling by <span class="math notranslate nohighlight">\(i_B\)</span> is preserved, and by <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:elem:comp">Lemma 2.4</a> <span class="math notranslate nohighlight">\(\varphi \circ X \in m\mathcal F\)</span>, so:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \mathbb E\left[i_B \mathbb 1_{X \in B}\right] \leq \mathbb E[\varphi(X)\mathbb 1_{X \in B}] \leq \mathbb E\left[\varphi(X(\omega))\right] \\
+\[\begin{split}    \mathbb E\left[i_B \mathbb 1_{X \in B}\right] \leq \mathbb E[\varphi(X)\mathbb 1_{X \in B}] \leq \mathbb E\left[\varphi(X)\right] \\
     \Rightarrow i_B \mathbb P(X \in B) \leq \mathbb E[\varphi(X); X \in B] \leq \mathbb E\varphi(X).\end{split}\]</div>
 </div>
 <p>Pretty easy, right? Next up, we’ll see a corollary of Markov’s inequality, called Chebyshev’s inequality:</p>
