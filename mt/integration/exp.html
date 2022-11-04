@@ -813,7 +813,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 \[    \mathbb P\left(\left\{\omega \in \Omega : \lim_{n \rightarrow \infty}X_n(\omega) = X(\omega)\right\}\right) \equiv \mathbb P\left(\lim_{n \rightarrow \infty}X_n = X\right) = 1.\]</div>
 </section>
 </div><p>So, the idea here is that a random variable converges almost surely if the set of points which are mapped <span class="math notranslate nohighlight">\(X_n(\omega)\)</span> that have a limit of <span class="math notranslate nohighlight">\(X(\omega)\)</span> has a probability of <span class="math notranslate nohighlight">\(1\)</span>. We can also use that the probability of the complement of a set is <span class="math notranslate nohighlight">\(1 - \)</span> the probability of the set to deduce that equivalently, <span class="math notranslate nohighlight">\(\mathbb P\left(\lim_{n \rightarrow \infty}X_n \neq X\right) = 0\)</span>.</p>
-<p>We can also understand this definition using the concept of the <span class="math notranslate nohighlight">\(\limsup\)</span> of a set, in an <span class="math notranslate nohighlight">\(\epsilon\)</span>/<span class="math notranslate nohighlight">\(\delta\)</span> sort of way like you are used to in real analysis:</p>
+<p>We can also understand this definition using the concept of the <span class="math notranslate nohighlight">\(\limsup\)</span> of a set, in an <span class="math notranslate nohighlight">\(\epsilon\)</span> sort of way like you are used to in real analysis:</p>
 <div class="proof definition admonition" id="definition-15">
 <p class="admonition-title"><span class="caption-number">Definition 3.24 </span> (Equivalent definition for convergence almost surely)</p>
 <section class="definition-content" id="proof-content">
@@ -821,7 +821,8 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <div class="math notranslate nohighlight">
 \[    \mathbb P\left(\limsup_{n \rightarrow \infty}\left\{\omega \in \Omega : |X_n(\omega) - X(\omega)| &gt; \epsilon\right\}\right) = 0.\]</div>
 </section>
-</div><p>We have another term for the special case of convergence in measure when we are dealing with a probability space, too:</p>
+</div><p>The interetation of this quantity is the same as the one you saw in <a class="reference internal" href="props.html#mt:int:props:conv:convae">Definition 3.14</a>.</p>
+<p>We have another term for the special case of convergence in measure when we are dealing with a probability space, too:</p>
 <div class="proof definition admonition" id="mt:int:exp:conv:convprob">
 <p class="admonition-title"><span class="caption-number">Definition 3.25 </span> (Convergence in probability)</p>
 <section class="definition-content" id="proof-content">
@@ -834,7 +835,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <div class="proof lemma admonition" id="mt:int:exp:conv:convas_implies_convprob">
 <p class="admonition-title"><span class="caption-number">Lemma 3.11 </span> (Convergence almost surely implies convergence in probability)</p>
 <section class="lemma-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. Then if <span class="math notranslate nohighlight">\(X_n \xrightarrow[n \rightarrow \infty]{a.s} X\)</span>, <span class="math notranslate nohighlight">\(X_n \xrightarrow[n\rightarrow\infty]{\mathcal P} X\)</span>.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. Then if <span class="math notranslate nohighlight">\(X_n \xrightarrow[n \rightarrow \infty]{a.s.} X\)</span>, <span class="math notranslate nohighlight">\(X_n \xrightarrow[n\rightarrow\infty]{\mathcal P} X\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Direct application of <a class="reference internal" href="props.html#mt:int:props:conv:convae_implies_convinmeas">Lemma 3.7</a>, noting that a probability space is <span class="math notranslate nohighlight">\(\mu\)</span>-finite, and by noting the equivalent conditions for the definitions of convergence almost surely is <span class="math notranslate nohighlight">\(\mathbb P\left(\lim_{n \rightarrow \infty}X_n \neq X\right) = 0\)</span> and convergence in probability is <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\mathbb P\left(|X_n - X| &gt; \epsilon\right) = 0\)</span>.</p>
