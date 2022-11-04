@@ -982,7 +982,7 @@ title="Print to PDF"
 </section>
 </div><p>Likewise, here the idea is that the infinmum of a sequence of sets is just the intersection of the whole sequence of sets. Extending our analogy, the infimum of a sequence of sets is the <em>largest possible set</em> which contains elements common to the entire sequence of sets. This idea is captured by an intersection. Try to see what happens when, further, the sequence of sets is captured by a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra:</p>
 <div class="proof example admonition" id="mt:intro:set:sig:extr_closure">
-<p class="admonition-title"><span class="caption-number">Example 2.8 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under extrema)</p>
+<p class="admonition-title"><span class="caption-number">Example 2.7 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are closed under extrema)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, and <span class="math notranslate nohighlight">\((F_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a sequence of sets in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. Show that <span class="math notranslate nohighlight">\(\sup_{n \in \mathbb N}F_n\)</span> and <span class="math notranslate nohighlight">\(\inf_{n \in \mathbb N} F_n\)</span> are also in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
 <p>Hint: these proofs should be short and sweet, and borrow from the definition of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras and De Morgan’s Law III.</p>
@@ -993,20 +993,62 @@ title="Print to PDF"
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a sequence of sets. Then:</p>
 <div class="math notranslate nohighlight">
-\[    \liminf_{n \rightarrow \infty} F_n \triangleq \inf_{n \in \mathbb N}\sup_{m \geq n} F_n \equiv \bigcap_{n \in \mathbb N}\bigcup_{m \geq n}F_n,
+\[    \liminf_{n \rightarrow \infty} F_n \triangleq \inf_{n \in \mathbb N}\sup_{m \geq n} F_n \equiv \bigcup_{n \in \mathbb N}\bigcap_{m \geq n}F_n,
     \limsup_{n \rightarrow \infty} F_n \triangleq \inf_{n \in \mathbb N}\sup_{m \geq n} F_n \equiv \bigcap_{n \in \mathbb N}\bigcup_{m \geq n}F_n,\]</div>
 <p>and further, if <span class="math notranslate nohighlight">\(\limsup_{n \in \mathbb N} F_n = \liminf_{n \in \mathbb N} F_n\)</span>, and we say that:</p>
 <div class="math notranslate nohighlight">
 \[    \lim_{n \rightarrow \infty}F_n = \liminf_{n \rightarrow \infty}F_n = \limsup_{n \rightarrow \infty}F_n\]</div>
 </section>
 </div><p><span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are also closed under set-theoretic limits, too:</p>
-<div class="proof example admonition" id="mt:intro:set:sig:extr_closure">
+<div class="proof example admonition" id="mt:intro:set:sig:set_theor">
 <p class="admonition-title"><span class="caption-number">Example 2.8 </span> (<span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is closed under set-theoretic limits)</p>
 <section class="example-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space with <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathcal F\)</span>, and <span class="math notranslate nohighlight">\((F_n)_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a sequence of sets in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra. Show that <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}F_n\)</span> and <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty} F_n\)</span> are also in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
-<p>Hint: use your result from <a class="reference internal" href="#mt:intro:set:sig:extr_closure">Example 2.8</a> and borrow from the definition of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
+<p>Hint: use your result from <a class="reference internal" href="#mt:intro:set:sig:extr_closure">Example 2.7</a> and borrow from the definition of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
 </section>
-</div></section>
+</div><p>We can further clarify some special situations where the set-theoretic limit, <span class="math notranslate nohighlight">\(\lim\)</span>, of a sequence of sets exists, using <em>monotone</em> sequences of sets:</p>
+<div class="proof definition admonition" id="mt:intro:set:sig:monotone_sets">
+<p class="admonition-title"><span class="caption-number">Definition 2.19 </span> (Monotone sequence of sets)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a sequence of sets. Then:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\((F_n)\)</span> is called <strong>monotone non-increasing</strong> if for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(F_{n + 1} \subseteq F_n\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\((F_n)\)</span> is called <strong>monotone non-decreasing</strong> if for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>.</p></li>
+</ol>
+</section>
+</div><p>The ideas here are that, like for sequences of numbers, monotonicity here refers to the composition of elements in the sets. Monotone non-increasing sets are those where every sequential set is <em>contained</em> in the preceding set, and monotone non-decreasing sets are those where every sequential set <em>contains</em> the preceding set.</p>
+<p>If we have a sequence of sets which is monotone, the set-theoretic limits exist:</p>
+<div class="proof lemma admonition" id="lemma-33">
+<p class="admonition-title"><span class="caption-number">Lemma 2.3 </span> (Monotone sequences of sets have limits)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is an event space, and <span class="math notranslate nohighlight">\(F_n \subseteq \Omega\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span> is a monotone (non-increasing or non-decreasing) sequence of sets. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \lim_{n \rightarrow \infty}F_n = \liminf_{n \rightarrow \infty}F_n = \limsup_{n \rightarrow \infty}F_n.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. We have two cases, the case where <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-increasing or non-decreasing:
+1. Monotone non-increasing:
+If <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-increasing, then for any <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \bigcap_{m \in \mathbb N}F_m &amp;= \bigcap_{m \geq n}F_m,\\
+    F_n &amp;= \bigcup_{m \geq n}F_m,\end{split}\]</div>
+<p>by definition of <span class="math notranslate nohighlight">\(F_{n + 1} \subseteq F_{n}\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \liminf_{n \rightarrow \infty}F_n &amp;= \sup_{n \in \mathbb N}\inf_{m \geq n}F_m \\
+    &amp;= \bigcup_{n \in \mathbb N}\bigcap_{m \geq n}F_m \\
+    &amp;= \bigcap_{n \in \mathbb N}\bigcap_{m \in \mathbb N}F_m,\,\,\,\, \bigcap_{m \in \mathbb N}F_m = \bigcap_{m \geq n}F_m \\
+    &amp;= \bigcap_{n \in \mathbb N}F_n,\,\,\,\,\text{double $\cap$ is redundant} \\
+    &amp;= \bigcap_{n \in \mathbb N}\bigcap_{m \geq n}F_m,\,\,\,\,F_n = \bigcup_{m \geq n}F_m \\
+    &amp;= \inf_{n \in \mathbb N}\sup_{m \geq n}F_m \\
+    &amp;= \limsup_{n \rightarrow \infty}F_n.\end{split}\]</div>
+<p>2. Monotone non-decreasing:</p>
+<p>Repeat the same argument, noting that if <span class="math notranslate nohighlight">\((F_n)\)</span> is monotone non-increasing, then <span class="math notranslate nohighlight">\(F_n \subseteq F_{n + 1}\)</span>, so for every <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    F_n &amp;= \bigcap_{m \geq n}F_m,\\
+    \bigcup_{m \in \mathbb N}F_m &amp;= \bigcup_{m \geq n}F_m.\end{split}\]</div>
+<p>Then in both cases, <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty}F_n = \limsup_{n \rightarrow \infty}F_n\)</span>, and we can define <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}F_n\)</span> to be this set.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
