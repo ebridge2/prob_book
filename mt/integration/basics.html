@@ -687,17 +687,17 @@ title="Print to PDF"
 <section id="properties-of-the-integral-for-simple-functions">
 <h3><span class="section-number">3.1.1.1. </span>Properties of the integral for simple functions<a class="headerlink" href="#properties-of-the-integral-for-simple-functions" title="Permalink to this headline">#</a></h3>
 <p>To show that the integral holds desirable properties, we need to extend a concept we defined previously: statements <span class="math notranslate nohighlight">\(\mathcal S\)</span> that are <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. Remember that we defined this term in <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:ae">Definition 2.20</a>. Recalling that definition, we can now extend this concept to a very particular set of statements, <em>relations</em>:</p>
-<div class="proof definition admonition" id="definition-3">
+<div class="proof definition admonition" id="mt:int:basics:relae">
 <p class="admonition-title"><span class="caption-number">Definition 3.3 </span> (Relation holds almost everywhere)</p>
 <section class="definition-content" id="proof-content">
-<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space. Assume that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (S, \Sigma)\)</span> are two functions. We say that a relation <span class="math notranslate nohighlight">\(\mathcal R : S \times S \rightarrow \{0, 1\}\)</span> holds <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. if there exists <span class="math notranslate nohighlight">\(N \in \mathcal F\)</span> s.t.:</p>
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space. Assume that <span class="math notranslate nohighlight">\(\varphi, \psi : (\Omega, \mathcal F) \rightarrow (S, \Sigma)\)</span> are two functions. We say that a relation <span class="math notranslate nohighlight">\(\rho : S \times S \rightarrow \{0, 1\}\)</span> holds <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. if there exists <span class="math notranslate nohighlight">\(N \in \mathcal F\)</span> s.t.:</p>
 <div class="math notranslate nohighlight">
-\[    \mu\left(\{\omega \in N : \mathcal R\left(\varphi(\omega), \psi(\omega)\right) = 0\}\right) = 0\]</div>
-<p>and for every <span class="math notranslate nohighlight">\(\omega \in \Omega \setminus N\)</span>, <span class="math notranslate nohighlight">\(\mathcal R\left(\varphi(\omega), \psi(\omega)\right) = 1\)</span>.</p>
-<p>and we write that <span class="math notranslate nohighlight">\(\mathcal R(\varphi, \psi)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. If the measure is implied, we shorten this to a.e.</p>
+\[    \mu\left(\{\omega \in N : \rho\left(\varphi(\omega), \psi(\omega)\right) = 0\}\right) = 0\]</div>
+<p>and for every <span class="math notranslate nohighlight">\(\omega \in \Omega \setminus N\)</span>, <span class="math notranslate nohighlight">\(\rho\left(\varphi(\omega), \psi(\omega)\right) = 1\)</span>.</p>
+<p>and we write that <span class="math notranslate nohighlight">\(\rho(\varphi, \psi)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. If the measure is implied, we shorten this to a.e.</p>
 </section>
 </div><p>The idea here is that for some subset of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the domain, the relation does <em>not</em> hold, but that the measure of this set of points where the relation does not hold has measure <span class="math notranslate nohighlight">\(0\)</span>. For every other point in the domain, the relation holds.</p>
-<p>For instance, let’s take an example to be <span class="math notranslate nohighlight">\(\mathcal R(a, b) = a \geq b\)</span>. Then <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} \psi\)</span> means that <span class="math notranslate nohighlight">\(\mu\left(\left\{\omega \in \Omega : \varphi(\omega) &lt; \psi(\omega)\right\}\right) = 0\)</span>. Let’s see how we can use this with the integral.</p>
+<p>For instance, let’s take an example to be <span class="math notranslate nohighlight">\(\rho(a, b) = a \geq b\)</span> (a function which is true and returns <span class="math notranslate nohighlight">\(1\)</span> when <span class="math notranslate nohighlight">\(a \geq b\)</span>, and false or returns <span class="math notranslate nohighlight">\(0\)</span> when <span class="math notranslate nohighlight">\(a &lt; b\)</span>). Then <span class="math notranslate nohighlight">\(\varphi \overset{a.e.}{\geq} \psi\)</span> means that <span class="math notranslate nohighlight">\(\mu\left(\left\{\omega \in \Omega : \varphi(\omega) &lt; \psi(\omega)\right\}\right) = 0\)</span>. Let’s see how we can use this with the integral.</p>
 <p>Intuitively, non-negative simple functions have non-negative integrals:</p>
 <div class="proof property admonition" id="mt:int:basics:int:prop:nnintegral">
 <p class="admonition-title"><span class="caption-number">Property 3.1 </span> (Non-negative simple function has non-negative integral)</p>
@@ -1179,7 +1179,7 @@ title="Print to PDF"
 </section>
 </div><p>Since bounded and simple functions are special cases of <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions, the machinery will readily apply to those cases, too.</p>
 <p>Now, we are ready to handle the properties:</p>
-<div class="proof property admonition" id="property-29">
+<div class="proof property admonition" id="mt:int:basics:muint:nnint">
 <p class="admonition-title"><span class="caption-number">Property 3.10 </span> (Non-negative <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function has non-negative integral)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, and <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable where <span class="math notranslate nohighlight">\(f \overset{a.e.}{\geq} 0\)</span>. Then <span class="math notranslate nohighlight">\(\int f \,\text d \mu \geq 0\)</span>.</p>
@@ -1196,7 +1196,7 @@ title="Print to PDF"
 <p>which is by <a class="reference internal" href="#mt:int:basics:nn:nn">Property 3.7</a> since <span class="math notranslate nohighlight">\(f^+ \geq 0\)</span>.</p>
 </div>
 <p>We can rescale them:</p>
-<div class="proof property admonition" id="property-30">
+<div class="proof property admonition" id="mt:int:basics:muint:rescale">
 <p class="admonition-title"><span class="caption-number">Property 3.11 </span> (Rescaled <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions have rescaled integrals)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, <span class="math notranslate nohighlight">\(f \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, and <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>. Then <span class="math notranslate nohighlight">\(\int r f \,\text d \mu = r \int f \,\text d \mu\)</span>.</p>
@@ -1211,7 +1211,7 @@ title="Print to PDF"
 <p>where the second-to-last line follows by <a class="reference internal" href="#mt:int:basics:nn:rescale">Property 3.8</a>.</p>
 </div>
 <p>and finally, we can sum them:</p>
-<div class="proof property admonition" id="property-31">
+<div class="proof property admonition" id="mt:int:basics:muint:sum">
 <p class="admonition-title"><span class="caption-number">Property 3.12 </span> (Summed <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions have summed integral)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, <span class="math notranslate nohighlight">\((\mathbb R, \Sigma)\)</span> is a measurable space, <span class="math notranslate nohighlight">\(f,g \in m(\mathcal F, \Sigma)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable. Then <span class="math notranslate nohighlight">\(\int (f + g)\,\text d \mu = \int f \,\text d \mu + \int g \,\text d \mu\)</span>.</p>
@@ -1233,6 +1233,12 @@ title="Print to PDF"
 <p>since these are their definitions given by <a class="reference internal" href="#mt:int:basics:muint:int">Definition 3.10</a>.</p>
 </div>
 <p>As always, we obtain all of the integration corollaries in <a class="reference internal" href="#mt-int-basics-corollaries"><span class="std std-numref">Section 3.1.2</span></a> due to these three properties holding for <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions.</p>
+<div class="proof remark admonition" id="mt:int:basics:constants">
+<p class="admonition-title"><span class="caption-number">Remark 3.1 </span> (Constant functions follow all the properties discussed)</p>
+<section class="remark-content" id="proof-content">
+<p>Suppose that you have an extremely simple function; e.g., <span class="math notranslate nohighlight">\(f(\omega) = x\)</span>, where <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span> is a constant. This function is certainly simple; e.g., take <span class="math notranslate nohighlight">\(\alpha_n = x\)</span>, <span class="math notranslate nohighlight">\(F_1 = \Omega\)</span>. It should be pretty clear to you that because it is simple, it is obviously bounded (you can use the number <span class="math notranslate nohighlight">\(x\)</span> itself as the bound), it is a rescaling of a non-negative function (if <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, consider that <span class="math notranslate nohighlight">\(f(\omega) = -g(\omega)\)</span>, where <span class="math notranslate nohighlight">\(g(\omega) = -x \geq 0\)</span>), and it is therefore integrable too, assuming that the measure of the whole space is finite.</p>
+</section>
+</div><p>Think about this remark a little bit.</p>
 </section>
 </section>
 </section>

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3.3. Expectation" href="exp.html" />
@@ -480,12 +482,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#norms-and-convexity">
+   3.2.1. Norms and Convexity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convex-functions">
+     3.2.1.1. Convex Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#norms">
+     3.2.1.2. Norms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-results">
+   3.2.2. Convergence Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convergence-concepts">
+     3.2.2.1. Convergence Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convergence-theorems">
+     3.2.2.2. Convergence Theorems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measure-restriction">
+   3.2.3. Measure Restriction
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -497,6 +557,53 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#norms-and-convexity">
+   3.2.1. Norms and Convexity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convex-functions">
+     3.2.1.1. Convex Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#norms">
+     3.2.1.2. Norms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convergence-results">
+   3.2.2. Convergence Results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convergence-concepts">
+     3.2.2.1. Convergence Concepts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convergence-theorems">
+     3.2.2.2. Convergence Theorems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measure-restriction">
+   3.2.3. Measure Restriction
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -509,6 +616,343 @@ title="Print to PDF"
 <p>That last section was pretty neat stuff, eh?</p>
 <p>While this might seem like all we did was introduced a bunch of cumbersome notation to “reinvent the wheel” and give you back your Riemann integral from calculus, it turns out this is a lot more powerful than that stuff. In particular, you’ll notice that we were <em>extremely</em> cautious every step of the way from the preceding chapters all the way to now regarding which assumptions different conditions hold under. These might seem like “mindless details” that you’d rather go without, but the brilliance of probability theory <em>is</em> the details.</p>
 <p>These properties that we are constructing, from the ground up, have been explicit about <em>every assumption</em> made along the way. As we build more and more results, we’re going to keep that trend up, and all these assumptions and conditions are going to start making sense as you begin to see that extremely weak conditions might add up to a result that is beautiful. As you’ll see in the next section, the concept of <em>expected value</em> in probability theory is <em>understood</em> as a special case of integration with respect to a <em>probability measure</em>, so while we’re going to unfortunately burden you with some more properties of integrals, it will start to tie back to probability theory more directly next.</p>
+<section id="norms-and-convexity">
+<h2><span class="section-number">3.2.1. </span>Norms and Convexity<a class="headerlink" href="#norms-and-convexity" title="Permalink to this headline">#</a></h2>
+<p>In this section, we’ll learn some details about two concepts that we will later see are acutely related: norms and convex functions. When we attempt to classify random variables in the next chapter, we’ll use these two concepts to do so.</p>
+<section id="convex-functions">
+<h3><span class="section-number">3.2.1.1. </span>Convex Functions<a class="headerlink" href="#convex-functions" title="Permalink to this headline">#</a></h3>
+<p>We’ll start off with a definition you’ve probably seen in some form before:</p>
+<div class="proof definition admonition" id="mt:int:props:convex:defn">
+<p class="admonition-title"><span class="caption-number">Definition 3.11 </span> (Convex Function)</p>
+<section class="definition-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(\varphi : \mathcal X \rightarrow \mathbb R\)</span> defined on a convex subset <span class="math notranslate nohighlight">\(\mathcal X \subseteq \mathbb R\)</span> is convex if for all <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span> and for all <span class="math notranslate nohighlight">\(x_1, x_2 \in \mathcal X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \lambda\varphi(x_1) + (1 - \lambda)\varphi(x_2) \geq \varphi\left(\lambda x_1 + (1 - \lambda)x_2\right).\]</div>
+</section>
+</div><p>Let’s think about what this means, intuitively. First: what the heck is a <strong>convex subset</strong> <span class="math notranslate nohighlight">\(\mathcal X\)</span>? All that this means is, for all <span class="math notranslate nohighlight">\(x_1, x_2 \in \mathcal X\)</span>, that any possible <em>convex combination</em> of these elements <span class="math notranslate nohighlight">\(\lambda x_1 + (1 - \lambda)x_2\)</span> is also <span class="math notranslate nohighlight">\(\in \mathcal X\)</span>. This holds for all <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span>. For instance, if we are dealing with real numbers, <span class="math notranslate nohighlight">\(\mathcal X\)</span> could just be an interval.</p>
+<p>The idea here is that in this case, the point <span class="math notranslate nohighlight">\(z = \lambda x_1 + (1 - \lambda)x_2\)</span> is some point in <em>between</em> <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>. This is ensured by the fact that <span class="math notranslate nohighlight">\(\lambda\)</span> is between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span>. Now, let’s think about the left side of an equation. What happens as <span class="math notranslate nohighlight">\(t\)</span> changes? Graphically, it turns out that it looks something like this:</p>
+<figure class="align-default" id="mt-int-props-convexfig">
+<a class="reference internal image-reference" href="../../_images/convex.png"><img alt="../../_images/convex.png" src="../../_images/convex.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.2 </span><span class="caption-text"><strong>(A)</strong> The red line represents the line <span class="math notranslate nohighlight">\(\lambda \varphi(x_1) + (1 - \lambda)\varphi(x_2)\)</span> for some value <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span>. For a convex function, for any two points <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>, this line will be <em>entirely</em> above the actual function, <span class="math notranslate nohighlight">\(\varphi(x)\)</span>. <strong>(B)</strong> A non-convex function <span class="math notranslate nohighlight">\(\psi\)</span>. Notice that we can choose points <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> where the red line is not always above the function.</span><a class="headerlink" href="#mt-int-props-convexfig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>An important consequence that we will use throughout this course is a relatively simple real analysis result:</p>
+<div class="proof lemma admonition" id="mt:int:props:convex:second_deriv">
+<p class="admonition-title"><span class="caption-number">Lemma 3.5 </span> (Convex functions and second derivatives)</p>
+<section class="lemma-content" id="proof-content">
+<p>A function <span class="math notranslate nohighlight">\(\varphi \in C^2 : \mathcal X \rightarrow \mathbb R\)</span> defined on an interval <span class="math notranslate nohighlight">\(\mathcal X\)</span> is convex on <span class="math notranslate nohighlight">\(\mathcal X\)</span> if and only if for all <span class="math notranslate nohighlight">\(x \in \mathcal X\)</span>, <span class="math notranslate nohighlight">\(\varphi''(x) \geq 0\)</span>.</p>
+</section>
+</div><p>What this asserts is that if the function <span class="math notranslate nohighlight">\(\varphi\)</span> is further twice differentiable and the function is defined on an interval (which is a convex subset), we have a second way to assert convexity, which is (often) much easier to work with: simply check its second derivative. Visually, this solidifies an intuitive notion of convexity demonstrated by <a class="reference internal" href="#mt-int-props-convexfig"><span class="std std-numref">Fig. 3.2</span></a>(A): a convex function will be curved <em>upwards</em>.</p>
+<p>Now, we’re going to talk about some nuancy points that are consequences of the definition of convex functions. In my opinion, the proofs/intuition of these results go somewhat beyond an introductory real analysis course, so you shouldn’t worry if it doesn’t immediately make sense to you:</p>
+<div class="proof lemma admonition" id="mt:int:props:convex:subderiv">
+<p class="admonition-title"><span class="caption-number">Lemma 3.6 </span> (Subderivatives of convex functions)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that the function <span class="math notranslate nohighlight">\(\varphi : \mathcal X \rightarrow \mathbb R\)</span> defined on a convex open subset <span class="math notranslate nohighlight">\(\mathcal X \subseteq \mathbb R\)</span> is convex. The the <em>subderivative</em> at a point <span class="math notranslate nohighlight">\(x_0 \in \mathcal X\)</span> is a real number <span class="math notranslate nohighlight">\(c\)</span> s.t. for all <span class="math notranslate nohighlight">\(x \in \mathcal X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    c  \leq \frac{\varphi(x) - \varphi(x_0)}{x - x_0}.\]</div>
+</section>
+</div><p>That <span class="math notranslate nohighlight">\(\mathcal X\)</span> is <em>open</em> suggests that if <span class="math notranslate nohighlight">\(x \in \mathcal X\)</span>, that the neighborhood <span class="math notranslate nohighlight">\(\{x + h\}_{0 &lt; h &lt; \epsilon} \subseteq \mathcal X\)</span> for some <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>. As it turns out, for a convex function <span class="math notranslate nohighlight">\(\varphi\)</span>, we can take this even further, and can say that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    a_l &amp;= \lim_{h \downarrow 0}\frac{\varphi(x) - \varphi(x - h)}{h} \\
+    a_u &amp;= \lim_{h \downarrow 0}\frac{\varphi(x + h) - \varphi(x)}{h}\end{split}\]</div>
+<p>are both finite, and <span class="math notranslate nohighlight">\([a_l, a_u]\)</span> is called the <strong>subdifferential</strong> (it is a set of all of the subdifferentials). When the function <span class="math notranslate nohighlight">\(f\)</span> is continuously differentiable on the entire domain <span class="math notranslate nohighlight">\(\mathcal X\)</span>, this is fairly rudimentary what we are talking about here: <span class="math notranslate nohighlight">\(a_l\)</span> and <span class="math notranslate nohighlight">\(a_u\)</span> are the left and right derivatives for a point <span class="math notranslate nohighlight">\(x\)</span> (and, in the case of continuous functions, these are <em>equal</em>). The nuance here can be shown with something that is convex but <em>not</em> continuously differentiable, like the absolute value:</p>
+<figure class="align-default" id="mt-int-props-subderiv">
+<a class="reference internal image-reference" href="../../_images/subderiv.png"><img alt="../../_images/subderiv.png" src="../../_images/subderiv.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.3 </span><span class="caption-text">In this case, we can see two sub-tangent lines at the point <span class="math notranslate nohighlight">\(x = 0\)</span>, which are lines which intersect with <span class="math notranslate nohighlight">\(f(x) = |x|\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span> but whose slopes are in the interval formed by the left and right derivatives, <span class="math notranslate nohighlight">\(-1\)</span> and <span class="math notranslate nohighlight">\(1\)</span> respectively. The sub-derivatives exist since <span class="math notranslate nohighlight">\(f(x) = |x|\)</span> is convex; if you are struggling with why it is convex, think about the lines we drew previously in <a class="reference internal" href="#mt-int-props-convexfig"><span class="std std-numref">Fig. 3.2</span></a>.</span><a class="headerlink" href="#mt-int-props-subderiv" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we get to one of the fundamental results of integration:</p>
+<div class="proof theorem admonition" id="mt:int:props:convex:jensen">
+<p class="admonition-title"><span class="caption-number">Theorem 3.2 </span> (Jensen’s Inequality)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal X \subseteq \mathbb R\)</span> is an interval,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f \in m\mathcal F : \Omega \rightarrow \mathcal X\)</span> is a measurable function,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\varphi \in m\mathcal R: \mathcal X \rightarrow \mathbb R\)</span> is convex, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\varphi(f) = \varphi \circ f\)</span> are <span class="math notranslate nohighlight">\(\mathbb P\)</span>-integrable.</p></li>
+</ol>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    \varphi\left(\int f \,\text d \mathbb P\right) \leq 
+    \int \varphi\left(f\right) \,\text d \mathbb P.\]</div>
+</section>
+</div><p>This result, it turns out, is pretty easy to prove if <span class="math notranslate nohighlight">\(f\)</span> is <em>also</em> <span class="math notranslate nohighlight">\(C^2\)</span>, but that wouldn’t quite be as general as we want it to be: this result can hold for <em>any</em> convex functions, not just the <span class="math notranslate nohighlight">\(C^2\)</span> ones. In the proof below, we use the concept of the sub-derivative that we just intuited our way through, and then we’ll recap why we had to use sub-derivatives at all once we’re done:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Let <span class="math notranslate nohighlight">\(c = \int f \,\text d\mathbb P\)</span>, which is finite since <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\mathbb P\)</span>-integrable <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\ell(x) = a x + b\)</span> be a linear function for <span class="math notranslate nohighlight">\(a, b, x \in \mathbb R\)</span> s.t. <span class="math notranslate nohighlight">\(\ell(c) = \varphi(c)\)</span>, and <span class="math notranslate nohighlight">\(\varphi(x) \geq \ell(x)\)</span>. Such a function <span class="math notranslate nohighlight">\(\ell\)</span> exists, since by the convexity of <span class="math notranslate nohighlight">\(\varphi\)</span>, we can see that with:</p>
+<div class="math notranslate nohighlight">
+\[    a_l = \lim_{h \downarrow 0}\frac{\varphi(c) - \varphi(c - h)}{h} \leq \lim_{h \downarrow 0}\frac{\varphi(c + h) - \varphi(c)}{h} = a_u,\]</div>
+<p>Letting <span class="math notranslate nohighlight">\(a \in [a_l, a_u]\)</span> (<span class="math notranslate nohighlight">\(a\)</span> is a <em>sub-derivative</em> of <span class="math notranslate nohighlight">\(\varphi\)</span>) and <span class="math notranslate nohighlight">\(\ell(x) = a(x - c) + \varphi(c)\)</span> gives the desired properties, as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    x \neq c \Rightarrow \ell(x) &amp;\leq a_u(x - c) + \varphi(c),\,\,\,\,\text{defn. of a sub-derivative}, a \leq a_u \\
+    x = c \Rightarrow \ell(c) &amp;= \varphi(c).\end{split}\]</div>
+<p>Note, then, that <span class="math notranslate nohighlight">\(\varphi(x) \geq \ell(x)\)</span> for any <span class="math notranslate nohighlight">\(x \in \mathbb R\)</span>, and consequently, <span class="math notranslate nohighlight">\(\varphi \circ f \geq \ell \circ f\)</span>, so <span class="math notranslate nohighlight">\(\varphi \circ f \overset{a.e.}{\geq} \ell \circ f\)</span>.</p>
+<p>It is pretty that <span class="math notranslate nohighlight">\(\ell \circ f\)</span> is a rescaling of an integrable function <span class="math notranslate nohighlight">\(f\)</span> by <span class="math notranslate nohighlight">\(a\)</span> and a sum with a constant term, <span class="math notranslate nohighlight">\(-ac + \varphi(c)\)</span>. Particularly, here note that since we have a probability space, the measure of the entire space is finite, and the constant is integrable by <a class="reference internal" href="basics.html#mt:int:basics:constants">Remark 3.1</a>. Therefore, <span class="math notranslate nohighlight">\(\ell \circ f\)</span> is integrable by <a class="reference internal" href="basics.html#mt:int:basics:muint:rescale">Property 3.11</a> and <a class="reference internal" href="basics.html#mt:int:basics:muint:sum">Property 3.12</a>.</p>
+<p>Then by <a class="reference internal" href="basics.html#mt:int:basics:int:cor:ineq">Corollary 3.1</a>, since <span class="math notranslate nohighlight">\(\varphi \circ f\)</span> is integrable by supposition:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int \varphi\circ f \, \text d\mathbb P &amp;\geq 
+    \int \ell \circ f \, \text d\mathbb P \\
+    &amp;= \int \left(a f - c + \varphi(c)\right) \, \text d\mathbb P \\
+    &amp;= a\left(\int f\,\text d \mathbb P - c\right) + \varphi(c) \\
+    &amp;= \ell\left(\int f\,\text d\mathbb P\right),\,\,\,\,\ell(x) \triangleq a(x - c) + \varphi(c) \\
+    &amp;= \varphi\left(\int f \, \text d \mathbb P\right),\,\,\,\,\ell(c) = \varphi(c)\end{split}\]</div>
+<p>where by construction, <span class="math notranslate nohighlight">\(c = \int f \,\text d \mathbb P\)</span>.</p>
+</div>
+<p>So: why did we have to use sub-derivatives, and what did they let us do? Well, since <span class="math notranslate nohighlight">\(\varphi\)</span> is only convex, it is entirely possible that the derivative doesn’t exist at a point we are interested in (think about if the absolute value had an inflection right at <span class="math notranslate nohighlight">\(x = \int f \,\text d \mathbb P\)</span> instead of at <span class="math notranslate nohighlight">\(x = 0\)</span>, like in the figure we considered; e.g., <span class="math notranslate nohighlight">\(\varphi(x) = \left|x - \int f \,\text d \mathbb P\right|\)</span>). So, what we did was, we constructed a <em>sub-tangent</em> line via a sub-derivative at this point, just to give us extra protection for the general case where we could have a non-existant derivative.</p>
+</section>
+<section id="norms">
+<h3><span class="section-number">3.2.1.2. </span>Norms<a class="headerlink" href="#norms" title="Permalink to this headline">#</a></h3>
+<p>Jensen’s inequality will make properties about norms of random variables very easy to prove. What’s a norm you might ask?</p>
+<div class="proof definition admonition" id="mt:int:props:norm:defn">
+<p class="admonition-title"><span class="caption-number">Definition 3.12 </span> (Functional norm)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and suppose that <span class="math notranslate nohighlight">\(p \in [1, \infty)\)</span>. The functional norm of a function <span class="math notranslate nohighlight">\(f \in m\mathcal F : \Omega \rightarrow \mathbb R\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[||f||_p \triangleq \left(\int |f|^p \,\text d \mu\right)^{\frac{1}{p}}\]</div>
+</section>
+</div><p>We tend to classify functions as those that have finite functional norms:</p>
+<div class="proof definition admonition" id="definition-5">
+<p class="admonition-title"><span class="caption-number">Definition 3.13 </span> (<span class="math notranslate nohighlight">\(\mathbb L^p\)</span> space)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and suppose that <span class="math notranslate nohighlight">\(p \in [1, \infty)\)</span>. Then the <span class="math notranslate nohighlight">\(\mathbb L^p(\mu)\)</span> space is the set of measurable functions:</p>
+<div class="math notranslate nohighlight">
+\[    \mathbb L^p(\mu) \triangleq \left\{f \in m\mathcal F : ||f||_p &lt; \infty\right\}\]</div>
+</section>
+</div><p>We can use functional norms to obtain some more desirable properties of integration. Let’s check out Hölder’s inequality:</p>
+<div class="proof theorem admonition" id="mt:int:props:convex:holder">
+<p class="admonition-title"><span class="caption-number">Theorem 3.3 </span> (Hölder’s inequality)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, that <span class="math notranslate nohighlight">\(f, g \in m\mathcal F\)</span>, and that <span class="math notranslate nohighlight">\(p, q \in [1, \infty)\)</span> are s.t. <span class="math notranslate nohighlight">\(\frac{1}{p} + \frac{1}{q} = 1\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int |f \cdot g| \,\text d \mu \leq ||f||_p ||g||_q.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. If <span class="math notranslate nohighlight">\(||f||_p = 0\)</span>, then note that by definition, <span class="math notranslate nohighlight">\(\mu\left(\{\omega : f(\omega) \neq 0\}\right) = 0\)</span> and so <span class="math notranslate nohighlight">\(f \overset{a.e.}{=} 0\)</span>, and vice-versa for <span class="math notranslate nohighlight">\(||g||_q\)</span>.</p>
+<p>In this case, the product <span class="math notranslate nohighlight">\(f \circ g \overset{a.e.}{=} 0\)</span>, as <span class="math notranslate nohighlight">\((f\cdot g)(\omega) \equiv f(\omega)g(\omega) = 0\)</span> as well, satisfying the inequality.</p>
+<p>Therefore, suppose that <span class="math notranslate nohighlight">\(||f||_p, ||g||_q &gt; 0\)</span>. Further, WOLOG, assume that <span class="math notranslate nohighlight">\(||f||_p = ||g||_q = 1\)</span>. Note that this applies generally, as we could simply take <span class="math notranslate nohighlight">\(f'(\omega) = \frac{f(\omega)}{||f||_p}\)</span> and vice-versa for <span class="math notranslate nohighlight">\(g\)</span>, and we would obtain a result that is simply a scalar multiple of <span class="math notranslate nohighlight">\(||f||_p||g||_q\)</span>, since <span class="math notranslate nohighlight">\(|f(\omega) g(\omega)| = ||f||_p||g||_q|f'(\omega)g'(\omega)|\)</span> since by definition, <span class="math notranslate nohighlight">\(||f||_p, ||g||_q &gt; 0\)</span>.</p>
+<p>Note that for any <span class="math notranslate nohighlight">\(x, y \geq 0\)</span>, that using basic properties of the <span class="math notranslate nohighlight">\(\exp\)</span> and <span class="math notranslate nohighlight">\(\log\)</span> functions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    xy &amp;= \exp(\log(xy)) \\
+    &amp;= \exp(\log x + \log y) \\
+    &amp;= \exp\left(\frac{1}{p} p\log x + \frac{1}{q}q \log y\right) \\
+    &amp;= \exp\left(\frac{1}{p} \log x^p + \frac{1}{q} \log y^q\right)\end{split}\]</div>
+<p>Notice that <span class="math notranslate nohighlight">\(\exp(x)\)</span> is convex, since its second derivative is positive by <a class="reference internal" href="#mt:int:props:convex:second_deriv">Lemma 3.5</a>. Then since <span class="math notranslate nohighlight">\(\frac{1}{p} + \frac{1}{q}\)</span> is positive:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    xy &amp;\leq \frac{1}{p} \exp(\log x^p) + \frac{1}{q} \exp(\log y^q) \\
+    &amp;= \frac{x^p}{p} + \frac{y^q}{q}.\end{split}\]</div>
+<p>Taking <span class="math notranslate nohighlight">\(x = |f(\omega)|\)</span> and <span class="math notranslate nohighlight">\(y = |g(\omega)|\)</span>, we see that:</p>
+<div class="math notranslate nohighlight">
+\[    |f(\omega)||g(\omega)| = |f(\omega)g(\omega)| \leq \frac{|f(\omega)|^p}{p} + \frac{|g(\omega)|^q}{q},\]</div>
+<p>which holds for all <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, so <span class="math notranslate nohighlight">\(|f \cdot g| \leq \frac{|f|^p}{p} + \frac{|g|^q}{q}\)</span>. Integrating:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int |f \cdot g| \,\text d \mu &amp;\leq \int \left(\frac{|f|^p}{p} + \frac{|g|^q}{q}\right)\,\text d \mu \\
+    &amp;= \frac{||f||_p}{p} + \frac{||g||_q}{q} \\
+    &amp;= \frac{1}{p} + \frac{1}{q},\,\,\,\,||f||_p = ||g||_q = 1\text{ WOLOG} \\
+    &amp;= 1,\,\,\,\,\frac{1}{p} + \frac{1}{q} \text{ by supposition} \\
+    &amp;= ||f||_p ||g||_q.\end{split}\]</div>
+</div>
+</section>
+</section>
+<section id="convergence-results">
+<h2><span class="section-number">3.2.2. </span>Convergence Results<a class="headerlink" href="#convergence-results" title="Permalink to this headline">#</a></h2>
+<section id="convergence-concepts">
+<h3><span class="section-number">3.2.2.1. </span>Convergence Concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h3>
+<p>Next, we get to the convergence theorems for integrals. To do this, we first need two quick definitions to get us started:</p>
+<div class="proof definition admonition" id="definition-7">
+<p class="admonition-title"><span class="caption-number">Definition 3.14 </span> (Convergence Almost Everywhere)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subset m\mathcal F\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span> if for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu\left(\left\{\omega \in \Omega : \lim_{n \rightarrow \infty}f_n(\omega) \neq f(\omega)\right\}\right) \equiv \mu(\lim_{n \rightarrow \infty}f_n \neq f) = 0.\]</div>
+</section>
+</div><p>The idea here is that for all but a set of measure <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(f_n(\omega) \xrightarrow[n \rightarrow \infty]{} f(\omega)\)</span>. Stated another way, we have pointwise convergence of <span class="math notranslate nohighlight">\(f_n\)</span> to <span class="math notranslate nohighlight">\(f\)</span> almost everywhere. Next, we get to a practically distinct definition, which <em>almost</em> looks the same. This concept is called convergence in measure:</p>
+<div class="proof definition admonition" id="definition-8">
+<p class="admonition-title"><span class="caption-number">Definition 3.15 </span> (Convergence in measure)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and the measurable functions <span class="math notranslate nohighlight">\(f, f_n \in m\mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subset m\mathcal F\)</span>. We say that <span class="math notranslate nohighlight">\(f_n \rightarrow f\)</span> in measure if for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[    \mu\left(\left\{\omega \in \Omega : |f_n(\omega) - f(\omega)| &gt; \epsilon\right\}\right) \equiv \mu(|f_n - f| &gt; \epsilon) \xrightarrow[n \rightarrow \infty]{} 0.\]</div>
+</section>
+</div><p>While these definitions almost look the same, the practical distinction is that the limit, this time, is <em>outside</em> of the measure statement. The idea here is that, as <span class="math notranslate nohighlight">\(n\)</span> grows, the measure of the set of points <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> is converging to zero. This contrasts from the fact that in the preceding statement, the measure of the set of points <span class="math notranslate nohighlight">\(\omega\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> <em>is</em> zero. Intuitively, convergence almost everywhere, in fact, <em>implies</em> convergence in measure (with the slight note that the entire space <span class="math notranslate nohighlight">\(\Omega\)</span> must have finite measure). Let’s see what these two concepts will allow us to do.</p>
+</section>
+<section id="convergence-theorems">
+<h3><span class="section-number">3.2.2.2. </span>Convergence Theorems<a class="headerlink" href="#convergence-theorems" title="Permalink to this headline">#</a></h3>
+<div class="proof theorem admonition" id="mt:int:props:conv:bct">
+<p class="admonition-title"><span class="caption-number">Theorem 3.4 </span> (Bounded Convergence)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(F\in \mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\mu\)</span>-finite set, where <span class="math notranslate nohighlight">\(\mu(F) &lt; \infty\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of measurable functions which vanish on <span class="math notranslate nohighlight">\(F^c\)</span>; that is, <span class="math notranslate nohighlight">\(\omega \in F^c \Rightarrow f_n(\omega) = 0\)</span>,</p></li>
+<li><p>There exists <span class="math notranslate nohighlight">\(M\)</span> s.t. <span class="math notranslate nohighlight">\(|f_n(\omega)| \leq M\)</span> (<span class="math notranslate nohighlight">\(f_n\)</span> are each bounded), and</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{} f\)</span> in measure.</p></li>
+</ol>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int_F f\,\text d \mu = \lim_{n \rightarrow \infty}\int_F f_n\,\text d \mu.\]</div>
+</section>
+</div><p>The idea here is that we are conceptually moving the limit <em>across</em> the integral: the left hand side can be thought of as the integral of <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}f_n\)</span> on sets that are progressively encompassing more and more of the sample space <span class="math notranslate nohighlight">\(\Omega\)</span>.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Suppose that <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, and define <span class="math notranslate nohighlight">\(G_n \triangleq \{\omega \in F : |f_n(\omega) - f(\omega)| \leq \epsilon\}\)</span>, and <span class="math notranslate nohighlight">\(B_n \triangleq F \setminus G_n = \{\omega \in F : |f_n(\omega) - f(\omega)| &gt; \epsilon\}\)</span>. Intuitively, <span class="math notranslate nohighlight">\(G_n\)</span> are the points of <span class="math notranslate nohighlight">\(F\)</span> for a particular <span class="math notranslate nohighlight">\(n\)</span> where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(f(\omega)\)</span>, and <span class="math notranslate nohighlight">\(B_n\)</span> are the points where <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> is not.</p>
+<p>Then by <a class="reference internal" href="basics.html#mt:int:basics:bounded_int">Theorem 3.1</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \left|\int_F f \,\text d \mu - \int_F f_n\,\text d \mu \right| &amp;= \left|\int_F (f - f_n)\,\text d \mu\right| \\
+    &amp;\leq \int_F |f - f_n|\,\text d \mu,\,\,\,\,\text{Jensen's inequality, as }|\cdot|\text{ is convex} \\
+    &amp;= \int_{G_n}|f - f_n| \,\text d\mu + \int_{B_n}|f - f_n| \,\text d\mu,\,\,\,\,G_n \sqcup B_n = F \\
+    &amp;\leq \epsilon \mu(F) + 2M\mu(B_n),\end{split}\]</div>
+<p>For the left-hand expression, we used that for <span class="math notranslate nohighlight">\(\omega \in G_n\)</span>, <span class="math notranslate nohighlight">\(|f_n(\omega) - f(\omega)| \leq \epsilon\)</span> by construction. For the right hand side, we used that <span class="math notranslate nohighlight">\(|f_n| \leq M \Rightarrow |f| \leq M\)</span> (bounded functions can only converge to a bounded function), and consequently we applied the triangle inequality, <span class="math notranslate nohighlight">\(|f - f_n| \leq |f| + |f_n| \leq 2M\)</span>.</p>
+<p>Continuing:</p>
+<div class="math notranslate nohighlight">
+\[    \left|\int_F f \,\text d \mu - \int_F f_n\,\text d \mu\right| \xrightarrow[n \rightarrow \infty]{} \epsilon \mu(E),\]</div>
+<p>since <span class="math notranslate nohighlight">\(\mu(B_n) \xrightarrow[n \rightarrow \infty]{} 0\)</span> by definition of <span class="math notranslate nohighlight">\(f_n \rightarrow f\)</span> in measure. Noting that <span class="math notranslate nohighlight">\(0 \leq \mu(F) &lt; \infty\)</span> by supposition, and that <span class="math notranslate nohighlight">\(\epsilon\)</span> was arbitrary, gives the desired result.</p>
+</div>
+<p>So, intuitively, as the functions <span class="math notranslate nohighlight">\(f_n\)</span> get closer to <span class="math notranslate nohighlight">\(f\)</span> <em>in measure</em> (the sets on which they disagree have measure converging to <span class="math notranslate nohighlight">\(0\)</span>), somewhat intuitively, the integrals converge, too. The key here is that the <em>bounded</em> convergence theorem applies for <em>bounded</em> functions. We have a somewhat equivalent, albeit practically much more applicable, result for non-negative functions:</p>
+<div class="proof theorem admonition" id="mt:int:props:conv:fatou">
+<p class="admonition-title"><span class="caption-number">Theorem 3.5 </span> (Fatou)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of non-negative functions; e.g., <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[    \liminf_{n \rightarrow \infty} \int f_n \,\text d \mu \geq \int \liminf_{n \rightarrow \infty} f_n \,\text d \mu.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Define <span class="math notranslate nohighlight">\(g_n\)</span> to be the function where <span class="math notranslate nohighlight">\(g_n(\omega) \triangleq \inf_{m \geq n}f_n(\omega)\)</span>. It follows that for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, <span class="math notranslate nohighlight">\(f_n(\omega) \geq g_n(\omega)\)</span>, since <span class="math notranslate nohighlight">\(g_n(\omega)\)</span> is the infimum of a set which contains <span class="math notranslate nohighlight">\(f_n(\omega)\)</span> by construction.</p>
+<p>Note that as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, that <span class="math notranslate nohighlight">\(g_n(\omega) \uparrow g(\omega)\)</span> converges below to some value <span class="math notranslate nohighlight">\(g(\omega)\)</span> (possibly infinite), which follows because <span class="math notranslate nohighlight">\(g_{n + 1}(\omega) \geq g_n(\omega)\)</span>, since <span class="math notranslate nohighlight">\(\{f_m(\omega) : m \geq n+1\} \subseteq \{f_m(\omega) : m \geq n\}\)</span> (<span class="math notranslate nohighlight">\(\{g_n(\omega)\}_n\)</span> is monotonically increasing in <span class="math notranslate nohighlight">\(n\)</span>).</p>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    g_n(\omega) \uparrow g(\omega) = \sup_{n \rightarrow \infty}g_n(\omega) = \liminf_{n \rightarrow \infty} f_n(\omega).\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\ing f_n\,\text d \mu \geq \int g_n\,\text d \mu\)</span> by <a class="reference internal" href="basics.html#mt:int:basics:int:cor:ineq">Corollary 3.1</a>, it is sufficient to show that:</p>
+<div class="math notranslate nohighlight">
+\[    \liminf_{n \rightarrow \infty}\int g_n\,\text d \mu \geq \inf g \,\text d\mu.\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\{F_m\} \subseteq \mathcal F\)</span> be a sequence of sets which finite measure, where <span class="math notranslate nohighlight">\(F_m \uparrow \Omega\)</span> as <span class="math notranslate nohighlight">\(m \rightarrow \infty\)</span>. Since <span class="math notranslate nohighlight">\(g_n \geq 0\)</span>, then for fixed <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    (g_n(\omega) \wedge m)\mathbb 1_{\{F_m\}}(\omega) \xrightarrow[n \rightarrow \infty]{} (g(\omega) \wedge m) \mathbb 1_{\{F_m\}}(\omega).\]</div>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \liminf_{n \rightarrow \infty}\int g_n\,\text d\mu \geq \int (g_n \wedge m)\mathbb 1_{\{F_m\}}\,\text d \mu,\,\,\,\,0 \leq g_n \wedge m \leq g_n \\
+    &amp;= \int_{F_m} (g_n \wedge m)\,\text d \mu \\
+    &amp;\xrightarrow[n \rightarrow \infty]{} \int_{F_m}(g \wedge m)\,\text d \mu,\end{split}\]</div>
+<p>Note that both sides are at most upper-bounded by <span class="math notranslate nohighlight">\(m\)</span>, so <a class="reference internal" href="#mt:int:props:conv:bct">Theorem 3.4</a> applies in the bottom line.</p>
+<p>Taking the sup over <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \liminf_{n \rightarrow \infty}\int g_n\,\text d \mu &amp;= \sup_m \liminf_{n \rightarrow \infty}\int g_n\,\text d \mu \\
+    &amp;\xrightarrow[n \rightarrow \infty]{} \sup_m \int_{F_m}(g \wedge m)\,\text d \mu \\
+    &amp;= \int g\,\text d \mu,\end{split}\]</div>
+<p>Notice that by definition of convergence from below, that by <a class="reference internal" href="basics.html#mt:int:basics:nn:int_compute">Lemma 3.2</a> applies in the bottom line, and we are finished.</p>
+</div>
+<p>This is clearly much more general than the Bounded Convergence Theorem: the only restriction we have here is that we have a sequence of non-negative functions; we don’t need a sequence of functions which is bounded and converging in measure.</p>
+<p>When the functions are converging below, we can further clarify the nature of the convergence with a slight extension of Fatou’s Lemma: the integrals will also converge from below. In other words, functions converging “monotonely” have “monotonely” converging integrals:</p>
+<div class="proof theorem admonition" id="mt:int:props:conv:mct">
+<p class="admonition-title"><span class="caption-number">Theorem 3.6 </span> (Monotone Convergence)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of non-negative functions; e.g., <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>, where <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. (<span class="math notranslate nohighlight">\(f_n\)</span> is monotone increasing to <span class="math notranslate nohighlight">\(f\)</span>). Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int f_n\,\text d \mu \uparrow \int f\,\text d \mu,\]</div>
+<p>as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</section>
+</div><p>As you notice, this theorem statement looks a lot like the statement from Fatou’s Lemma <a class="reference internal" href="#mt:int:props:conv:fatou">Theorem 3.5</a>, and in fact, we’ll use some of the intuition from Fatou’s Lemma to make this proof rigorous:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. By Fatou’s Lemma <a class="reference internal" href="#mt:int:props:conv:fatou">Theorem 3.5</a>, <span class="math notranslate nohighlight">\(f_n \geq 0\)</span> implies that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \liminf_{n \rightarrow \infty} \int f_n\,\text d \mu &amp;\geq \int \liminf_{n \rightarrow \infty}f_n\,\text d \mu \\
+    &amp;= \int f \,\text d \mu,\end{split}\]</div>
+<p>since <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> by supposition.</p>
+<p>Conversely, as <span class="math notranslate nohighlight">\(f_n \overset{a.e.}{\leq} f\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb n\)</span>, we see that by <a class="reference internal" href="basics.html#mt:int:basics:int:cor:ineq">Corollary 3.1</a>:</p>
+<div class="math notranslate nohighlight">
+\[    \limsup_{n \rightarrow \infty}\int f_n\,\text d \mu \leq \int f \,\text d \mu.\]</div>
+<p>Together, this gives that:</p>
+<div class="math notranslate nohighlight">
+\[    \lim_{n \rightarrow \infty}\int f_n\,\text d \mu = \int f \,\text d \mu,\]</div>
+<p>Which is because we have that <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}\int f_n\,\text d \mu \leq \int f \,\text d \mu \leq \limsup_{n \rightarrow \infty}\int f_n\,\text d \mu\)</span>, which only holds in the case of equality because the <span class="math notranslate nohighlight">\(\limsup\)</span> is greater than or equal to the <span class="math notranslate nohighlight">\(\liminf\)</span> of the same sequence.</p>
+<p>Finally, note that <span class="math notranslate nohighlight">\(0 \leq f_n \uparrow f\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. as <span class="math notranslate nohighlight">\(n\rightarrow \infty\)</span>, which implies that <span class="math notranslate nohighlight">\(0 \overset{a.e.}{\leq} f_n \overset{a.e.}{\leq} f_{n + 1}\)</span>, so by <a class="reference internal" href="basics.html#mt:int:basics:int:cor:ineq">Corollary 3.1</a>, we have that:</p>
+<div class="math notranslate nohighlight">
+\[\int f_n\,\text d \mu \leq \int f_{n + 1}\,\text d \mu\]</div>
+<p>for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(\{\int f_n\,\text d \mu\}_n\)</span> is a monotone non-decreasing sequence, and its limit is <span class="math notranslate nohighlight">\(\int f \,\text d \mu\)</span>, as desired.</p>
+</div>
+<p>Next, we’ll see another application of Fatou’s Lemma, which is called the Dominated Convergence Theorem. Basically, what this theorem asserts is that if a sequence of measurable functions <span class="math notranslate nohighlight">\(f_n\)</span> are converging almost surely to another function <span class="math notranslate nohighlight">\(f\)</span>, and can be <em>dominated</em> by a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function, then the integrals converge, too:</p>
+<div class="proof theorem admonition" id="mt:int:props:conv:dct">
+<p class="admonition-title"><span class="caption-number">Theorem 3.7 </span> (Dominated Convergence)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f \in m\mathcal F\)</span> is a function where <span class="math notranslate nohighlight">\(f_n \xrightarrow[n \rightarrow \infty]{a.e.} f\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(g\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable,</p></li>
+<li><p><span class="math notranslate nohighlight">\(|f_n| \leq g\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>.</p></li>
+</ol>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    \int f_n\,\text d \mu \xrightarrow[n \rightarrow \infty]{} \int f \,\text d \mu.\]</div>
+</section>
+</div><p>The idea here is that <span class="math notranslate nohighlight">\(g\)</span> is dominating the <span class="math notranslate nohighlight">\(f_n\)</span> by condition 4. Consequently, since <span class="math notranslate nohighlight">\(f_n\)</span> are converging a.e. to <span class="math notranslate nohighlight">\(f\)</span>, then <span class="math notranslate nohighlight">\(g\)</span> dominates <span class="math notranslate nohighlight">\(f\)</span> too, which suggests that <span class="math notranslate nohighlight">\(f\)</span> (and further, the entire sequence <span class="math notranslate nohighlight">\(\{f_n\}\)</span>) are <span class="math notranslate nohighlight">\(\mu\)</span>-integrable. Intuitively, this is because the integral of any function which is dominated by <span class="math notranslate nohighlight">\(g\)</span> can be at most <span class="math notranslate nohighlight">\(\int |g|\,\text d \mu\)</span>.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Note that since <span class="math notranslate nohighlight">\(|f_n| \leq g\)</span>, then <span class="math notranslate nohighlight">\(-f_n \leq g \Rightarrow f_n + g \geq 0\)</span>, and consequently, Fatou’s lemma applies. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \liminf_{n \rightarrow \infty}\int (f_n + g) \,\text d \mu &amp;\geq \int \liminf_{n \rightarrow \infty}\left(f_n + g\right)\,\text d \mu,\,\,\,\,\text{Fatou} \\
+    &amp;= \int (f + g) \,\text d \mu,\,\,\,\,f_n \xrightarrow[]{a.e.} f.\end{split}\]</div>
+<p>By subtracting <span class="math notranslate nohighlight">\(\int g \,\text d \mu\)</span> from both sides:</p>
+<div class="math notranslate nohighlight">
+\[    -\int g \,\text d \mu \Rightarrow \liminf_{n \rightarrow \infty}\int f_n \,\text d \mu \geq \int f \,\text d \mu,\]</div>
+<p>which follows by <a class="reference internal" href="basics.html#mt:int:basics:muint:sum">Property 3.12</a>.</p>
+<p>Applying the same approach to <span class="math notranslate nohighlight">\(-f_n\)</span>, we obtain that <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty}-\int f_n\,\text d \mu \geq -\int f\,\text d\mu\)</span>, which implie sthat <span class="math notranslate nohighlight">\(\limsup_{n \rightarrow \infty}f_n\,\text d \mu \leq \int f\,\text d \mu\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(\liminf_{n \rightarrow \infty}\int f_n \,\text d \mu \geq \int f \,\text d \mu \geq  \limsup_{n \rightarrow \infty}\int f_n \,\text d \mu\)</span>, equality must hold, since the <span class="math notranslate nohighlight">\(\limsup\)</span> is greater than or equal to the <span class="math notranslate nohighlight">\(\liminf\)</span> of the same sequence.</p>
+</div>
+</section>
+</section>
+<section id="measure-restriction">
+<h2><span class="section-number">3.2.3. </span>Measure Restriction<a class="headerlink" href="#measure-restriction" title="Permalink to this headline">#</a></h2>
+<p>The final building block we will need in integration is the concept of measure restrictions. As its name somewhat suggests, a <em>measure restriction</em> basically lets us take an existing measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, and define a <em>new</em> measure space from only a subset <span class="math notranslate nohighlight">\(F \subseteq \Omega\)</span> that <em>agrees with</em> <span class="math notranslate nohighlight">\(\mu\)</span> on a new <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra that is, intuitively, induced by <span class="math notranslate nohighlight">\(F\)</span>. In some sense, this is kind of the opposite of the extension theorems we saw previously.</p>
+<p>If you recall, we built machinery that worked on <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras by building machinery on much simpler families of sets (such as algebras), and then simply argued that the machinery also, by construction <em>had</em> to work on the <span class="math notranslate nohighlight">\(\sigma\)</span>-generated algebra, too. Here, we’re going to take existing machinery that works on a measure space, and show that we can take arbitrary subsets of the event space <span class="math notranslate nohighlight">\(\Omega\)</span> and use it to produce new measurable spaces.</p>
+<p>Let’s give this idea a go:</p>
+<div class="proof corollary admonition" id="corollary-13">
+<p class="admonition-title"><span class="caption-number">Corollary 3.5 </span> (Defining a measure by restriction)</p>
+<section class="corollary-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and let:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{F_n\}_{n \in \mathbb N} \subseteq \mathcal F\)</span> is a set of disjoint events,</p></li>
+<li><p><span class="math notranslate nohighlight">\(F = \bigsqcup_{n \in \mathbb N} F_n\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(f \in m\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function.</p></li>
+</ol>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[    \sum_{n = 1}^\infty \int_{F_n}f \,\text d \mu = \int_F f\,\text d \mu.\]</div>
+<p>Further, if <span class="math notranslate nohighlight">\(f \geq 0\)</span>, and for any <span class="math notranslate nohighlight">\(A \in \mathcal F\)</span> s.t. <span class="math notranslate nohighlight">\(A \subseteq F\)</span>, then <span class="math notranslate nohighlight">\(\nu(A) = \int_A f\,\text d\mu\)</span> defines a measure on <span class="math notranslate nohighlight">\((F, \mathcal F_F)\)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[    \mathcal F_F \triangleq \{A \subseteq F : A \in \mathcal F\}.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Define <span class="math notranslate nohighlight">\(f_m \triangleq f \mathbb 1_{\left\{\bigsqcup_{n \in [m]}F_n\right\}}\)</span>, and let <span class="math notranslate nohighlight">\(f_F \triangleq f\mathbb 1_{\{F\}}\)</span>. Then:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(f_m \xrightarrow[n \rightarrow \infty]{} f_F\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(|f_m| \leq f\)</span> for all <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span> by construction since <span class="math notranslate nohighlight">\(F_m \subseteq F\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int |f|\,\text d \mu &lt; \infty\)</span>, since by supposition, <span class="math notranslate nohighlight">\(f\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable.</p></li>
+</ol>
+<p>Then by the Dominated Convergence <a class="reference internal" href="#mt:int:props:conv:dct">Theorem 3.7</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_F f\,\text d \mu = \int f_F \,\text d \mu &amp;\equiv \int \lim_{m \rightarrow \infty}f \mathbb 1_{\left\{\bigsqcup_{n \in [m]}F_n\right\}}\,\text d\mu \\
+    &amp;= \lim_{m \rightarrow \infty}\int_{\bigsqcup_{n \in [m]}F_n} f \,\text d \mu,\,\,\,\,\text{DCT}\\
+    &amp;= \lim_{m \rightarrow \infty}\sum_{n \in [m]}\int_{F_n}f \,\text d \mu,\,\,\,\,F_m\text{ are disjoint} \\
+    &amp;= \sum_{n = 1}^\infty \int_{F_m} f \,\text d \mu.\end{split}\]</div>
+<p>The second to last result follows by noting that <span class="math notranslate nohighlight">\(\int_{\bigsqcup_{n \in [m]}F_n}f\,\text d\mu = \int \sum_{n \in [m]}\mathbb 1_{\{F_n\}}f\,\text d\mu\)</span> by the disjointness of <span class="math notranslate nohighlight">\(\{F_m\}\)</span>.</p>
+<p>Then by construction, <span class="math notranslate nohighlight">\(\nu\)</span> is countably additive.</p>
+<p>If further <span class="math notranslate nohighlight">\(f \geq 0\)</span>, then <span class="math notranslate nohighlight">\(\nu \geq 0\)</span> by construction, indicating that <span class="math notranslate nohighlight">\(\nu\)</span> is a measure since it is countably additive and non-negative.</p>
+<p>We can repeat this argument for any <span class="math notranslate nohighlight">\(A \subseteq F\)</span> and a countably additive disjoint sequence of events <span class="math notranslate nohighlight">\(\{A_n\}\)</span> whose union is <span class="math notranslate nohighlight">\(A\)</span> to obtain that the desired result holds for any <span class="math notranslate nohighlight">\(A \in \mathcal F_F\)</span>.</p>
+<p>To see that <span class="math notranslate nohighlight">\((F, \mathcal F_F)\)</span> is a measurable space, all that’s left is to show that <span class="math notranslate nohighlight">\(\mathcal F_F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(F\)</span>:</p>
+<p>1. Contains <span class="math notranslate nohighlight">\(F\)</span>: Since <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span> and <span class="math notranslate nohighlight">\(F \subseteq F\)</span>, then <span class="math notranslate nohighlight">\(F \in \mathcal F_F\)</span> by definition.</p>
+<p>2. Closed under complements: Suppose that <span class="math notranslate nohighlight">\(A \in \mathcal F_F\)</span>.</p>
+<p>Define <span class="math notranslate nohighlight">\(A_F^c = F \setminus A \equiv F \cap A^c \subseteq F\)</span> (<span class="math notranslate nohighlight">\(A_F^c\)</span> is the complement of <span class="math notranslate nohighlight">\(A\)</span> in <span class="math notranslate nohighlight">\(F\)</span>, and <span class="math notranslate nohighlight">\(A^c\)</span> is the complement of <span class="math notranslate nohighlight">\(A\)</span> in <span class="math notranslate nohighlight">\(\Omega\)</span>).</p>
+<p>Notice that as <span class="math notranslate nohighlight">\(F, A^c \in \mathcal F\)</span>, that <span class="math notranslate nohighlight">\(A_F^c \in \mathcal F\)</span>, as <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra (and hence closed under intersections and complements).</p>
+<p>Since <span class="math notranslate nohighlight">\(F \cap A^c \subseteq F\)</span>, then <span class="math notranslate nohighlight">\(A_F^c = F \cap A^c \in \mathcal F_F\)</span>, by definition.</p>
+<p>3. Closed under countable unions: Suppose that <span class="math notranslate nohighlight">\(\{A_n\} \subseteq \mathcal F_F\)</span> is a disjoint sequence of sets.</p>
+<p>Then <span class="math notranslate nohighlight">\(A = \bigsqcup_n A_n \subseteq F\)</span>, because element-wise, each <span class="math notranslate nohighlight">\(A_n \subseteq F\)</span>, and hence the union cannot be <span class="math notranslate nohighlight">\(\supset F\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(\mathcal F\)</span> was a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, then <span class="math notranslate nohighlight">\(A \in \mathcal F\)</span>, and <span class="math notranslate nohighlight">\(A \subseteq F\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(A \in \mathcal F_F\)</span>, by definition.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
