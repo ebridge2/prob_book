@@ -797,7 +797,7 @@ title="Print to PDF"
 <p>Proof. With some manipulations, notice that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \left(1 + \frac{c_n}{n}\right)^n &amp;= \exp\left\{n\log\left(1 + \frac{c_n}{n}\right)\right\} \\
-    &amp;= \exp\left\{n\log\left(\frac{c_n}{n} + o\left(\left|\frac{c_n}{n}\right|^2\right)\right)\right\}\end{split}\]</div>
+    &amp;= \exp\left\{n\left(\frac{c_n}{n} + o\left(\left|\frac{c_n}{n}\right|^2\right)\right)\right\}\end{split}\]</div>
 <p>Which is an order <span class="math notranslate nohighlight">\(1\)</span> Taylor expansion of <span class="math notranslate nohighlight">\(\log(1 + x)\)</span>, by <a class="reference internal" href="#foundations:series:taylor:log">Example 1.3</a>. For large <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(o\left(\left|\frac{c_n}{n}\right|^2\right) = o\left(\left|\frac{1}{n}\right|^2\right)\)</span>. Then for large <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \left(1 + \frac{c_n}{n}\right)^n &amp;= \exp\left\{c_n + o(n^{-1})\right\} \\
