@@ -1051,7 +1051,7 @@ title="Print to PDF"
     &amp;= \lim_{n \rightarrow \infty}\int_{X(\Omega)}f_n\,\text d \left(X_*\mu\right),\,\,\,\,\text{Result from 2.} \\
     &amp;= \int_{X(\Omega)}\lim_{n \rightarrow \infty}f_n\,\text d \left(X_*\mu\right),\,\,\,\,\text{MCT, as }f_n \uparrow f, f_n \geq 0 \\
     &amp;= \int_{X(\Omega)}f \,\text d \left(X_*\mu\right).\end{split}\]</div>
-<p>4. Integrable functions: Write <span class="math notranslate nohighlight">\(f(x) = f^+(x) - f^-(x)\)</span>, where <span class="math notranslate nohighlight">\(f^+(x) = \wedge 0\)</span>, and <span class="math notranslate nohighlight">\(f^-(x) = (-f(x)) \wedge 0\)</span>, as-per <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>.</p>
+<p>4. Integrable functions: Write <span class="math notranslate nohighlight">\(f(x) = f^+(x) - f^-(x)\)</span>, where <span class="math notranslate nohighlight">\(f^+(x) = f(x) \wedge 0\)</span>, and <span class="math notranslate nohighlight">\(f^-(x) = (-f(x)) \wedge 0\)</span>, as-per <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>.</p>
 <p>Then since <span class="math notranslate nohighlight">\(f(X)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, both <span class="math notranslate nohighlight">\(f^+(X)\)</span> and <span class="math notranslate nohighlight">\(f^-(X)\)</span> are <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, by Equation <a class="reference internal" href="basics.html#equation-mt-int-basics-muint-helper">(3.4)</a>.</p>
 <p>Direct application of <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a> gives:</p>
 <div class="math notranslate nohighlight">
@@ -1074,7 +1074,7 @@ title="Print to PDF"
 \[\begin{split}\int_{S \setminus X(\Omega)} f\, \text d\left(X_*\mu\right) &amp;= \int_{\omega \in S \setminus X(\Omega)} f\, \text d\left(\mu\circ X^{-1}\right) \\
 &amp;= \int_{\omega \in S \setminus X(\Omega)} f\, \text d\left(\mu(\varnothing)\right) \\
 &amp;= 0.\end{split}\]</div>
-<p>as the right-most quantity is <span class="math notranslate nohighlight">\(0\)</span>. Therefore:</p>
+<p>Therefore:</p>
 <div class="math notranslate nohighlight">
 \[\int_{X(\Omega)} f\, \text d\left(X_*\mu\right) &amp;= 
 \int_{S} f\, \text d\left(X_*\mu\right).\]</div>
