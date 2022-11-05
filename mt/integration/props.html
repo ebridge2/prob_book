@@ -543,6 +543,11 @@ title="Print to PDF"
    3.2.3. Measure Restriction
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-variables">
+   3.2.4. Change of variables
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -599,6 +604,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#measure-restriction">
    3.2.3. Measure Restriction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-variables">
+   3.2.4. Change of variables
   </a>
  </li>
 </ul>
@@ -865,7 +875,7 @@ title="Print to PDF"
 <p>Then:</p>
 <div class="math notranslate nohighlight">
 \[    g_n(\omega) \uparrow g(\omega) = \sup_{n \rightarrow \infty}g_n(\omega) = \liminf_{n \rightarrow \infty} f_n(\omega).\]</div>
-<p>Since <span class="math notranslate nohighlight">\(\ing f_n\,\text d \mu \geq \int g_n\,\text d \mu\)</span> by <a class="reference internal" href="basics.html#mt:int:basics:int:cor:ineq">Corollary 3.1</a>, it is sufficient to show that:</p>
+<p>Since <span class="math notranslate nohighlight">\(\int f_n\,\text d \mu \geq \int g_n\,\text d \mu\)</span> by <a class="reference internal" href="basics.html#mt:int:basics:int:cor:ineq">Corollary 3.1</a>, it is sufficient to show that:</p>
 <div class="math notranslate nohighlight">
 \[    \liminf_{n \rightarrow \infty}\int g_n\,\text d \mu \geq \inf g \,\text d\mu.\]</div>
 <p>Let <span class="math notranslate nohighlight">\(\{F_m\} \subseteq \mathcal F\)</span> be a sequence of sets which finite measure, where <span class="math notranslate nohighlight">\(F_m \uparrow \Omega\)</span> as <span class="math notranslate nohighlight">\(m \rightarrow \infty\)</span>. Since <span class="math notranslate nohighlight">\(g_n \geq 0\)</span>, then for fixed <span class="math notranslate nohighlight">\(m\)</span>:</p>
@@ -887,7 +897,7 @@ title="Print to PDF"
 <p>This is clearly much more general than the Bounded Convergence Theorem: the only restriction we have here is that we have a sequence of non-negative functions; we don’t need a sequence of functions which is bounded and converging in measure.</p>
 <p>When the functions are converging below, we can further clarify the nature of the convergence with a slight extension of Fatou’s Lemma: the integrals will also converge from below. In other words, functions converging “monotonely” have “monotonely” converging integrals:</p>
 <div class="proof theorem admonition" id="mt:int:props:conv:mct">
-<p class="admonition-title"><span class="caption-number">Theorem 3.5 </span> (Monotone Convergence)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 3.5 </span> (Monotone Convergence (MCT))</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where <span class="math notranslate nohighlight">\(\{f_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of non-negative functions; e.g., <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>, where <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>-a.e. (<span class="math notranslate nohighlight">\(f_n\)</span> is monotone increasing to <span class="math notranslate nohighlight">\(f\)</span>). Then:</p>
 <div class="math notranslate nohighlight">
@@ -916,7 +926,7 @@ title="Print to PDF"
 </div>
 <p>Next, we’ll see another application of Fatou’s Lemma, which is called the Dominated Convergence Theorem. Basically, what this theorem asserts is that if a sequence of measurable functions <span class="math notranslate nohighlight">\(f_n\)</span> are converging almost surely to another function <span class="math notranslate nohighlight">\(f\)</span>, and can be <em>dominated</em> by a <span class="math notranslate nohighlight">\(\mu\)</span>-integrable function, then the integrals converge, too:</p>
 <div class="proof theorem admonition" id="mt:int:props:conv:dct">
-<p class="admonition-title"><span class="caption-number">Theorem 3.6 </span> (Dominated Convergence)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 3.6 </span> (Dominated Convergence (DCT))</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>, where:</p>
 <ol class="simple">
@@ -992,6 +1002,65 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(A = \bigsqcup_n A_n \subseteq F\)</span>, because element-wise, each <span class="math notranslate nohighlight">\(A_n \subseteq F\)</span>, and hence the union cannot be <span class="math notranslate nohighlight">\(\supset F\)</span>.</p>
 <p>Since <span class="math notranslate nohighlight">\(\mathcal F\)</span> was a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, then <span class="math notranslate nohighlight">\(A \in \mathcal F\)</span>, and <span class="math notranslate nohighlight">\(A \subseteq F\)</span>.</p>
 <p>Then <span class="math notranslate nohighlight">\(A \in \mathcal F_F\)</span>, by definition.</p>
+</div>
+</section>
+<section id="change-of-variables">
+<h2><span class="section-number">3.2.4. </span>Change of variables<a class="headerlink" href="#change-of-variables" title="Permalink to this headline">#</a></h2>
+<p>Just because we showed that you <em>can</em> calculate all the integrals we have discussed thus far, doesn’t mean we <em>want to</em>. The reason that we have introduced all this new notation, which might feel cumbersome at first, is that it will ultimately make your understanding of random variables and concepts deriving from all the things we’ve discussed thus far a <em>lot</em> easier to wrap your head around. Plainly, the expressions just happen to be a lot simpler, and the rules easier to follow.</p>
+<p>However, when you actually need to arrive at a numerical solution to an integral, it’s typically a lot easier to use the rules of Riemann integration that you’ve learned through Calculus than it is to use rules like <a class="reference internal" href="basics.html#mt:int:basics:bounded_int">Theorem 3.1</a>, <a class="reference internal" href="basics.html#mt:int:basics:nn:int_def">Definition 3.8</a>, or <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>. So, ideally, we will be able to benefit from the conceptual niceties of the measure-theoretic integration intuition that we’ve developed, but <em>still</em> be able to calculate these things numerically in practice. This is done via the <em>change of variables</em>, where we <em>change</em> the sets we are integrating over from one set to another, using a measurable function:</p>
+<div class="proof lemma admonition" id="mt:int:props:cov">
+<p class="admonition-title"><span class="caption-number">Lemma 3.9 </span> (Change of variables)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and that <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, wnere <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span> are random variables, and either:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(f \geq 0\)</span>, or</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(X)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable.</p></li>
+</ol>
+<p>Then with <span class="math notranslate nohighlight">\(X_*\mu = \mu \circ X^{-1} : X(\Omega) \rightarrow \bar{\mathbb R}_{\geq 0}\)</span>, and <span class="math notranslate nohighlight">\(X(\Omega) \triangleq \{X(\omega) : \omega \in \Omega\}\)</span>, the <em>pushforward measure</em> of <span class="math notranslate nohighlight">\(\mu\)</span> (<a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>):</p>
+<div class="math notranslate nohighlight">
+\[    \int_\Omega f(X)\,\text d \mu = \int_{X(\Omega)} f\, \text d\left(X_*\mu\right).\]</div>
+</section>
+</div><p>So, what does this formula let us do? What this formula allows is that we can take a measurable function like <span class="math notranslate nohighlight">\(X\)</span>, we can compute functions of this measurable function <span class="math notranslate nohighlight">\(f(X)\)</span>, and then can compute integrals of <span class="math notranslate nohighlight">\(f(X)\)</span> using <em>not</em> the space upon which <span class="math notranslate nohighlight">\(X\)</span> was defined, but on the space upon which <span class="math notranslate nohighlight">\(f\)</span> is defined. If the codomain, for instance, is a Riemann space (e.g., <span class="math notranslate nohighlight">\(S = \mathbb R^d\)</span>), then we have it really nice: we can use all of the rules we learned in Riemann calculus (the traditional approach to single and multivariable introductory calculus courses). This is called a <em>change of variables</em> because we are <em>changing</em> from integrating over <span class="math notranslate nohighlight">\(\Omega\)</span> to <span class="math notranslate nohighlight">\(X(\Omega)\)</span> using the pushforward measure <span class="math notranslate nohighlight">\(X_*\mu\)</span>.</p>
+<p>For now, let’s work on proving this result. We’ll do it in <span class="math notranslate nohighlight">\(5\)</span> steps, using a similar approach to what we did when we first learned about integration in <a class="reference internal" href="basics.html#mt-int-basics"><span class="std std-numref">Section 3.1</span></a>, where we build up the equality from indicators, to simple functions, to bounded functions, to non-negative functions, to <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions. Throughout the below proof, we will repeatedly use the fact that the pushforward measure is a measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward_is_meas">Lemma 2.7</a>. This means that measurable functions <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span> will be equipped with all of the niceties that we learned about in the preceding chapter <a class="reference internal" href="basics.html#mt-int-basics"><span class="std std-numref">Section 3.1</span></a> on integration:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. 1. Indicator functions: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, and <span class="math notranslate nohighlight">\(f \triangleq \mathbb 1_{\{B\}}(s)\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega \mathbb 1_{\{B\}}(X) \,\text d \mu &amp;= \mu(X \in B) \equiv \mu \circ X^{-1}(B) \\
+    &amp;= X_*\mu(B) \\
+    &amp;= \int_{X(\Omega)} \mathbb 1_{\{B\}}\,\text d\left(X_*\mu\right),\end{split}\]</div>
+<p>Where in the final line, we use that <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span>, the definition of a pushforward measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>, and the definition of the integral of an indicator with respect to a measure, <a class="reference internal" href="basics.html#mt:int:basics:int:simplefn">Definition 3.2</a> (noting that an indicator is a simple function).
+2. Simple functions: Suppose that <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]} \subseteq \Sigma\)</span> for <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, and <span class="math notranslate nohighlight">\(\{\alpha_n\}_{n \in [m]} \subseteq \mathbb R\)</span>, where <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]}\)</span> are disjoint.</p>
+<p>Define <span class="math notranslate nohighlight">\(f(s) \triangleq \sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}(s)\)</span> to be a simple function. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \int_{\Omega}\sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}(X)\,\text d \mu \\
+    &amp;= \sum_{n \in [m]}\int_{\Omega}\alpha_n\mathbb 1_{\{B_n\}}(X)\,\text d \mu,\end{split}\]</div>
+<p>Which follows since the sum of simple functions is simple by <a class="reference internal" href="basics.html#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a>. Continuing and using the result from 1.:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \sum_{n \in [m]}\int_{X(\Omega)} \alpha_n\mathbb 1_{\{B_n\}}\,\text d\left(X_*\mu\right) \\
+    &amp;= \int_{X(\Omega)}\sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}\,\text d\left(X_*\mu\right),\,\,\,\,\text{Sum of simple fns is simple} \\
+    &amp;= \int_{X(\Omega)}f\,\text d \left(X_*\mu\right).\end{split}\]</div>
+<p>Which follows since by <a class="reference internal" href="basics.html#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a> and that the pushforward measure is a measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>.
+3. Non-negative functions: Suppose <span class="math notranslate nohighlight">\(f \geq 0\)</span>, and define:</p>
+<div class="math notranslate nohighlight">
+\[    f_n(x) \triangleq \frac{\lfloor 2^n f(x)\rfloor}{2^n}\wedge n.\]</div>
+<p>Intuitively, <span class="math notranslate nohighlight">\(f_n(x)\)</span> is <span class="math notranslate nohighlight">\(f(x)\)</span> rounded off to the nearest <span class="math notranslate nohighlight">\(\frac{1}{2^n}\)</span> for a given <span class="math notranslate nohighlight">\(x\)</span>, and is further upper-bounded by <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Note that each <span class="math notranslate nohighlight">\(f_n(x)\)</span> is simple because with an upper bound of <span class="math notranslate nohighlight">\(n\)</span>, there are finitely many ways to round off the value <span class="math notranslate nohighlight">\(f_n(x)\)</span> (taking values in <span class="math notranslate nohighlight">\([0, n]\)</span>) to the nearest <span class="math notranslate nohighlight">\(\frac{1}{2^n}\)</span> (there are <span class="math notranslate nohighlight">\(2^n n\)</span> possible ways to do this).</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. By definition, <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>, and by construction, since <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, then <span class="math notranslate nohighlight">\(f_n(X) \uparrow f(X)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> absolutely (and certainly also <span class="math notranslate nohighlight">\(a.e.\)</span>). Then by the MCT <a class="reference internal" href="#mt:int:props:conv:mct">Theorem 3.5</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \lim_{n \rightarrow \infty}\int_\Omega f_n(X)\,\text d \mu \\
+    &amp;= \lim_{n \rightarrow \infty}\int_{X(\Omega)}f_n\,\text d \left(X_*\mu\right),\,\,\,\,\text{Result from 2.} \\
+    &amp;= \int_{X(\Omega)}\lim_{n \rightarrow \infty}f_n\,\text d \left(X_*\mu\right),\,\,\,\,\text{MCT, as }f_n \uparrow f, f_n \geq 0 \\
+    &amp;= \int_{X(\Omega)}f \,\text d \left(X_*\mu\right).\end{split}\]</div>
+<p>4. Integrable functions: Write <span class="math notranslate nohighlight">\(f(x) = f^+(x) - f^-(x)\)</span>, where <span class="math notranslate nohighlight">\(f^+(x) = \wedge 0\)</span>, and <span class="math notranslate nohighlight">\(f^-(x) = (-f(x)) \wedge 0\)</span>, as-per <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(f(X)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, both <span class="math notranslate nohighlight">\(f^+(X)\)</span> and <span class="math notranslate nohighlight">\(f^-(X)\)</span> are <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, by Equation <a class="reference internal" href="basics.html#equation-mt-int-basics-muint-helper">(3.4)</a>.</p>
+<p>Direct application of <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a> gives:</p>
+<div class="math notranslate nohighlight">
+\[    \int_\Omega f(X) \,\text d \mu = \int_\Omega f^+(X) \,\text d \mu - \int_\Omega f^-(X) \,\text d \mu.\]</div>
+<p>Note further that <span class="math notranslate nohighlight">\(f^+, f^- \geq 0\)</span>. Then by 3.:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f^+(X) \,\text d \mu - \int_\Omega f^-(X) \,\text d \mu &amp;= \int_{X(\Omega)}f^+ \,\text d \left(X_*\mu\right) - \int_{X(\Omega)}f^- \,\text d \left(X_*\mu\right) \\
+    &amp;= \int_{X(\Omega)}f \,\text d \left(X_*\mu\right),\end{split}\]</div>
+<p>Where in the final line, we used that <span class="math notranslate nohighlight">\(f\)</span> is a measurable function with domain <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and codomain <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>, and the definition of a pushforward measure <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>.</p>
 </div>
 </section>
 </section>

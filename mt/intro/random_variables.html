@@ -536,6 +536,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pushforward-measure">
+   2.3.4. Pushforward measure
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -586,6 +591,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pushforward-measure">
+   2.3.4. Pushforward measure
+  </a>
  </li>
 </ul>
 
@@ -890,7 +900,7 @@ title="Print to PDF"
 <p>Which follows because <span class="math notranslate nohighlight">\(X_n \in m(\mathcal F, \mathcal R)\)</span>, so <span class="math notranslate nohighlight">\(\{X_n \geq r\} \in \mathcal F\)</span> by <a class="reference internal" href="#mt:intro:rvs:elem:gen_sets_borel">Corollary 2.1</a>, and <span class="math notranslate nohighlight">\(\mathcal F\)</span> is closed under countable intersections.</p>
 <p>Then by <a class="reference internal" href="#mt:intro:rvs:elem:gen_sets_borel">Corollary 2.1</a>, <span class="math notranslate nohighlight">\(Y \in m(\mathcal F, \mathcal R)\)</span>.</p>
 </div>
-<p>This theorem asserts that the infimum of a sequence <span class="math notranslate nohighlight">\((X_n)\)</span> of random variables is a random variable, too. The same holds for the supremum:</p>
+<p>This theorem asserts that the infimum of a sequence <span class="math notranslate nohighlight">\(\{X_n\}\)</span> of random variables is a random variable, too. The same holds for the supremum:</p>
 <div class="proof property admonition" id="mt:intro:rvs:elem:ext:sup">
 <p class="admonition-title"><span class="caption-number">Property 2.17 </span> (Supremum is measurable)</p>
 <section class="property-content" id="proof-content">
@@ -923,6 +933,53 @@ title="Print to PDF"
 <p>Then <span class="math notranslate nohighlight">\(Y = \sup_n Y_n \in m(\mathcal F, \mathcal R)\)</span>, by <a class="reference internal" href="#mt:intro:rvs:elem:ext:inf">Property 2.16</a>.</p>
 </div>
 </section>
+</section>
+<section id="pushforward-measure">
+<h2><span class="section-number">2.3.4. </span>Pushforward measure<a class="headerlink" href="#pushforward-measure" title="Permalink to this headline">#</a></h2>
+<p>As it turns out, we can use measurable functions to obtain measures on the codomain. This process is called “pushing forward” the measure from one measure space to the measurable space in the codomain, via the measurable function:</p>
+<div class="proof definition admonition" id="mt:intro:rvs:pushforward">
+<p class="admonition-title"><span class="caption-number">Definition 2.39 </span> (Pushforward measure)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. Then the <strong>pushforward</strong> of <span class="math notranslate nohighlight">\(\mu\)</span> is defined as the measure <span class="math notranslate nohighlight">\(X_*\mu : \Sigma \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> where for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    X_*\mu(B) \triangleq \mu\left(X^{-1}(B)\right).\]</div>
+</section>
+</div><p>Remember that <span class="math notranslate nohighlight">\(\mu\)</span> measures sets in the domain; e.g., <span class="math notranslate nohighlight">\(\mu : \mathcal F \rightarrow \bar{\mathbb R}_{\geq 0}\)</span>. Here, the <em>pushforward measure</em> is, instead, measuring the codomain, by using the <em>inverse mapping</em> of <span class="math notranslate nohighlight">\(X\)</span>. So, in words, <span class="math notranslate nohighlight">\(X_*(\mu)(B)\)</span> for some <span class="math notranslate nohighlight">\(B \in \Sigma\)</span> is first looking at the points of the domain which map to <span class="math notranslate nohighlight">\(B\)</span> under <span class="math notranslate nohighlight">\(X\)</span> (the preimage of <span class="math notranslate nohighlight">\(B\)</span> under <span class="math notranslate nohighlight">\(X\)</span>), and then measuring that set using the measure <span class="math notranslate nohighlight">\(\mu\)</span>. It is called a <em>pushforward</em> because we are “pushing” the measure from one measurable space to the other. We will learn more about the pushforward measure when we try to compute measure-theoretic integrals, but for now all that we need to know is that it’s a measure. To do this, we’ll need a quick lemma:</p>
+<div class="proof lemma admonition" id="mt:intro:rvs:pushforward:preimage">
+<p class="admonition-title"><span class="caption-number">Lemma 2.6 </span> (Preimage of disjoint sets are disjoint)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. Let <span class="math notranslate nohighlight">\(\{F_n\}_{n \in \mathbb N} \subseteq \mathcal F\)</span> that are disjoint. Then <span class="math notranslate nohighlight">\(\{X^{-1}(F_n)\}_{n \in \mathbb N}\)</span> where <span class="math notranslate nohighlight">\(X^{-1}(F_n) \equiv \{X \in F_n\} \equiv \{\omega \in \Omega : X(\omega) \in F_n\}\)</span> are disjoint.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. It suffices to show that if <span class="math notranslate nohighlight">\(\omega \in X^{-1}(F_n)\)</span>, then for all <span class="math notranslate nohighlight">\(m \neq n\)</span>, <span class="math notranslate nohighlight">\(\omega \not \in X^{-1}(F_m)\)</span>, by definition of disjointness.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\omega \in X^{-1}(F_n) \equiv \{\omega \in \Omega : X(\omega) \in F_n\}\)</span>, so <span class="math notranslate nohighlight">\(X^{-1}(\omega) \in F_n\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(F_n\)</span> are disjoint, and <span class="math notranslate nohighlight">\(X\)</span> is a function (no <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span> can be mapped to multiple values in the codomain), then for all <span class="math notranslate nohighlight">\(m \neq n\)</span>, <span class="math notranslate nohighlight">\(\omega \not \in X^{-1}(F_m)\)</span>.</p>
+</div>
+<p>And now we are ready to prove the result we intended to:</p>
+<div class="proof lemma admonition" id="mt:intro:rvs:pushforward_is_meas">
+<p class="admonition-title"><span class="caption-number">Lemma 2.7 </span> (Pushforward measure is a measure)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, and let <span class="math notranslate nohighlight">\(X_*\mu : \Sigma \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> be the pushforward measure of <span class="math notranslate nohighlight">\(\mu\)</span>. Then <span class="math notranslate nohighlight">\(X_*\mu\)</span> is a measure.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. To show that <span class="math notranslate nohighlight">\(X_*\mu\)</span> is a measure, we need to show that it is non-negative, countably additive, and that the measure of the empty set is <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>1. Non-negative: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, then <span class="math notranslate nohighlight">\(X^{-1}(B) \in \mathcal F\)</span>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(\mu\)</span> is a measure on <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, <span class="math notranslate nohighlight">\(\mu(X^{-1}(B)) \equiv X_*\mu(B) \geq 0\)</span> (<span class="math notranslate nohighlight">\(X_*\mu\)</span> retains non-negativity).</p>
+<p>2. Countably additive: Suppose that <span class="math notranslate nohighlight">\(\{B_n\}_{n \in \mathbb N} \Sigma\)</span> are disjoint. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X_*\mu\left(\bigsqcup_{n \in \mathbb N}F_n\right) &amp;= \mu\left(X^{-1}\left(\bigsqcup_{n \in \mathbb N}F_n\right)\right),\,\,\,\,\text{ defn. of pushforward meas.} \\
+&amp;= \mu\left(\bigsqcup_{n \in \mathbb N}X^{-1}\left(F_n\right)\right),\end{split}\]</div>
+<p>which follows by <a class="reference internal" href="#mt:intro:rvs:pushforward:preimage">Lemma 2.6</a>, since the preimage of disjoint sets are disjoint. Continuing, and noting that <span class="math notranslate nohighlight">\(\mu\)</span> is a measure means that it is countably additive:</p>
+<div class="math notranslate nohighlight">
+\[X_*\mu\left(\bigsqcup_{n \in \mathbb N}F_n\right) &amp;= \sum_{n \in \mathbb N}\mu\left(X^{-1}(F_n)\right),\,\,\,\,\text{Countable additivity of }\mu\]</div>
+<p>as desired.
+3. Measure of empty set is <span class="math notranslate nohighlight">\(0\)</span>: Notice that <span class="math notranslate nohighlight">\(X^{-1}(\varnothing) = \varnothing\)</span>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(\mu\)</span> is a measure:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    X_*\mu(\varnothing) &amp;= \mu\left(X^{-1}(\varnothing)\right) \\
+    &amp;= \mu(\varnothing) = 0,\,\,\,\,X^{-1}(\varnothing) = \varnothing.\end{split}\]</div>
+</div>
 </section>
 </section>
 

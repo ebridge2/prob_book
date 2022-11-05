@@ -536,6 +536,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-variables">
+   3.3.5. Change of variables
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -586,6 +591,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-variables">
+   3.3.5. Change of variables
+  </a>
  </li>
 </ul>
 
@@ -776,7 +786,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <p>In practice, you might see Markov’s inequality called Chebyshev’s inequality, but we’ll stick to the nomenclature we described so that we can be explicit.</p>
 <p>Another powerful corollary of Markov’s inequality is that if the expectation of the absolute value random variable is finite, then the random variable is finite almost surely:</p>
 <div class="proof lemma admonition" id="mt:int:exp:ss:bounded">
-<p class="admonition-title"><span class="caption-number">Lemma 3.9 </span> (Bounded absolute expectation)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.10 </span> (Bounded absolute expectation)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable where <span class="math notranslate nohighlight">\(\mathbb E|X| = M &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(\mathbb P(|X| = \infty) = 0\)</span>.</p>
 </section>
@@ -793,7 +803,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <h2><span class="section-number">3.3.4. </span>Convergence concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h2>
 <p>Just like we were able to directly extend results on the basics of integration and the results on norms and convexity, we can do the same thing with convergence concepts. Let’s see how this works:</p>
 <div class="proof lemma admonition" id="lemma-13">
-<p class="admonition-title"><span class="caption-number">Lemma 3.10 </span> (Fatou)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.11 </span> (Fatou)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. If <span class="math notranslate nohighlight">\(X_n \overset{a.s.}{\geq} 0\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
 <div class="math notranslate nohighlight">
@@ -833,7 +843,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 </div><p>So, the idea here is that a random variable converges almost surely if the set of points <span class="math notranslate nohighlight">\(\omega\)</span> mapped to <span class="math notranslate nohighlight">\(X_n(\omega)\)</span> that are <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(X(\omega)\)</span> for every <span class="math notranslate nohighlight">\(n\)</span> that is large enough has a probability that converges to <span class="math notranslate nohighlight">\(1\)</span>. We can also use that the probability of the complement of a set is <span class="math notranslate nohighlight">\(1 - \)</span> the probability of the set to deduce that equivalently, <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\mathbb P\left(|X_n - X| &gt; \epsilon\right) = 0\)</span>.</p>
 <p>Further, we have the same catch as we did with convergence almost surely implying convergence in probability:</p>
 <div class="proof lemma admonition" id="mt:int:exp:conv:convas_implies_convprob">
-<p class="admonition-title"><span class="caption-number">Lemma 3.11 </span> (Convergence almost surely implies convergence in probability)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.12 </span> (Convergence almost surely implies convergence in probability)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. Then if <span class="math notranslate nohighlight">\(X_n \xrightarrow[n \rightarrow \infty]{a.s.} X\)</span>, <span class="math notranslate nohighlight">\(X_n \xrightarrow[n\rightarrow\infty]{\mathcal P} X\)</span>.</p>
 </section>
@@ -843,7 +853,8 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 </section>
 <section id="the-rest-of-the-convergence-concepts">
 <h3><span class="section-number">3.3.4.2. </span>The rest of the convergence concepts<a class="headerlink" href="#the-rest-of-the-convergence-concepts" title="Permalink to this headline">#</a></h3>
-<div class="proof theorem admonition" id="theorem-18">
+<p>Finally, we’ll just rattle off the convergence concepts from the last section for posterity:</p>
+<div class="proof theorem admonition" id="mt:int:exp:conv:mct">
 <p class="admonition-title"><span class="caption-number">Theorem 3.10 </span> (Monotone Convergence)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable, where <span class="math notranslate nohighlight">\(0 \leq X_n \uparrow X\)</span> a.s. Then:</p>
@@ -854,7 +865,41 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 </div><div class="proof admonition" id="proof">
 <p>Proof. Direct application of <a class="reference internal" href="props.html#mt:int:props:conv:mct">Theorem 3.5</a>.</p>
 </div>
+<div class="proof theorem admonition" id="mt:int:exp:conv:dct">
+<p class="admonition-title"><span class="caption-number">Theorem 3.11 </span> (Dominated Convergence)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. If:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(X_n \xrightarrow[n \rightarrow \infty]{a.s.} X\)</span>,</p></li>
+<li><p>There exists <span class="math notranslate nohighlight">\(Y \in m\mathcal F\)</span> s.t. <span class="math notranslate nohighlight">\(|X_n| \leq Y\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb E|Y| &lt; \infty\)</span>,</p></li>
+</ol>
+<p>Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \mathbb EX_n &amp;\xrightarrow[n \rightarrow \infty]{} \mathbb EX \\
+    \Rightarrow \lim_{n \rightarrow \infty}\mathbb EX_n &amp;= \mathbb E\left[\lim_{n \rightarrow \infty}X_n\right] = \mathbb EX.\end{split}\]</div>
 </section>
+</div><p>If <span class="math notranslate nohighlight">\(Y\)</span> is a constant function; e.g., <span class="math notranslate nohighlight">\(Y(\omega) = r\)</span> for <span class="math notranslate nohighlight">\(r \in \mathbb R\)</span>, then we call <a class="reference internal" href="#mt:int:exp:conv:dct">Theorem 3.11</a> the <strong>bounded convergence theorem</strong>.</p>
+</section>
+</section>
+<section id="change-of-variables">
+<h2><span class="section-number">3.3.5. </span>Change of variables<a class="headerlink" href="#change-of-variables" title="Permalink to this headline">#</a></h2>
+<p>Obviously, the change of variables formula applies here, too:</p>
+<div class="proof lemma admonition" id="mt:int:exp:cov">
+<p class="admonition-title"><span class="caption-number">Lemma 3.13 </span> (Change of variables)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and that <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span> are random variables, and either:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(f \geq 0\)</span>, or</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb E|f(X)|&lt; \infty\)</span>.</p></li>
+</ol>
+<p>Then with <span class="math notranslate nohighlight">\(X_*\mathbb P = \mathbb P \circ X^{-1}\)</span> the pushforward measure of <span class="math notranslate nohighlight">\(\mathbb P\)</span>, and <span class="math notranslate nohighlight">\(X(\Omega) \triangleq \{X(\omega) : \omega \in \Omega\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    \mathbb E f(X) \triangleq \int_\Omega f(X)\,\text d \mathbb P = \int_{X(\Omega)} f\,\text d X_*\mathbb P.\]</div>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Direct application of <a class="reference internal" href="props.html#mt:int:props:cov">Lemma 3.9</a>.</p>
+</div>
 </section>
 </section>
 
