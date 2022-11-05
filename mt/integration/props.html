@@ -1028,8 +1028,8 @@ title="Print to PDF"
 \[\begin{split}    \int_\Omega \mathbb 1_{\{B\}}(X) \,\text d \mu &amp;= \mu(X \in B) \equiv \mu \circ X^{-1}(B) \\
     &amp;= X_*\mu(B) \\
     &amp;= \int_{X(\Omega)} \mathbb 1_{\{B\}}\,\text d\left(X_*\mu\right),\end{split}\]</div>
-<p>Where in the final line, we use that <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span>, the definition of a pushforward measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>, and the definition of the integral of an indicator with respect to a measure, <a class="reference internal" href="basics.html#mt:int:basics:int:simplefn">Definition 3.2</a> (noting that an indicator is a simple function).
-2. Simple functions: Suppose that <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]} \subseteq \Sigma\)</span> for <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, and <span class="math notranslate nohighlight">\(\{\alpha_n\}_{n \in [m]} \subseteq \mathbb R\)</span>, where <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]}\)</span> are disjoint.</p>
+<p>Where in the final line, we use that <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span>, the definition of a pushforward measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>, and the definition of the integral of an indicator with respect to a measure, <a class="reference internal" href="basics.html#mt:int:basics:int:simplefn">Definition 3.2</a> (noting that an indicator is a simple function).</p>
+<p>2. Simple functions: Suppose that <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]} \subseteq \Sigma\)</span> for <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, and <span class="math notranslate nohighlight">\(\{\alpha_n\}_{n \in [m]} \subseteq \mathbb R\)</span>, where <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]}\)</span> are disjoint.</p>
 <p>Define <span class="math notranslate nohighlight">\(f(s) \triangleq \sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}(s)\)</span> to be a simple function. Then:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \int_{\Omega}\sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}(X)\,\text d \mu \\
@@ -1039,8 +1039,8 @@ title="Print to PDF"
 \[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \sum_{n \in [m]}\int_{X(\Omega)} \alpha_n\mathbb 1_{\{B_n\}}\,\text d\left(X_*\mu\right) \\
     &amp;= \int_{X(\Omega)}\sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}\,\text d\left(X_*\mu\right),\,\,\,\,\text{Sum of simple fns is simple} \\
     &amp;= \int_{X(\Omega)}f\,\text d \left(X_*\mu\right).\end{split}\]</div>
-<p>Which follows since by <a class="reference internal" href="basics.html#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a> and that the pushforward measure is a measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>.
-3. Non-negative functions: Suppose <span class="math notranslate nohighlight">\(f \geq 0\)</span>, and define:</p>
+<p>Which follows since by <a class="reference internal" href="basics.html#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a> and that the pushforward measure is a measure, <a class="reference internal" href="../intro/random_variables.html#mt:intro:rvs:pushforward">Definition 2.39</a>.</p>
+<p>3. Non-negative functions: Suppose <span class="math notranslate nohighlight">\(f \geq 0\)</span>, and define:</p>
 <div class="math notranslate nohighlight">
 \[    f_n(x) \triangleq \frac{\lfloor 2^n f(x)\rfloor}{2^n}\wedge n.\]</div>
 <p>Intuitively, <span class="math notranslate nohighlight">\(f_n(x)\)</span> is <span class="math notranslate nohighlight">\(f(x)\)</span> rounded off to the nearest <span class="math notranslate nohighlight">\(\frac{1}{2^n}\)</span> for a given <span class="math notranslate nohighlight">\(x\)</span>, and is further upper-bounded by <span class="math notranslate nohighlight">\(n\)</span>.</p>
