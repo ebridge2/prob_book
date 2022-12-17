@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Distribution Functions &#8212; Measure Theoretic Probability Theory</title>
+    <title>2.4. Pushforward measures and distribution functions &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -200,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Distribution Functions
+     2.4. Pushforward measures and distribution functions
     </a>
    </li>
   </ul>
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../integration/prod_meas.html">
-     3.4. Product Measures
+     3.4. Integration in higher dimensions
     </a>
    </li>
   </ul>
@@ -505,13 +505,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pushforward-measure">
+   2.4.1. Pushforward measure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inducing-distribution-functions">
-   2.4.1. Inducing distribution functions
+   2.4.2. Inducing distribution functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#properties-of-distribution-functions">
-   2.4.2. Properties of distribution functions
+   2.4.3. Properties of distribution functions
   </a>
  </li>
 </ul>
@@ -523,7 +528,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Distribution Functions</h1>
+                <h1>Pushforward measures and distribution functions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -534,13 +539,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pushforward-measure">
+   2.4.1. Pushforward measure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inducing-distribution-functions">
-   2.4.1. Inducing distribution functions
+   2.4.2. Inducing distribution functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#properties-of-distribution-functions">
-   2.4.2. Properties of distribution functions
+   2.4.3. Properties of distribution functions
   </a>
  </li>
 </ul>
@@ -553,14 +563,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="distribution-functions">
-<span id="mt-intro-distns"></span><h1><span class="section-number">2.4. </span>Distribution Functions<a class="headerlink" href="#distribution-functions" title="Permalink to this headline">#</a></h1>
-<p>So, now we have these concepts called random variables, which are really just measurable functions on a particular domain with respect to some codomain. We can perform all of the traditional mathematical operations with random variables, and still obtain random variables. What else do we need as far as machinery goes? We need to link these random variables to probabilities. This happens via the distribution function.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pushforward-measures-and-distribution-functions">
+<span id="mt-intro-distns"></span><h1><span class="section-number">2.4. </span>Pushforward measures and distribution functions<a class="headerlink" href="#pushforward-measures-and-distribution-functions" title="Permalink to this headline">#</a></h1>
+<p>So, now we have these concepts called random variables, which are really just measurable functions on a particular domain with respect to some codomain. We can perform all of the traditional mathematical operations with random variables, and still obtain random variables. What else do we need as far as machinery goes? We need to link these random variables to probabilities. This happens via a concept called a <em>pushforward measure</em>.</p>
+<section id="pushforward-measure">
+<h2><span class="section-number">2.4.1. </span>Pushforward measure<a class="headerlink" href="#pushforward-measure" title="Permalink to this headline">#</a></h2>
+<p>As it turns out, we can use measurable functions defined on a measure space to obtain measures on the codomain. This process is called “pushing forward” the measure from one measure space to the measurable space in the codomain, via the measurable function:</p>
+<div class="proof definition admonition" id="mt:intro:rvs:pushforward">
+<p class="admonition-title"><span class="caption-number">Definition 2.40 </span> (Pushforward measure)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. Then the <strong>pushforward</strong> of <span class="math notranslate nohighlight">\(\mu\)</span> is defined as the measure <span class="math notranslate nohighlight">\(X_*\mu : \Sigma \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> where for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[    X_*\mu(B) \triangleq \mu\left(X^{-1}(B)\right).\]</div>
+</section>
+</div><p>The idea here is that we are, in some sense, finding which values of <span class="math notranslate nohighlight">\(\Omega\)</span> were mapped into <span class="math notranslate nohighlight">\(B\)</span> by <span class="math notranslate nohighlight">\(X\)</span> via <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> (which must be a set <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, by definition of a random variable), and then calculating the probability (via <span class="math notranslate nohighlight">\(\mathbb P\)</span>) of this set. Since <span class="math notranslate nohighlight">\(\mu\)</span> is a probability measure with respect to the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, this is a possible thing that we can do.</p>
+<p>Let’s consider this from another angle to describe what’s going on here. First, we know that <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>; that is, <span class="math notranslate nohighlight">\(X\)</span> is mapping elements of the event space to the codomain. <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span> (the definition of a <span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-random variable) takes us from subsets of the codomain (elements of <span class="math notranslate nohighlight">\(\Sigma\)</span>) to measurable subsets of the sample space (elements of <span class="math notranslate nohighlight">\(\mathcal F\)</span>). We can then use <span class="math notranslate nohighlight">\(\mu\)</span> to measure these measurable subsets of the sample space.</p>
+<p>Conceptually, we can understand this process using the the intuition we gained from <a class="reference internal" href="random_variables.html#mt-intro-rvs"><span class="std std-ref">random variables</span></a>, and combine it with what we learned about <a class="reference internal" href="probability_spaces.html#mt-intro-prob-spaces"><span class="std std-ref">measures</span></a>:</p>
+<figure class="align-default" id="mt-intro-distns-law">
+<a class="reference internal image-reference" href="../../_images/preimage.png"><img alt="../../_images/preimage.png" src="../../_images/preimage.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">We start with some subset of <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(B\)</span> (in red), which is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on the codomain, <span class="math notranslate nohighlight">\(\Sigma\)</span>. We identify the corresponding element of the domain (here, denoted <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span>, in blue) that is mapped somewhere within <span class="math notranslate nohighlight">\(B\)</span>, which is an element of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on the domain, <span class="math notranslate nohighlight">\(\mathcal F\)</span> (since <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\((\mathcal F, \mathcal \Sigma)\)</span> measurable). To compute the pushforward of <span class="math notranslate nohighlight">\(X\)</span> with respect to the set <span class="math notranslate nohighlight">\(B\)</span>, we simply evaluate the measure (the area, which is defined on the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>) of these corresponding blue circles. This is denoted by <span class="math notranslate nohighlight">\(X_*\mu(B)\)</span>, giving us a measure of the codomain.</span><a class="headerlink" href="#mt-intro-distns-law" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It is called a <em>pushforward</em> because we are “pushing” the measure from one measurable space to the other. We will learn more about the pushforward measure when we try to compute measure-theoretic integrals, but for now all that we need to know is that it’s a measure. To do this, we’ll need a quick lemma:</p>
+<div class="proof lemma admonition" id="mt:intro:rvs:pushforward:preimage">
+<p class="admonition-title"><span class="caption-number">Lemma 2.6 </span> (Preimage of disjoint sets are disjoint)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>. Let <span class="math notranslate nohighlight">\(\{F_n\}_{n \in \mathbb N} \subseteq \mathcal F\)</span> that are disjoint. Then <span class="math notranslate nohighlight">\(\{X^{-1}(F_n)\}_{n \in \mathbb N}\)</span> where <span class="math notranslate nohighlight">\(X^{-1}(F_n) \equiv \{X \in F_n\} \equiv \{\omega \in \Omega : X(\omega) \in F_n\}\)</span> are disjoint.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. It suffices to show that if <span class="math notranslate nohighlight">\(\omega \in X^{-1}(F_n)\)</span>, then for all <span class="math notranslate nohighlight">\(m \neq n\)</span>, <span class="math notranslate nohighlight">\(\omega \not \in X^{-1}(F_m)\)</span>, by definition of disjointness.</p>
+<p>Suppose that <span class="math notranslate nohighlight">\(\omega \in X^{-1}(F_n) \equiv \{\omega \in \Omega : X(\omega) \in F_n\}\)</span>, so <span class="math notranslate nohighlight">\(X^{-1}(\omega) \in F_n\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(F_n\)</span> are disjoint, and <span class="math notranslate nohighlight">\(X\)</span> is a function (no <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span> can be mapped to multiple values in the codomain), then for all <span class="math notranslate nohighlight">\(m \neq n\)</span>, <span class="math notranslate nohighlight">\(\omega \not \in X^{-1}(F_m)\)</span>.</p>
+</div>
+<p>And now we are ready to prove the result we intended to:</p>
+<div class="proof lemma admonition" id="mt:intro:rvs:pushforward_is_meas">
+<p class="admonition-title"><span class="caption-number">Lemma 2.7 </span> (Pushforward measure is a measure)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> is a measurable space, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, and let <span class="math notranslate nohighlight">\(X_*\mu : \Sigma \rightarrow \bar{\mathbb R}_{\geq 0}\)</span> be the pushforward measure of <span class="math notranslate nohighlight">\(\mu\)</span>. Then <span class="math notranslate nohighlight">\(X_*\mu\)</span> is a measure.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. To show that <span class="math notranslate nohighlight">\(X_*\mu\)</span> is a measure, we need to show that it is non-negative, countably additive, and that the measure of the empty set is <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>1. Non-negative: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span>, then <span class="math notranslate nohighlight">\(X^{-1}(B) \in \mathcal F\)</span>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(\mu\)</span> is a measure on <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, <span class="math notranslate nohighlight">\(\mu(X^{-1}(B)) \equiv X_*\mu(B) \geq 0\)</span> (<span class="math notranslate nohighlight">\(X_*\mu\)</span> retains non-negativity).</p>
+<p>2. Countably additive: Suppose that <span class="math notranslate nohighlight">\(\{B_n\}_{n \in \mathbb N} \Sigma\)</span> are disjoint. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X_*\mu\left(\bigsqcup_{n \in \mathbb N}B_n\right) &amp;= \mu\left(X^{-1}\left(\bigsqcup_{n \in \mathbb N}F_n\right)\right),\,\,\,\,\text{ defn. of pushforward meas.} \\
+&amp;= \mu\left(\bigsqcup_{n \in \mathbb N}X^{-1}\left(B_n\right)\right),\end{split}\]</div>
+<p>which follows by <a class="reference internal" href="#mt:intro:rvs:pushforward:preimage">Lemma 2.6</a>, since the preimage of disjoint sets are disjoint. Continuing, and noting that <span class="math notranslate nohighlight">\(\mu\)</span> is a measure means that it is countably additive:</p>
+<div class="math notranslate nohighlight">
+\[X_*\mu\left(\bigsqcup_{n \in \mathbb N}B_n\right) = \sum_{n \in \mathbb N}\mu\left(X^{-1}(F_n)\right),\,\,\,\,\text{Countable additivity of }\mu\]</div>
+<p>as desired.
+3. Measure of empty set is <span class="math notranslate nohighlight">\(0\)</span>: Notice that <span class="math notranslate nohighlight">\(X^{-1}(\varnothing) = \varnothing\)</span>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(\mu\)</span> is a measure:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    X_*\mu(\varnothing) &amp;= \mu\left(X^{-1}(\varnothing)\right) \\
+    &amp;= \mu(\varnothing) = 0,\,\,\,\,X^{-1}(\varnothing) = \varnothing.\end{split}\]</div>
+</div>
+</section>
 <section id="inducing-distribution-functions">
-<h2><span class="section-number">2.4.1. </span>Inducing distribution functions<a class="headerlink" href="#inducing-distribution-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.2. </span>Inducing distribution functions<a class="headerlink" href="#inducing-distribution-functions" title="Permalink to this headline">#</a></h2>
 <p>Now that we have random variables (measurable functions), if the domain is a probability space, we can use the definition of a random variable to deduce that it is certainly the case that for any set in the codomain, the preimage of the set in the codomain is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the corresponding probability space. Since this set is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra of the probability space, we can assign a probability to that set:</p>
 <div class="proof definition admonition" id="mt:intro:distns:law">
-<p class="admonition-title"><span class="caption-number">Definition 2.40 </span> (Law of a random variable)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.41 </span> (Law of a random variable)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable. Then the induced probability measure on <span class="math notranslate nohighlight">\(S\)</span> by <span class="math notranslate nohighlight">\(X\)</span>, also known as the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span>, is the measure <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> where for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -568,46 +634,25 @@ title="Print to PDF"
     &amp;\equiv \mathbb P\left(X^{-1}(B)\right) \\
     &amp;\equiv \mathbb P(X \in B)\end{split}\]</div>
 </section>
-</div><p>The idea here is that we are, in some sense, finding which values of <span class="math notranslate nohighlight">\(\Omega\)</span> were mapped into <span class="math notranslate nohighlight">\(B\)</span> by <span class="math notranslate nohighlight">\(X\)</span> via <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> (which must be a set <span class="math notranslate nohighlight">\(F \in \mathcal F\)</span>, by definition of a random variable), and then calculating the probability (via <span class="math notranslate nohighlight">\(\mathbb P\)</span>) of this set. Since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a probability measure with respect to the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>, this is a possible thing that we can do. We call this particular induced probability measure the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span> because, as we will see shortly, it ascribes most of the behaviors about <span class="math notranslate nohighlight">\(X\)</span> that we will care about.</p>
-<p>Let’s consider this from another angle to describe what’s going on here. First, we know that <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>; that is, <span class="math notranslate nohighlight">\(X\)</span> is mapping elements of the event space to the codomain. <span class="math notranslate nohighlight">\(X^{-1} : \Sigma \rightarrow \mathcal F\)</span> (the definition of a <span class="math notranslate nohighlight">\((\mathcal F, \Sigma)\)</span>-random variable) takes us from subsets of the codomain (elements of <span class="math notranslate nohighlight">\(\Sigma\)</span>) to measurable subsets of the sample space (elements of <span class="math notranslate nohighlight">\(\mathcal F\)</span>). We can then use <span class="math notranslate nohighlight">\(\mathbb P\)</span> to measure these measurable subsets of the sample space.</p>
-<p>Conceptually, we can understand this process using the the intuition we gained from <a class="reference internal" href="random_variables.html#mt-intro-rvs"><span class="std std-ref">random variables</span></a>, and combine it with what we learned about <a class="reference internal" href="probability_spaces.html#mt-intro-prob-spaces"><span class="std std-ref">measures</span></a>:</p>
-<figure class="align-default" id="mt-intro-distns-law">
-<a class="reference internal image-reference" href="../../_images/preimage.png"><img alt="../../_images/preimage.png" src="../../_images/preimage.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">We start with some subset of <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(B\)</span> (in red), which is in the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on the codomain, <span class="math notranslate nohighlight">\(\Sigma\)</span>. We identify the corresponding element of the domain (here, denoted <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span>, in blue) that is mapped somewhere within <span class="math notranslate nohighlight">\(B\)</span>, which is an element of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra defined on the domain, <span class="math notranslate nohighlight">\(\mathcal F\)</span> (since <span class="math notranslate nohighlight">\(X\)</span> is <span class="math notranslate nohighlight">\((\mathcal F, \mathcal \Sigma)\)</span> measurable). To compute the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span> with respect to the set <span class="math notranslate nohighlight">\(B\)</span>, we simply evaluate the probability (the area, which is defined on the measurable space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span>) of these corresponding blue circles.</span><a class="headerlink" href="#mt-intro-distns-law" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>In other words, using compositions, we could describe <span class="math notranslate nohighlight">\(\mathcal L_X \triangleq \mathbb P \circ X^{-1}\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> represents the probability (the measure of the domain <span class="math notranslate nohighlight">\(\Omega\)</span>) that under <span class="math notranslate nohighlight">\(X\)</span>, winds up in <span class="math notranslate nohighlight">\(B\)</span>. From the definition, it should be pretty clear that <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>:</p>
+</div><p>We call this particular induced probability measure the <em>law</em> of <span class="math notranslate nohighlight">\(X\)</span> because, as we will see shortly, it ascribes most of the behaviors about <span class="math notranslate nohighlight">\(X\)</span> that we will care about. In other words, using compositions, we could describe <span class="math notranslate nohighlight">\(\mathcal L_X \triangleq \mathbb P \circ X^{-1}\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> represents the probability (the measure of the domain <span class="math notranslate nohighlight">\(\Omega\)</span>) that under <span class="math notranslate nohighlight">\(X\)</span>, winds up in <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Based on what we just learned about pushforward measures, it’s pretty clear that the law is a measure (since probability measures are measures), so <span class="math notranslate nohighlight">\(\mathcal L_X \equiv X_*\mathbb P\)</span>, using the notation we became familiar with for pushforward meassures. This means that the intuition that we just covered about pushforward measures extends directly to the law, too.</p>
+<p>We really only need one new attribute from the preceding proof to show that the law is a probability measure:</p>
 <div class="proof proposition admonition" id="mt:intro:distns:law_is_meas">
 <p class="admonition-title"><span class="caption-number">Proposition 2.1 </span> (The law is a probability measure)</p>
 <section class="proposition-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> and the measurable space <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> is a random variable, and <span class="math notranslate nohighlight">\(\mathcal L_X = \mathbb P\circ X^{-1}\)</span> is the law of <span class="math notranslate nohighlight">\(X\)</span>. <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> is a probability measure on <span class="math notranslate nohighlight">\((S, \Sigma)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. 1. <span class="math notranslate nohighlight">\(\mathcal L_X(B) \geq 0\)</span> for every <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>. Then:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}    \mathcal L_X(B) &amp;= \mathbb P(X \in B) \equiv \mathbb P(\{\omega : X(\omega) \in B\}) \\
-    &amp;\geq 0\end{split}\]</div>
-<p>since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a probability measure.</p>
-<p>2. <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>:</p>
+<p>Proof. 1. <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \mathcal L_X(S) &amp;= \mathbb P(X \in S) \equiv \mathbb P(\{\omega : X(\omega) \in S\}) \\
     &amp;= 1\end{split}\]</div>
 <p>which follows because <span class="math notranslate nohighlight">\(X : \omega \mapsto X(\omega) \in S\)</span> for any <span class="math notranslate nohighlight">\(\omega\)</span> by definition of <span class="math notranslate nohighlight">\(X : \Omega \rightarrow S\)</span>.</p>
-<p>3. Countably additive: Suppose that <span class="math notranslate nohighlight">\((B_n)_{n \in \mathbb N} \subseteq \Sigma\)</span> are disjoint. Since <span class="math notranslate nohighlight">\(\Sigma\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, then <span class="math notranslate nohighlight">\(B = \bigcup_{n \in \mathbb N}B_n \in \Sigma\)</span>, and:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}    \mathcal L_X(B) &amp;= \mathcal L_X\left(\bigcup_{n \in \mathbb N}B_n\right) \\
-    &amp;= \mathbb P\left(X \in \bigcup_{n \in \mathbb N}B_n\right) \equiv  P\left(\left\{\omega : X(\omega) \in \bigcup_{n \in \mathbb N}B_n\right\}\right) \\
-    &amp;= \mathbb P\left(\bigcup_{n \in \mathbb N}(X \in B_n)\right) \equiv \mathbb P\left(\bigcup_{n \in \mathbb N}\{\omega : X(\omega) \in B_n\}\right),\,\,\,\,\text{defn. of union}\end{split}\]</div>
-<p>As <span class="math notranslate nohighlight">\(X\)</span> is a function, each <span class="math notranslate nohighlight">\(X^{-1}(B_n)\)</span> are disjoint because <span class="math notranslate nohighlight">\(X\)</span> can only map each <span class="math notranslate nohighlight">\(\omega\)</span> to one value in <span class="math notranslate nohighlight">\(S\)</span>. Therefore, we can use the countable additivity of <span class="math notranslate nohighlight">\(\mathbb P\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}    \mathcal L_X(B) &amp;= \sum_{n \in \mathbb N}\mathbb P(X \in B_n) \equiv \sum_{n \in \mathbb N}\mathbb P(\{\omega : X(\omega) \in B_n\}),\,\,\,\,\text{countable additivity of }\mathbb P \\
-    &amp;= \sum_{n \in \mathbb N}\mathcal L_X(B_n).\end{split}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(\mathcal L_X : \mathcal \Sigma \rightarrow [0, 1]\)</span>, <span class="math notranslate nohighlight">\(\mathcal L_X(S) = 1\)</span>, and is countably additive, it is a probability measure.</p>
+<p>The non-negativity and countable additivity conditions for the law <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> are proven by <a class="reference internal" href="#mt:intro:rvs:pushforward_is_meas">Lemma 2.7</a>.</p>
 </div>
 <p>If the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, we are ready to make a further claim about <span class="math notranslate nohighlight">\(\mathcal L_X\)</span> using the distribution function:</p>
 <div class="proof definition admonition" id="mt:intro:distns:distn_fn">
-<p class="admonition-title"><span class="caption-number">Definition 2.41 </span> (Distribution function)</p>
+<p class="admonition-title"><span class="caption-number">Definition 2.42 </span> (Distribution function)</p>
 <section class="definition-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \mathcal R)\)</span> is a random variable with law <span class="math notranslate nohighlight">\(\mathcal L_X\)</span>. The distribution function is:</p>
 <div class="math notranslate nohighlight">
@@ -625,7 +670,7 @@ title="Print to PDF"
 <p>Then by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:unique">Lemma 2.4</a>, <span class="math notranslate nohighlight">\(\mathcal L_X = F_X\)</span> on <span class="math notranslate nohighlight">\(\sigma(\mathcal P) = \mathcal R\)</span>.</p>
 </div>
 <p>In general, when we work with random variables, we will work with the distribution function for many of our proofs that we consider.</p>
-<div class="proof remark admonition" id="remark-4">
+<div class="proof remark admonition" id="remark-7">
 <p class="admonition-title"><span class="caption-number">Remark 2.7 </span> (The codomain will be <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>)</p>
 <section class="remark-content" id="proof-content">
 <p>For the remainder of this section, we will work where the codomain is the measurable space <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>. For this reason, we’ll omit explicitly stating the codomain every single time for brevity.</p>
@@ -634,14 +679,14 @@ title="Print to PDF"
 <figure class="align-default" id="mt-intro-distns-distnfn">
 <a class="reference internal image-reference" href="../../_images/distn.png"><img alt="../../_images/distn.png" src="../../_images/distn.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text"><strong>(A)</strong> <span class="math notranslate nohighlight">\(X\)</span> is a <span class="math notranslate nohighlight">\(\mathcal F\)</span> random variable on the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> which assigns points in <span class="math notranslate nohighlight">\(\Omega\)</span> to values on <span class="math notranslate nohighlight">\(\mathbb R\)</span>. As <span class="math notranslate nohighlight">\(r_i\)</span> increases, large and larger subsets of points (indicated by the sequentially increasing sets, going from red, to blue, to green) in <span class="math notranslate nohighlight">\(\Omega\)</span> take a value <span class="math notranslate nohighlight">\(X(\omega)\)</span> that is less than <span class="math notranslate nohighlight">\(r_i\)</span>. <strong>(B)</strong> The distribution function corresponds to the relative size of the sets (the <em>probability</em>) in <span class="math notranslate nohighlight">\(\Omega\)</span> for points which land in different intervals of <span class="math notranslate nohighlight">\(\mathbb R\)</span>.</span><a class="headerlink" href="#mt-intro-distns-distnfn" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text"><strong>(A)</strong> <span class="math notranslate nohighlight">\(X\)</span> is a <span class="math notranslate nohighlight">\(\mathcal F\)</span> random variable on the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F)\)</span> which assigns points in <span class="math notranslate nohighlight">\(\Omega\)</span> to values on <span class="math notranslate nohighlight">\(\mathbb R\)</span>. As <span class="math notranslate nohighlight">\(r_i\)</span> increases, large and larger subsets of points (indicated by the sequentially increasing sets, going from red, to blue, to green) in <span class="math notranslate nohighlight">\(\Omega\)</span> take a value <span class="math notranslate nohighlight">\(X(\omega)\)</span> that is less than <span class="math notranslate nohighlight">\(r_i\)</span>. <strong>(B)</strong> The distribution function corresponds to the relative size of the sets (the <em>probability</em>) in <span class="math notranslate nohighlight">\(\Omega\)</span> for points which land in different intervals of <span class="math notranslate nohighlight">\(\mathbb R\)</span>.</span><a class="headerlink" href="#mt-intro-distns-distnfn" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="properties-of-distribution-functions">
-<h2><span class="section-number">2.4.2. </span>Properties of distribution functions<a class="headerlink" href="#properties-of-distribution-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.3. </span>Properties of distribution functions<a class="headerlink" href="#properties-of-distribution-functions" title="Permalink to this headline">#</a></h2>
 <p>Distribution functions have some nice properties that will be convenient for building up intuition about the law of random variables. First up is monotonicity:</p>
-<div class="proof property admonition" id="property-5">
+<div class="proof property admonition" id="property-8">
 <p class="admonition-title"><span class="caption-number">Property 2.19 </span> (Monotonicity of distribution functions)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then if <span class="math notranslate nohighlight">\(x \leq y \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(F(x) \leq F(y)\)</span>.</p>
@@ -653,7 +698,7 @@ title="Print to PDF"
 <p>Then since <span class="math notranslate nohighlight">\(\mathbb P\)</span> is a measure, <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:monotone">Property 2.3</a>, <span class="math notranslate nohighlight">\(F(x) \equiv \mathbb P(X \leq x) \leq \mathbb P(X \leq y) \equiv F(y)\)</span>.</p>
 </div>
 <p>So, what this establishes is that <span class="math notranslate nohighlight">\(F\)</span> is monotone non-decreasing. Further, we can establish properties about the tails of <span class="math notranslate nohighlight">\(F\)</span>, too. These results borrow the monotone convergence (from above and below) of measures:</p>
-<div class="proof property admonition" id="property-6">
+<div class="proof property admonition" id="property-9">
 <p class="admonition-title"><span class="caption-number">Property 2.20 </span> (Tails of the distribution function)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(\lim_{x \rightarrow \infty}F(x) = 1\)</span>, and <span class="math notranslate nohighlight">\(\lim_{x \rightarrow -\infty}F(x) = 0\)</span>.</p>
@@ -674,7 +719,7 @@ title="Print to PDF"
 <p>where the convergence from above is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convabove">Property 2.6</a>.</p>
 </div>
 <p>Another property we will make substantial use of with respect to distribution functions is that they are right continuous, and not (necessarily) left-continuous:</p>
-<div class="proof property admonition" id="property-7">
+<div class="proof property admonition" id="property-10">
 <p class="admonition-title"><span class="caption-number">Property 2.21 </span> (Right-continuity of distribution function)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. <span class="math notranslate nohighlight">\(\lim_{y \downarrow x}F(y) = F(x)\)</span>.</p>
@@ -690,7 +735,7 @@ title="Print to PDF"
 <p>where the convergence from above is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convabove">Property 2.6</a>.</p>
 </div>
 <p>The key fine point here for the (potential) lack of left-continuity is that, as we see here, the right-hand side of the following equality is <span class="math notranslate nohighlight">\(\mathbb P(X &lt; x)\)</span>, and <em>not</em> <span class="math notranslate nohighlight">\(F(x) = \mathbb P(X \leq x)\)</span>:</p>
-<div class="proof property admonition" id="property-8">
+<div class="proof property admonition" id="property-11">
 <p class="admonition-title"><span class="caption-number">Property 2.22 </span> (Distribution functions (not necessarily) left-continuous)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(F(x^-) \triangleq \lim_{y \uparrow x}F(y) = \mathbb P(X &lt; x)\)</span>.</p>
@@ -706,7 +751,7 @@ title="Print to PDF"
 <p>where the convergence from below is by <a class="reference internal" href="probability_spaces.html#mt:intro:prob_spaces:meas:convbelow">Property 2.5</a>.</p>
 </div>
 <p>Finally, the probability at any particular point can be taken to be the difference in the distribution function at that value, minus the limit point we defined above:</p>
-<div class="proof property admonition" id="property-9">
+<div class="proof property admonition" id="property-12">
 <p class="admonition-title"><span class="caption-number">Property 2.23 </span> (Probability at a point)</p>
 <section class="property-content" id="proof-content">
 <p>Suppose the probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span>, and that <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable with distribution function <span class="math notranslate nohighlight">\(F\)</span>. Then <span class="math notranslate nohighlight">\(\mathbb P(X = x) = F(x) - F(x^-)\)</span>.</p>

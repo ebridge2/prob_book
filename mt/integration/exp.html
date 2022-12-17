@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.4. Product Measures" href="prod_meas.html" />
+    <link rel="next" title="3.4. Integration in higher dimensions" href="prod_meas.html" />
     <link rel="prev" title="3.2. Properties of Integration" href="props.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -200,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../intro/distns.html">
-     2.4. Distribution Functions
+     2.4. Pushforward measures and distribution functions
     </a>
    </li>
   </ul>
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="prod_meas.html">
-     3.4. Product Measures
+     3.4. Integration in higher dimensions
     </a>
    </li>
   </ul>
@@ -610,7 +610,7 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="expectation">
 <span id="mt-int-exp"></span><h1><span class="section-number">3.3. </span>Expectation<a class="headerlink" href="#expectation" title="Permalink to this headline">#</a></h1>
 <p>In this section, we’ll learn about a particular type of integral. Remember that an integral is defined on a measurable space and with respect to a measure; e.g., the measure space <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span>. As we learned, when we have simple, bounded, non-negative, or integrable measurable functions <span class="math notranslate nohighlight">\(f\)</span>, the integral is the operation that is denoted symbolically as <span class="math notranslate nohighlight">\(\int f \,\text d \mu\)</span>.</p>
-<p>When this measure is <em>further</em> a probability measure <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:probmeas:def">Definition 2.34</a>, we call this integral something special: we call it an expectation, or expected value. Let’s start with a definition.</p>
+<p>When this measure is <em>further</em> a probability measure <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:probmeas:def">Definition 2.35</a>, we call this integral something special: we call it an expectation, or expected value. Let’s start with a definition.</p>
 <div class="proof definition admonition" id="mt:int:exp:defn">
 <p class="admonition-title"><span class="caption-number">Definition 3.17 </span> (Expected value)</p>
 <section class="definition-content" id="proof-content">
@@ -643,7 +643,7 @@ title="Print to PDF"
 \[    \mathbb P\left(\left\{\omega \in \Omega : \rho(X(\omega), Y(\omega)) = 0\right\}\right) = 1.\]</div>
 <p>We write that <span class="math notranslate nohighlight">\(\rho(X, Y)\)</span> is a.s.</p>
 </section>
-</div><p>You will notice that this statement is basically <em>exactly</em> the same as the statement that we made when it came to a relation holding almost everywhere back in <a class="reference internal" href="basics.html#mt:int:basics:relae">Definition 3.3</a>, <em>except</em> for the fact that the domain in this case is a probability space. Again, if a relation holds almost surely, it also holds almost everywhere, but not necessarily the reverse (for the reason we gave back when we first introduced almost sure statements in <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:as">Definition 2.36</a>).</p>
+</div><p>You will notice that this statement is basically <em>exactly</em> the same as the statement that we made when it came to a relation holding almost everywhere back in <a class="reference internal" href="basics.html#mt:int:basics:relae">Definition 3.3</a>, <em>except</em> for the fact that the domain in this case is a probability space. Again, if a relation holds almost surely, it also holds almost everywhere, but not necessarily the reverse (for the reason we gave back when we first introduced almost sure statements in <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:as">Definition 2.37</a>).</p>
 <div class="proof property admonition" id="mt:int:exp:basics">
 <p class="admonition-title"><span class="caption-number">Property 3.13 </span> (Expectation basics)</p>
 <section class="property-content" id="proof-content">
@@ -786,7 +786,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <p>In practice, you might see Markov’s inequality called Chebyshev’s inequality, but we’ll stick to the nomenclature we described so that we can be explicit.</p>
 <p>Another powerful corollary of Markov’s inequality is that if the expectation of the absolute value random variable is finite, then the random variable is finite almost surely:</p>
 <div class="proof lemma admonition" id="mt:int:exp:ss:bounded">
-<p class="admonition-title"><span class="caption-number">Lemma 3.10 </span> (Bounded absolute expectation)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.9 </span> (Bounded absolute expectation)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable where <span class="math notranslate nohighlight">\(\mathbb E|X| = M &lt; \infty\)</span>. Then <span class="math notranslate nohighlight">\(\mathbb P(|X| = \infty) = 0\)</span>.</p>
 </section>
@@ -803,7 +803,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <h2><span class="section-number">3.3.4. </span>Convergence concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h2>
 <p>Just like we were able to directly extend results on the basics of integration and the results on norms and convexity, we can do the same thing with convergence concepts. Let’s see how this works:</p>
 <div class="proof lemma admonition" id="lemma-13">
-<p class="admonition-title"><span class="caption-number">Lemma 3.11 </span> (Fatou)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.10 </span> (Fatou)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. If <span class="math notranslate nohighlight">\(X_n \overset{a.s.}{\geq} 0\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>, then:</p>
 <div class="math notranslate nohighlight">
@@ -843,7 +843,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 </div><p>So, the idea here is that a random variable converges almost surely if the set of points <span class="math notranslate nohighlight">\(\omega\)</span> mapped to <span class="math notranslate nohighlight">\(X_n(\omega)\)</span> that are <span class="math notranslate nohighlight">\(\epsilon\)</span>-close to <span class="math notranslate nohighlight">\(X(\omega)\)</span> for every <span class="math notranslate nohighlight">\(n\)</span> that is large enough has a probability that converges to <span class="math notranslate nohighlight">\(1\)</span>. We can also use that the probability of the complement of a set is <span class="math notranslate nohighlight">\(1 - \)</span> the probability of the set to deduce that equivalently, <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\mathbb P\left(|X_n - X| &gt; \epsilon\right) = 0\)</span>.</p>
 <p>Further, we have the same catch as we did with convergence almost surely implying convergence in probability:</p>
 <div class="proof lemma admonition" id="mt:int:exp:conv:convas_implies_convprob">
-<p class="admonition-title"><span class="caption-number">Lemma 3.12 </span> (Convergence almost surely implies convergence in probability)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.11 </span> (Convergence almost surely implies convergence in probability)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, <span class="math notranslate nohighlight">\(\{X_n\}_{n \in \mathbb N} \subseteq m\mathcal F\)</span> is a sequence of random variables, and <span class="math notranslate nohighlight">\(X \in m\mathcal F\)</span> is a random variable. Then if <span class="math notranslate nohighlight">\(X_n \xrightarrow[n \rightarrow \infty]{a.s.} X\)</span>, <span class="math notranslate nohighlight">\(X_n \xrightarrow[n\rightarrow\infty]{\mathcal P} X\)</span>.</p>
 </section>
@@ -886,7 +886,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 <h2><span class="section-number">3.3.5. </span>Change of variables<a class="headerlink" href="#change-of-variables" title="Permalink to this headline">#</a></h2>
 <p>Obviously, the change of variables formula applies here, too:</p>
 <div class="proof lemma admonition" id="mt:int:exp:cov">
-<p class="admonition-title"><span class="caption-number">Lemma 3.13 </span> (Change of variables)</p>
+<p class="admonition-title"><span class="caption-number">Lemma 3.12 </span> (Change of variables)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mathbb P)\)</span> is a probability space, and that <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, where <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span> are random variables, and either:</p>
 <ol class="simple">
@@ -898,7 +898,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
 \[    \mathbb E f(X) \triangleq \int_\Omega f(X)\,\text d \mathbb P = \int_{S} f\,\text d X_*\mathbb P.\]</div>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. Direct application of <a class="reference internal" href="props.html#mt:int:props:cov">Lemma 3.9</a>.</p>
+<p>Proof. Direct application of <code class="xref prf prf-ref docutils literal notranslate"><span class="pre">mt:int:props:cov</span></code>.</p>
 </div>
 </section>
 </section>
@@ -940,7 +940,7 @@ Define <span class="math notranslate nohighlight">\(i_B \triangleq \inf\{\varphi
     <a class='right-next' id="next-link" href="prod_meas.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.4. </span>Product Measures</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Integration in higher dimensions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

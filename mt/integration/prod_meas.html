@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.4. Product Measures &#8212; Measure Theoretic Probability Theory</title>
+    <title>3.4. Integration in higher dimensions &#8212; Measure Theoretic Probability Theory</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. Classes of Random Variables" href="../classes/classes.html" />
@@ -198,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../intro/distns.html">
-     2.4. Distribution Functions
+     2.4. Pushforward measures and distribution functions
     </a>
    </li>
   </ul>
@@ -230,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.4. Product Measures
+     3.4. Integration in higher dimensions
     </a>
    </li>
   </ul>
@@ -480,23 +482,114 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-path-we-ve-taken">
+   3.4.1. The path we’ve taken
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-basics-of-measure-theory">
+     3.4.1.1. The basics of measure theory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-basics-of-integration">
+     3.4.1.2. The basics of integration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pushforward-measures-allow-us-to-extend-integration-beyong-real-valued-codomains">
+     3.4.1.3. Pushforward measures allow us to extend integration beyong real-valued codomains
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-new-families-of-sets">
+   3.4.2. Some new families of sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-variables">
+   3.4.3. Change of variables
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Product Measures</h1>
+                <h1>Integration in higher dimensions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-path-we-ve-taken">
+   3.4.1. The path we’ve taken
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-basics-of-measure-theory">
+     3.4.1.1. The basics of measure theory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-basics-of-integration">
+     3.4.1.2. The basics of integration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pushforward-measures-allow-us-to-extend-integration-beyong-real-valued-codomains">
+     3.4.1.3. Pushforward measures allow us to extend integration beyong real-valued codomains
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-new-families-of-sets">
+   3.4.2. Some new families of sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-of-variables">
+   3.4.3. Change of variables
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -504,8 +597,173 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="product-measures">
-<span id="mt-int-prod-meas"></span><h1><span class="section-number">3.4. </span>Product Measures<a class="headerlink" href="#product-measures" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="integration-in-higher-dimensions">
+<span id="mt-int-prod-meas"></span><h1><span class="section-number">3.4. </span>Integration in higher dimensions<a class="headerlink" href="#integration-in-higher-dimensions" title="Permalink to this headline">#</a></h1>
+<p>So, let’s reflect back briefly to the journey we’ve taken so far.</p>
+<section id="the-path-we-ve-taken">
+<h2><span class="section-number">3.4.1. </span>The path we’ve taken<a class="headerlink" href="#the-path-we-ve-taken" title="Permalink to this headline">#</a></h2>
+<section id="the-basics-of-measure-theory">
+<h3><span class="section-number">3.4.1.1. </span>The basics of measure theory<a class="headerlink" href="#the-basics-of-measure-theory" title="Permalink to this headline">#</a></h3>
+<p>We started way back in <a class="reference internal" href="../intro/set_theory.html#mt-intro-set-theory"><span class="std std-numref">Section 2.1</span></a> by introducing some basics about sets and families of sets. We learned that we could have families of sets (sets of subsets) where we could equip the sets with a notion of measure, that for all intents and purposes, felt like it satisfied the intuitive concept of “size”.</p>
+<p>Upon these so-called measure spaces, we could construct functions, called random variables, in which there was a notion of one-to-oneness of the inverse mapping with sets of the respective <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras (<em>measurable</em> functions).</p>
+<p>If we confined ourselves to probability spaces, we could qualify that these pushforward measures were qualified as a <em>law</em> of a random variable, which was a probability measure induced on the codomain. The law of the random variable could further be uniquely determined by the distribution function of the random variable.</p>
+</section>
+<section id="the-basics-of-integration">
+<h3><span class="section-number">3.4.1.2. </span>The basics of integration<a class="headerlink" href="#the-basics-of-integration" title="Permalink to this headline">#</a></h3>
+<p>Next, we built out all of the machinery that we needed to devise integrals on measure spaces in which the codomain are real numbers.</p>
+<p>We discussed how we could build up from simple functions, to bounded functions, to non-negative, to integrable functions, with each integral, in effect, being well-defined using a simpler function and the behaviors of sets of simpler functions which in the limit would be our desired function of interest.</p>
+<p>Finally, we saw how with the particularity of considering only probability spaces, that these integrals could be further characterized as expectations, and we obtained even more properties about integrals with respect to these particular spaces.</p>
+<p>So, what did we miss?</p>
+</section>
+<section id="pushforward-measures-allow-us-to-extend-integration-beyong-real-valued-codomains">
+<h3><span class="section-number">3.4.1.3. </span>Pushforward measures allow us to extend integration beyong real-valued codomains<a class="headerlink" href="#pushforward-measures-allow-us-to-extend-integration-beyong-real-valued-codomains" title="Permalink to this headline">#</a></h3>
+<p>You’ll notice that, in the reflection we described above, that there was an important clarification: in all of the integration material we’ve covered so far, the codomain is <em>strictly</em> real numbers. This means that for a given event space <span class="math notranslate nohighlight">\(\Omega\)</span>, the <em>only</em> random variables <span class="math notranslate nohighlight">\(X\)</span> that we know how to integrate with (thus far) are those where <span class="math notranslate nohighlight">\(X(\omega)\)</span> takes real values.</p>
+<p>How big do you think a brain imaging measurement is? How complicated do you think a genome might be? There are <em>tons</em> of types of data that, for modern scientific practices, really <em>cannot</em> just be summarized with a real value. This means that as we are building out our machinery, we left out one of the biggest pieces of all: what do we do when we have more than a single real-valued number? How can we proceed?</p>
+<p>As it so happens, a concept we already discussed, pushforward meaures, tied together with a new concept which we’ll get to in a second, are all that we need to integrate on much more complicated spaces. At a high level, what we’re going to do is a similar approach to what you saw back when we first defined the <span class="xref myst">Lebesgue measure</span>: we’re going to define a set of sets which are on <span class="math notranslate nohighlight">\(\mathbb R^d\)</span> (the <span class="math notranslate nohighlight">\(d\)</span>-dimensional real numbers), we’re going to show that this set of sets fulfills properties which put it into a pair of families of sets (<span class="math notranslate nohighlight">\(\pi\)</span>-systems and a new family of sets, <span class="math notranslate nohighlight">\(\lambda\)</span>-systems, and then we’re going to show that we can define a measure using an <em>extension</em> from these sets of sets to our space of interest. This is very similar to how we defined the Lebesgue measure using Carothéodory’s Extension <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:carotheodory">Theorem 2.2</a>.</p>
+<p>Then, we’ll show how we can build out integration on this new measure space, using Fubini’s theorem, to extend what we already learned about integration on the real numbers to the new space. Finally, we’ll show how we can use pushforward measures and the change of variables formula to actually compute these integral expressions we came up with over the course of this chapter.</p>
+</section>
+</section>
+<section id="some-new-families-of-sets">
+<h2><span class="section-number">3.4.2. </span>Some new families of sets<a class="headerlink" href="#some-new-families-of-sets" title="Permalink to this headline">#</a></h2>
+<p>So far, we’ve seen <span class="math notranslate nohighlight">\(\pi\)</span>-systems, algebras, and <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, and seen how these sets are progressively more restrictive definitions (all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are algebras, but not all algebras were <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, so on and so forth). If you recall, for a <span class="math notranslate nohighlight">\(\pi\)</span>-system, for instance, you learned that it was a non-empty collection closed under finite intersections.</p>
+<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, on the other hand, contained the whole set, was closed under complements, and was closed under countable unions. We learned that <span class="math notranslate nohighlight">\(\pi\)</span>-systems were <em>relaxations</em> of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras, in that all <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras were <span class="math notranslate nohighlight">\(\pi\)</span>-systems, but not all <span class="math notranslate nohighlight">\(\pi\)</span>-systems were <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras.</p>
+<p>So, what was the key that we were missing in <span class="math notranslate nohighlight">\(\pi\)</span>-systems make them not quite <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras? From the definition, it <em>looks</em> like just about everything, but we can be a bit more specific. We can differentiate <span class="math notranslate nohighlight">\(\pi\)</span>-systems from <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras succinctly: the <span class="math notranslate nohighlight">\(\pi\)</span>-systems that are <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras are also <span class="math notranslate nohighlight">\(\lambda\)</span>-systems, which is a new family of sets:</p>
+<div class="proof definition admonition" id="mt:intro:prod_meas:lambda">
+<p class="admonition-title"><span class="caption-number">Definition 3.26 </span> (<span class="math notranslate nohighlight">\(\lambda\)</span>-system)</p>
+<section class="definition-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. <span class="math notranslate nohighlight">\(\mathcal L\)</span> is called a <span class="math notranslate nohighlight">\(\lambda\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span> if it is a non-empty collection of subsets <span class="math notranslate nohighlight">\(L \in \mathcal L\)</span>, s.t. <span class="math notranslate nohighlight">\(L \subseteq \Omega\)</span>, where:</p>
+<ol class="simple">
+<li><p>Contains the entire set: <span class="math notranslate nohighlight">\(\Omega \in \mathcal L\)</span>,</p></li>
+<li><p>Closure under contained set differences: If <span class="math notranslate nohighlight">\(L_1, L_2 \in \mathcal L\)</span> and <span class="math notranslate nohighlight">\(L_1 \subseteq L_2\)</span>, then <span class="math notranslate nohighlight">\(L_2 \setminus L_1 \in \mathcal L\)</span>, and</p></li>
+<li><p>Closed under countable <em>increasing</em> unions: If <span class="math notranslate nohighlight">\(\{L_n\}_{n \in \mathbb N} \subseteq \mathcal L\)</span> is s.t. <span class="math notranslate nohighlight">\(A_n \uparrow A = \bigcup_{n \in \mathbb N} A_n\)</span>, then <span class="math notranslate nohighlight">\(A \in \mathcal L\)</span>.</p></li>
+</ol>
+</section>
+</div><p>Remember that the notation <span class="math notranslate nohighlight">\(L_n \uparrow L\)</span> means that <span class="math notranslate nohighlight">\(\{L_n\}_n\)</span> is converging to <span class="math notranslate nohighlight">\(L\)</span> from below, as-per <a class="reference internal" href="../intro/probability_spaces.html#mt:intro:prob_spaces:meas:set_conv_below">Definition 2.30</a>. This looks <em>really close</em> to the definition of a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra, but there is a key difference: the <span class="math notranslate nohighlight">\(\lambda\)</span>-system is only closed under countable <em>increasing</em> unions. This property can be restated another way to look even closer to the definition of a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra:</p>
+<div class="proof example admonition" id="mt:int:prod_meas:lambdachar">
+<p class="admonition-title"><span class="caption-number">Example 3.2 </span> (<span class="math notranslate nohighlight">\(\lambda\)</span>-systems are closed under countable disjoint unions)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(\mathcal L\)</span> is a <span class="math notranslate nohighlight">\(\lambda\)</span>-system. Show that <span class="math notranslate nohighlight">\(\mathcal L\)</span> is closed under countable unions of pairwise disjoint sets; e.g., if <span class="math notranslate nohighlight">\(\{L_n\}_{n \in \mathbb N} \subseteq \mathcal L\)</span>, where for all <span class="math notranslate nohighlight">\(i \neq j\)</span>, <span class="math notranslate nohighlight">\(L_i \cap L_j = \varnothing\)</span>, then <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}L_n \in \mathcal L\)</span>.</p>
+</section>
+</div><p>So we have closure under countable <em>disjoint</em> unions, whereas <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras were closed under <em>all</em> countable unions.</p>
+<p>We can also use this to obtain another fundamental property of <span class="math notranslate nohighlight">\(\lambda\)</span>-systems, that will be useful to us below:</p>
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 3.3 </span> (<span class="math notranslate nohighlight">\(\lambda\)</span>-systems are closed under complements)</p>
+<section class="example-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and <span class="math notranslate nohighlight">\(\mathcal L\)</span> is a <span class="math notranslate nohighlight">\(\lambda\)</span>-system. Then if <span class="math notranslate nohighlight">\(L \in \mathcal L\)</span>, <span class="math notranslate nohighlight">\(L^c \in \mathcal L\)</span>.</p>
+</section>
+</div><p>As it turns out, <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras can equivalently be characterized as systems which are both <span class="math notranslate nohighlight">\(\pi\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> systems:</p>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 3.12 </span> (Equivalence of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras and <span class="math notranslate nohighlight">\((\pi, \lambda)\)</span> systems)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set. Then <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra on <span class="math notranslate nohighlight">\(\Omega\)</span> if and only if <span class="math notranslate nohighlight">\(\mathcal F\)</span> is both a <span class="math notranslate nohighlight">\(\pi\)</span> and a <span class="math notranslate nohighlight">\(\lambda\)</span> system.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. 1. <span class="math notranslate nohighlight">\(\Rightarrow)\)</span> Suppose that <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
+<p>Notice that by construction, <span class="math notranslate nohighlight">\(\mathcal F\)</span> is contains the whole set, is closed under complements, and is closed under countable unions. Then <span class="math notranslate nohighlight">\(\mathcal F\)</span> is clearly a <span class="math notranslate nohighlight">\(\lambda\)</span>-system, because closure under countable increasing unions is a special case of closure under countable unions.</p>
+<p>Further, <span class="math notranslate nohighlight">\(\mathcal F\)</span> is clearly a <span class="math notranslate nohighlight">\(\pi\)</span>-system, because it is closed under countable intersections by <a class="reference internal" href="../intro/set_theory.html#mt:intro:set:sig:closure_intersect">Property 2.1</a>, and hence also closed under finitely many intersections.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Leftarrow)\)</span>: Suppose that <span class="math notranslate nohighlight">\(\mathcal F\)</span> is both a <span class="math notranslate nohighlight">\(\pi\)</span>-system and a <span class="math notranslate nohighlight">\(\lambda\)</span>-system. We have three properties to prove:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Contains <span class="math notranslate nohighlight">\(\Omega\)</span>: note that the definition of a <span class="math notranslate nohighlight">\(\lambda\)</span>-system ensures that <span class="math notranslate nohighlight">\(\Omega \in \mathcal F\)</span>.</p></li>
+<li><p>Closure under complements: note that the definition of a <span class="math notranslate nohighlight">\(\lambda\)</span>-system ensures that <span class="math notranslate nohighlight">\(\mathcal F\)</span> is closed under complements.</p></li>
+<li><p>Closure under countable unions: Suppose that <span class="math notranslate nohighlight">\(F_n \in \mathcal F\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Define the sequence of sets:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}    E_n = \begin{cases}
+        F_1 &amp; n = 1 \\
+        F_n \setminus \cup_{m = 1}^{n-1} F_m &amp; n &gt; 1
+    \end{cases}.\end{split}\]</div>
+<p>Note that for <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, <span class="math notranslate nohighlight">\(E_n\)</span> can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    E_n &amp;= F_n \cap \left(\cup_{m = 1}^{n-1} F_m\right)^c,\,\,\,\,\text{Defn. of set diff.}\\
+    &amp;= F_n \cap \left(\bigcap_{m = 1}^{n - 1}F_m^c\right).\,\,\,\,\text{DeMorgan II}\end{split}\]</div>
+<p>Notice that <span class="math notranslate nohighlight">\(\mathcal F\)</span> is closed under complements, since it is a <span class="math notranslate nohighlight">\(\lambda\)</span>-system, so <span class="math notranslate nohighlight">\(F_m^c \in \mathcal F\)</span>. <span class="math notranslate nohighlight">\(\mathcal F\)</span> is closed under finite intersections since it is a <span class="math notranslate nohighlight">\(\pi\)</span>-system, so <span class="math notranslate nohighlight">\(\bigcap_{m = 1}^{n - 1}F_m^c \in \mathcal F\)</span>. <span class="math notranslate nohighlight">\(\mathcal F\)</span> is a <span class="math notranslate nohighlight">\(\lambda\)</span>-system, so it is closed under set differences, so <span class="math notranslate nohighlight">\(E_n \in \mathcal F\)</span>.</p>
+<p>Finally, notice that by construction, <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}E_n \in \mathcal F\)</span>, since <span class="math notranslate nohighlight">\(E_n\)</span> are disjoint by construction.</p>
+<p>Then noting that <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}E_n = \bigcup_{n \in \mathbb N}F_n\)</span>, it is clear that <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}F_n \in \mathcal F\)</span>.</p>
+</div>
+<p>This characterization can be used to prove a special result that will help us extend measures to more complicated spaces:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. Dynkin <span class="math notranslate nohighlight">\(\pi, \lambda\)</span> Theorem
+Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal P\)</span> and <span class="math notranslate nohighlight">\(\mathcal L\)</span> be a <span class="math notranslate nohighlight">\(\pi\)</span>-system and a <span class="math notranslate nohighlight">\(\lambda\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span>, respectively. Then if <span class="math notranslate nohighlight">\(\mathcal P \subeteq \mathcal L\)</span>, <span class="math notranslate nohighlight">\(\sigma(\mathcal P) \subseteq \mathcal L\)</span>.</p>
+</div>
+</section>
+<section id="change-of-variables">
+<h2><span class="section-number">3.4.3. </span>Change of variables<a class="headerlink" href="#change-of-variables" title="Permalink to this headline">#</a></h2>
+<p>Just because we showed that you <em>can</em> calculate all the integrals we have discussed thus far, doesn’t mean we <em>want to</em>. The reason that we have introduced all this new notation, which might feel cumbersome at first, is that it will ultimately make your understanding of random variables and concepts deriving from all the things we’ve discussed thus far a <em>lot</em> easier to wrap your head around. Plainly, the expressions just happen to be a lot simpler, and the rules easier to follow.</p>
+<p>However, when you actually need to arrive at a numerical solution to an integral, it’s typically a lot easier to use the rules of Riemann integration that you’ve learned through Calculus than it is to use rules like <a class="reference internal" href="basics.html#mt:int:basics:bounded_int">Theorem 3.1</a>, <a class="reference internal" href="basics.html#mt:int:basics:nn:int_def">Definition 3.8</a>, or <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>, whenever possible. So, ideally, we will be able to benefit from the conceptual niceties of the measure-theoretic integration intuition that we’ve developed, but <em>still</em> be able to calculate these things numerically in practice. This is done via the <em>change of variables</em>, where we <em>change</em> the sets we are integrating over from one set to another, using a measurable function:</p>
+<div class="proof lemma admonition" id="mt:int:prod_meas:cov">
+<p class="admonition-title"><span class="caption-number">Lemma 3.13 </span> (Change of variables)</p>
+<section class="lemma-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\((\Omega, \mathcal F, \mu)\)</span> is a measure space, and that <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span> are measurable spaces, wnere <span class="math notranslate nohighlight">\(X \in m(\mathcal F, \Sigma)\)</span> and <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span> are random variables, and either:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(f \geq 0\)</span>, or</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(X)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable.</p></li>
+</ol>
+<p>Then with <span class="math notranslate nohighlight">\(X_*\mu = \mu \circ X^{-1} : S \rightarrow \bar{\mathbb R}_{\geq 0}\)</span>, and <span class="math notranslate nohighlight">\(X(\Omega) \triangleq \{X(\omega) : \omega \in \Omega\}\)</span>, the <em>pushforward measure</em> of <span class="math notranslate nohighlight">\(\mu\)</span> (<a class="reference internal" href="../intro/distns.html#mt:intro:rvs:pushforward">Definition 2.40</a>):</p>
+<div class="math notranslate nohighlight">
+\[    \int_\Omega f(X)\,\text d \mu = \int_{X(\Omega)} f\, \text d\left(X_*\mu\right) = \int_Sf\,\text d \left(X_*\mu\right).\]</div>
+</section>
+</div><p>So, what does this formula let us do? What this formula allows is that we can take a measurable function like <span class="math notranslate nohighlight">\(X\)</span>, we can compute functions of this measurable function <span class="math notranslate nohighlight">\(f(X)\)</span>, and then can compute integrals of <span class="math notranslate nohighlight">\(f(X)\)</span> using <em>not</em> the space upon which <span class="math notranslate nohighlight">\(X\)</span> was defined, but on the space upon which <span class="math notranslate nohighlight">\(f\)</span> is defined. If the codomain, for instance, is a Riemann space (e.g., <span class="math notranslate nohighlight">\(S = \mathbb R^d\)</span>), then we have it really nice: we can use all of the rules we learned in Riemann calculus (the traditional approach to single and multivariable introductory calculus courses). This is called a <em>change of variables</em> because we are <em>changing</em> from integrating over <span class="math notranslate nohighlight">\(\Omega\)</span> to <span class="math notranslate nohighlight">\(X(\Omega)\)</span> using the pushforward measure <span class="math notranslate nohighlight">\(X_*\mu\)</span>.</p>
+<p>For now, let’s work on proving this result. We’ll do it in <span class="math notranslate nohighlight">\(5\)</span> steps, using a similar approach to what we did when we first learned about integration in <a class="reference internal" href="basics.html#mt-int-basics"><span class="std std-numref">Section 3.1</span></a>, where we build up the equality from indicators, to simple functions, to bounded functions, to non-negative functions, to <span class="math notranslate nohighlight">\(\mu\)</span>-integrable functions. Throughout the below proof, we will repeatedly use the fact that the pushforward measure is a measure, <a class="reference internal" href="../intro/distns.html#mt:intro:rvs:pushforward_is_meas">Lemma 2.7</a>. This means that measurable functions <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span> will be equipped with all of the niceties that we learned about in the preceding chapter <a class="reference internal" href="basics.html#mt-int-basics"><span class="std std-numref">Section 3.1</span></a> on integration:</p>
+<div class="proof admonition" id="proof">
+<p>Proof. 1. Indicator functions: Suppose that <span class="math notranslate nohighlight">\(B \in \Sigma\)</span>, and <span class="math notranslate nohighlight">\(f \triangleq \mathbb 1_{\{B\}}(s)\)</span>. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega \mathbb 1_{\{B\}}(X) \,\text d \mu &amp;= \mu(X \in B) \equiv \mu \circ X^{-1}(B) \\
+    &amp;= X_*\mu(B) \\
+    &amp;= \int_{X(\Omega)} \mathbb 1_{\{B\}}\,\text d\left(X_*\mu\right),\end{split}\]</div>
+<p>Where in the final line, we use that <span class="math notranslate nohighlight">\(f \in m(\Sigma, \mathcal R)\)</span>, the definition of a pushforward measure, <a class="reference internal" href="../intro/distns.html#mt:intro:rvs:pushforward">Definition 2.40</a>, and the definition of the integral of an indicator with respect to a measure, <a class="reference internal" href="basics.html#mt:int:basics:int:simplefn">Definition 3.2</a> (noting that an indicator is a simple function).</p>
+<p>2. Simple functions: Suppose that <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]} \subseteq \Sigma\)</span> for <span class="math notranslate nohighlight">\(m \in \mathbb N\)</span>, and <span class="math notranslate nohighlight">\(\{\alpha_n\}_{n \in [m]} \subseteq \mathbb R\)</span>, where <span class="math notranslate nohighlight">\(\{B_n\}_{n \in [m]}\)</span> are disjoint.</p>
+<p>Define <span class="math notranslate nohighlight">\(f(s) \triangleq \sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}(s)\)</span> to be a simple function. Then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \int_{\Omega}\sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}(X)\,\text d \mu \\
+    &amp;= \sum_{n \in [m]}\int_{\Omega}\alpha_n\mathbb 1_{\{B_n\}}(X)\,\text d \mu,\end{split}\]</div>
+<p>Which follows since the sum of simple functions is simple by <a class="reference internal" href="basics.html#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a>. Continuing and using the result from 1.:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \sum_{n \in [m]}\int_{X(\Omega)} \alpha_n\mathbb 1_{\{B_n\}}\,\text d\left(X_*\mu\right) \\
+    &amp;= \int_{X(\Omega)}\sum_{n \in [m]}\alpha_n\mathbb 1_{\{B_n\}}\,\text d\left(X_*\mu\right),\,\,\,\,\text{Sum of simple fns is simple} \\
+    &amp;= \int_{X(\Omega)}f\,\text d \left(X_*\mu\right).\end{split}\]</div>
+<p>Which follows since by <a class="reference internal" href="basics.html#mt:int:basics:int:prop:sum_simple_fn_simple">Lemma 3.1</a> and that the pushforward measure is a measure, <a class="reference internal" href="../intro/distns.html#mt:intro:rvs:pushforward">Definition 2.40</a>.</p>
+<p>3. Non-negative functions: Suppose <span class="math notranslate nohighlight">\(f \geq 0\)</span>, and define:</p>
+<div class="math notranslate nohighlight">
+\[    f_n(x) \triangleq \frac{\lfloor 2^n f(x)\rfloor}{2^n}\wedge n.\]</div>
+<p>Intuitively, <span class="math notranslate nohighlight">\(f_n(x)\)</span> is <span class="math notranslate nohighlight">\(f(x)\)</span> “rounded off” to the nearest <span class="math notranslate nohighlight">\(\frac{1}{2^n}\)</span> for a given <span class="math notranslate nohighlight">\(x\)</span>, and is further upper-bounded by <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Note that each <span class="math notranslate nohighlight">\(f_n(x)\)</span> is simple because with an upper bound of <span class="math notranslate nohighlight">\(n\)</span>, there are finitely many ways to round off the value <span class="math notranslate nohighlight">\(f_n(x)\)</span> (taking values in <span class="math notranslate nohighlight">\([0, n]\)</span>) to the nearest <span class="math notranslate nohighlight">\(\frac{1}{2^n}\)</span> (there are <span class="math notranslate nohighlight">\(2^n n\)</span> possible ways to do this).</p>
+<p>Further, note that <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>. By definition, <span class="math notranslate nohighlight">\(f_n \geq 0\)</span>, and by construction, since <span class="math notranslate nohighlight">\(f_n \uparrow f\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, then <span class="math notranslate nohighlight">\(f_n(X) \uparrow f(X)\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span> absolutely (and certainly also <span class="math notranslate nohighlight">\(a.e.\)</span>). Then by the MCT <a class="reference internal" href="props.html#mt:int:props:conv:mct">Theorem 3.5</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f(X) \,\text d \mu &amp;= \lim_{n \rightarrow \infty}\int_\Omega f_n(X)\,\text d \mu \\
+    &amp;= \lim_{n \rightarrow \infty}\int_{X(\Omega)}f_n\,\text d \left(X_*\mu\right),\,\,\,\,\text{Result from 2.} \\
+    &amp;= \int_{X(\Omega)}\lim_{n \rightarrow \infty}f_n\,\text d \left(X_*\mu\right),\,\,\,\,\text{MCT, as }f_n \uparrow f, f_n \geq 0 \\
+    &amp;= \int_{X(\Omega)}f \,\text d \left(X_*\mu\right).\end{split}\]</div>
+<p>4. Integrable functions: Write <span class="math notranslate nohighlight">\(f(x) = f^+(x) - f^-(x)\)</span>, where <span class="math notranslate nohighlight">\(f^+(x) = f(x) \wedge 0\)</span>, and <span class="math notranslate nohighlight">\(f^-(x) = (-f(x)) \wedge 0\)</span>, as-per <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>.</p>
+<p>Then since <span class="math notranslate nohighlight">\(f(X)\)</span> is <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, both <span class="math notranslate nohighlight">\(f^+(X)\)</span> and <span class="math notranslate nohighlight">\(f^-(X)\)</span> are <span class="math notranslate nohighlight">\(\mu\)</span>-integrable, by Equation <a class="reference internal" href="basics.html#equation-mt-int-basics-muint-helper">(3.4)</a>.</p>
+<p>Direct application of <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a> gives:</p>
+<div class="math notranslate nohighlight">
+\[    \int_\Omega f(X) \,\text d \mu = \int_\Omega f^+(X) \,\text d \mu - \int_\Omega f^-(X) \,\text d \mu.\]</div>
+<p>Note further that <span class="math notranslate nohighlight">\(f^+, f^- \geq 0\)</span>. Then by 3.:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \int_\Omega f^+(X) \,\text d \mu - \int_\Omega f^-(X) \,\text d \mu &amp;= \int_{X(\Omega)}f^+ \,\text d \left(X_*\mu\right) - \int_{X(\Omega)}f^- \,\text d \left(X_*\mu\right) \\
+    &amp;= \int_{X(\Omega)}f \,\text d \left(X_*\mu\right),\end{split}\]</div>
+<p>Where in the final line, we used that <span class="math notranslate nohighlight">\(f\)</span> is a measurable function with domain <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and codomain <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>, and the definition of a pushforward measure <a class="reference internal" href="../intro/distns.html#mt:intro:rvs:pushforward">Definition 2.40</a>.</p>
+</div>
+<p>As an important remark, notice that we didn’t <em>explicitly</em> show the right-most equality, but this turns out to be pretty easy:</p>
+<div class="proof remark admonition" id="remark-5">
+<p class="admonition-title"><span class="caption-number">Remark 3.2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Note that in the change of variables formula, the following two are equivalent, which we did not explicitly prove above:</p>
+<div class="math notranslate nohighlight">
+\[\int_{X(\Omega)} f\, \text d\left(X_*\mu\right) &amp;= \int_{S} f\, \text d\left(X_*\mu\right).\]</div>
+<p>This is because for any <span class="math notranslate nohighlight">\(r \not \in X(\Omega)\)</span>, <span class="math notranslate nohighlight">\(X^{-1}: r \mapsto \varnothing\)</span>. Noting that <span class="math notranslate nohighlight">\(X_*\mu\)</span> is a measure, and hence the measure of the empty set is <span class="math notranslate nohighlight">\(0\)</span>, we can just as easily write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_{S \setminus X(\Omega)} f\, \text d\left(X_*\mu\right) &amp;= \int_{\omega \in S \setminus X(\Omega)} f\, \text d\left(\mu\circ X^{-1}\right) \\
+&amp;= \int_{\omega \in S \setminus X(\Omega)} f\, \text d\left(\mu(\varnothing)\right) \\
+&amp;= 0.\end{split}\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[\int_{X(\Omega)} f\, \text d\left(X_*\mu\right) = 
+\int_{S} f\, \text d\left(X_*\mu\right).\]</div>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">

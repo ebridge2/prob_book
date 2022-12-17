@@ -200,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../mt/intro/distns.html">
-     2.4. Distribution Functions
+     2.4. Pushforward measures and distribution functions
     </a>
    </li>
   </ul>
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../mt/integration/prod_meas.html">
-     3.4. Product Measures
+     3.4. Integration in higher dimensions
     </a>
    </li>
   </ul>
@@ -795,10 +795,10 @@ title="Print to PDF"
 <p>Often times, we’re going to try our best to not just show you empirical results, we’re going to try to demonstrate how the result works in practice. This is going to be done, more often than not, using code snippets and figures. In general, all code relevant to an algorithm or simulation is going to be shown explicitly. For example, a python code block, and its corresponding output, looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">howdy_world</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Howdy world!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def howdy_world():
+    print(&quot;Howdy world!&quot;)
 
-<span class="n">howdy_world</span><span class="p">()</span>
+howdy_world()
 </pre></div>
 </div>
 </div>
@@ -811,10 +811,10 @@ title="Print to PDF"
 <p>Sometimes, there will be code sections that aren’t really relevant to the message being conveyed. These code blocks, which may include calls to plotting methods the user has seen before, or redundant blocks that only add styling to figures or the like, will generally be hidden if we think that they detract from the overall flow of a section. These blocks will look like this:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">howdy_hidden</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Howdy world, but I&#39;m hidden!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def howdy_hidden():
+    print(&quot;Howdy world, but I&#39;m hidden!&quot;)
 
-<span class="n">howdy_hidden</span><span class="p">()</span>
+howdy_hidden()
 </pre></div>
 </div>
 </div>

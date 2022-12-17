@@ -202,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="mt/intro/distns.html">
-     2.4. Distribution Functions
+     2.4. Pushforward measures and distribution functions
     </a>
    </li>
   </ul>
@@ -234,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="mt/integration/prod_meas.html">
-     3.4. Product Measures
+     3.4. Integration in higher dimensions
     </a>
    </li>
   </ul>
@@ -437,16 +437,15 @@ title="Open an issue"
    <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
    <a href="#cap-definition-10"><strong>definition-10</strong></a> | 
    <a href="#cap-definition-12"><strong>definition-12</strong></a> | 
-   <a href="#cap-definition-13"><strong>definition-13</strong></a> | 
    <a href="#cap-definition-15"><strong>definition-15</strong></a> | 
    <a href="#cap-definition-17"><strong>definition-17</strong></a> | 
    <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
    <a href="#cap-definition-21"><strong>definition-21</strong></a> | 
-   <a href="#cap-definition-24"><strong>definition-24</strong></a> | 
-   <a href="#cap-definition-27"><strong>definition-27</strong></a> | 
-   <a href="#cap-definition-28"><strong>definition-28</strong></a> | 
+   <a href="#cap-definition-26"><strong>definition-26</strong></a> | 
+   <a href="#cap-definition-29"><strong>definition-29</strong></a> | 
    <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
    <a href="#cap-definition-30"><strong>definition-30</strong></a> | 
+   <a href="#cap-definition-32"><strong>definition-32</strong></a> | 
    <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
    <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
    <a href="#cap-definition-6"><strong>definition-6</strong></a> | 
@@ -458,12 +457,13 @@ title="Open an issue"
    <a href="#cap-example-1"><strong>example-1</strong></a> | 
    <a href="#cap-example-10"><strong>example-10</strong></a> | 
    <a href="#cap-example-11"><strong>example-11</strong></a> | 
+   <a href="#cap-example-12"><strong>example-12</strong></a> | 
    <a href="#cap-example-13"><strong>example-13</strong></a> | 
-   <a href="#cap-example-14"><strong>example-14</strong></a> | 
+   <a href="#cap-example-15"><strong>example-15</strong></a> | 
+   <a href="#cap-example-16"><strong>example-16</strong></a> | 
    <a href="#cap-example-19"><strong>example-19</strong></a> | 
    <a href="#cap-example-2"><strong>example-2</strong></a> | 
    <a href="#cap-example-4"><strong>example-4</strong></a> | 
-   <a href="#cap-example-9"><strong>example-9</strong></a> | 
    <a href="#cap-foundations:series:defs:partsum"><strong>foundations:series:defs:partsum</strong></a> | 
    <a href="#cap-foundations:series:defs:series"><strong>foundations:series:defs:series</strong></a> | 
    <a href="#cap-foundations:series:taylor:cos"><strong>foundations:series:taylor:cos</strong></a> | 
@@ -532,6 +532,8 @@ title="Open an issue"
    <a href="#cap-mt:int:exp:ss:defn"><strong>mt:int:exp:ss:defn</strong></a> | 
    <a href="#cap-mt:int:exp:ss:expofind"><strong>mt:int:exp:ss:expofind</strong></a> | 
    <a href="#cap-mt:int:exp:ss:markov"><strong>mt:int:exp:ss:markov</strong></a> | 
+   <a href="#cap-mt:int:prod_meas:cov"><strong>mt:int:prod_meas:cov</strong></a> | 
+   <a href="#cap-mt:int:prod_meas:lambdachar"><strong>mt:int:prod_meas:lambdachar</strong></a> | 
    <a href="#cap-mt:int:props:conv:bct"><strong>mt:int:props:conv:bct</strong></a> | 
    <a href="#cap-mt:int:props:conv:convae"><strong>mt:int:props:conv:convae</strong></a> | 
    <a href="#cap-mt:int:props:conv:convae_implies_convinmeas"><strong>mt:int:props:conv:convae_implies_convinmeas</strong></a> | 
@@ -544,7 +546,6 @@ title="Open an issue"
    <a href="#cap-mt:int:props:convex:jensen"><strong>mt:int:props:convex:jensen</strong></a> | 
    <a href="#cap-mt:int:props:convex:second_deriv"><strong>mt:int:props:convex:second_deriv</strong></a> | 
    <a href="#cap-mt:int:props:convex:subderiv"><strong>mt:int:props:convex:subderiv</strong></a> | 
-   <a href="#cap-mt:int:props:cov"><strong>mt:int:props:cov</strong></a> | 
    <a href="#cap-mt:int:props:norm:defn"><strong>mt:int:props:norm:defn</strong></a> | 
    <a href="#cap-mt:intro:distns:distn_fn"><strong>mt:intro:distns:distn_fn</strong></a> | 
    <a href="#cap-mt:intro:distns:distn_fn_dets_law"><strong>mt:intro:distns:distn_fn_dets_law</strong></a> | 
@@ -562,6 +563,7 @@ title="Open an issue"
    <a href="#cap-mt:intro:prob_spaces:meas:lebesgue:exist_unique"><strong>mt:intro:prob_spaces:meas:lebesgue:exist_unique</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:meas:measdiff"><strong>mt:intro:prob_spaces:meas:measdiff</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:meas:monotone"><strong>mt:intro:prob_spaces:meas:monotone</strong></a> | 
+   <a href="#cap-mt:intro:prob_spaces:meas:set_conv_below"><strong>mt:intro:prob_spaces:meas:set_conv_below</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:meas:subadd"><strong>mt:intro:prob_spaces:meas:subadd</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:meas:unique"><strong>mt:intro:prob_spaces:meas:unique</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:meas_sp"><strong>mt:intro:prob_spaces:meas_sp</strong></a> | 
@@ -569,6 +571,7 @@ title="Open an issue"
    <a href="#cap-mt:intro:prob_spaces:probmeas:def"><strong>mt:intro:prob_spaces:probmeas:def</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:probsp:def"><strong>mt:intro:prob_spaces:probsp:def</strong></a> | 
    <a href="#cap-mt:intro:prob_spaces:setfn"><strong>mt:intro:prob_spaces:setfn</strong></a> | 
+   <a href="#cap-mt:intro:prod_meas:lambda"><strong>mt:intro:prod_meas:lambda</strong></a> | 
    <a href="#cap-mt:intro:rvs:elem:comp"><strong>mt:intro:rvs:elem:comp</strong></a> | 
    <a href="#cap-mt:intro:rvs:elem:cont"><strong>mt:intro:rvs:elem:cont</strong></a> | 
    <a href="#cap-mt:intro:rvs:elem:ext:inf"><strong>mt:intro:rvs:elem:ext:inf</strong></a> | 
@@ -592,6 +595,7 @@ title="Open an issue"
    <a href="#cap-mt:intro:set:sig"><strong>mt:intro:set:sig</strong></a> | 
    <a href="#cap-mt:intro:set:sig:borel"><strong>mt:intro:set:sig:borel</strong></a> | 
    <a href="#cap-mt:intro:set:sig:borel_gen"><strong>mt:intro:set:sig:borel_gen</strong></a> | 
+   <a href="#cap-mt:intro:set:sig:closure_intersect"><strong>mt:intro:set:sig:closure_intersect</strong></a> | 
    <a href="#cap-mt:intro:set:sig:extr_closure"><strong>mt:intro:set:sig:extr_closure</strong></a> | 
    <a href="#cap-mt:intro:set:sig:intersection"><strong>mt:intro:set:sig:intersection</strong></a> | 
    <a href="#cap-mt:intro:set:sig:monotone_sets"><strong>mt:intro:set:sig:monotone_sets</strong></a> | 
@@ -605,23 +609,23 @@ title="Open an issue"
    <a href="#cap-pref:dummy-theorem"><strong>pref:dummy-theorem</strong></a> | 
    <a href="#cap-pref:dummy-theorem2"><strong>pref:dummy-theorem2</strong></a> | 
    <a href="#cap-pref:nns"><strong>pref:nns</strong></a> | 
+   <a href="#cap-property-10"><strong>property-10</strong></a> | 
+   <a href="#cap-property-11"><strong>property-11</strong></a> | 
+   <a href="#cap-property-12"><strong>property-12</strong></a> | 
    <a href="#cap-property-18"><strong>property-18</strong></a> | 
    <a href="#cap-property-19"><strong>property-19</strong></a> | 
    <a href="#cap-property-2"><strong>property-2</strong></a> | 
    <a href="#cap-property-20"><strong>property-20</strong></a> | 
-   <a href="#cap-property-5"><strong>property-5</strong></a> | 
-   <a href="#cap-property-6"><strong>property-6</strong></a> | 
-   <a href="#cap-property-7"><strong>property-7</strong></a> | 
    <a href="#cap-property-8"><strong>property-8</strong></a> | 
    <a href="#cap-property-9"><strong>property-9</strong></a> | 
    <a href="#cap-remark-0"><strong>remark-0</strong></a> | 
    <a href="#cap-remark-12"><strong>remark-12</strong></a> | 
-   <a href="#cap-remark-17"><strong>remark-17</strong></a> | 
    <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
    <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
-   <a href="#cap-remark-4"><strong>remark-4</strong></a> | 
    <a href="#cap-remark-5"><strong>remark-5</strong></a> | 
+   <a href="#cap-remark-7"><strong>remark-7</strong></a> | 
    <a href="#cap-theorem-18"><strong>theorem-18</strong></a> | 
+   <a href="#cap-theorem-3"><strong>theorem-3</strong></a> | 
    <a href="#cap-theorem-4"><strong>theorem-4</strong></a> | 
    <a href="#cap-theorem-7"><strong>theorem-7</strong></a> | 
    <a href="#cap-thm:found:lim:equiv_liminf_limsup"><strong>thm:found:lim:equiv_liminf_limsup</strong></a> | 
@@ -766,14 +770,6 @@ title="Open an issue"
        <a href="mt/integration/basics.html#definition-12"><code class="xref">definition-12</code></a> <em>(mt/integration/basics)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-13"><td></td><td>
-       <strong>definition-13</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/probability_spaces.html#definition-13"><code class="xref">definition-13</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-15"><td></td><td>
        <strong>definition-15</strong></td><td></td></tr>
      <tr>
@@ -806,28 +802,20 @@ title="Open an issue"
        <a href="mt/intro/probability_spaces.html#definition-21"><code class="xref">definition-21</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-24"><td></td><td>
-       <strong>definition-24</strong></td><td></td></tr>
+     <tr class="cap" id="cap-definition-26"><td></td><td>
+       <strong>definition-26</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/set_theory.html#definition-24"><code class="xref">definition-24</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#definition-26"><code class="xref">definition-26</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-27"><td></td><td>
-       <strong>definition-27</strong></td><td></td></tr>
+     <tr class="cap" id="cap-definition-29"><td></td><td>
+       <strong>definition-29</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/set_theory.html#definition-27"><code class="xref">definition-27</code></a> <em>(mt/intro/set_theory)</em></td><td>
-       <em>definition</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-definition-28"><td></td><td>
-       <strong>definition-28</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/set_theory.html#definition-28"><code class="xref">definition-28</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#definition-29"><code class="xref">definition-29</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-3"><td></td><td>
@@ -844,6 +832,14 @@ title="Open an issue"
        <td></td>
        <td>
        <a href="mt/intro/set_theory.html#definition-30"><code class="xref">definition-30</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-32"><td></td><td>
+       <strong>definition-32</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#definition-32"><code class="xref">definition-32</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-definition-4"><td></td><td>
@@ -891,7 +887,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/probability_spaces.html#definition-9"><code class="xref">definition-9</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <a href="mt/intro/set_theory.html#definition-9"><code class="xref">definition-9</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ex:foundations:series:conv_tests:integral"><td></td><td>
@@ -934,6 +930,14 @@ title="Open an issue"
        <a href="mt/intro/set_theory.html#example-11"><code class="xref">example-11</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-12"><td></td><td>
+       <strong>example-12</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#example-12"><code class="xref">example-12</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-13"><td></td><td>
        <strong>example-13</strong></td><td></td></tr>
      <tr>
@@ -942,12 +946,20 @@ title="Open an issue"
        <a href="mt/intro/set_theory.html#example-13"><code class="xref">example-13</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-14"><td></td><td>
-       <strong>example-14</strong></td><td></td></tr>
+     <tr class="cap" id="cap-example-15"><td></td><td>
+       <strong>example-15</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/set_theory.html#example-14"><code class="xref">example-14</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <a href="mt/intro/set_theory.html#example-15"><code class="xref">example-15</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-16"><td></td><td>
+       <strong>example-16</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#example-16"><code class="xref">example-16</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-example-19"><td></td><td>
@@ -972,14 +984,6 @@ title="Open an issue"
        <td></td>
        <td>
        <a href="mt/intro/probability_spaces.html#example-4"><code class="xref">example-4</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
-       <em>example</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-example-9"><td></td><td>
-       <strong>example-9</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/set_theory.html#example-9"><code class="xref">example-9</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-foundations:series:defs:partsum"><td></td><td>
@@ -1526,6 +1530,22 @@ title="Open an issue"
        <a href="mt/integration/exp.html#mt:int:exp:ss:markov"><code class="xref">mt:int:exp:ss:markov</code></a> <em>(mt/integration/exp)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:int:prod_meas:cov"><td></td><td>
+       <strong>mt:int:prod_meas:cov</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/integration/prod_meas.html#mt:int:prod_meas:cov"><code class="xref">mt:int:prod_meas:cov</code></a> <em>(mt/integration/prod_meas)</em></td><td>
+       <em>lemma</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:int:prod_meas:lambdachar"><td></td><td>
+       <strong>mt:int:prod_meas:lambdachar</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/integration/prod_meas.html#mt:int:prod_meas:lambdachar"><code class="xref">mt:int:prod_meas:lambdachar</code></a> <em>(mt/integration/prod_meas)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:int:props:conv:bct"><td></td><td>
        <strong>mt:int:props:conv:bct</strong></td><td></td></tr>
      <tr>
@@ -1620,14 +1640,6 @@ title="Open an issue"
        <td></td>
        <td>
        <a href="mt/integration/props.html#mt:int:props:convex:subderiv"><code class="xref">mt:int:props:convex:subderiv</code></a> <em>(mt/integration/props)</em></td><td>
-       <em>lemma</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-mt:int:props:cov"><td></td><td>
-       <strong>mt:int:props:cov</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/integration/props.html#mt:int:props:cov"><code class="xref">mt:int:props:cov</code></a> <em>(mt/integration/props)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:int:props:norm:defn"><td></td><td>
@@ -1766,6 +1778,14 @@ title="Open an issue"
        <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:monotone"><code class="xref">mt:intro:prob_spaces:meas:monotone</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prob_spaces:meas:set_conv_below"><td></td><td>
+       <strong>mt:intro:prob_spaces:meas:set_conv_below</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:meas:set_conv_below"><code class="xref">mt:intro:prob_spaces:meas:set_conv_below</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:intro:prob_spaces:meas:subadd"><td></td><td>
        <strong>mt:intro:prob_spaces:meas:subadd</strong></td><td></td></tr>
      <tr>
@@ -1820,6 +1840,14 @@ title="Open an issue"
        <td></td>
        <td>
        <a href="mt/intro/probability_spaces.html#mt:intro:prob_spaces:setfn"><code class="xref">mt:intro:prob_spaces:setfn</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:prod_meas:lambda"><td></td><td>
+       <strong>mt:intro:prod_meas:lambda</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/integration/prod_meas.html#mt:intro:prod_meas:lambda"><code class="xref">mt:intro:prod_meas:lambda</code></a> <em>(mt/integration/prod_meas)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:intro:rvs:elem:comp"><td></td><td>
@@ -1923,7 +1951,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/random_variables.html#mt:intro:rvs:pushforward"><code class="xref">mt:intro:rvs:pushforward</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <a href="mt/intro/distns.html#mt:intro:rvs:pushforward"><code class="xref">mt:intro:rvs:pushforward</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:intro:rvs:pushforward:preimage"><td></td><td>
@@ -1931,7 +1959,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/random_variables.html#mt:intro:rvs:pushforward:preimage"><code class="xref">mt:intro:rvs:pushforward:preimage</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <a href="mt/intro/distns.html#mt:intro:rvs:pushforward:preimage"><code class="xref">mt:intro:rvs:pushforward:preimage</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:intro:rvs:pushforward_is_meas"><td></td><td>
@@ -1939,7 +1967,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/random_variables.html#mt:intro:rvs:pushforward_is_meas"><code class="xref">mt:intro:rvs:pushforward_is_meas</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <a href="mt/intro/distns.html#mt:intro:rvs:pushforward_is_meas"><code class="xref">mt:intro:rvs:pushforward_is_meas</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>lemma</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:intro:rvs:rv"><td></td><td>
@@ -2005,6 +2033,14 @@ title="Open an issue"
        <td>
        <a href="mt/intro/set_theory.html#mt:intro:set:sig:borel_gen"><code class="xref">mt:intro:set:sig:borel_gen</code></a> <em>(mt/intro/set_theory)</em></td><td>
        <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-mt:intro:set:sig:closure_intersect"><td></td><td>
+       <strong>mt:intro:set:sig:closure_intersect</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/set_theory.html#mt:intro:set:sig:closure_intersect"><code class="xref">mt:intro:set:sig:closure_intersect</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-mt:intro:set:sig:extr_closure"><td></td><td>
        <strong>mt:intro:set:sig:extr_closure</strong></td><td></td></tr>
@@ -2110,12 +2146,36 @@ title="Open an issue"
        <a href="intro/preface.html#pref:nns"><code class="xref">pref:nns</code></a> <em>(intro/preface)</em></td><td>
        <em>definition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-property-10"><td></td><td>
+       <strong>property-10</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#property-10"><code class="xref">property-10</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-property-11"><td></td><td>
+       <strong>property-11</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#property-11"><code class="xref">property-11</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-property-12"><td></td><td>
+       <strong>property-12</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#property-12"><code class="xref">property-12</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-18"><td></td><td>
        <strong>property-18</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="mt/intro/set_theory.html#property-18"><code class="xref">property-18</code></a> <em>(mt/intro/set_theory)</em></td><td>
+       <a href="mt/intro/probability_spaces.html#property-18"><code class="xref">property-18</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-19"><td></td><td>
@@ -2140,30 +2200,6 @@ title="Open an issue"
        <td></td>
        <td>
        <a href="mt/intro/probability_spaces.html#property-20"><code class="xref">property-20</code></a> <em>(mt/intro/probability_spaces)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-property-5"><td></td><td>
-       <strong>property-5</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/distns.html#property-5"><code class="xref">property-5</code></a> <em>(mt/intro/distns)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-property-6"><td></td><td>
-       <strong>property-6</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/distns.html#property-6"><code class="xref">property-6</code></a> <em>(mt/intro/distns)</em></td><td>
-       <em>property</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-property-7"><td></td><td>
-       <strong>property-7</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/distns.html#property-7"><code class="xref">property-7</code></a> <em>(mt/intro/distns)</em></td><td>
        <em>property</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-property-8"><td></td><td>
@@ -2198,14 +2234,6 @@ title="Open an issue"
        <a href="mt/intro/random_variables.html#remark-12"><code class="xref">remark-12</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-17"><td></td><td>
-       <strong>remark-17</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/integration/props.html#remark-17"><code class="xref">remark-17</code></a> <em>(mt/integration/props)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-2"><td></td><td>
        <strong>remark-2</strong></td><td></td></tr>
      <tr>
@@ -2222,14 +2250,6 @@ title="Open an issue"
        <a href="mt/intro/random_variables.html#remark-3"><code class="xref">remark-3</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-4"><td></td><td>
-       <strong>remark-4</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="mt/intro/distns.html#remark-4"><code class="xref">remark-4</code></a> <em>(mt/intro/distns)</em></td><td>
-       <em>remark</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-5"><td></td><td>
        <strong>remark-5</strong></td><td></td></tr>
      <tr>
@@ -2238,12 +2258,28 @@ title="Open an issue"
        <a href="mt/intro/random_variables.html#remark-5"><code class="xref">remark-5</code></a> <em>(mt/intro/random_variables)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-7"><td></td><td>
+       <strong>remark-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/intro/distns.html#remark-7"><code class="xref">remark-7</code></a> <em>(mt/intro/distns)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-18"><td></td><td>
        <strong>theorem-18</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="mt/intro/random_variables.html#theorem-18"><code class="xref">theorem-18</code></a> <em>(mt/intro/random_variables)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-theorem-3"><td></td><td>
+       <strong>theorem-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="mt/integration/prod_meas.html#theorem-3"><code class="xref">theorem-3</code></a> <em>(mt/integration/prod_meas)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-4"><td></td><td>
