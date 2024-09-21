@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>1.3. Series &#8212; Measure Theoretic Probability Theory</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,61 +65,104 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'foundations/convergence_tests';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Introduction to Measure Theory" href="../mt/intro/intro.html" />
     <link rel="prev" title="1.2. Useful Results" href="useful_results.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../coverpage.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Measure Theoretic Probability Theory</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Measure Theoretic Probability Theory - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Measure Theoretic Probability Theory - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,574 +171,293 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/preface.html">
-   Preface
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/terminology.html">
-   Terminology
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/preface.html">Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/terminology.html">Terminology</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Foundations
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="foundations.html">
-   1. Foundations
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="limits.html">
-     1.1. Limits
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="useful_results.html">
-     1.2. Useful Results
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.3. Series
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="foundations.html">1. Foundations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="limits.html">1.1. Limits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="useful_results.html">1.2. Useful Results</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Series</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduction to Measure Theory
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../mt/intro/intro.html">
-   2. Introduction to Measure Theory
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/intro/set_theory.html">
-     2.1. Set Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/intro/probability_spaces.html">
-     2.2. Measures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/intro/random_variables.html">
-     2.3. Random Variables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/intro/distns.html">
-     2.4. Pushforward measures and distribution functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../mt/integration/integration.html">
-   3. Integration and Expectation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/integration/basics.html">
-     3.1. Defining Integration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/integration/props.html">
-     3.2. Properties of Integration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/integration/exp.html">
-     3.3. Expectation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mt/integration/prod_meas.html">
-     3.4. Integration in higher dimensions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mt/classes/classes.html">
-   4. Classes of Random Variables
-  </a>
- </li>
+</li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Asymptotic Probability Theory
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Measure Theory</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../asy/llns/llns.html">
-   5. Laws of Large Numbers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../asy/clts/clts.html">
-   6. Central Limit Theorems
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../asy/conc/conc.html">
-   7. Concentration
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mt/intro/intro.html">2. Introduction to Measure Theory</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mt/intro/set_theory.html">2.1. Set Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt/intro/probability_spaces.html">2.2. Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt/intro/random_variables.html">2.3. Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt/intro/distns.html">2.4. Pushforward measures and distribution functions</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Markov Chain Theory
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mt/integration/integration.html">3. Integration and Expectation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mt/integration/basics.html">3.1. Defining Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt/integration/props.html">3.2. Properties of Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt/integration/exp.html">3.3. Expectation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mt/integration/prod_meas.html">3.4. Integration in higher dimensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mt/classes/classes.html">4. Classes of Random Variables</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Asymptotic Probability Theory</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../mc/martingales/martingales.html">
-   8. Martingales
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../mc/mc/mc.html">
-   9. Markov Chains
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../asy/llns/llns.html">5. Laws of Large Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asy/clts/clts.html">6. Central Limit Theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asy/conc/conc.html">7. Concentration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Markov Chain Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../mc/martingales/martingales.html">8. Martingales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mc/mc/mc.html">9. Markov Chains</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/ebridge2/prob_book/master?urlpath=tree/prob_book/foundations/convergence_tests.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ebridge2/prob_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/foundations/convergence_tests.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ebridge2/prob_book/issues/new?title=Issue%20on%20page%20%2Ffoundations/convergence_tests.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/foundations/convergence_tests.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/ebridge2/prob_book/"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/ebridge2/prob_book//issues/new?title=Issue%20on%20page%20%2Ffoundations/convergence_tests.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/ebridge2/prob_book/edit/master/prob_book/foundations/convergence_tests.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/foundations/convergence_tests.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-definitions">
-   1.3.1. Basic definitions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taylor-s-theorem">
-   1.3.2. Taylor’s theorem
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examples-of-taylor-series">
-     1.3.2.1. Examples of Taylor series
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#consequences-of-taylor-s-theorem">
-     1.3.2.2. Consequences of Taylor’s theorem
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence-concepts">
-   1.3.3. Convergence concepts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparison-test">
-     1.3.3.1. Comparison test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integral-test">
-     1.3.3.2. Integral test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-series-test">
-     1.3.3.3.
-     <span class="math notranslate nohighlight">
-      \(p\)
-     </span>
-     -series test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ratio-test">
-     1.3.3.4. Ratio Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#root-test">
-     1.3.3.5. Root Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limit-comparison-test">
-     1.3.3.6. Limit Comparison Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#alternating-series-test">
-     1.3.3.7. Alternating series test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence-of-tails-of-series-and-tails">
-   1.3.4. Convergence of tails of series and tails
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Series</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-definitions">
-   1.3.1. Basic definitions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#taylor-s-theorem">
-   1.3.2. Taylor’s theorem
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#examples-of-taylor-series">
-     1.3.2.1. Examples of Taylor series
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#consequences-of-taylor-s-theorem">
-     1.3.2.2. Consequences of Taylor’s theorem
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence-concepts">
-   1.3.3. Convergence concepts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparison-test">
-     1.3.3.1. Comparison test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integral-test">
-     1.3.3.2. Integral test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-series-test">
-     1.3.3.3.
-     <span class="math notranslate nohighlight">
-      \(p\)
-     </span>
-     -series test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ratio-test">
-     1.3.3.4. Ratio Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#root-test">
-     1.3.3.5. Root Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limit-comparison-test">
-     1.3.3.6. Limit Comparison Test
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#alternating-series-test">
-     1.3.3.7. Alternating series test
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convergence-of-tails-of-series-and-tails">
-   1.3.4. Convergence of tails of series and tails
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Series</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-definitions">1.3.1. Basic definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-s-theorem">1.3.2. Taylor’s theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-taylor-series">1.3.2.1. Examples of Taylor series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences-of-taylor-s-theorem">1.3.2.2. Consequences of Taylor’s theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-concepts">1.3.3. Convergence concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-test">1.3.3.1. Comparison test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-test">1.3.3.2. Integral test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-series-test">1.3.3.3. <span class="math notranslate nohighlight">\(p\)</span>-series test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-test">1.3.3.4. Ratio Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-test">1.3.3.5. Root Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-comparison-test">1.3.3.6. Limit Comparison Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternating-series-test">1.3.3.7. Alternating series test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-of-tails-of-series-and-tails">1.3.4. Convergence of tails of series and tails</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="series">
-<span id="foundations-series"></span><h1><span class="section-number">1.3. </span>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h1>
+<span id="foundations-series"></span><h1><span class="section-number">1.3. </span>Series<a class="headerlink" href="#series" title="Permalink to this heading">#</a></h1>
 <p>It is almost always the case in real analysis that we’re going to be concerned with what happens when we take sums (or averages) of long sequences. These are known as <em>series</em>, and we need a few basic definitions to get us started.</p>
 <section id="basic-definitions">
-<h2><span class="section-number">1.3.1. </span>Basic definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.1. </span>Basic definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this heading">#</a></h2>
 <p>To start with, we have a specific term, called a <em>partial sum</em>, for the sum of a portion of a sequence:</p>
 <div class="proof definition admonition" id="foundations:series:defs:partsum">
 <p class="admonition-title"><span class="caption-number">Definition 1.13 </span> (Partial sum)</p>
@@ -706,13 +480,13 @@ title="Print to PDF"
 </section>
 </div></section>
 <section id="taylor-s-theorem">
-<h2><span class="section-number">1.3.2. </span>Taylor’s theorem<a class="headerlink" href="#taylor-s-theorem" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.2. </span>Taylor’s theorem<a class="headerlink" href="#taylor-s-theorem" title="Permalink to this heading">#</a></h2>
 <p>One of the most useful results from real analysis is known as Taylor’s Theorem, which effectively asserts that we can restate functions satisfying specific conditions using Taylor series. We can then, in effect, “chop off” terms from this Taylor series to obtain arbitrarily precise estimates of the function itself using polynomials. We’ve already seen the class of continuously differentiable functions <a class="reference internal" href="useful_results.html#foundations:useful_results:diff_class">Definition 1.12</a>, so we are ready to understand the concept behind the Taylor series:</p>
 <div class="proof lemma admonition" id="foundations:series:taylor:series">
 <p class="admonition-title"><span class="caption-number">Lemma 1.4 </span> (Taylor series)</p>
 <section class="lemma-content" id="proof-content">
 <p>Suppose that:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(x_0 \in \mathbb R\)</span>,</p></li>
 <li><p>let <span class="math notranslate nohighlight">\(f  : \mathbb R \rightarrow \mathbb R\)</span> be a function,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal X \subseteq \mathbb R\)</span> is a neighborhood about <span class="math notranslate nohighlight">\(x_0\)</span>, on which <span class="math notranslate nohighlight">\(f \in C^\infty\)</span>.</p></li>
@@ -726,7 +500,7 @@ title="Print to PDF"
 <p class="admonition-title"><span class="caption-number">Theorem 1.2 </span> (Taylor’s Theorem)</p>
 <section class="theorem-content" id="proof-content">
 <p>Suppose that:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(n \geq 1\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(x_0 \in \mathbb R\)</span>,</p></li>
 <li><p>let <span class="math notranslate nohighlight">\(f  : \mathbb R \rightarrow \mathbb R\)</span> be a function,</p></li>
@@ -739,7 +513,7 @@ title="Print to PDF"
 </section>
 </div><p>The core interpretation of Taylor’s Theorem that we will need for our study is that <span class="math notranslate nohighlight">\(T_n(f, x, x_0)\)</span> is a polynomial which “agrees” with <span class="math notranslate nohighlight">\(f\)</span> in terms of derivatives about <span class="math notranslate nohighlight">\(x_0\)</span> up to order <span class="math notranslate nohighlight">\(n\)</span>, and further, will be arbitrarily precise within a neighborhood of <span class="math notranslate nohighlight">\(x_0\)</span>. The idea of Taylor’s Theorem is that we are, in effect, “chopping off” the Taylor series at an arbitrary point, and are left with a remainder that is of a (potentially) extremely low order <span class="math notranslate nohighlight">\(o(|x - x_0|^n)\)</span> when <span class="math notranslate nohighlight">\(x\)</span> is in a neighborhood of <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
 <section id="examples-of-taylor-series">
-<h3><span class="section-number">1.3.2.1. </span>Examples of Taylor series<a class="headerlink" href="#examples-of-taylor-series" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.2.1. </span>Examples of Taylor series<a class="headerlink" href="#examples-of-taylor-series" title="Permalink to this heading">#</a></h3>
 <p>Let’s take a look at some common Taylor series that will arise. As an exercise, try to work through some of these yourself:</p>
 <div class="proof example admonition" id="foundations:series:taylor:geometric">
 <p class="admonition-title"><span class="caption-number">Example 1.1 </span> (Taylor series of <span class="math notranslate nohighlight">\(\frac{1}{1 - x}\)</span>)</p>
@@ -784,7 +558,7 @@ title="Print to PDF"
 </div><p>Due to the oddness of <span class="math notranslate nohighlight">\(\sin(x)\)</span> (that is, <span class="math notranslate nohighlight">\(\sin(x) = -\sin(x)\)</span>), we only end up with <em>odd</em> powers.</p>
 </section>
 <section id="consequences-of-taylor-s-theorem">
-<h3><span class="section-number">1.3.2.2. </span>Consequences of Taylor’s theorem<a class="headerlink" href="#consequences-of-taylor-s-theorem" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.2.2. </span>Consequences of Taylor’s theorem<a class="headerlink" href="#consequences-of-taylor-s-theorem" title="Permalink to this heading">#</a></h3>
 <p>Next is an important consequence of Taylor’s theorem that will arise in several places in the book. Let’s start with an important sequence:</p>
 <div class="proof lemma admonition" id="lemma-9">
 <p class="admonition-title"><span class="caption-number">Lemma 1.5 </span> (Limit is exponential)</p>
@@ -807,16 +581,16 @@ title="Print to PDF"
 </section>
 </section>
 <section id="convergence-concepts">
-<h2><span class="section-number">1.3.3. </span>Convergence concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.3. </span>Convergence concepts<a class="headerlink" href="#convergence-concepts" title="Permalink to this heading">#</a></h2>
 <p>We’re going to be extremely interested in the behavior of these series and their behaviors. This means that we need some tools to easily let us determine for which particular sequences <span class="math notranslate nohighlight">\((a_n)\)</span> that the resulting series converges/diverges. These tend to be called convergence tests.</p>
 <section id="comparison-test">
-<h3><span class="section-number">1.3.3.1. </span>Comparison test<a class="headerlink" href="#comparison-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.1. </span>Comparison test<a class="headerlink" href="#comparison-test" title="Permalink to this heading">#</a></h3>
 <p>First up is the simplest test, the comparison test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:comp">
 <p class="admonition-title"><span class="caption-number">Lemma 1.6 </span> (Comparison Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span> where all <span class="math notranslate nohighlight">\(a_n, b_n \geq 0\)</span>. Then:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty b_n\)</span> is a convergent series and <span class="math notranslate nohighlight">\(a_n \leq b_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty\)</span> converges.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty b_n\)</span> is a divergent series and <span class="math notranslate nohighlight">\(a_n \geq b_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span> diverges.</p></li>
 </ol>
@@ -824,7 +598,7 @@ title="Print to PDF"
 </div><p>When we have easy-to-use series that we already know behavior about, this can make proving convergence somewhat trivial.</p>
 </section>
 <section id="integral-test">
-<h3><span class="section-number">1.3.3.2. </span>Integral test<a class="headerlink" href="#integral-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.2. </span>Integral test<a class="headerlink" href="#integral-test" title="Permalink to this heading">#</a></h3>
 <p>Next up is the integral test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:integral">
 <p class="admonition-title"><span class="caption-number">Lemma 1.7 </span> (Integral Test)</p>
@@ -865,14 +639,14 @@ title="Print to PDF"
 &amp;= -\frac{1}{(s - 1)(\log n)^{s - 1}} \big|_{n = 2}^\infty \\
 &amp;= 0 + \frac{1}{(s - 1)\log(2)^{s - 1}}\end{split}\]</div>
 <p>Which is finite (the integral is convergent). So our results are:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(s \leq 1\)</span>, the series diverges, by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.7</a> and <a class="reference internal" href="#lem:foundations:series:conv_tests:comp">Lemma 1.6</a>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(s &gt; 1\)</span>, the series converges by <a class="reference internal" href="#lem:foundations:series:conv_tests:integral">Lemma 1.7</a>.</p></li>
 </ol>
 </section>
 </div></section>
 <section id="p-series-test">
-<h3><span class="section-number">1.3.3.3. </span><span class="math notranslate nohighlight">\(p\)</span>-series test<a class="headerlink" href="#p-series-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.3. </span><span class="math notranslate nohighlight">\(p\)</span>-series test<a class="headerlink" href="#p-series-test" title="Permalink to this heading">#</a></h3>
 <p>Next up is probably the most important convergence result that you will want to know inside and out, the <span class="math notranslate nohighlight">\(p\)</span>-series convergence test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:pseries">
 <p class="admonition-title"><span class="caption-number">Lemma 1.8 </span> (<span class="math notranslate nohighlight">\(p\)</span>-series Convergence Test)</p>
@@ -884,19 +658,19 @@ title="Print to PDF"
 </section>
 </div></section>
 <section id="ratio-test">
-<h3><span class="section-number">1.3.3.4. </span>Ratio Test<a class="headerlink" href="#ratio-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.4. </span>Ratio Test<a class="headerlink" href="#ratio-test" title="Permalink to this heading">#</a></h3>
 <p>The next test is one of the more easily used convergence tests, as it amounts to taking the limit of two numbers. It is called the ratio test, and is based on the ratios of consecutive terms; e.g., <span class="math notranslate nohighlight">\(r_n \triangleq \frac{a_{n + 1}}{a_n}\)</span>. The statement is rather big and involved:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:ratio">
 <p class="admonition-title"><span class="caption-number">Lemma 1.9 </span> (Ratio Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, where <span class="math notranslate nohighlight">\(a_n \neq 0\)</span> for large <span class="math notranslate nohighlight">\(n\)</span>. Let <span class="math notranslate nohighlight">\(L = \lim_{n \rightarrow \infty}|r_n|\)</span>, where <span class="math notranslate nohighlight">\(r_n = \frac{a_{n + 1}}{a_n}\)</span>. If <span class="math notranslate nohighlight">\(L\)</span> exists, then:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(L &lt; 1\)</span>, the series converges absolutely.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(L = 1\)</span>, the test is inconclusive.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(L &gt; 1\)</span>, the series diverges.</p></li>
 </ol>
 <p>Further, if <span class="math notranslate nohighlight">\(L\)</span> does not exist, let <span class="math notranslate nohighlight">\(S = \limsup_{n \rightarrow \infty} |r_n|\)</span> and <span class="math notranslate nohighlight">\(I = \liminf_{n \rightarrow \infty}|r_n|\)</span>. Then:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(S &gt; 1\)</span>, the series converges absolutely.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(R &lt; 1\)</span>, the series diverges.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(|r_n| \geq 1\)</span> for all large <span class="math notranslate nohighlight">\(n\)</span>, regardless of the value of <span class="math notranslate nohighlight">\(R\)</span>, the series diverges.</p></li>
@@ -906,13 +680,13 @@ title="Print to PDF"
 </div><p>So, the nice aspect of this test is, we only need to think about the behavior of <span class="math notranslate nohighlight">\(r_n\)</span> in the tail. This means we can couple the ratio test with other nice results that operate on ratios of two numbers, like L’Hôpital’s rule, for determining behavior about the series. The downside is that these inconclusive cases can sometimes be rather annoying.</p>
 </section>
 <section id="root-test">
-<h3><span class="section-number">1.3.3.5. </span>Root Test<a class="headerlink" href="#root-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.5. </span>Root Test<a class="headerlink" href="#root-test" title="Permalink to this heading">#</a></h3>
 <p>The next test can also be useful if we have terms that can easily be upper bounded by an <span class="math notranslate nohighlight">\(n^{th}\)</span> root, such as polynomial expressions. This is called the root test:</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:root">
 <p class="admonition-title"><span class="caption-number">Lemma 1.10 </span> (Root Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Consider the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty a_n\)</span>, and let <span class="math notranslate nohighlight">\(C = \limsup_{n \rightarrow \infty} \sqrt[n]{|a_n|}\)</span>. If:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(C &lt; 1\)</span>, the series converges absolutely.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(C &gt; 1\)</span>, the series diverges.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(C = 1\)</span>, and further, <span class="math notranslate nohighlight">\(\sqrt[n]{|a_n|} \downarrow 1\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, the series diverges.</p></li>
@@ -921,13 +695,13 @@ title="Print to PDF"
 </section>
 </div></section>
 <section id="limit-comparison-test">
-<h3><span class="section-number">1.3.3.6. </span>Limit Comparison Test<a class="headerlink" href="#limit-comparison-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.6. </span>Limit Comparison Test<a class="headerlink" href="#limit-comparison-test" title="Permalink to this heading">#</a></h3>
 <p>The next test looks only at the limits of a pair of sequence to determine behaviors, and is pretty similar to the comparison test.</p>
 <div class="proof lemma admonition" id="lem:foundations:series:conv_tests:lim_cmp">
 <p class="admonition-title"><span class="caption-number">Lemma 1.11 </span> (Limit Comparison Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> and <span class="math notranslate nohighlight">\((b_n)\)</span> be two sequences on <span class="math notranslate nohighlight">\(\mathcal A\)</span>. Further, assume that <span class="math notranslate nohighlight">\(a_n \geq 0\)</span>, and <span class="math notranslate nohighlight">\(b_n &gt; 0\)</span>, for all <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Then:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} &gt; 0\)</span> is finite, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> converges <span class="math notranslate nohighlight">\(\iff \sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} = 0\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> converges.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\lim_{n \rightarrow \infty}\frac{a_n}{b_n} = \infty\)</span> and <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} b_n\)</span> diverges, then <span class="math notranslate nohighlight">\(\sum_{n \in \mathbb N} a_n\)</span> diverges.</p></li>
@@ -960,13 +734,13 @@ title="Print to PDF"
 </section>
 </div></section>
 <section id="alternating-series-test">
-<h3><span class="section-number">1.3.3.7. </span>Alternating series test<a class="headerlink" href="#alternating-series-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.3.7. </span>Alternating series test<a class="headerlink" href="#alternating-series-test" title="Permalink to this heading">#</a></h3>
 <p>The next test considers what happens when we have an alternating series (the series alternates between positive and negative values), and the absolute value of the terms converge to zero. This is called the alternating series test:</p>
 <div class="proof lemma admonition" id="lemma-20">
 <p class="admonition-title"><span class="caption-number">Lemma 1.12 </span> (Alternating Series Test)</p>
 <section class="lemma-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathcal A \subset \mathbb R\)</span>, and let <span class="math notranslate nohighlight">\((a_n)\)</span> be a sequence on <span class="math notranslate nohighlight">\(\mathcal A\)</span>, where <span class="math notranslate nohighlight">\(a_n = (-1)^n b_n\)</span>, or <span class="math notranslate nohighlight">\(a_n = (-1)^{n + 1}b_n\)</span>, for <span class="math notranslate nohighlight">\(b_n \geq 0\)</span>. If:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(b_n \xrightarrow[n \rightarrow \infty]{} 0\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(b_n\)</span> is a decreasing sequence (<span class="math notranslate nohighlight">\(b_{n + 1} \leq b_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>),</p></li>
 </ol>
@@ -975,7 +749,7 @@ title="Print to PDF"
 </div></section>
 </section>
 <section id="convergence-of-tails-of-series-and-tails">
-<h2><span class="section-number">1.3.4. </span>Convergence of tails of series and tails<a class="headerlink" href="#convergence-of-tails-of-series-and-tails" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.3.4. </span>Convergence of tails of series and tails<a class="headerlink" href="#convergence-of-tails-of-series-and-tails" title="Permalink to this heading">#</a></h2>
 <p>An important result we will use repeatedly throughout the book is that the definition of a series converging is that the partial sums possess a limit. The consequence of this is that, conveniently, this means that the tail of the series converge to zero. We’ll formalize this intuitive result with a lemma:</p>
 <div class="proof lemma admonition" id="lemma-21">
 <p class="admonition-title"><span class="caption-number">Lemma 1.13 </span> (Convergent Series and the Tail Sum)</p>
@@ -1038,7 +812,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./foundations"
         },
         predefinedOutput: true
@@ -1046,50 +820,118 @@ title="Print to PDF"
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="useful_results.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.2. </span>Useful Results</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="useful_results.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Useful Results</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../mt/intro/intro.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../mt/intro/intro.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Measure Theory</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-definitions">1.3.1. Basic definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-s-theorem">1.3.2. Taylor’s theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-taylor-series">1.3.2.1. Examples of Taylor series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences-of-taylor-s-theorem">1.3.2.2. Consequences of Taylor’s theorem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-concepts">1.3.3. Convergence concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-test">1.3.3.1. Comparison test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-test">1.3.3.2. Integral test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-series-test">1.3.3.3. <span class="math notranslate nohighlight">\(p\)</span>-series test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-test">1.3.3.4. Ratio Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-test">1.3.3.5. Root Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-comparison-test">1.3.3.6. Limit Comparison Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alternating-series-test">1.3.3.7. Alternating series test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-of-tails-of-series-and-tails">1.3.4. Convergence of tails of series and tails</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Eric W. Bridgeford<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Eric W. Bridgeford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
