@@ -530,11 +530,12 @@ document.write(`
 <p>Then noting that <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}E_n = \bigcup_{n \in \mathbb N}F_n\)</span>, it is clear that <span class="math notranslate nohighlight">\(\bigcup_{n \in \mathbb N}F_n \in \mathcal F\)</span>.</p>
 </div>
 <p>This characterization can be used to prove a special result that will help us extend measures to more complicated spaces:</p>
-<div class="proof admonition" id="proof">
-<p>Proof. Dynkin <span class="math notranslate nohighlight">\(\pi, \lambda\)</span> Theorem
-Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal P\)</span> and <span class="math notranslate nohighlight">\(\mathcal L\)</span> be a <span class="math notranslate nohighlight">\(\pi\)</span>-system and a <span class="math notranslate nohighlight">\(\lambda\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span>, respectively. Then if <span class="math notranslate nohighlight">\(\mathcal P \subeteq \mathcal L\)</span>, <span class="math notranslate nohighlight">\(\sigma(\mathcal P) \subseteq \mathcal L\)</span>.</p>
-</div>
+<div class="proof theorem admonition" id="theorem-4">
+<p class="admonition-title"><span class="caption-number">Theorem 3.13 </span> (Dynkin <span class="math notranslate nohighlight">\(\pi, \lambda\)</span> Theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a set, and let <span class="math notranslate nohighlight">\(\mathcal P\)</span> and <span class="math notranslate nohighlight">\(\mathcal L\)</span> be a <span class="math notranslate nohighlight">\(\pi\)</span>-system and a <span class="math notranslate nohighlight">\(\lambda\)</span>-system on <span class="math notranslate nohighlight">\(\Omega\)</span>, respectively. Then if <span class="math notranslate nohighlight">\(\mathcal P \subseteq \mathcal L\)</span>, <span class="math notranslate nohighlight">\(\sigma(\mathcal P) \subseteq \mathcal L\)</span>.</p>
 </section>
+</div></section>
 <section id="change-of-variables">
 <h2><span class="section-number">3.4.3. </span>Change of variables<a class="headerlink" href="#change-of-variables" title="Permalink to this heading">#</a></h2>
 <p>Just because we showed that you <em>can</em> calculate all the integrals we have discussed thus far, doesn’t mean we <em>want to</em>. The reason that we have introduced all this new notation, which might feel cumbersome at first, is that it will ultimately make your understanding of random variables and concepts deriving from all the things we’ve discussed thus far a <em>lot</em> easier to wrap your head around. Plainly, the expressions just happen to be a lot simpler, and the rules easier to follow.</p>
@@ -594,12 +595,12 @@ Suppose that <span class="math notranslate nohighlight">\(\Omega\)</span> is a s
 <p>Where in the final line, we used that <span class="math notranslate nohighlight">\(f\)</span> is a measurable function with domain <span class="math notranslate nohighlight">\((S, \Sigma)\)</span> and codomain <span class="math notranslate nohighlight">\((\mathbb R, \mathcal R)\)</span>, <a class="reference internal" href="basics.html#mt:int:basics:muint:int">Definition 3.10</a>, and the definition of a pushforward measure <a class="reference internal" href="../intro/distns.html#mt:intro:rvs:pushforward">Definition 2.40</a>.</p>
 </div>
 <p>As an important remark, notice that we didn’t <em>explicitly</em> show the right-most equality, but this turns out to be pretty easy:</p>
-<div class="proof remark admonition" id="remark-5">
+<div class="proof remark admonition" id="remark-6">
 <p class="admonition-title"><span class="caption-number">Remark 3.2 </span></p>
 <section class="remark-content" id="proof-content">
 <p>Note that in the change of variables formula, the following two are equivalent, which we did not explicitly prove above:</p>
 <div class="math notranslate nohighlight">
-\[\int_{X(\Omega)} f\, \text d\left(X_*\mu\right) &amp;= \int_{S} f\, \text d\left(X_*\mu\right).\]</div>
+\[\int_{X(\Omega)} f\, \text d\left(X_*\mu\right) = \int_{S} f\, \text d\left(X_*\mu\right).\]</div>
 <p>This is because for any <span class="math notranslate nohighlight">\(r \not \in X(\Omega)\)</span>, <span class="math notranslate nohighlight">\(X^{-1}: r \mapsto \varnothing\)</span>. Noting that <span class="math notranslate nohighlight">\(X_*\mu\)</span> is a measure, and hence the measure of the empty set is <span class="math notranslate nohighlight">\(0\)</span>, we can just as easily write:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\int_{S \setminus X(\Omega)} f\, \text d\left(X_*\mu\right) &amp;= \int_{\omega \in S \setminus X(\Omega)} f\, \text d\left(\mu\circ X^{-1}\right) \\
